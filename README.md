@@ -1,12 +1,3 @@
-# ntexup
-
-
-![](documentation/website/splash.png)
-
-![](documentation/website/ex02.png)
-
-![](documentation/website/ex03.png)
-
 # ntexup Documentation Slides
 
 This repository contains presentation slides that showcase and document the capabilities of ntexup — a text-based, developer-friendly presentation tool for academics, researchers, and technical communicators.
@@ -42,19 +33,18 @@ Compile and open this folder
 nuts ntexup --show .
 ```
 
-note that this is exactly equivalent to
+Note that you don’t need to clone or download this repository to render it; you can simply run:
+
 
 ```bash
 nuts ntexup --show --documentation
 ```
 
-which will download this repo automatically and display the documentation slides.
 
-
-Contributing
+## Contributing
 Pull requests with new example slides, improvements, or corrections are welcome!
 Please follow the style and formatting conventions used in existing slides.
 
-License
+## License
 Unless otherwise stated in individual files, all content in this repository is released under the same license as ntexup.
 
