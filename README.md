@@ -40,6 +40,14 @@ Note that you don’t need to clone or download this repository to render it; yo
 nuts ntexup --show --documentation
 ```
 
+## Related Repositories
+
+- [ntexup](https://github.com/thevpc/ntexup):  
+  The core ntexup tool and runtime environment for building text-based presentations and documents.
+
+- [ntexup-templates](https://github.com/thevpc/ntexup-templates):  
+  Reusable templates and themes to style and structure your ntexup slides and documents.
+
 
 ## Contributing
 Pull requests with new example slides, improvements, or corrections are welcome!
