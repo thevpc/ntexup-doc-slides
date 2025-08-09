@@ -37,7 +37,7 @@ Note that you don’t need to clone or download this repository to render it; yo
 
 
 ```bash
-nuts ntexup --show --documentation
+nuts ntexup --view --documentation
 ```
 
 ## Related Repositories
