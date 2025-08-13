@@ -9,17 +9,19 @@ body{
             }
             // Row
             miniPage{
-                plot2d(x:dtimes(-5,5,100)){
-                        curve{
-                            f(x):sin(x)
+                plot2d(x:dtimes(-10,10,500)){
+                        area{
+                            f(x): "100*abs(cos(pow(abs(x),1.5))/(1+0.2*abs(x)))"
+                            title:"my function"
                         }
                 }
             }
             miniCodeNTexup(
                 """
-                    plot2d(x:dtimes(-5,5,100)){
-                        curve {
-                            f(x):sin(x)
+                    plot2d(x:dtimes(-10,10,500)){
+                        area {
+                            f(x):"100*abs(cos(pow(abs(x),1.5))/(1+0.2*abs(x)))"
+                            title:"my function"
                         }
                     }
                 """
