@@ -9,7 +9,7 @@ normal(title:"Other Shapes",variant:5){
             }
             // Row
             miniPage{
-                    arrow(at: center,color:themeColors[2],rotate:-45)
+                    arrow(at: center,color:documentColors[2],rotate:-45)
             }
             miniCodeNTexup(
                 """
