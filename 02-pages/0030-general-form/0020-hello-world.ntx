@@ -7,14 +7,14 @@ normal(title:"Hello World",variant:2){
 
             // Row
             miniPage{
-                //rectangle(at:center, color:themeColors[2])
+                //rectangle(at:center, color:documentColors[2])
                 text("Hello World")
             }
             miniCodeNTexup(""" "Hello World" """)
 
             // Row
             miniPage{
-                //rectangle(at:center, color:themeColors[2])
+                //rectangle(at:center, color:documentColors[2])
                 """
                     - Hello ##World##
                     - Hello ###World###
@@ -33,7 +33,7 @@ normal(title:"Hello World",variant:2){
 
             // Row
             miniPage{
-                //rectangle(at:center, color:themeColors[2])
+                //rectangle(at:center, color:documentColors[2])
                 ul{
                     ¶ Hello ##World##
                     ¶ Hello ###World###
