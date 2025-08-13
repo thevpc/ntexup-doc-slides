@@ -9,7 +9,7 @@ normal(title:"Polygons",variant:5){
             }
             // Row
             miniPage{
-                pentagon(at:center, size:50, background:themeColors[4], color:themeColors[2])
+                pentagon(at:center, size:50, background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 pentagon()
@@ -17,7 +17,7 @@ normal(title:"Polygons",variant:5){
 
             // Row
             miniPage{
-                hexagon(at:center, size:50, background:themeColors[4], color:themeColors[2])
+                hexagon(at:center, size:50, background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 hexagon()
@@ -25,7 +25,7 @@ normal(title:"Polygons",variant:5){
 
             // Row
             miniPage{
-                heptagon(at:center, size:50, background:themeColors[4], color:themeColors[2])
+                heptagon(at:center, size:50, background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 heptagon()
@@ -34,7 +34,7 @@ normal(title:"Polygons",variant:5){
 
             // Row
             miniPage{
-                octagon(at:center, size:50, background:themeColors[4], color:themeColors[2])
+                octagon(at:center, size:50, background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 octagon()
@@ -42,7 +42,7 @@ normal(title:"Polygons",variant:5){
 
             // Row
             miniPage{
-                nonagon(at:center, size:50, background:themeColors[4], color:themeColors[2])
+                nonagon(at:center, size:50, background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 nonagon()
@@ -50,7 +50,7 @@ normal(title:"Polygons",variant:5){
 
             // Row
             miniPage{
-                decagon(at:center, size:50, background:themeColors[4], color:themeColors[2])
+                decagon(at:center, size:50, background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 decagon()
@@ -58,7 +58,7 @@ normal(title:"Polygons",variant:5){
 
             // Row
             miniPage{
-                polygon(at:center, size:50, background:themeColors[4], color:themeColors[2])
+                polygon(at:center, size:50, background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 polygon()
@@ -66,7 +66,7 @@ normal(title:"Polygons",variant:5){
 
             // Row
             miniPage{
-                polygon(at:center, size:50, count:8, background:themeColors[4], color:themeColors[2])
+                polygon(at:center, size:50, count:8, background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 polygon(count:8)
@@ -74,7 +74,7 @@ normal(title:"Polygons",variant:5){
 
             // Row
             miniPage{
-                polygon(at:center, size:50, points:[(0,0),(50,0),(100,20),(80,80)], background:themeColors[4], color:themeColors[2])
+                polygon(at:center, size:50, points:[(0,0),(50,0),(100,20),(80,80)], background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 polygon(points:[
