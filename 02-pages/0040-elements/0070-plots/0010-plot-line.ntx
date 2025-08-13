@@ -9,7 +9,7 @@ body{
             }
             // Row
             miniPage{
-                plot2d(xmin:-5 , xmax: 5){
+                plot2d(x:dtimes(-5,5,100)){
                         curve{
                             f(x):sin(x)
                         }
@@ -17,7 +17,7 @@ body{
             }
             miniCodeNTexup(
                 """
-                    plot2d(xmin:-5 , xmax: 5){
+                    plot2d(x:dtimes(-5,5,100)){
                         curve {
                             f(x):sin(x)
                         }
@@ -26,31 +26,27 @@ body{
             )
             // Row
             miniPage{
-                plot2d(xmin:-5 , xmax: 5){
+                plot2d(x:dtimes(-5,5,100)){
                     curve{
                         f(x):sin(x)
                         title:'sin'
-                        color:red
                     }
-                    curve{
+                    area{
                         f(x):cos(x)
                         title:'cos'
-                        color:blue
                     }
                 }
             }
             miniCodeNTexup(
                 """
-                plot2d(xmin:-5 , xmax: 5){
+                plot2d(x:dtimes(-5,5,100)){
                     curve{
                         f(x):sin(x)
                         title:'sin'
-                        color:red
                     }
-                    curve{
+                    area{
                         f(x):cos(x)
                         title:'cos'
-                        color:blue
                     }
                 }
                 """
