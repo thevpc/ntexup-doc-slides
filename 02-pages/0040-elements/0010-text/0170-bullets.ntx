@@ -11,7 +11,7 @@ normal(title:"Bullets",variant:3){
 
             // Row
             miniPage{
-                //rectangle(at:center, color:themeColors[2])
+                //rectangle(at:center, color:documentColors[2])
                 styles:{
                     "*" : {
                         font-size:3%P
@@ -39,7 +39,7 @@ normal(title:"Bullets",variant:3){
                         font-size:3%P
                     }
                 }
-                //rectangle(at:center, color:themeColors[2])
+                //rectangle(at:center, color:documentColors[2])
                 ul{
                     ¶ Hello ##World##
                     ul{
@@ -70,7 +70,7 @@ normal(title:"Bullets",variant:3){
                         font-size:3%P
                     }
                 }
-                //rectangle(at:center, color:themeColors[2])
+                //rectangle(at:center, color:documentColors[2])
                 ol{
                     ¶ Hello ##World##
                     ol{
