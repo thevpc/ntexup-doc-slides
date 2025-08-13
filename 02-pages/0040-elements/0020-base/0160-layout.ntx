@@ -7,33 +7,33 @@ normal(title:"Layout",variant:4){
             // Row
             miniPage{
                 group{
-                    rectangle(at:top, size:(50,50), background:themeColors[4], color:themeColors[2], margin:10)
-                    triangle(at:left, size:(50,50), background:themeColors[5], color:themeColors[5], margin:10)
+                    rectangle(at:top, size:(50,50), background:documentColors[4], color:documentColors[2], margin:10)
+                    triangle(at:left, size:(50,50), background:documentColors[5], color:documentColors[5], margin:10)
                 }
             }
             miniCodeNTexup( """
                 group{
                     rectangle(at:top, size:(50,50),
-                        background:themeColors[4])
+                        background:documentColors[4])
                     triangle(at:left, size:(50,50),
-                        background:themeColors[5])
+                        background:documentColors[5])
                 }
             """)
 
             // Row
             miniPage{
                 grid((2,2)){
-                    rectangle(at:top, size:(50,50), background:themeColors[4], color:themeColors[2], margin:10)
-                    triangle(at:left, size:(50,50), background:themeColors[5], color:themeColors[5], margin:10)
+                    rectangle(at:top, size:(50,50), background:documentColors[4], color:documentColors[2], margin:10)
+                    triangle(at:left, size:(50,50), background:documentColors[5], color:documentColors[5], margin:10)
                     "Hello"
                 }
             }
             miniCodeNTexup( """
                 grid((2,2)){
                     rectangle(at:top, size:(50,50),
-                        background:themeColors[4])
+                        background:documentColors[4])
                     triangle(at:left, size:(50,50),
-                        background:themeColors[5])
+                        background:documentColors[5])
                     "Hello"
                 }
             """)
@@ -41,12 +41,12 @@ normal(title:"Layout",variant:4){
             // Row
             miniPage{
                 grid((3,2),columns-weight:[1,4],rows-weight:[1,4]){
-                    rectangle(background:themeColors[4], color:themeColors[2], margin:10)
-                    triangle(background:themeColors[5], color:themeColors[5], margin:10)
-                    rectangle(background:themeColors[4], color:themeColors[2], margin:10)
-                    triangle(background:themeColors[5], color:themeColors[5], margin:10)
-                    rectangle(background:themeColors[4], color:themeColors[2], margin:10)
-                    triangle(background:themeColors[5], color:themeColors[5], margin:10)
+                    rectangle(background:documentColors[4], color:documentColors[2], margin:10)
+                    triangle(background:documentColors[5], color:documentColors[5], margin:10)
+                    rectangle(background:documentColors[4], color:documentColors[2], margin:10)
+                    triangle(background:documentColors[5], color:documentColors[5], margin:10)
+                    rectangle(background:documentColors[4], color:documentColors[2], margin:10)
+                    triangle(background:documentColors[5], color:documentColors[5], margin:10)
                 }
             }
             miniCodeNTexup( """
