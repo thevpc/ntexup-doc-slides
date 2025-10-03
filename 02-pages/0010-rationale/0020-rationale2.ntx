@@ -1,4 +1,4 @@
-agenda(title:"Rationale"){
+agenda-slide(title:"Rationale"){
     body{
         ul{
             ¶ Uses TSON which is a derivative of JSON format but with more readability
