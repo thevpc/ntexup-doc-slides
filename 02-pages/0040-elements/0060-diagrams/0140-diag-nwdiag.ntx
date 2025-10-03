@@ -1,4 +1,4 @@
-normal(title:"Network Diagrams",variant:7){
+content-slide(title:"Network Diagrams",variant:7){
     body{
         grid((4,1),columns-weight:[2,3]){
             styles:{
