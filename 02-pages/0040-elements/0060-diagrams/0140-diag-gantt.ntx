@@ -1,4 +1,4 @@
-normal(title:"Gantt Diagrams",variant:7){
+content-slide(title:"Gantt Diagrams",variant:7){
     body{
         grid((2,2),columns-weight:[2,3]){
             styles:{
