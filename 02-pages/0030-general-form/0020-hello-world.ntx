@@ -1,4 +1,4 @@
-normal(title:"Hello World",variant:2){
+content-slide(title:"Hello World",variant:2){
     body{
         grid(4,2,columns-weight:[1]){
             styles:{
