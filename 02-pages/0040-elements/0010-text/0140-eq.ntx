@@ -1,4 +1,4 @@
-normal(title:"Latex Equations",variant:3){
+content-slide(title:"Latex Equations",variant:3){
     body{
         grid(4,2,columns-weight:[1,3]){
             styles:{
