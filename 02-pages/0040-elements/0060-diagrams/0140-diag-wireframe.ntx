@@ -1,4 +1,4 @@
-normal(title:"Wireframe Diagrams",variant:7){
+content-slide(title:"Wireframe Diagrams",variant:7){
     body{
         grid((4,2),columns-weight:[2,3]){
             styles:{
