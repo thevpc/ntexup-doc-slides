@@ -1,4 +1,4 @@
-agenda(title:"Rationale"){
+agenda-slide(title:"Rationale"){
     body{
         ul{
             ¶ Text-based, declarative, and intuitive syntax
