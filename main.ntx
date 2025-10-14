@@ -1,5 +1,18 @@
 themeName=classic // use classic or ibtihel
 documentColorAccent=1 // use a number from 1 to 12
 themeShowPalette=true
+documentTitle="ntexup"
+documentSubtitle="
+       A declarative, text-based document
+              & presentation generator
+                 "
+documentSubsubtitle="Open Source"
+documentAuthor="thevpc"
+documentAuthorEmail="https://github.com/thevpc/ntexup"
+documentAuthorAffiliation="thevpc"
+documentChapter="Chapter 1"
+documentDate="2025-08-06"
+documentVersion="v0.8.7.0"
+
 include("01-styles")
 include("02-pages")
