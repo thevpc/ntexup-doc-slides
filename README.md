@@ -30,14 +30,14 @@ cd ntexup-doc-slides
 Compile and open this folder
 
 ```bash
-nuts ntexup --show .
+nuts ntexup show .
 ```
 
 Note that you don’t need to clone or download this repository to render it; you can simply run:
 
 
 ```bash
-nuts ntexup --view --documentation
+nuts ntexup show-doc
 ```
 
 ## Related Repositories
