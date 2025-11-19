@@ -12,7 +12,7 @@ documentAuthorEmail="https://github.com/thevpc/ntexup"
 documentAuthorAffiliation="thevpc"
 documentChapter="Chapter 1"
 documentDate="2025-08-06"
-documentVersion="v0.8.7.0"
+documentVersion="v0.8.9.0"
 
 include("01-styles")
 include("02-pages")
