@@ -1,13 +1,17 @@
 agenda-slide(title:"Rationale"){
     body{
-        ul{
-            ¶ Text-based, declarative, and intuitive syntax
-            ¶ Readable by humans, writable with ease
-            ¶ Designed for long-lived documents with effortless maintenance
-            ¶ Unmatched control over rendering
-            ¶ Seamless multi-file support
-            ¶ Version-control friendly (Git & more)
-            ¶ Integrates with LaTeX, UML, and beyond
-        }
+        a: b
+        a: .¶ Text-based, declarative, and intuitive syntax
+           .. {a:b}
+           .. {a:b}
+           . "test"
+
+        .¶ Text-based, declarative, and intuitive syntax
+        .¶ Readable by humans, writable with ease
+        .¶ Designed for long-lived documents with effortless maintenance
+        .¶ Unmatched control over rendering
+        .¶ Seamless multi-file support
+        .¶ Version-control friendly (Git & more)
+        .¶ Integrates with LaTeX, UML, and beyond
     }
 }
