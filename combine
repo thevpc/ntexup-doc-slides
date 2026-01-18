@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+dfs() {
+  local dir="$1"
+
+  # list directory entries, sorted
+  local entries
+  IFS=$'\n' entries=($(ls -1A "$dir" | sort))
+  unset IFS
+
+  for e in "${entries[@]}"; do
+    local path="$dir/$e"
+
+    if [[ -d "$path" ]]; then
+      dfs "$path"
+    elif [[ -f "$path" && "$path" == *.ntx ]]; then
+      cat "$path"
+    fi
+  done
+}
+
+dfs "." > all.ntxx
