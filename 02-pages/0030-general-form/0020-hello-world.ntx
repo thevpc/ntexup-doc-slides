@@ -5,7 +5,7 @@ content-slide(title:"Hello World",variant:2){
                 "*": {margin:2}
             }
 
-            // Row
+//            // Row
             miniPage{
                 //rectangle(at:center, color:documentColors[2])
                 text("Hello World")
@@ -34,18 +34,14 @@ content-slide(title:"Hello World",variant:2){
             // Row
             miniPage{
                 //rectangle(at:center, color:documentColors[2])
-                ul{
-                    ¶ Hello ##World##
-                    ¶ Hello ###World###
-                    ¶ Hello ####World####
-                }
+                • ¶ Hello ##World##
+                • ¶ Hello ###World###
+                • ¶ Hello ####World####
             }
             miniCodeNTexup("""
-                    ul{
-                        ¶ Hello ##World##
-                        ¶ Hello ###World###
-                        ¶ Hello ####World####
-                    }
+                • ¶ Hello ##World##
+                • ¶ Hello ###World###
+                • ¶ Hello ####World####
              """
             )
         }
