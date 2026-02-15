@@ -7,13 +7,13 @@ include(
 
 @define miniPage{
     group(background:white,draw-contour){
-        componentBody
+        body
     }
 }
 
 @define miniCode{
     group(background:Gray89,draw-contour,margin:5){
-        componentBody
+        body
     }
 }
 
