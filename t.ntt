@@ -1,0 +1,1943 @@
+themeName=classic // use classic or ibtihel
+documentColorAccent=1 // use a number from 1 to 12
+themeShowPalette=true
+documentTitle="ntexup"
+documentSubtitle="
+       A declarative, text-based document
+              & presentation generator
+                 "
+documentSubsubtitle="Open Source"
+documentAuthor="thevpc"
+documentAuthorEmail="https://github.com/thevpc/ntexup"
+documentAuthorAffiliation="thevpc"
+documentChapter="Chapter 1"
+documentDate="2025-08-06"
+documentVersion="v0.8.9.0"
+
+include("01-styles")
+include("02-pages")
+content-slide(title:"Plot lines",variant:8){
+body{
+        grid((2,1),columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+            // Row
+            miniPage{
+                plot2d(x:dtimes(-10,10,500)){
+                        area{
+                            f(x): "100*abs(cos(pow(abs(x),1.5))/(1+0.2*abs(x)))"
+                            title:"my function"
+                        }
+                }
+            }
+            miniCodeNTexup(
+                """
+                    plot2d(x:dtimes(-10,10,500)){
+                        area {
+                            f(x):"100*abs(cos(pow(abs(x),1.5))/(1+0.2*abs(x)))"
+                            title:"my function"
+                        }
+                    }
+                """
+            )
+            // Row
+            miniPage{
+                plot2d(x:dtimes(-5,5,100)){
+                    curve{
+                        f(x):sin(x)
+                        title:'sin'
+                    }
+                    area{
+                        f(x):cos(x)
+                        title:'cos'
+                    }
+                }
+            }
+            miniCodeNTexup(
+                """
+                plot2d(x:dtimes(-5,5,100)){
+                    curve{
+                        f(x):sin(x)
+                        title:'sin'
+                    }
+                    area{
+                        f(x):cos(x)
+                        title:'cos'
+                    }
+                }
+                """
+            )
+        }
+    }
+
+}
+content-slide(title:"Images",variant:6){
+    body{
+        grid((4,4),columns-weight:[1,3]){
+            // Row 2
+            image("../../../images/image.png",size:(50,50),at:center)
+            miniCodeNTexup(
+            """
+                image("../../../images/image.png")
+            """
+            )
+
+            // Row 2
+            image("../../../images/image.jpg",size:(50,50),at:center)
+            miniCodeNTexup(
+            """
+                image("../../../images/image.jpg")
+            """
+            )
+
+            // Row 3
+
+            image("../../../images/image.gif",size:(50,50),at:center)
+            miniCodeNTexup(
+            """
+                image("../../../images/image.gif")
+            """
+            )
+
+            // Row 4
+
+            image("../../../images/image.svg",size:(50,50),at:center)
+            miniCodeNTexup(
+            """
+                image("../../../images/image.svg")
+            """
+            )
+
+            // Row 4
+
+            image("../../../images/image.avif",size:(50,50),at:center)
+            miniCodeNTexup(
+            """
+                image("../../../images/image.avif")
+            """
+            )
+
+            // Row 4
+
+            image("../../../images/image.webp",size:(50,50),at:center)
+            miniCodeNTexup(
+            """
+                image("../../../images/image.webp")
+            """
+            )
+
+        }
+    }
+
+}
+content-slide(title:"Gantt Diagrams",variant:7){
+    body{
+        grid((2,2),columns-weight:[2,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+            // Row 1
+            // ---------------------------------------------
+            miniPage{
+                gantt( size:(95,70), at:center
+                    """
+                        [Task1] requires 4 days
+                        then [Task1.1] requires 4 days
+                        [Task1.2] starts at [Task1]'s end and requires 7 days
+
+                        [Task2] requires 5 days
+                        then [Task2.1] requires 4 days
+
+                        [MaxTaskEnd] happens at [Task1.1]'s end
+                        [MaxTaskEnd] happens at [Task1.2]'s end
+                        [MaxTaskEnd] happens at [Task2.1]'s end
+                    """
+                )
+            }
+
+            miniCodeNTexup(
+            ```
+                 gantt(
+                     """
+                        [Task1] requires 4 days
+                        then [Task1.1] requires 4 days
+                        [Task1.2] starts at [Task1]'s end and requires 7 days
+
+                        [Task2] requires 5 days
+                        then [Task2.1] requires 4 days
+
+                        [MaxTaskEnd] happens at [Task1.1]'s end
+                        [MaxTaskEnd] happens at [Task1.2]'s end
+                        [MaxTaskEnd] happens at [Task2.1]'s end
+                     """
+                 )
+
+             ```
+             )
+
+            // Row 2
+            // ---------------------------------------------
+            miniPage{
+                gantt(size:(95,40), at:center
+                    """
+                        [Prototype design] requires 13 days
+                        [Test prototype] requires 4 days
+                        [Test prototype] starts at [Prototype design]'s end
+                        [Prototype design] is colored in Fuchsia/FireBrick
+                        [Test prototype] is colored in GreenYellow/Green
+                    """
+                )
+            }
+
+            miniCodeNTexup(
+            ```
+                 gantt(
+                     """
+                        [Prototype design] requires 13 days
+                        [Test prototype] requires 4 days
+                        [Test prototype] starts at [Prototype design]'s end
+                        [Prototype design] is colored in Fuchsia/FireBrick
+                        [Test prototype] is colored in GreenYellow/Green
+                     """
+                 )
+
+             ```
+             )
+        }
+    }
+
+}
+content-slide(title:"Network Diagrams",variant:7){
+    body{
+        grid((4,1),columns-weight:[2,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+            // Row 1
+            // ---------------------------------------------
+            miniPage{
+                nwdiag(size:(100,50), at:center
+                    """
+                          // define group outside of network definitions
+                          group {
+                            color = "#FFAAAA";
+
+                            web01;
+                            web02;
+                            db01;
+                          }
+
+                          network dmz {
+                            web01;
+                            web02;
+                          }
+                          network internal {
+                            web01;
+                            web02;
+                            db01;
+                            db02;
+                          }
+                    """
+                )
+            }
+
+            miniCodeNTexup(
+            ```
+                 nwdiag(
+                     """
+                          // define group outside of network definitions
+                          group {
+                            color = "#FFAAAA";
+
+                            web01;
+                            web02;
+                            db01;
+                          }
+
+                          network dmz {
+                            web01;
+                            web02;
+                          }
+                          network internal {
+                            web01;
+                            web02;
+                            db01;
+                            db02;
+                          }
+                     """
+                 )
+
+             ```
+             )
+
+            // Row 2
+            // ---------------------------------------------
+            miniPage{
+                nwdiag(size:(100,50), at:center
+                    """
+                        network Sample_front {
+                            address = "192.168.10.0/24"
+                            color = "red"
+
+                            // define group
+                            group web {
+                              web01 [address = ".1, .2", shape = "node"]
+                              web02 [address = ".2, .3"]
+                            }
+                          }
+                          network Sample_back {
+                            address = "192.168.20.0/24"
+                            color = "palegreen"
+                            web01 [address = ".1"]
+                            web02 [address = ".2"]
+                            db01 [address = ".101", shape = database ]
+                            db02 [address = ".102"]
+
+                            // define network using defined nodes
+                            group db {
+                              db01;
+                              db02;
+                            }
+                          }
+                    """
+                )
+            }
+
+            miniCodeNTexup(
+            ```
+                 nwdiag(
+                     """
+                        network Sample_front {
+                            address = "192.168.10.0/24"
+                            color = "red"
+
+                            // define group
+                            group web {
+                              web01 [address = ".1, .2", shape = "node"]
+                              web02 [address = ".2, .3"]
+                            }
+                          }
+                          network Sample_back {
+                            address = "192.168.20.0/24"
+                            color = "palegreen"
+                            web01 [address = ".1"]
+                            web02 [address = ".2"]
+                            db01 [address = ".101", shape = database ]
+                            db02 [address = ".102"]
+
+                            // define network using defined nodes
+                            group db {
+                              db01;
+                              db02;
+                            }
+                          }
+                     """
+                 )
+
+             ```
+             )
+        }
+    }
+
+}
+content-slide(title:"UML Classes",variant:7){
+    body{
+        grid((4,1),columns-weight:[2,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+            // Row 1
+            // ---------------------------------------------
+            miniPage{
+                uml(at:center,size:(100,50)
+                    """
+                        Object <|-- ArrayList
+                        List <|.. ArrayList
+                        interface List
+                        Object : equals()
+                        ArrayList : Object[] elementData
+                        ArrayList : size()
+                    """
+                )
+            }
+
+            miniCodeNTexup(
+            ```
+                 uml(
+                     """
+                        Object <|-- ArrayList
+                        List <|.. ArrayList
+                        interface List
+                        Object : equals()
+                        ArrayList : Object[] elementData
+                        ArrayList : size()
+                     """
+                 )
+
+             ```
+             )
+
+            // Row 2
+            // ---------------------------------------------
+            miniPage{
+                uml(at:center,size:(100,50)
+                    """
+                        actor Bob #red
+                        ' The only difference between actor
+                        'and participant is the drawing
+                        participant Alice
+                        participant "I have a really\nlong name" as L #99FF99
+                        /' You can also declare:
+                           participant L as "I have a really\nlong name"  #99FF99
+                          '/
+
+                        Alice->Bob: Authentication Request
+                        Bob->Alice: Authentication Response
+                        Bob->L: Log transaction
+                    """
+                )
+            }
+
+            miniCodeNTexup(
+            ```
+                 uml(
+                     """
+                        actor Bob #red
+                        ' The only difference between actor
+                        'and participant is the drawing
+                        participant Alice
+                        participant "I have a really\nlong name" as L #99FF99
+                        /' You can also declare:
+                           participant L as "I have a really\nlong name"  #99FF99
+                          '/
+
+                        Alice->Bob: Authentication Request
+                        Bob->Alice: Authentication Response
+                        Bob->L: Log transaction
+                     """
+                 )
+
+             ```
+             )
+        }
+    }
+
+}
+content-slide(title:"UML Use Case",variant:7){
+    body{
+        grid((4,1),columns-weight:[2,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+            // Row 1
+            // ---------------------------------------------
+            miniPage{
+                uml(at:center,size:(100,50)
+                    """
+                        left to right direction
+                        actor "Food Critic" as fc
+                        rectangle Restaurant {
+                          usecase "Eat Food" as UC1
+                          usecase "Pay for Food" as UC2
+                          usecase "Drink" as UC3
+                        }
+                        fc --> UC1
+                        fc --> UC2
+                        fc --> UC3
+                    """
+                )
+            }
+
+            miniCodeNTexup(
+            ```
+                 uml(
+                     """
+                        left to right direction
+                        actor "Food Critic" as fc
+                        rectangle Restaurant {
+                          usecase "Eat Food" as UC1
+                          usecase "Pay for Food" as UC2
+                          usecase "Drink" as UC3
+                        }
+                        fc --> UC1
+                        fc --> UC2
+                        fc --> UC3
+                     """
+                 )
+
+             ```
+             )
+
+            // Row 2
+            // ---------------------------------------------
+            miniPage{
+                uml(at:center,size:(100,50)
+                    """
+                        [c]
+                        node node {
+                          port p1
+                          port p2
+                          port p3
+                          file f1
+                        }
+
+                        c --> p1
+                        c --> p2
+                        c --> p3
+                        p1 --> f1
+                        p2 --> f1
+                    """
+                )
+            }
+
+            miniCodeNTexup(
+            ```
+                 uml(
+                     """
+                        [c]
+                        node node {
+                          port p1
+                          port p2
+                          port p3
+                          file f1
+                        }
+
+                        c --> p1
+                        c --> p2
+                        c --> p3
+                        p1 --> f1
+                        p2 --> f1
+                     """
+                 )
+
+             ```
+             )
+        }
+    }
+
+}
+content-slide(title:"Wireframe Diagrams",variant:7){
+    body{
+        grid((4,2),columns-weight:[2,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+            // Row 1
+            // ---------------------------------------------
+            miniPage{
+                wireframe(size:(90,30),at:center
+                    """
+                        {+
+                          Login    | "MyName   "
+                          Password | "****     "
+                          [Cancel] | [  OK   ]
+                        }
+                    """
+                )
+            }
+
+            miniCodeNTexup(
+             code:
+             ```
+                 wireframe(
+                     """
+                        Login    | "MyName   "
+                        Password | "****     "
+                        [Cancel] | [  OK   ]
+                     """
+                 )
+
+             ```
+              rowspan:2
+
+             )
+
+            // Row 2
+            // ---------------------------------------------
+            miniPage{
+                wireframe(size:(90,30),at:center
+                    """
+                        {+
+                        {/ <b>General | Fullscreen | Behavior | Saving }
+                        {
+                        { Open image in: | ^Smart Mode^ }
+                        [X] Smooth images when zoomed
+                        [X] Confirm image deletion
+                        [ ] Show hidden images
+                        }
+                        [Close]
+                        }
+                    """
+                )
+            }
+
+            miniCodeNTexup(
+                code:
+                ```
+                 wireframe(
+                    """
+                        {+
+                        {/ <b>General | Fullscreen | Behavior | Saving }
+                        {
+                        { Open image in: | ^Smart Mode^ }
+                        [X] Smooth images when zoomed
+                        [X] Confirm image deletion
+                        [ ] Show hidden images
+                        }
+                        [Close]
+                        }
+                     """
+                 )
+
+                ```
+                     rowspan:2
+             )
+        }
+    }
+
+}
+content-slide(title:"Simple Text",variant:3){
+    body{
+        grid(4,2,columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+            // Row
+            miniPage{
+                plain("Hello World",font-size:10)
+            }
+            miniCodeNTexup( """ plain("Hello World") """)
+            // Row
+            miniPage{
+                plain("Hello World",font-italic,font-size:10)
+            }
+            miniCodeNTexup(""" plain("Hello World",font-italic) """)
+
+            // Row
+            miniPage{
+                plain(
+                    "
+                        Hello
+                        World
+                    "
+                    ,font-bold,font-size:10)
+            }
+            miniCodeNTexup("""
+                                plain(
+                                         "
+                                             Hello
+                                             World
+                                         "
+                                     ,font-bold)
+                             """
+            )
+            // Row
+            miniPage{
+                plain(
+                    "
+                        Hello  World
+                        This    Is    Me
+                    ", font-family:monospaced,
+                       font-size:5
+                    )
+            }
+            miniCodeNTexup( """
+                            plain(
+                                     "
+                                         Hello
+                                         World
+                                     "
+                                  font-family: monospaced
+                                 )
+                         """
+            )
+        }
+    }
+
+}
+content-slide(title:"NTF format",variant:3){
+    body{
+        grid(4,2,columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+            // Row
+            grid(1,2,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:4%P}
+                }
+                ntf(
+                """
+                    ##Hello## ### World ###
+                """
+                )
+            }
+            miniCodeNTexup(
+                ```
+                    ntf(
+                    """
+                    ##Hello## ### World ###
+                    """
+                    )
+                ```)
+
+            // Row
+            grid(1,2,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:4%P}
+                }
+                ntf(
+                """
+                    ##:p1 color 1## ##:p2 color 2##
+                    ##:p3 color 3## ##:p10 color 4##
+                    ##:/ italic##   ##:info hint##
+                """
+                )
+            }
+            miniCodeNTexup(
+                ```
+                    ntf(
+                    """
+                        ##:p1:color 1## ##:p2:color 2##
+                        ##:p3:color 3## ##:p10:color 4##
+                        ##:/:italic## ##:info hint##
+                    """
+                    )
+                ```)        }
+    }
+
+}
+content-slide(title:"Latex Equations",variant:3){
+    body{
+        grid(4,2,columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+            // Row
+            grid(1,2,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:15}
+                }
+
+                eq("X^2=\sin(\pi x)",draw-contour:false,font-size:3%P)
+            }
+            column{
+                miniCodeNTexup(
+                """
+                eq("X^2=\sin(\pi x)")
+                """)
+                text("Latex math expressions are supported out of the box...", font-size:2%P,margin:[10,20],font-italic,color:documentColors[3])
+            }
+            // Row
+            grid(1,2,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:3%P}
+                }
+                    eq("X²=\sin(πx)", font-size:3%P,draw-contour:false)
+            }
+            column{
+                miniCodeNTexup(
+                    """
+                        eq("X²=\sin(πx)")
+                    """)
+                text("you can use superscripts and subscripts and custom symbols...", font-size:2%P,margin:[10,20],font-italic,color:documentColors[3])
+            }
+
+
+            // Row
+            grid(1,2,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:6%P}
+                }
+                    text("""
+                        [[eq: X²=\sin(πx)]]
+                    """
+                    ,font-size:6%P)
+            }
+            column{
+                miniCodeNTexup(
+                    """
+                    "[[eq: X^2=\sin(x) ]]"
+                    """)
+                text("you can embed eq in a string...", font-size:2%P,margin:[10,20],font-italic,color:documentColors[3])
+            }
+
+
+// Row
+            grid(1,3,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:4%P}
+                }
+                """
+                    ##Equation 1 (superscript)## =
+                    [[eq: X²=\sin(πx) ]]
+                    ###Equation 2### =
+                    [[eq: X^2=\sin \left( \pi x \right) ]]
+                    ####Equation 3#### =
+                    [[eq: X^2=\sin(x) ]]
+                """
+            }
+//            text("hello" draw-contour:true)
+            column{
+                miniCodeNTexup(
+                    ```
+                    """
+                        ##Equation 1 (superscript)## =
+                        [[eq: X²=\sin(πx) ]]
+                        ###Equation 2### =
+                        [[eq: X^2=\sin \left( \pi x \right) ]]
+                        ####Equation 3#### =
+                        [[eq: X^2=\sin(x) ]]
+                    """
+                    ```
+                    )
+                text("you can embed eq in a string...", font-size:2%P,margin:[10,20],font-italic,color:documentColors[3])
+            }
+        }
+    }
+
+}
+content-slide(title:"Source Code",variant:3){
+    body{
+        grid(4,2,columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+            // Row
+            grid(1,2,background:white,draw-contour){
+                source(java
+                    """
+                        public static class
+                        MyClass{
+                            int value = 10;
+                            int add(int b){
+                                value++;
+                            }
+                        }
+                    """
+                    font-size:2%P,
+                    font-family:Monospaced
+                )
+            }
+            miniCodeNTexup(
+                ```
+                    source(java
+                    """
+                        public static class
+                        MyClass{
+                            int value = 10;
+                            int add(int b){
+                                value++;
+                            }
+                        }
+                    """
+                    )
+                ```
+                )
+
+            // Row
+            grid(1,2,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:5%P}
+                }
+                source(sql
+                    """
+                        Select *
+                        From Tab
+                        Where 1=1
+                    """
+                    font-size:2%P,
+                    font-family:Monospaced
+                )
+            }
+            miniCodeNTexup(
+                ```
+                    source(sql
+                    """
+                        Select *
+                        From Tab
+                        Where 1=1
+                    """
+                    )
+                ```
+                )
+
+            // Row
+            grid(1,2,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:5%P}
+                }
+                source(xml
+                    """
+                        <a value="text">
+                          <b value="text"></b>
+                        </a>
+                    """
+                    font-size:2%P,
+                    font-family:Monospaced
+                )
+            }
+            miniCodeNTexup(
+                ```
+                    source(xml
+                    """
+                        <a value="text">
+                          <b value="text"></b>
+                        </a>
+                    """
+                    )
+                ```
+                )
+
+            grid(1,2,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:10%P}
+                }
+                source(text
+                    """
+                        text, java,
+                        c#, c++
+                        xml,html,json
+                        bash,fish,cmd
+                        sql,
+                        hd, ntf,hadra,
+                        tson,ntexup
+                    """
+                    font-size:2%P,
+                    font-family:Monospaced
+                )
+            }
+            "Supported Languages"
+
+        }
+    }
+
+}
+content-slide(title:"Rich Text",variant:3){
+    body{
+        grid(4,2,columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+            // Row
+            grid(1,2,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:3%P}
+                }
+                "Hello World"
+                text("Hello World")
+                text("Hello World",font-italic)
+                text("Hello World",font-bold)
+            }
+            miniCodeNTexup(
+                """
+                "Hello World"
+                text("Hello World")
+                text("Hello World",font-italic)
+                text("Hello World",font-bold)
+                """)
+
+
+            // Row
+            grid(1,2,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:3%P}
+                }
+                """
+                    **Bold X**
+                    __Italic Y__
+                    #Title 1#
+                    ##Title 2##
+                    ###Title 3###
+                """
+            }
+            miniCodeNTexup(
+                ```
+                """
+                    **Bold X**
+                    __Italic Y__
+                    #Title 1#
+                    ##Title 2##
+                    ###Title 3###
+                """
+                ```
+                )
+
+
+            // Row
+            grid(1,2,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:3%P}
+                }
+                    """
+                        [[ntf: ##:p1: hello##]] world
+                    """
+            }
+            miniCodeNTexup(
+                ```
+                    """
+                        [[ntf: ##:p1: hello##]] world
+                    """
+                ```)
+
+
+            // Row
+            grid(1,2,background:white,draw-contour){
+                styles:{
+                    "*":{font-size:3%P}
+                }
+                """
+                    #Equation 1 (with superscript) =
+                    [[eq: X²=\sin(πx) ]]
+                    ##Equation 2## =
+                    [[eq: X^2=\sin \left( \pi x \right) ]]
+                    ###Equation 3### =
+                    [[eq: X^2=\sin(x) ]]
+                """
+            }
+            miniCodeNTexup(
+                ```
+                """
+                    #Equation 1# =
+                    [[eq: X²=\sin(πx) ]]
+                    ##Equation 2## =
+                    [[eq: X^2=\sin \left( \pi x \right) ]]
+                    ###Equation 3### =
+                    [[eq: X^2=\sin(x) ]]
+                """
+                ```
+                )
+
+        }
+    }
+
+}
+content-slide(title:"Bullets",variant:3){
+    body{
+        grid(4,2,columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+
+
+            // Row
+            miniPage{
+                //rectangle(at:center, color:documentColors[2])
+                styles:{
+                    "*" : {
+                        font-size:3%P
+                    }
+                }
+                ul{
+                    ¶ Hello ##World##
+                    ¶ Hello ###World###
+                    ¶ Hello ####World####
+                }
+            }
+            miniCodeNTexup( """
+                    ul{
+                        ¶ Hello ##World##
+                        ¶ Hello ###World###
+                        ¶ Hello ####World####
+                    }
+             """)
+
+            // Row
+            miniPage{
+
+                styles:{
+                    "*" : {
+                        font-size:3%P
+                    }
+                }
+                //rectangle(at:center, color:documentColors[2])
+                ul{
+                    ¶ Hello ##World##
+                    ul{
+                        ¶ Sub 1
+                        ¶ Sub 2
+                    }
+                    ¶ Hello ###World###
+                    ¶ Hello ####World####
+                }
+            }
+            miniCodeNTexup( """
+                ul{
+                    ¶ Hello ##World##
+                    ul{
+                        ¶ Sub 1
+                        ¶ Sub 2
+                    }
+                    ¶ Hello ###World###
+                    ¶ Hello ####World####
+                }
+             """)
+
+            // Row
+            miniPage{
+
+                styles:{
+                    "*" : {
+                        font-size:3%P
+                    }
+                }
+                //rectangle(at:center, color:documentColors[2])
+                ol{
+                    ¶ Hello ##World##
+                    ol{
+                        ¶ Sub 1
+                        ¶ Sub 2
+                    }
+                    ¶ Hello ###World###
+                    ¶ Hello ####World####
+                }
+            }
+            miniCodeNTexup( """
+                ol{
+                    ¶ Hello ##World##
+                    ol{
+                        ¶ Sub 1
+                        ¶ Sub 2
+                    }
+                    ¶ Hello ###World###
+                    ¶ Hello ####World####
+                }
+             """)
+        }
+    }
+
+}
+content-slide(title:"Lines",variant:5){
+    body{
+        grid(4,2,columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+            // Row
+            miniPage{
+                line(from:(10,10), to:(80,90), color:red,stroke:3)
+            }
+            miniCodeNTexup( """ line(from:(0,0), to:(80,20)) """)
+
+            // Row
+            miniPage{
+                arc(from:30, to:180, color:red,stroke:3)
+            }
+            miniCodeNTexup( """ arc(from:30, to:180) """)
+
+            // Row
+            miniPage{
+                quad-curve(from:(10,10), to:(80,90), ctrl:(60,30), color:red,stroke:3)
+            }
+            miniCodeNTexup(
+                """
+                    quad-curve(
+                        from:(10,10),
+                        ctrl:(60,30)
+                        to:(80,90),
+                    )
+                """)
+
+
+            // Row
+            miniPage{
+                cubic-curve(from:(10,10), to:(80,90),
+                    ctrl1:(60,30), ctrl2:(30,60),
+                    color:red,
+                    stroke:3)
+            }
+            miniCodeNTexup(
+                """
+                    cubic-curve(
+                    from:(10,10),
+                    ctrl1:(60,30),
+                    ctrl2:(30,60)
+                    to:(80,90),
+                    )
+                """)
+
+
+        }
+    }
+
+}
+content-slide(title:"Arrows",variant:5){
+    body{
+        grid(4,2,columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+            // Row
+            miniPage{
+                line(from:(10,10), to:(80,90),
+                end-arrow:simple()
+                color:red,stroke:3)
+            }
+            miniCodeNTexup(
+                """
+                    line(
+                        from:(10,10), to:(80,90)
+                        end-arrow:simple()
+                    )
+                """
+            )
+            // Row
+            miniPage{
+                line(from:(10,10), to:(80,90), color:red
+                ,stroke:3
+                start-arrow:triangle()
+                end-arrow:triangle-full()
+                )
+            }
+            miniCodeNTexup(
+                """
+                    line(
+                        from:(10,10), to:(80,90)
+                        start-arrow:triangle()
+                        end-arrow:triangle-full()
+                    )
+                """
+            )
+
+            // Row
+            miniPage{
+                line(from:(10,10), to:(80,90), color:red
+                ,stroke:3
+                start-arrow:oval()
+                end-arrow:oval-full()
+                )
+            }
+            miniCodeNTexup(
+                """
+                    line(
+                        from:(10,10), to:(80,90)
+                        start-arrow:circle()
+                        end-arrow:circle-full()
+                    )
+                """
+            )
+
+
+            // Row
+            miniPage{
+                line(from:(10,10), to:(80,90), color:red
+                ,stroke:3
+                start-arrow:diamond()
+                end-arrow:diamond-full()
+                )
+            }
+            miniCodeNTexup(
+                """
+                    line(
+                        from:(10,10), to:(80,90)
+                        start-arrow:diamond()
+                        end-arrow:diamond-full()
+                    )
+                """
+            )
+
+            // Row
+            miniPage{
+                line(from:(10,10), to:(80,90), color:red
+                ,stroke:3
+                start-arrow:rectangle()
+                end-arrow:rectangle-full()
+                )
+            }
+            miniCodeNTexup(
+                """
+                    line(
+                        from:(10,10), to:(80,90)
+                        start-arrow:rectangle()
+                        end-arrow:rectangle-full()
+                    )
+                """
+            )
+
+
+
+        }
+    }
+
+}
+content-slide(title:"Polygons",variant:5){
+    body{
+        grid((6,3),columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+            // Row
+            miniPage{
+                pentagon(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                pentagon()
+                """)
+
+            // Row
+            miniPage{
+                hexagon(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                hexagon()
+                """)
+
+            // Row
+            miniPage{
+                heptagon(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                heptagon()
+                """)
+
+
+            // Row
+            miniPage{
+                octagon(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                octagon()
+                """)
+
+            // Row
+            miniPage{
+                nonagon(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                nonagon()
+                """)
+
+            // Row
+            miniPage{
+                decagon(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                decagon()
+                """)
+
+            // Row
+            miniPage{
+                polygon(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                polygon()
+                """)
+
+            // Row
+            miniPage{
+                polygon(at:center, size:50, count:8, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                polygon(count:8)
+                """)
+
+            // Row
+            miniPage{
+                polygon(at:center, size:50, points:[(0,0),(50,0),(100,20),(80,80)], background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                polygon(points:[
+                (0,0),(50,0),
+                (100,80),(50,50)
+                ])
+                """)
+
+        }
+    }
+
+}
+content-slide(title:"Other Shapes",variant:5){
+    body{
+        grid(4,2,columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+            // Row
+            miniPage{
+                    arrow(at: center,color:documentColors[2],rotate:-45)
+            }
+            miniCodeNTexup(
+                """
+                    arrow(at: center,rotate:-45)
+                """
+            )
+
+            // Row
+            miniPage{
+              cylinder(origin:center,position:(50,20) ,size:(30,25),stroke:5,ellipse-height:20,segment-count:5,background-color:"#00215E")
+              cylinder(origin:center,position:(50,50) ,size:(30,25),stroke:5,ellipse-height:20,segment-count:3,background-color:"#F86F03")
+              cylinder(origin:center,position:(50,80) ,size:(30,25),stroke:5,ellipse-height:20)
+            }
+            miniCodeNTexup(
+                """
+              cylinder(ellipse-height:20,
+                segment-count:5)
+              cylinder(ellipse-height:20,
+                segment-count:3)
+              cylinder(ellipse-height:20)
+                """
+            )
+
+            // Row
+            miniPage{
+              donut (origin:center,position:(50,15),size:40,stroke:5,background-color:"#00215E",inner-radius:50,start-angle:0,extent-angle:270)
+              donut (origin:center,position:(50,45),size:40,stroke:5,background-color:"#FC4100",inner-radius:30)
+              donut (origin:center,position:(50,75),size:40,stroke:5,inner-radius:80)
+            }
+            miniCodeNTexup(
+                """
+              donut (inner-radius:50,
+                start-angle:0,extent-angle:270)
+              donut (inner-radius:30)
+              donut (inner-radius:80)
+                """
+            )
+
+            // Row
+            miniPage{
+              pie (origin:center,position:(50,15),size:40,stroke:5,background-color:"#00215E",start-angle:0,extent-angle:270)
+              pie (origin:center,position:(50,75),size:40,stroke:5)
+            }
+            miniCodeNTexup(
+                """
+              pie()
+              pie(start-angle:0,extent-angle:270)
+                """
+            )
+        }
+    }
+
+}
+content-slide(title:"Shapes",variant:4){
+    body{
+        grid((6,3),columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+            // Row
+            miniPage{
+                rectangle(at:center, size:(50,20), background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """ rectangle() """)
+
+            // Row
+            miniPage{
+                triangle(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """ triangle() """)
+
+            // Row
+            miniPage{
+                square(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """ square() """)
+
+            // Row
+            miniPage{
+                rhombus(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                rhombus()
+                diamond()
+                """)
+
+            // Row
+            miniPage{
+                parallelogram(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                parallelogram()
+                """)
+
+            // Row
+            miniPage{
+                trapezoid(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                trapezoid()
+                """)
+
+            // Row
+            miniPage{
+                circle(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                circle()
+                """)
+
+            // Row
+            miniPage{
+                ellipse(at:center, size:(80,30), background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """
+                ellipse(size:(80,30))
+                """)
+
+        }
+    }
+
+}
+content-slide(title:"Sizes",variant:4){
+    body{
+        grid((6,3),columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+            }
+
+            // Row
+            miniPage{
+                rectangle(at:center, , background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """ rectangle() """)
+
+            // Row
+            miniPage{
+                rectangle(at:center, size:(100,100), background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """ rectangle(size:(100,100)) """)
+
+            // Row
+            miniPage{
+                rectangle(at:center, size:100, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """ rectangle(size:100) """)
+
+            // Row
+            miniPage{
+                rectangle(at:center, size:80, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """ rectangle(size:80) """)
+
+            // Row
+            miniPage{
+                rectangle(at:center, size:50, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """ rectangle(size:50) """)
+
+            // Row
+            miniPage{
+                rectangle(at:center, size:(40,80), background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """ rectangle(size:(40,80)) """)
+
+            // Row
+            miniPage{
+                rectangle(at:center, size:15%P, background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """ rectangle(size:15%P) """)
+
+        }
+    }
+
+}
+content-slide(title:"Positions",variant:4){
+    body{
+        grid((6,3),columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+            }
+            // Row
+            miniPage{
+                rectangle(at:center, size:(30,30), background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup(""" rectangle(at:center) """ )
+
+            // Row
+            miniPage{
+                rectangle(at:top, size:(30,30), background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup( """ rectangle(at:top) """)
+
+            // Row
+            miniPage{
+                rectangle(at:top-left, size:(30,30), background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup(""" rectangle(at:top-left) """)
+
+            // Row
+            miniPage{
+                rectangle(at:bottom-right, size:(30,30), background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup(""" rectangle(at:bottom-right) """)
+
+            // Row
+            miniPage{
+                rectangle(origin:(50,50), position:(50,50), size:(30,30), background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup("""
+                rectangle(origin:(50,50)
+                    position:(50,50))
+                """
+                )
+
+            // Row
+            miniPage{
+                rectangle(origin:(60,60), position:(100,100), size:(30,30), background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup("""
+                rectangle(origin:(60,60)
+                    position:(100,100))
+                """
+                )
+
+            // Row
+            miniPage{
+                rectangle(origin:(100,100), position:(100,100), size:(30,30), background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup("""
+                rectangle(origin:(100,100)
+                    position:(100,100))
+                """
+                )
+
+            // Row
+            miniPage{
+                rectangle(origin:(100,100), position:(50,50), size:(30,30), background:documentColors[4], color:documentColors[2])
+            }
+            miniCodeNTexup("""
+                rectangle(origin:(100,100)
+                    position:(50,50))
+                """
+                )
+        }
+    }
+
+}
+content-slide(title:"Margins",variant:4){
+    body{
+        grid((6,3),columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+            }
+            // Row
+            miniPage{
+                rectangle(at:top, size:(30,30), background:documentColors[4], color:documentColors[2], margin:10)
+                rectangle(at:left, size:(30,30), background:documentColors[4], color:documentColors[2], margin:10)
+                rectangle(at:bottom, size:(30,30), background:documentColors[4], color:documentColors[2], margin:10)
+                rectangle(at:right, size:(30,30), background:documentColors[4], color:documentColors[2], margin:10)
+            }
+            miniCodeNTexup( """ rectangle(margin:10) """)
+
+            // Row
+            miniPage{
+                rectangle(at:top, size:(30,30), background:documentColors[4], color:documentColors[2], margin:20)
+                rectangle(at:left, size:(30,30), background:documentColors[4], color:documentColors[2], margin:20)
+                rectangle(at:bottom, size:(30,30), background:documentColors[4], color:documentColors[2], margin:20)
+                rectangle(at:right, size:(30,30), background:documentColors[4], color:documentColors[2], margin:20)
+            }
+            miniCodeNTexup( """ rectangle(margin:20) """)
+
+            // Row
+            miniPage{
+                rectangle(at:top, size:(30,30), background:documentColors[4], color:documentColors[2], margin:(5,30))
+                rectangle(at:left, size:(30,30), background:documentColors[4], color:documentColors[2], margin:(5,30))
+                rectangle(at:bottom, size:(30,30), background:documentColors[4], color:documentColors[2], margin:(5,30))
+                rectangle(at:right, size:(30,30), background:documentColors[4], color:documentColors[2], margin:(5,30))
+            }
+            miniCodeNTexup( """ rectangle(margin:(5,30)) """)
+
+            // Row
+            miniPage{
+                rectangle(at:top, size:(30,30), background:documentColors[4], color:documentColors[2], margin:(5,30,0,0))
+                rectangle(at:left, size:(30,30), background:documentColors[4], color:documentColors[2], margin:(5,30,0,0))
+                rectangle(at:bottom, size:(30,30), background:documentColors[4], color:documentColors[2], margin:(5,30,0,0))
+                rectangle(at:right, size:(30,30), background:documentColors[4], color:documentColors[2], margin:(5,30,0,0))
+            }
+            miniCodeNTexup( """ rectangle(margin:(5,30,0,0)) """)
+
+        }
+    }
+
+}
+content-slide(title:"Layout",variant:4){
+    body{
+        grid(4,2,columns-weight:[1,3]){
+            styles:{
+                "*": {margin:2}
+            }
+            // Row
+            miniPage{
+                group{
+                    rectangle(at:top, size:(50,50), background:documentColors[4], color:documentColors[2], margin:10)
+                    triangle(at:left, size:(50,50), background:documentColors[5], color:documentColors[5], margin:10)
+                }
+            }
+            miniCodeNTexup( """
+                group{
+                    rectangle(at:top, size:(50,50),
+                        background:documentColors[4])
+                    triangle(at:left, size:(50,50),
+                        background:documentColors[5])
+                }
+            """)
+
+            // Row
+            miniPage{
+                grid((2,2)){
+                    rectangle(at:top, size:(50,50), background:documentColors[4], color:documentColors[2], margin:10)
+                    triangle(at:left, size:(50,50), background:documentColors[5], color:documentColors[5], margin:10)
+                    "Hello"
+                }
+            }
+            miniCodeNTexup( """
+                grid((2,2)){
+                    rectangle(at:top, size:(50,50),
+                        background:documentColors[4])
+                    triangle(at:left, size:(50,50),
+                        background:documentColors[5])
+                    "Hello"
+                }
+            """)
+
+            // Row
+            miniPage{
+                grid((3,2),columns-weight:[1,4],rows-weight:[1,4]){
+                    rectangle(background:documentColors[4], color:documentColors[2], margin:10)
+                    triangle(background:documentColors[5], color:documentColors[5], margin:10)
+                    rectangle(background:documentColors[4], color:documentColors[2], margin:10)
+                    triangle(background:documentColors[5], color:documentColors[5], margin:10)
+                    rectangle(background:documentColors[4], color:documentColors[2], margin:10)
+                    triangle(background:documentColors[5], color:documentColors[5], margin:10)
+                }
+            }
+            miniCodeNTexup( """
+                grid((3,2),
+                    columns-weight:[1,4],
+                    rows-weight:[1,4]){
+                        rectangle()
+                        triangle()
+                        rectangle()
+                        triangle()
+                        rectangle()
+                        triangle()
+                }
+             """)
+
+
+
+        }
+    }
+
+}
+content-slide(title:"Test me",variant:9){
+    body{
+        column{
+            // write whatever you like here???
+            """
+            open the following file
+                ##<ntexup_gitroot>/documentation/ntexup-doc/02-pages/9999-conclusion/0110-test.ntx##
+            and try to write some things there...
+            """
+        }
+    }
+
+}
+thankyou-slide(title:"Bye")
+content-slide(title:"Hello World",variant:2){
+    body{
+        grid(4,2,columns-weight:[1]){
+            styles:{
+                "*": {margin:2}
+            }
+
+//            // Row
+            miniPage{
+                //rectangle(at:center, color:documentColors[2])
+                text("Hello World")
+            }
+            miniCodeNTexup(""" "Hello World" """)
+
+            // Row
+            miniPage{
+                //rectangle(at:center, color:documentColors[2])
+                """
+                    - Hello ##World##
+                    - Hello ###World###
+                    - Hello ####World####
+                """
+            }
+
+            miniCodeNTexup( """
+                    "
+                        - Hello ##World##
+                        - Hello ###World###
+                        - Hello ####World####
+                    "
+             """
+            )
+
+            // Row
+            miniPage{
+                //rectangle(at:center, color:documentColors[2])
+                • ¶ Hello ##World##
+                • ¶ Hello ###World###
+                • ¶ Hello ####World####
+            }
+            miniCodeNTexup("""
+                • ¶ Hello ##World##
+                • ¶ Hello ###World###
+                • ¶ Hello ####World####
+             """
+            )
+        }
+    }
+
+}
+content-slide(title:"More Elaborate Example",variant:2){
+    body{
+        grid(2,1){
+            miniCode{
+                source(ntexup,file:"0030-example.tson", position: (2,2),font-size:2%P)
+            }
+            grid(2,2,draw-contour,background:white){
+                styles:{
+                    "*":{
+                        margin:5
+                    }
+                }
+                group{ // supports shapes
+                    rectangle(at:center,size:(80),
+                        background:yellow,
+                        color:red,
+                        stroke:4
+                    )
+                    group(size:50,at:center){
+                        ul{
+                            "Item 1"
+                            "Item 2"
+                        }
+                    }
+                }
+                plot2d(x:dtimes(-5,5,100)){
+                    curve{ // supports plot
+                        f(x):sin(x)
+                        title:'sin'
+                    }
+                }
+                // supports LATEX
+                eq("f_1(x)=\int_x \sin(x^2)",font-size:4%P)
+                uml(// supports PLANTUML
+                    """
+                        left to right direction
+                        actor "Food Critic" as fc
+                        rectangle Restaurant {
+                          usecase "Eat Food" as UC1
+                        }
+                        fc --> UC1
+                    """
+                )
+            }
+        }
+    }
+}
+agenda-slide(title:"Rationale"){
+    body{
+        •¶ Text-based, declarative, and intuitive syntax
+        •¶ Readable by humans, writable with ease
+        •¶ Designed for long-lived documents with effortless maintenance
+        •¶ Unmatched control over rendering
+        •¶ Seamless multi-file support
+        •¶ Version-control friendly (Git & more)
+        •¶ Integrates with LaTeX, UML, and beyond
+    }
+}
+agenda-slide(title:"Rationale"){
+    body{
+        ul{
+            ¶ Uses TSON which is a derivative of JSON format but with more readability
+            ¶ Declarative syntax : what you write is what you get
+            ¶ Parameterizable : variables and conditions are processed for rendering
+            ¶ Templatable : one can define his own components
+            ¶ Themable : uses a CSS like styling
+            ¶ Composable : you can combine multiple components to build reusable components
+            ¶ Portable: works across platforms and environments with minimal setup
+        }
+    }
+    
+}
+cover-slide()
+include(
+    eitherPath(
+        "$HOME/xprojects/nuts-world/nuts-productivity/ntexup/ntexup-templates/${themeName}/v1.0/theme"
+        "github://thevpc/ntexup-templates/${themeName}/v1.0/theme"
+    )
+)
+
+@define miniPage{
+    group(background:white,draw-contour){
+        body
+    }
+}
+
+@define miniCode{
+    group(background:Gray89,draw-contour,margin:5){
+        body
+    }
+}
+
+@define miniCodeNTexup(code){
+    group(background:Gray89,draw-contour,margin:5){
+        source(ntexup, code)
+    }
+}
