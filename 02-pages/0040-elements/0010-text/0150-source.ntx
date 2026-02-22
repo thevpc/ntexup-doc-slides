@@ -112,7 +112,7 @@ content-slide(title:"Source Code",variant:3){
                     font-family:Monospaced
                 )
             }
-            "Supported Languages"
+            text("Supported Languages", font-size:3%P)
 
         }
     }
