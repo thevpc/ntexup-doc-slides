@@ -20,21 +20,32 @@ content-slide(title:"Positions",variant:4){
             miniPage{
                 rectangle(at:top-left, size:(30,30), background:documentColors[4], color:documentColors[2])
             }
-            miniCodeNTexup(""" rectangle(at:top-left) """)
+            miniCodeNTexup("""
+                rectangle(
+                    at:top-left
+                )
+                """
+            )
 
             // Row
             miniPage{
                 rectangle(at:bottom-right, size:(30,30), background:documentColors[4], color:documentColors[2])
             }
-            miniCodeNTexup(""" rectangle(at:bottom-right) """)
+            miniCodeNTexup("""
+                rectangle(
+                    at:bottom-right
+                )
+                """)
 
             // Row
             miniPage{
                 rectangle(origin:(50,50), position:(50,50), size:(30,30), background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup("""
-                rectangle(origin:(50,50)
-                    position:(50,50))
+                rectangle(
+                    origin:(50,50)
+                    position:(50,50)
+                )
                 """
                 )
 
@@ -43,8 +54,10 @@ content-slide(title:"Positions",variant:4){
                 rectangle(origin:(60,60), position:(100,100), size:(30,30), background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup("""
-                rectangle(origin:(60,60)
-                    position:(100,100))
+                rectangle(
+                    origin:(60,60)
+                    position:(100,100)
+                )
                 """
                 )
 
@@ -53,8 +66,10 @@ content-slide(title:"Positions",variant:4){
                 rectangle(origin:(100,100), position:(100,100), size:(30,30), background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup("""
-                rectangle(origin:(100,100)
-                    position:(100,100))
+                rectangle(
+                    origin:(100,100)
+                    position:(100,100)
+                )
                 """
                 )
 
@@ -63,8 +78,10 @@ content-slide(title:"Positions",variant:4){
                 rectangle(origin:(100,100), position:(50,50), size:(30,30), background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup("""
-                rectangle(origin:(100,100)
-                    position:(50,50))
+                rectangle(
+                    origin:(100,100)
+                    position:(50,50)
+                )
                 """
                 )
         }
