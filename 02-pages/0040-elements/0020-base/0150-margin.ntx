@@ -29,7 +29,11 @@ content-slide(title:"Margins",variant:4){
                 rectangle(at:bottom, size:(30,30), background:documentColors[4], color:documentColors[2], margin:(5,30))
                 rectangle(at:right, size:(30,30), background:documentColors[4], color:documentColors[2], margin:(5,30))
             }
-            miniCodeNTexup( """ rectangle(margin:(5,30)) """)
+            miniCodeNTexup( """
+                rectangle(
+                    margin:(5,30)
+                )
+                """)
 
             // Row
             miniPage{
@@ -38,7 +42,11 @@ content-slide(title:"Margins",variant:4){
                 rectangle(at:bottom, size:(30,30), background:documentColors[4], color:documentColors[2], margin:(5,30,0,0))
                 rectangle(at:right, size:(30,30), background:documentColors[4], color:documentColors[2], margin:(5,30,0,0))
             }
-            miniCodeNTexup( """ rectangle(margin:(5,30,0,0)) """)
+            miniCodeNTexup( """
+                rectangle(
+                    margin:(5,30,0,0)
+                )
+            """)
 
         }
     }
