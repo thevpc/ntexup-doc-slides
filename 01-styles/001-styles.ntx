@@ -1,7 +1,7 @@
 include(
     eitherPath(
         "$HOME/xprojects/nuts-world/nuts-productivity/ntexup/ntexup-templates/${themeName}/v1.0/theme"
-        "github://thevpc/ntexup-templates/${themeName}/v1.0/theme"
+//        "github://thevpc/ntexup-templates/${themeName}/v1.0/theme"
     )
 )
 
@@ -19,6 +19,6 @@ include(
 
 @define miniCodeNTexup(code){
     group(background:Gray89,draw-contour,margin:5){
-        source(ntexup, code)
+        source(ntexup, code,font-size:2%P)
     }
 }
