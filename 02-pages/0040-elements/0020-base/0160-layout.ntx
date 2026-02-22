@@ -7,16 +7,20 @@ content-slide(title:"Layout",variant:4){
             // Row
             miniPage{
                 group{
-                    rectangle(at:top, size:(50,50), background:documentColors[4], color:documentColors[2], margin:10)
-                    triangle(at:left, size:(50,50), background:documentColors[5], color:documentColors[5], margin:10)
+                  rectangle(at:top, size:(50,50), background:documentColors[4], color:documentColors[2], margin:10)
+                  triangle(at:left, size:(50,50), background:documentColors[5], color:documentColors[5], margin:10)
                 }
             }
             miniCodeNTexup( """
                 group{
-                    rectangle(at:top, size:(50,50),
-                        background:documentColors[4])
-                    triangle(at:left, size:(50,50),
-                        background:documentColors[5])
+                  rectangle(at:top,
+                      size:(50,50),
+                      background:documentColors[4]
+                  )
+                  triangle(at:left,
+                      size:(50,50),
+                      background:documentColors[5]
+                  )
                 }
             """)
 
@@ -30,11 +34,14 @@ content-slide(title:"Layout",variant:4){
             }
             miniCodeNTexup( """
                 grid((2,2)){
-                    rectangle(at:top, size:(50,50),
-                        background:documentColors[4])
-                    triangle(at:left, size:(50,50),
-                        background:documentColors[5])
-                    "Hello"
+                  rectangle(at:top,
+                    size:(50,50),
+                    background:documentColors[4]
+                  )
+                  triangle(at:left,
+                    size:(50,50),
+                    background:documentColors[5]
+                  )
                 }
             """)
 
