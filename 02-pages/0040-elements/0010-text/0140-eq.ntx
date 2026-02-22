@@ -61,7 +61,7 @@ content-slide(title:"Latex Equations",variant:3){
 // Row
             grid(1,3,background:white,draw-contour){
                 styles:{
-                    "*":{font-size:4%P}
+                    "*":{font-size:3%P}
                 }
                 """
                     ##Equation 1 (superscript)## =
