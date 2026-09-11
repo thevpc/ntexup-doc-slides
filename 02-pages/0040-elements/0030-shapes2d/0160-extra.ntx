@@ -13,7 +13,10 @@ content-slide(title:"Other Shapes",variant:5){
             }
             miniCodeNTexup(
                 """
-                    arrow(at: center,rotate:-45)
+                arrow(
+                  at: center,
+                  rotate:-45
+                )
                 """
             )
 
@@ -25,11 +28,17 @@ content-slide(title:"Other Shapes",variant:5){
             }
             miniCodeNTexup(
                 """
-              cylinder(ellipse-height:20,
-                segment-count:5)
-              cylinder(ellipse-height:20,
-                segment-count:3)
-              cylinder(ellipse-height:20)
+                cylinder(
+                  ellipse-height:20,
+                  segment-count:5
+                )
+                cylinder(
+                  ellipse-height:20,
+                  segment-count:3
+                )
+                cylinder(
+                  ellipse-height:20
+                )
                 """
             )
 
@@ -40,12 +49,15 @@ content-slide(title:"Other Shapes",variant:5){
               donut (origin:center,position:(50,75),size:40,stroke:5,inner-radius:80)
             }
             miniCodeNTexup(
-                """
-              donut (inner-radius:50,
-                start-angle:0,extent-angle:270)
-              donut (inner-radius:30)
-              donut (inner-radius:80)
-                """
+              """
+              donut(
+                inner-radius:50,
+                start-angle:0,
+                extent-angle:270
+              )
+              donut(inner-radius:30)
+              donut(inner-radius:80)
+              """
             )
 
             // Row
@@ -55,8 +67,11 @@ content-slide(title:"Other Shapes",variant:5){
             }
             miniCodeNTexup(
                 """
-              pie()
-              pie(start-angle:0,extent-angle:270)
+                pie()
+                pie(
+                  start-angle:0,
+                  extent-angle:270
+                )
                 """
             )
         }

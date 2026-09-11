@@ -45,9 +45,9 @@ content-slide(title:"NTF format",variant:3){
                 ```
                     ntf(
                     """
-                        ##:p1:color 1## ##:p2:color 2##
-                        ##:p3:color 3## ##:p10:color 4##
-                        ##:/:italic## ##:info hint##
+                    ##:p1:color 1## ##:p2:color 2##
+                    ##:p3:color 3## ##:p10:color 4##
+                    ##:/:italic## ##:info hint##
                     """
                     )
                 ```)        }

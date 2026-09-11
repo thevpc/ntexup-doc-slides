@@ -15,11 +15,13 @@ content-slide(title:"Layout",variant:4){
                 group{
                   rectangle(at:top,
                       size:(50,50),
-                      background:documentColors[4]
+                      background:
+                        documentColors[4]
                   )
                   triangle(at:left,
                       size:(50,50),
-                      background:documentColors[5]
+                      background:
+                        documentColors[5]
                   )
                 }
             """)
@@ -36,11 +38,13 @@ content-slide(title:"Layout",variant:4){
                 grid((2,2)){
                   rectangle(at:top,
                     size:(50,50),
-                    background:documentColors[4]
+                    background:
+                      documentColors[4]
                   )
                   triangle(at:left,
                     size:(50,50),
-                    background:documentColors[5]
+                    background:
+                      documentColors[5]
                   )
                 }
             """)

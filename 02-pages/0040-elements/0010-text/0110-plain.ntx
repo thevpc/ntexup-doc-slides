@@ -16,7 +16,11 @@ content-slide(title:"Simple Text",variant:3){
             miniPage{
                 plain("Hello World",font-italic,font-size:10)
             }
-            miniCodeNTexup(""" plain("Hello World",font-italic) """)
+            miniCodeNTexup("""
+                plain("Hello World",
+                      font-italic
+                )
+            """)
 
             // Row
             miniPage{
@@ -28,12 +32,13 @@ content-slide(title:"Simple Text",variant:3){
                     ,font-bold,font-size:10)
             }
             miniCodeNTexup("""
-                                plain(
-                                         "
-                                             Hello
-                                             World
-                                         "
-                                     ,font-bold)
+                plain(
+                     "
+                         Hello
+                         World
+                     "
+                     ,font-bold
+                )
                              """
             )
             // Row
@@ -47,13 +52,13 @@ content-slide(title:"Simple Text",variant:3){
                     )
             }
             miniCodeNTexup( """
-                            plain(
-                                     "
-                                         Hello
-                                         World
-                                     "
-                                  font-family: monospaced
-                                 )
+                plain(
+                    "
+                    Hello  World
+                    This    Is    Me
+                    "
+                    font-family: monospaced
+                )
                          """
             )
         }

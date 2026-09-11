@@ -12,13 +12,13 @@ include(
 }
 
 @define miniCode{
-    group(background:Gray89,draw-contour,margin:5){
+    group(background:Gray89,draw-contour,margin:5,padding:0.5%P){
         body
     }
 }
 
 @define miniCodeNTexup(code){
-    group(background:Gray89,draw-contour,margin:5){
+    group(background:Gray89,draw-contour,margin:5,padding:0.5%P){
         source(ntexup, code,font-size:2%P,at:top-left)
     }
 }

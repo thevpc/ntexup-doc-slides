@@ -60,7 +60,9 @@ content-slide(title:"Shapes",variant:4){
                 ellipse(at:center, size:(80,30), background:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
-                ellipse(size:(80,30))
+                ellipse(
+                    size:(80,30)
+                )
                 """)
 
         }

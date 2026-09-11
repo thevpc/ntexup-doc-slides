@@ -13,54 +13,54 @@ content-slide(title:"Network Diagrams",variant:7){
             miniPage{
                 nwdiag(size:(100,50), at:center
                     """
-                          // define group outside of network definitions
-                          group {
-                            color = "#FFAAAA";
+                    // define group outside of network definitions
+                    group {
+                      color = "#FFAAAA";
 
-                            web01;
-                            web02;
-                            db01;
-                          }
+                      web01;
+                      web02;
+                      db01;
+                    }
 
-                          network dmz {
-                            web01;
-                            web02;
-                          }
-                          network internal {
-                            web01;
-                            web02;
-                            db01;
-                            db02;
-                          }
+                    network dmz {
+                      web01;
+                      web02;
+                    }
+                    network internal {
+                      web01;
+                      web02;
+                      db01;
+                      db02;
+                    }
                     """
                 )
             }
 
             miniCodeNTexup(
             ```
-                 nwdiag(
-                     """
-                        // define group outside
-                        // of network definitions
-                        group {
-                          color = "#FFAAAA";
-                          web01;
-                          web02;
-                          db01;
-                        }
-                        
-                        network dmz {
-                          web01;
-                          web02;
-                        }
-                        network internal {
-                          web01;
-                          web02;
-                          db01;
-                          db02;
-                        }
-                     """
-                 )
+            nwdiag(
+            """
+             // define group outside
+             // of network definitions
+             group {
+               color = "#FFAAAA";
+               web01;
+               web02;
+               db01;
+             }
+
+             network dmz {
+               web01;
+               web02;
+             }
+             network internal {
+               web01;
+               web02;
+               db01;
+               db02;
+             }
+            """
+            )
 
              ```
              )

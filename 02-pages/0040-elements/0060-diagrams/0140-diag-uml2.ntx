@@ -25,16 +25,16 @@ content-slide(title:"UML Classes",variant:7){
 
             miniCodeNTexup(
             ```
-                 uml(
-                     """
-                        Object <|-- ArrayList
-                        List <|.. ArrayList
-                        interface List
-                        Object : equals()
-                        ArrayList : Object[] elementData
-                        ArrayList : size()
-                     """
-                 )
+            uml(
+             """
+             Object <|-- ArrayList
+             List <|.. ArrayList
+             interface List
+             Object : equals()
+             ArrayList : Object[] elementData
+             ArrayList : size()
+             """
+            )
 
              ```
              )

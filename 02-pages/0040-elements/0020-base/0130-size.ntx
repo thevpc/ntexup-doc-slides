@@ -15,37 +15,68 @@ content-slide(title:"Sizes",variant:4){
             miniPage{
                 rectangle(at:center, size:(100,100), background:documentColors[4], color:documentColors[2])
             }
-            miniCodeNTexup( """ rectangle(size:(100,100)) """)
+            miniCodeNTexup(
+                """
+                rectangle(
+                  size:(100,100)
+                )
+                """)
 
             // Row
             miniPage{
                 rectangle(at:center, size:100, background:documentColors[4], color:documentColors[2])
             }
-            miniCodeNTexup( """ rectangle(size:100) """)
+            miniCodeNTexup(
+                """
+                rectangle(
+                    size:100
+                )
+                """)
 
             // Row
             miniPage{
                 rectangle(at:center, size:80, background:documentColors[4], color:documentColors[2])
             }
-            miniCodeNTexup( """ rectangle(size:80) """)
+            miniCodeNTexup(
+                """
+                rectangle(
+                    size:80
+                )
+                """)
 
             // Row
             miniPage{
                 rectangle(at:center, size:50, background:documentColors[4], color:documentColors[2])
             }
-            miniCodeNTexup( """ rectangle(size:50) """)
+            miniCodeNTexup(
+                """
+                rectangle(
+                    size:50
+                )
+                """
+                )
 
             // Row
             miniPage{
                 rectangle(at:center, size:(40,80), background:documentColors[4], color:documentColors[2])
             }
-            miniCodeNTexup( """ rectangle(size:(40,80)) """)
+            miniCodeNTexup(
+                """
+                rectangle(
+                  size:(40,80)
+                )
+                """)
 
             // Row
             miniPage{
                 rectangle(at:center, size:15%P, background:documentColors[4], color:documentColors[2])
             }
-            miniCodeNTexup( """ rectangle(size:15%P) """)
+            miniCodeNTexup(
+                """
+                rectangle(
+                  size:15%P
+                )
+                """)
 
         }
     }

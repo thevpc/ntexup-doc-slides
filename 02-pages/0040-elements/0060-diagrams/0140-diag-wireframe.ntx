@@ -25,13 +25,13 @@ content-slide(title:"Wireframe Diagrams",variant:7){
             miniCodeNTexup(
              code:
              ```
-                 wireframe(
-                     """
-                        Login    | "MyName   "
-                        Password | "****     "
-                        [Cancel] | [  OK   ]
-                     """
-                 )
+             wireframe(
+              """
+                 Login    | "MyName   "
+                 Password | "****     "
+                 [Cancel] | [  OK   ]
+              """
+             )
 
              ```
               rowspan:2
@@ -60,21 +60,20 @@ content-slide(title:"Wireframe Diagrams",variant:7){
             miniCodeNTexup(
                 code:
                 ```
-                 wireframe(
-                    """
-                        {+
-                        {/ <b>General | Fullscreen | Behavior | Saving }
-                        {
-                        { Open image in: | ^Smart Mode^ }
-                        [X] Smooth images when zoomed
-                        [X] Confirm image deletion
-                        [ ] Show hidden images
-                        }
-                        [Close]
-                        }
-                     """
-                 )
-
+                wireframe(
+                 """
+                     {+
+                     {/ <b>General | Fullscreen | Behavior | Saving }
+                     {
+                     { Open image in: | ^Smart Mode^ }
+                     [X] Smooth images when zoomed
+                     [X] Confirm image deletion
+                     [ ] Show hidden images
+                     }
+                     [Close]
+                     }
+                 """
+                )
                 ```
                      rowspan:2
              )

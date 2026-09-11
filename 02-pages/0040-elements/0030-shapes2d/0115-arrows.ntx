@@ -9,16 +9,21 @@ content-slide(title:"Arrows",variant:5){
             }
             // Row
             miniPage{
-                line(from:(10,10), to:(80,90),
-                end-arrow:simple()
-                color:red,stroke:3)
+                line(
+                  from:(10,10),
+                  to:(80,90),
+                  end-arrow:simple()
+                  color:red,
+                  stroke:3
+                )
             }
             miniCodeNTexup(
                 """
-                    line(
-                        from:(10,10), to:(80,90)
-                        end-arrow:simple()
-                    )
+                line(
+                    from:(10,10),
+                    to:(80,90)
+                    end-arrow:simple()
+                )
                 """
             )
             // Row
@@ -31,11 +36,14 @@ content-slide(title:"Arrows",variant:5){
             }
             miniCodeNTexup(
                 """
-                    line(
-                        from:(10,10), to:(80,90)
-                        start-arrow:triangle()
-                        end-arrow:triangle-full()
-                    )
+                line(
+                    from:(10,10),
+                    to:(80,90)
+                    start-arrow:
+                      triangle()
+                    end-arrow:
+                      triangle-full()
+                )
                 """
             )
 
@@ -49,11 +57,14 @@ content-slide(title:"Arrows",variant:5){
             }
             miniCodeNTexup(
                 """
-                    line(
-                        from:(10,10), to:(80,90)
-                        start-arrow:circle()
-                        end-arrow:circle-full()
-                    )
+                line(
+                    from:(10,10),
+                    to:(80,90)
+                    start-arrow:
+                      circle()
+                    end-arrow:
+                      circle-full()
+                )
                 """
             )
 
@@ -69,9 +80,12 @@ content-slide(title:"Arrows",variant:5){
             miniCodeNTexup(
                 """
                     line(
-                        from:(10,10), to:(80,90)
-                        start-arrow:diamond()
-                        end-arrow:diamond-full()
+                        from:(10,10)
+                        to:(80,90)
+                        start-arrow:
+                          diamond()
+                        end-arrow:
+                          diamond-full()
                     )
                 """
             )
@@ -87,9 +101,12 @@ content-slide(title:"Arrows",variant:5){
             miniCodeNTexup(
                 """
                     line(
-                        from:(10,10), to:(80,90)
-                        start-arrow:rectangle()
-                        end-arrow:rectangle-full()
+                        from:(10,10),
+                        to:(80,90)
+                        start-arrow:
+                          rectangle()
+                        end-arrow:
+                          rectangle-full()
                     )
                 """
             )

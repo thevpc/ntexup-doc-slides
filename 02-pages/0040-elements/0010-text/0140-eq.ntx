@@ -21,7 +21,11 @@ content-slide(title:"Latex Equations",variant:3){
                 """
                 eq("X^2=\sin(\pi x)")
                 """)
-                text("Latex math expressions are supported out of the box...", font-size:2%P,margin:[10,20],font-italic,color:documentColors[3])
+                text(
+                    "
+                    Latex math expressions are supported
+                    out of the box...
+                    ", font-size:2%P,margin:[10,20],font-italic,color:documentColors[3])
             }
             // Row
             grid(1,2,background:white,draw-contour){
@@ -77,12 +81,12 @@ content-slide(title:"Latex Equations",variant:3){
                 miniCodeNTexup(
                     ```
                     """
-                        ##Equation 1 (superscript)## =
-                        [[eq: X²=\sin(πx) ]]
-                        ###Equation 2### =
-                        [[eq: X^2=\sin \left( \pi x \right) ]]
-                        ####Equation 3#### =
-                        [[eq: X^2=\sin(x) ]]
+                    ##Equation 1 (superscript)## =
+                    [[eq: X²=\sin(πx) ]]
+                    ###Equation 2### =
+                    [[eq: X^2=\sin \left(\pi x \right)]]
+                    ####Equation 3#### =
+                    [[eq: X^2=\sin(x) ]]
                     """
                     ```
                     )

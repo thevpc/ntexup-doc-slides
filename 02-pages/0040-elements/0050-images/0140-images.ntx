@@ -5,7 +5,7 @@ content-slide(title:"Images",variant:6){
             image("../../../images/image.png",size:(50,50),at:center)
             miniCodeNTexup(
             """
-                image("../../../images/image.png")
+            image("../images/image.png")
             """
             )
 
@@ -13,7 +13,7 @@ content-slide(title:"Images",variant:6){
             image("../../../images/image.jpg",size:(50,50),at:center)
             miniCodeNTexup(
             """
-                image("../../../images/image.jpg")
+                image("../images/image.jpg")
             """
             )
 
@@ -22,7 +22,7 @@ content-slide(title:"Images",variant:6){
             image("../../../images/image.gif",size:(50,50),at:center)
             miniCodeNTexup(
             """
-                image("../../../images/image.gif")
+            image("../images/image.gif")
             """
             )
 
@@ -31,7 +31,7 @@ content-slide(title:"Images",variant:6){
             image("../../../images/image.svg",size:(50,50),at:center)
             miniCodeNTexup(
             """
-                image("../../../images/image.svg")
+            image("../images/image.svg")
             """
             )
 
@@ -40,7 +40,7 @@ content-slide(title:"Images",variant:6){
             image("../../../images/image.avif",size:(50,50),at:center)
             miniCodeNTexup(
             """
-                image("../../../images/image.avif")
+            image("../images/image.avif")
             """
             )
 
@@ -49,7 +49,7 @@ content-slide(title:"Images",variant:6){
             image("../../../images/image.webp",size:(50,50),at:center)
             miniCodeNTexup(
             """
-                image("../../../images/image.webp")
+            image("../images/image.webp")
             """
             )
 

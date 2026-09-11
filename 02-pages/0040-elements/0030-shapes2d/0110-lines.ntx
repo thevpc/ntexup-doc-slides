@@ -11,13 +11,27 @@ content-slide(title:"Lines",variant:5){
             miniPage{
                 line(from:(10,10), to:(80,90), color:red,stroke:3)
             }
-            miniCodeNTexup( """ line(from:(0,0), to:(80,20)) """)
+            miniCodeNTexup(
+            """
+            line(
+              from:(0,0),
+              to:(80,20)
+            )
+            """
+            )
 
             // Row
             miniPage{
                 arc(from:30, to:180, color:red,stroke:3)
             }
-            miniCodeNTexup( """ arc(from:30, to:180) """)
+            miniCodeNTexup(
+            """
+            arc(
+                from:30,
+                to:180
+            )
+            """
+            )
 
             // Row
             miniPage{
@@ -25,11 +39,11 @@ content-slide(title:"Lines",variant:5){
             }
             miniCodeNTexup(
                 """
-                    quad-curve(
-                        from:(10,10),
-                        ctrl:(60,30)
-                        to:(80,90),
-                    )
+                quad-curve(
+                    from:(10,10),
+                    ctrl:(60,30)
+                    to:(80,90),
+                )
                 """)
 
 
