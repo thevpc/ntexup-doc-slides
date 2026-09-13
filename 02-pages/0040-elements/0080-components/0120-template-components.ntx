@@ -1,0 +1,50 @@
+content-slide(title: "Built-in Template Components", variant: 4){
+    body{
+        grid((2, 3), columns-weight: [1, 1, 1], rows-weight: [1, 1]){
+            styles:{
+                "*": { margin: 2 }
+            }
+
+            // 1. Card with kicker
+            card(accentColor: documentColors[0]){
+                kicker("CARD COMPONENT")
+                ul{
+                    • "Auto-styled container"
+                    • "Integrated left accent bar"
+                    • "Embedded kicker support"
+                }
+            }
+
+            // 2. Stat box
+            card(accentColor: documentColors[1]){
+                stat(value: "99.9%", label: "Availability SLA")
+            }
+
+            // 3. Quote
+            quote(author: "Alan Kay"){
+                text("The best way to predict the future is to invent it.",
+                     font-size: 2.2%P, font-italic)
+            }
+
+            // 4. Callout: hint-info
+            hint-info("Information Callout"){
+                text("Provides contextual tips and info blocks with semantic coloring.")
+            }
+
+            // 5. Callout: hint-warning
+            hint-warning("Warning Callout"){
+                text("Highlights cautions or critical notices with warning accent colors.")
+            }
+
+            // 6. Panel (light canvas)
+            panel{
+                group(size: (100, 100)){
+                    text("Panel: Light Canvas", font-bold, color: "#1e293b",
+                         position: (50, 30), origin: center, font-size: 2.3%P)
+                    text("Warm ivory surface for diagrams & light content",
+                         color: "#64748b", position: (50, 65), origin: center, font-size: 1.8%P)
+                }
+            }
+        }
+    }
+}
