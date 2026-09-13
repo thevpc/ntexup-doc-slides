@@ -1,0 +1,95 @@
+content-slide(title:"Text along Path",variant:3){
+    body{
+        grid(2, 3, columns-weight: [1, 1.2]){
+            styles:{
+                "*": {margin: 2}
+                source:{
+                    at: left
+                }
+            }
+
+            // Row 1: Centered along Arc
+            miniPage{
+                styles:{
+                    "*": {font-size: 2.5%P}
+                }
+                text(
+                    "Non-linear Arc Centered Text",
+                    text-path: {arc(cx: 50, cy: 75, rx: 42, ry: 25, from: -25, to: 205)},
+                    text-align: center,
+                    font-bold,
+                    color: documentColors[0]
+                )
+            }
+            miniCodeNTexup(```
+                text(
+                    "Non-linear Arc Centered Text",
+                    text-path: {
+                        arc(cx: 50, cy: 75,
+                            rx: 42, ry: 25,
+                            from: -25, to: 205)
+                    },
+                    text-align: center,
+                    font-bold
+                )
+            ```)
+
+            // Row 2: Justified along Arc
+            miniPage{
+                styles:{
+                    "*": {font-size: 2.3%P}
+                }
+                text(
+                    "Justified Curved Text Along Arc Path",
+                    text-path: {arc(cx: 50, cy: 75, rx: 42, ry: 25, from: -25, to: 205)},
+                    text-align: justify,
+                    font-bold,
+                    color: documentColors[1]
+                )
+            }
+            miniCodeNTexup(```
+                text(
+                    "Justified Curved Text...",
+                    text-path: {
+                        arc(cx: 50, cy: 75,
+                            rx: 42, ry: 25,
+                            from: -25, to: 205)
+                    },
+                    text-align: justify,
+                    font-bold
+                )
+            ```)
+
+            // Row 3: Text along Polyline Path with Right & Left alignment
+            miniPage{
+                styles:{
+                    "*": {font-size: 2.2%P}
+                }
+                text(
+                    "Left aligned path",
+                    text-path: {(5, 30), (35, 70), (65, 30), (95, 70)},
+                    text-align: left,
+                    color: documentColors[2]
+                )
+                text(
+                    "Right aligned path",
+                    text-path: {(5, 45), (35, 85), (65, 45), (95, 85)},
+                    text-align: right,
+                    color: documentColors[3]
+                )
+            }
+            miniCodeNTexup(```
+                text(
+                    "Left aligned path",
+                    text-path: { (5, 30), (35, 70), (65, 30), (95, 70)},
+                    text-align: left
+                )
+                text(
+                    "Right aligned path",
+                    text-path: {(5, 45), (35, 85),(65, 45), (95, 85)},
+                    text-align: right
+                )
+            ```)
+        }
+    }
+}

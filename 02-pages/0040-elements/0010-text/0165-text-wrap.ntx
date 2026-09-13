@@ -1,0 +1,107 @@
+content-slide(title:"Text Wrap & Alignment",variant:3){
+    body{
+        grid(2, 3, columns-weight: [1, 1.2]){
+            styles:{
+                "*": {margin: 2}
+                source:{
+                    at: left
+                }
+            }
+
+            // Row 1: Left vs Right vs Center
+            miniPage{
+                styles:{
+                    "*": {font-size: 2.2%P}
+                }
+                grid(1, 3){
+                    text(
+                        "Left aligned: wraps cleanly at the specified width boundaries.",
+                        text-wrap: wrap,
+                        text-align: left
+                    )
+                    text(
+                        "Right aligned: lines end smoothly at the right boundary.",
+                        text-wrap: wrap,
+                        text-align: right,
+                        color: documentColors[1]
+                    )
+                    text(
+                        "Centered: each wrapped line is centered within the box.",
+                        text-wrap: wrap,
+                        text-align: center,
+                        color: documentColors[2]
+                    )
+                }
+            }
+            miniCodeNTexup(```
+                grid(1, 3){
+                    text("Left aligned...",
+                         text-wrap: wrap,
+                         text-align: left)
+                    text("Right aligned...",
+                         text-wrap: wrap,
+                         text-align: right)
+                    text("Centered...",
+                         text-wrap: wrap,
+                         text-align: center)
+                }
+            ```)
+
+            // Row 2: Justified text
+            miniPage{
+                styles:{
+                    "*": {font-size: 2.2%P}
+                }
+                text(
+                    """
+                    Justified text layout distributes available space evenly across all words on each line, creating crisp vertical margins on both sides while keeping the final paragraph line naturally left-aligned.
+                    """,
+                    text-wrap: wrap,
+                    text-align: justify
+                )
+            }
+            miniCodeNTexup(```
+                text(
+                    """
+                    Justified text layout
+                    distributes available space
+                    evenly across all words
+                    on each line, creating crisp
+                    margins on both sides...
+                    """,
+                    text-wrap: wrap,
+                    text-align: justify
+                )
+            ```)
+
+            // Row 3: Justified Melee Text with Equations
+            miniPage{
+                styles:{
+                    "*": {font-size: 2.2%P}
+                }
+                text(
+                    """
+                    Melee text supports mixed plain words, **bold text**, and inline LaTeX formulas like [[eq: E=mc^2 ]] or [[eq: a^2+b^2=c^2 ]] with smooth wrapping and justification.
+                    """,
+                    text-wrap: wrap,
+                    text-align: justify,
+                    color: documentColors[0]
+                )
+            }
+            miniCodeNTexup(```
+                text(
+                    """
+                    Melee text supports mixed plain
+                    words, **bold text**, and inline
+                    LaTeX formulas like [[eq: E=mc^2 ]]
+                    or [[eq: a^2+b^2=c^2 ]]
+                    with smooth wrapping and
+                    justification.
+                    """,
+                    text-wrap: wrap,
+                    text-align: justify
+                )
+            ```)
+        }
+    }
+}
