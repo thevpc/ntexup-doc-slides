@@ -1,0 +1,106 @@
+content-slide(title:"Color Functions & Gradients",variant:3){
+    body{
+        grid(4,2,columns-weight:[1,1.8]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+            // Row 1: Linear Gradients
+            miniPage{
+                grid((1,2)){
+                    rectangle(at:center, size:(35,25), background:linearGradientColor(documentColors[0], documentColors[2]))
+                    rectangle(at:center, size:(35,25), background:linearGradientColor(documentColors[1], documentColors[4], 45))
+                }
+            }
+            miniCodeNTexup(
+            """
+            rectangle(size:(35,25),
+              background:
+                linearGradientColor(
+                  documentColors[0],
+                  documentColors[2]
+                )
+            )
+            rectangle(size:(35,25),
+              background:
+                linearGradientColor(
+                  documentColors[1],
+                  documentColors[4],
+                  45
+                )
+            )
+            """
+            )
+
+            // Row 2: Lighter and Darker colors
+            miniPage{
+                grid((1,2)){
+                    rectangle(at:center, size:(30,25), background:lighterColor(documentColors[0], 0.4))
+                    rectangle(at:center, size:(30,25), background:darkerColor(documentColors[0], 0.4))
+                }
+            }
+            miniCodeNTexup(
+            """
+            rectangle(background:
+              lighterColor(
+                documentColors[0],
+                0.4
+              )
+            )
+            rectangle(background:
+              darkerColor(
+                documentColors[0],
+                0.4
+              )
+            )
+            """
+            )
+
+            // Row 3: Complementary & Invert
+            miniPage{
+                grid((1,2)){
+                    rectangle(at:center, size:(30,25), background:complementaryColor(documentColors[1]))
+                    rectangle(at:center, size:(30,25), background:invertColor(documentColors[1]))
+                }
+            }
+            miniCodeNTexup(
+            """
+            rectangle(background:
+              complementaryColor(
+                documentColors[1]
+              )
+            )
+            rectangle(background:
+              invertColor(
+                documentColors[1]
+              )
+            )
+            """
+            )
+
+            // Row 4: Rotate Hue & Sinebow
+            miniPage{
+                grid((1,2)){
+                    rectangle(at:center, size:(30,25), background:rotateHueColor(documentColors[0], 120))
+                    rectangle(at:center, size:(30,25), background:sinebowColor(0.7))
+                }
+            }
+            miniCodeNTexup(
+            """
+            rectangle(background:
+              rotateHueColor(
+                documentColors[0],
+                120
+              )
+            )
+            rectangle(background:
+              sinebowColor(0.7)
+            )
+            """
+            )
+        }
+    }
+}

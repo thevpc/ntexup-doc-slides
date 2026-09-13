@@ -9,14 +9,16 @@ content-slide(title:"Rich Text",variant:3){
             }
 
             // Row
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 styles:{
                     "*":{font-size:3%P}
                 }
-                "Hello World"
-                text("Hello World")
-                text("Hello World",font-italic)
-                text("Hello World",font-bold)
+                grid(1,2){
+                    "Hello World"
+                    text("Hello World")
+                    text("Hello World",font-italic)
+                    text("Hello World",font-bold)
+                }
             }
             miniCodeNTexup(
                 """
@@ -30,17 +32,19 @@ content-slide(title:"Rich Text",variant:3){
 
 
             // Row
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 styles:{
                     "*":{font-size:3%P}
                 }
-                """
-                    **Bold X**
-                    __Italic Y__
-                    #Title 1#
-                    ##Title 2##
-                    ###Title 3###
-                """
+                grid(1,2){
+                    """
+                        **Bold X**
+                        __Italic Y__
+                        #Title 1#
+                        ##Title 2##
+                        ###Title 3###
+                    """
+                }
             }
             miniCodeNTexup(
                 ```
@@ -56,13 +60,15 @@ content-slide(title:"Rich Text",variant:3){
 
 
             // Row
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 styles:{
                     "*":{font-size:3%P}
                 }
+                grid(1,2){
                     """
                     [[ntf: ##:p1: hello##]] world
                     """
+                }
             }
             miniCodeNTexup(
                 ```
@@ -73,18 +79,20 @@ content-slide(title:"Rich Text",variant:3){
 
 
             // Row
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 styles:{
                     "*":{font-size:3%P}
                 }
-                """
-                    #Equation 1 =
-                    [[eq: X²=\sin(πx) ]]
-                    ##Equation 2## =
-                    [[eq: X^2=\sin\left(\pi x\right) ]]
-                    ###Equation 3### =
-                    [[eq: X^2=\sin(x) ]]
-                """
+                grid(1,2){
+                    """
+                        #Equation 1 =
+                        [[eq: X²=\sin(πx) ]]
+                        ##Equation 2## =
+                        [[eq: X^2=\sin\left(\pi x\right) ]]
+                        ###Equation 3### =
+                        [[eq: X^2=\sin(x) ]]
+                    """
+                }
             }
             miniCodeNTexup(
                 ```

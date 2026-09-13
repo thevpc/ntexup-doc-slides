@@ -1,0 +1,149 @@
+content-slide(title:"3D Primitives",variant:4){
+    body{
+        grid(4,2,columns-weight:[1,1.8]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+            // Row 1: 3D Box with Colored Faces
+            miniPage{
+                scene3d(
+                    draw-contour,
+                    transform:{
+                        rotate(to:(0,100,0), angle:35)
+                        scale:0.75
+                    }
+                ){
+                    box(position:(-22.5,-17.5,-12.5),
+                        size:(45,35,25),
+                        background:documentColors[3],
+                        faces:{
+                            top:{background:documentColors[0]}
+                            front:{background:documentColors[4]}
+                            right:{background:documentColors[1]}
+                        }
+                    )
+                }
+            }
+            miniCodeNTexup(
+            """
+            scene3d(transform:{
+              rotate(to:(0,100,0), angle:35)
+              scale:0.75
+            }){
+              box(position:(-22.5,-17.5,-12.5),
+                size:(45,35,25),
+                faces:{
+                  top:{background:documentColors[0]}
+                  front:{background:documentColors[4]}
+                  right:{background:documentColors[1]}
+                }
+              )
+            }
+            """
+            )
+
+            // Row 2: UV Sphere
+            miniPage{
+                scene3d(
+                    draw-contour,
+                    transform:{
+                        scale:0.75
+                    }
+                ){
+                    sphere(radius:(28,28,28),
+                        meridians:24, parallels:16,
+                        background:documentColors[2],
+                        contour-color:documentColors[10]
+                    )
+                }
+            }
+            miniCodeNTexup(
+            """
+            scene3d(transform:{scale:0.75}){
+              sphere(radius:(28,28,28),
+                meridians:24,
+                parallels:16,
+                background:documentColors[2]
+              )
+            }
+            """
+            )
+
+            // Row 3: 3D Pyramid
+            miniPage{
+                scene3d(
+                    draw-contour,
+                    transform:{
+                        rotate(to:(0,100,0), angle:35)
+                        scale:0.75
+                    }
+                ){
+                    pyramid(position:(-22.5,-20,-17.5),
+                        size:(45,40,35),
+                        background:documentColors[7],
+                        faces:{
+                            front:{background:documentColors[4]}
+                            right:{background:documentColors[1]}
+                            left:{background:documentColors[0]}
+                        }
+                    )
+                }
+            }
+            miniCodeNTexup(
+            """
+            scene3d(transform:{
+              rotate(to:(0,100,0), angle:35)
+              scale:0.75
+            }){
+              pyramid(position:(-22.5,-20,-17.5),
+                size:(45,40,35),
+                faces:{
+                  front:{background:documentColors[4]}
+                  right:{background:documentColors[1]}
+                  left:{background:documentColors[0]}
+                }
+              )
+            }
+            """
+            )
+
+            // Row 4: 3D Helix / Spiral
+            miniPage{
+                scene3d(
+                    draw-contour,
+                    transform:{
+                        rotate(to:(0,100,0), angle:25)
+                        scale:0.75
+                    }
+                ){
+                    helix(position:(0,-22,0),
+                        radius:(20,20,20),
+                        height:45,
+                        turns:3.5,
+                        line-color:documentColors[0],
+                        stroke:basic(width:2)
+                    )
+                }
+            }
+            miniCodeNTexup(
+            """
+            scene3d(transform:{
+              rotate(to:(0,100,0), angle:25)
+              scale:0.75
+            }){
+              helix(position:(0,-22,0),
+                radius:(20,20,20),
+                height:45, turns:3.5,
+                line-color:documentColors[0],
+                stroke:basic(width:2)
+              )
+            }
+            """
+            )
+        }
+    }
+}

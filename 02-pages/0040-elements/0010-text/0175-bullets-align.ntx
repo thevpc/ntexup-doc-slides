@@ -39,7 +39,7 @@ content-slide(title:"Bullets Alignment",variant:3){
                     text("bullet-align: center (for large objects):", font-bold, color: documentColors[1])
                     ul(bullet-align: center){
                         rectangle(size: (15%P, 4.5%P), background: documentColors[4], color: documentColors[0])
-                        rectangle(size: (15%P, 6.5%P), background: documentColors[4], color: documentColors[1])
+                        rectangle(size: (15%P, 8.5%P), background: documentColors[4], color: documentColors[1])
                     }
                 }
             }

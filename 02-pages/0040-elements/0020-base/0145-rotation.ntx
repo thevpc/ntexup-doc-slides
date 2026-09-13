@@ -1,0 +1,70 @@
+content-slide(title:"Rotation",variant:4){
+    body{
+        grid((4,2),columns-weight:[1,1.5]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+            // Row 1: Basic shape rotation
+            miniPage{
+                rectangle(at:center, size:(40,25), background:documentColors[4], color:documentColors[0], rotate:45)
+            }
+            miniCodeNTexup(
+            """
+            rectangle(
+              at:center,
+              size:(40,25),
+              rotate:45
+            )
+            """
+            )
+
+            // Row 2: Text rotation
+            miniPage{
+                text("Rotated Label", font-bold, rotate:-25, at:center, color:documentColors[1])
+            }
+            miniCodeNTexup(
+            """
+            text(
+              "Rotated Label",
+              rotate:-25
+            )
+            """
+            )
+
+            // Row 3: Rotation with custom pivot (top-left vs center)
+            miniPage{
+                group{
+                    rectangle(at:center, size:(45,20), background:documentColors[4], color:documentColors[0], rotate:(30, 0, 0))
+                }
+            }
+            miniCodeNTexup(
+            """
+            rectangle(
+              at:center,
+              size:(45,20),
+              // pivot (angle, x, y):
+              rotate:(30, 0, 0)
+            )
+            """
+            )
+
+            // Row 4: Multiple rotated elements
+            miniPage{
+                group{
+                    rectangle(at:center, size:(35,35), background:documentColors[4], color:documentColors[2], rotate:15)
+                    rectangle(at:center, size:(35,35), background:documentColors[3], color:documentColors[1], rotate:60)
+                }
+            }
+            miniCodeNTexup(
+            """
+            rectangle(size:(35,35), rotate:15)
+            rectangle(size:(35,35), rotate:60)
+            """
+            )
+        }
+    }
+}

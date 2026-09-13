@@ -1,4 +1,4 @@
-themeName=classic // use classic or ibtihel
+themeName=meridian // use classic or meridian
 documentColorAccent=0 // use a number from 0 to 11
 themeShowPalette=true
 documentTitle="ntexup"
@@ -9,9 +9,9 @@ documentSubtitle="
 documentSubsubtitle="Open Source"
 documentAuthor="thevpc"
 documentAuthorEmail="https://github.com/thevpc/ntexup"
-documentAuthorAffiliation="thevpc"
+documentAuthorAffiliation="Open Source Community"
 documentChapter="Chapter 1"
-documentDate="2025-08-06"
+documentDate="2026-09-13"
 documentVersion="v1.0.0.0"
 
 include("01-styles")

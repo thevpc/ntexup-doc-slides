@@ -9,12 +9,13 @@ content-slide(title:"Latex Equations",variant:3){
             }
 
             // Row
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 styles:{
-                    "*":{font-size:15}
+                    "*":{font-size:1%P}
                 }
-
-                eq("X^2=\sin(\pi x)",draw-contour:false,font-size:3%P)
+                grid(1,2){
+                    eq("X^2=\sin(\pi x)",draw-contour:false,font-size:3%P)
+                }
             }
             column{
                 miniCodeNTexup(
@@ -28,53 +29,63 @@ content-slide(title:"Latex Equations",variant:3){
                     ", font-size:2%P,margin:[10,20],font-italic,color:documentColors[3])
             }
             // Row
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 styles:{
-                    "*":{font-size:3%P}
+                    "*":{font-size:1%P}
                 }
+                grid(1,2){
                     eq("X²=\sin(πx)", font-size:3%P,draw-contour:false)
+                }
             }
             column{
                 miniCodeNTexup(
                     """
                         eq("X²=\sin(πx)")
                     """)
-                text("you can use superscripts and subscripts and custom symbols...", font-size:2%P,margin:[10,20],font-italic,color:documentColors[3])
+                text(
+                "
+                you can use superscripts and subscripts and
+                custom symbols...
+                ", font-size:2%P,margin:[10,20],font-italic,color:documentColors[3])
             }
 
 
             // Row
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 styles:{
-                    "*":{font-size:6%P}
+                    "*":{font-size:1%P}
                 }
+                grid(1,2){
                     text("""
-                        [[eq: X²=\sin(πx)]]
+                        [[eq: X²=\cos(πx)]]
                     """
-                    ,font-size:6%P)
+                    ,font-size:3%P)
+                }
             }
             column{
                 miniCodeNTexup(
                     """
-                    "[[eq: X^2=\sin(x) ]]"
+                    "[[eq: X^2=\cos(x) ]]"
                     """)
                 text("you can embed eq in a string...", font-size:2%P,margin:[10,20],font-italic,color:documentColors[3])
             }
 
 
 // Row
-            grid(1,3,background:white,draw-contour){
+            miniPage{
                 styles:{
-                    "*":{font-size:3%P}
+                    "*":{font-size:2%P}
                 }
-                """
-                    ##Equation 1 (superscript)## =
-                    [[eq: X²=\sin(πx) ]]
-                    ###Equation 2### =
-                    [[eq: X^2=\sin \left( \pi x \right) ]]
-                    ####Equation 3#### =
-                    [[eq: X^2=\sin(x) ]]
-                """
+                grid(1,3){
+                    """
+                        ##Equation 1 (superscript)## =
+                        [[eq: X²=\sin(πx) ]]
+                        ###Equation 2### =
+                        [[eq: X^2=\sin \left( \pi x \right) ]]
+                        ####Equation 3#### =
+                        [[eq: X^2=\sin(x) ]]
+                    """
+                }
             }
 //            text("hello" draw-contour:true)
             column{

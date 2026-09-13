@@ -1,6 +1,6 @@
 agenda-slide(title:"Rationale"){
     body{
-        ul{
+        ul(bullet-align: top){
             ¶¶ Uses **TSON** which is a derivative of JSON format but
             ¶¶ with more readability
 
