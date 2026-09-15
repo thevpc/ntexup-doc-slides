@@ -6,25 +6,25 @@ content-slide(title:"Shapes",variant:4){
             }
             // Row
             miniPage{
-                rectangle(at:center, size:(50,20), background:documentColors[4], color:documentColors[2])
+                rectangle(at:center, size:(50,20), background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """ rectangle() """)
 
             // Row
             miniPage{
-                triangle(at:center, size:50, background:documentColors[4], color:documentColors[2])
+                triangle(at:center, size:50, background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """ triangle() """)
 
             // Row
             miniPage{
-                square(at:center, size:50, background:documentColors[4], color:documentColors[2])
+                square(at:center, size:50, background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """ square() """)
 
             // Row
             miniPage{
-                rhombus(at:center, size:50, background:documentColors[4], color:documentColors[2])
+                rhombus(at:center, size:50, background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 rhombus()
@@ -33,7 +33,7 @@ content-slide(title:"Shapes",variant:4){
 
             // Row
             miniPage{
-                parallelogram(at:center, size:50, background:documentColors[4], color:documentColors[2])
+                parallelogram(at:center, size:50, background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 parallelogram()
@@ -41,7 +41,7 @@ content-slide(title:"Shapes",variant:4){
 
             // Row
             miniPage{
-                trapezoid(at:center, size:50, background:documentColors[4], color:documentColors[2])
+                trapezoid(at:center, size:50, background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 trapezoid()
@@ -49,7 +49,7 @@ content-slide(title:"Shapes",variant:4){
 
             // Row
             miniPage{
-                circle(at:center, size:50, background:documentColors[4], color:documentColors[2])
+                circle(at:center, size:50, background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 circle()
@@ -57,7 +57,7 @@ content-slide(title:"Shapes",variant:4){
 
             // Row
             miniPage{
-                ellipse(at:center, size:(80,30), background:documentColors[4], color:documentColors[2])
+                ellipse(at:center, size:(80,30), background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """
                 ellipse(

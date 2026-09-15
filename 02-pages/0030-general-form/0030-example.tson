@@ -3,7 +3,7 @@ page{
     grid(2,2){
         group{ // supports shapes
             rectangle(at:center,size:(90),
-                background:yellow,
+                background-color:yellow,
                 color:red, stroke:4
             )
             ul(origin:left, position:(20,50)){

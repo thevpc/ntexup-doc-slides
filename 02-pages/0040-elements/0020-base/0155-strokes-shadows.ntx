@@ -10,13 +10,13 @@ content-slide(title:"Strokes & Shadows",variant:5){
 
             // Row 1: Dashed stroke & line-color
             miniPage{
-                rectangle(at:center, size:(60,25), background:documentColors[4], draw-contour, line-color:documentColors[0], stroke:dashed)
+                rectangle(at:center, size:(60,25), background-color:documentColors[4], draw-contour, line-color:documentColors[0], stroke:dashed)
             }
             miniCodeNTexup(
             """
             rectangle(
               size:(60,25),
-              background:documentColors[4],
+              background-color:documentColors[4],
               draw-contour,
               line-color:documentColors[0],
               stroke:dashed
@@ -26,7 +26,7 @@ content-slide(title:"Strokes & Shadows",variant:5){
 
             // Row 2: Basic stroke with custom width and dash pattern
             miniPage{
-                rectangle(at:center, size:(60,25), background:documentColors[4], draw-contour, line-color:documentColors[1], stroke:basic(width:2, dash:[8,4], cap:round))
+                rectangle(at:center, size:(60,25), background-color:documentColors[4], draw-contour, line-color:documentColors[1], stroke:basic(width:2, dash:[8,4], cap:round))
             }
             miniCodeNTexup(
             """
@@ -43,13 +43,13 @@ content-slide(title:"Strokes & Shadows",variant:5){
 
             // Row 3: Drop shadow on shape/card
             miniPage{
-                rectangle(at:center, size:(55,22), background:documentColors[0], color:white, shadow:{distance:(4,4), radius:6, color:gray})
+                rectangle(at:center, size:(55,22), background-color:documentColors[0], color:white, shadow:{distance:(4,4), radius:6, color:gray})
             }
             miniCodeNTexup(
             """
             rectangle(
               size:(55,22),
-              background:documentColors[0],
+              background-color:documentColors[0],
               shadow:{
                 distance:(4,4),
                 radius:6,

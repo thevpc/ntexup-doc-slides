@@ -10,7 +10,7 @@ content-slide(title:"Rotation",variant:4){
 
             // Row 1: Basic shape rotation
             miniPage{
-                rectangle(at:center, size:(40,25), background:documentColors[4], color:documentColors[0], rotate:45)
+                rectangle(at:center, size:(40,25), background-color:documentColors[4], color:documentColors[0], rotate:45)
             }
             miniCodeNTexup(
             """
@@ -38,7 +38,7 @@ content-slide(title:"Rotation",variant:4){
             // Row 3: Rotation with custom pivot (top-left vs center)
             miniPage{
                 group{
-                    rectangle(at:center, size:(45,20), background:documentColors[4], color:documentColors[0], rotate:(30, 0, 0))
+                    rectangle(at:center, size:(45,20), background-color:documentColors[4], color:documentColors[0], rotate:(30, 0, 0))
                 }
             }
             miniCodeNTexup(
@@ -55,8 +55,8 @@ content-slide(title:"Rotation",variant:4){
             // Row 4: Multiple rotated elements
             miniPage{
                 group{
-                    rectangle(at:center, size:(35,35), background:documentColors[4], color:documentColors[2], rotate:15)
-                    rectangle(at:center, size:(35,35), background:documentColors[3], color:documentColors[1], rotate:60)
+                    rectangle(at:center, size:(35,35), background-color:documentColors[4], color:documentColors[2], rotate:15)
+                    rectangle(at:center, size:(35,35), background-color:documentColors[3], color:documentColors[1], rotate:60)
                 }
             }
             miniCodeNTexup(

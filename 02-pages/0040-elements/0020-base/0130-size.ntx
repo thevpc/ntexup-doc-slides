@@ -7,13 +7,13 @@ content-slide(title:"Sizes",variant:4){
 
             // Row
             miniPage{
-                rectangle(at:center, , background:documentColors[4], color:documentColors[2])
+                rectangle(at:center, , background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup( """ rectangle() """)
 
             // Row
             miniPage{
-                rectangle(at:center, size:(100,100), background:documentColors[4], color:documentColors[2])
+                rectangle(at:center, size:(100,100), background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
                 """
@@ -24,7 +24,7 @@ content-slide(title:"Sizes",variant:4){
 
             // Row
             miniPage{
-                rectangle(at:center, size:100, background:documentColors[4], color:documentColors[2])
+                rectangle(at:center, size:100, background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
                 """
@@ -35,7 +35,7 @@ content-slide(title:"Sizes",variant:4){
 
             // Row
             miniPage{
-                rectangle(at:center, size:80, background:documentColors[4], color:documentColors[2])
+                rectangle(at:center, size:80, background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
                 """
@@ -46,7 +46,7 @@ content-slide(title:"Sizes",variant:4){
 
             // Row
             miniPage{
-                rectangle(at:center, size:50, background:documentColors[4], color:documentColors[2])
+                rectangle(at:center, size:50, background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
                 """
@@ -58,7 +58,7 @@ content-slide(title:"Sizes",variant:4){
 
             // Row
             miniPage{
-                rectangle(at:center, size:(40,80), background:documentColors[4], color:documentColors[2])
+                rectangle(at:center, size:(40,80), background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
                 """
@@ -69,7 +69,7 @@ content-slide(title:"Sizes",variant:4){
 
             // Row
             miniPage{
-                rectangle(at:center, size:15%P, background:documentColors[4], color:documentColors[2])
+                rectangle(at:center, size:15%P, background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
                 """

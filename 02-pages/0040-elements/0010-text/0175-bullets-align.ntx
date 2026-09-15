@@ -38,18 +38,18 @@ content-slide(title:"Bullets Alignment",variant:3){
                 grid(1, 2, rows-weight: [1, 4]){
                     text("bullet-align: center (for large objects):", font-bold, color: documentColors[1])
                     ul(bullet-align: center){
-                        rectangle(size: (15%P, 4.5%P), background: documentColors[4], color: documentColors[0])
-                        rectangle(size: (15%P, 8.5%P), background: documentColors[4], color: documentColors[1])
+                        rectangle(size: (15%P, 4.5%P), background-color: documentColors[4], color: documentColors[0])
+                        rectangle(size: (15%P, 8.5%P), background-color: documentColors[4], color: documentColors[1])
                     }
                 }
             }
             miniCodeNTexup(```
                 ul(bullet-align: center){
                     rectangle(size: (32%P, 3.5%P),
-                              background: documentColors[4],
+                              background-color: documentColors[4],
                               color: documentColors[0])
                     rectangle(size: (32%P, 3.5%P),
-                              background: documentColors[4],
+                              background-color: documentColors[4],
                               color: documentColors[1])
                 }
             ```)

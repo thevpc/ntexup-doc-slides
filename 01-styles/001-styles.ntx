@@ -8,19 +8,19 @@ include(
 )
 
 @define miniPage{
-    group(background: either(documentSurface, white), draw-contour, line-color: either(documentLine, Gray89)){
+    group(background-color: either(documentSurface, white), draw-contour, line-color: either(documentLine, Gray89)){
         body
     }
 }
 
 @define miniCode{
-    group(background: either(documentSurfaceAlt, Gray89), draw-contour, line-color: either(documentLine, Gray80), margin: 5, padding: 0.5%P){
+    group(background-color: either(documentSurfaceAlt, Gray89), draw-contour, line-color: either(documentLine, Gray80), margin: 5, padding: 0.5%P){
         body
     }
 }
 
 @define miniCodeNTexup(code){
-    group(/*background:black,draw-contour,*/margin:5,padding:0.5%P){
+    group(/*background-color:black,draw-contour,*/margin:5,padding:0.5%P){
         source(ntexup, code,font-size:2%P,at:top-left)
     }
 }

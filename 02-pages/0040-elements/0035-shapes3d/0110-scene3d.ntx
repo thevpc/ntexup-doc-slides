@@ -19,11 +19,11 @@ content-slide(title:"3D Primitives",variant:4){
                 ){
                     box(position:(-22.5,-17.5,-12.5),
                         size:(45,35,25),
-                        background:documentColors[3],
+                        background-color:documentColors[3],
                         faces:{
-                            top:{background:documentColors[0]}
-                            front:{background:documentColors[4]}
-                            right:{background:documentColors[1]}
+                            top:{background-color:documentColors[0]}
+                            front:{background-color:documentColors[4]}
+                            right:{background-color:documentColors[1]}
                         }
                     )
                 }
@@ -37,9 +37,9 @@ content-slide(title:"3D Primitives",variant:4){
               box(position:(-22.5,-17.5,-12.5),
                 size:(45,35,25),
                 faces:{
-                  top:{background:documentColors[0]}
-                  front:{background:documentColors[4]}
-                  right:{background:documentColors[1]}
+                  top:{background-color:documentColors[0]}
+                  front:{background-color:documentColors[4]}
+                  right:{background-color:documentColors[1]}
                 }
               )
             }
@@ -56,7 +56,7 @@ content-slide(title:"3D Primitives",variant:4){
                 ){
                     sphere(radius:(28,28,28),
                         meridians:24, parallels:16,
-                        background:documentColors[2],
+                        background-color:documentColors[2],
                         contour-color:documentColors[10]
                     )
                 }
@@ -67,7 +67,7 @@ content-slide(title:"3D Primitives",variant:4){
               sphere(radius:(28,28,28),
                 meridians:24,
                 parallels:16,
-                background:documentColors[2]
+                background-color:documentColors[2]
               )
             }
             """
@@ -84,11 +84,11 @@ content-slide(title:"3D Primitives",variant:4){
                 ){
                     pyramid(position:(-22.5,-20,-17.5),
                         size:(45,40,35),
-                        background:documentColors[7],
+                        background-color:documentColors[7],
                         faces:{
-                            front:{background:documentColors[4]}
-                            right:{background:documentColors[1]}
-                            left:{background:documentColors[0]}
+                            front:{background-color:documentColors[4]}
+                            right:{background-color:documentColors[1]}
+                            left:{background-color:documentColors[0]}
                         }
                     )
                 }
@@ -102,9 +102,9 @@ content-slide(title:"3D Primitives",variant:4){
               pyramid(position:(-22.5,-20,-17.5),
                 size:(45,40,35),
                 faces:{
-                  front:{background:documentColors[4]}
-                  right:{background:documentColors[1]}
-                  left:{background:documentColors[0]}
+                  front:{background-color:documentColors[4]}
+                  right:{background-color:documentColors[1]}
+                  left:{background-color:documentColors[0]}
                 }
               )
             }

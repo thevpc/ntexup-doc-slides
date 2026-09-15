@@ -11,21 +11,21 @@ content-slide(title:"Color Functions & Gradients",variant:3){
             // Row 1: Linear Gradients
             miniPage{
                 grid((1,2)){
-                    rectangle(at:center, size:(35,25), background:linearGradientColor(documentColors[0], documentColors[2]))
-                    rectangle(at:center, size:(35,25), background:linearGradientColor(documentColors[1], documentColors[4], 45))
+                    rectangle(at:center, size:(35,25), background-color:linearGradientColor(documentColors[0], documentColors[2]))
+                    rectangle(at:center, size:(35,25), background-color:linearGradientColor(documentColors[1], documentColors[4], 45))
                 }
             }
             miniCodeNTexup(
             """
             rectangle(size:(35,25),
-              background:
+              background-color:
                 linearGradientColor(
                   documentColors[0],
                   documentColors[2]
                 )
             )
             rectangle(size:(35,25),
-              background:
+              background-color:
                 linearGradientColor(
                   documentColors[1],
                   documentColors[4],
@@ -38,19 +38,19 @@ content-slide(title:"Color Functions & Gradients",variant:3){
             // Row 2: Lighter and Darker colors
             miniPage{
                 grid((1,2)){
-                    rectangle(at:center, size:(30,25), background:lighterColor(documentColors[0], 0.4))
-                    rectangle(at:center, size:(30,25), background:darkerColor(documentColors[0], 0.4))
+                    rectangle(at:center, size:(30,25), background-color:lighterColor(documentColors[0], 0.4))
+                    rectangle(at:center, size:(30,25), background-color:darkerColor(documentColors[0], 0.4))
                 }
             }
             miniCodeNTexup(
             """
-            rectangle(background:
+            rectangle(background-color:
               lighterColor(
                 documentColors[0],
                 0.4
               )
             )
-            rectangle(background:
+            rectangle(background-color:
               darkerColor(
                 documentColors[0],
                 0.4
@@ -62,18 +62,18 @@ content-slide(title:"Color Functions & Gradients",variant:3){
             // Row 3: Complementary & Invert
             miniPage{
                 grid((1,2)){
-                    rectangle(at:center, size:(30,25), background:complementaryColor(documentColors[1]))
-                    rectangle(at:center, size:(30,25), background:invertColor(documentColors[1]))
+                    rectangle(at:center, size:(30,25), background-color:complementaryColor(documentColors[1]))
+                    rectangle(at:center, size:(30,25), background-color:invertColor(documentColors[1]))
                 }
             }
             miniCodeNTexup(
             """
-            rectangle(background:
+            rectangle(background-color:
               complementaryColor(
                 documentColors[1]
               )
             )
-            rectangle(background:
+            rectangle(background-color:
               invertColor(
                 documentColors[1]
               )
@@ -84,19 +84,19 @@ content-slide(title:"Color Functions & Gradients",variant:3){
             // Row 4: Rotate Hue & Sinebow
             miniPage{
                 grid((1,2)){
-                    rectangle(at:center, size:(30,25), background:rotateHueColor(documentColors[0], 120))
-                    rectangle(at:center, size:(30,25), background:sinebowColor(0.7))
+                    rectangle(at:center, size:(30,25), background-color:rotateHueColor(documentColors[0], 120))
+                    rectangle(at:center, size:(30,25), background-color:sinebowColor(0.7))
                 }
             }
             miniCodeNTexup(
             """
-            rectangle(background:
+            rectangle(background-color:
               rotateHueColor(
                 documentColors[0],
                 120
               )
             )
-            rectangle(background:
+            rectangle(background-color:
               sinebowColor(0.7)
             )
             """

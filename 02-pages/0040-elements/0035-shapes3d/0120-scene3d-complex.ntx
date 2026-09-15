@@ -20,26 +20,26 @@ content-slide(title:"Complex 3D Scenes",variant:5){
                 ){
                     // Base pedestal
                     box(size:(60,12,60), position:(0,0,0),
-                        background:documentColors[10],
-                        faces:{top:{background:documentColors[1]}}
+                        background-color:documentColors[10],
+                        faces:{top:{background-color:documentColors[1]}}
                     )
                     // Second tier
                     box(size:(44,14,44), position:(8,12,8),
-                        background:documentColors[5],
-                        faces:{top:{background:documentColors[6]}}
+                        background-color:documentColors[5],
+                        faces:{top:{background-color:documentColors[6]}}
                     )
                     // Crowning pyramid
                     pyramid(size:(32,28,32), position:(14,26,14),
                         faces:{
-                            front:{background:documentColors[0]}
-                            right:{background:documentColors[3]}
-                            left:{background:documentColors[4]}
+                            front:{background-color:documentColors[0]}
+                            right:{background-color:documentColors[3]}
+                            left:{background-color:documentColors[4]}
                         }
                     )
                     // Floating orb
                     sphere(radius:(16,16,16), position:(30,66,30),
                         meridians:24, parallels:16,
-                        background:documentColors[2]
+                        background-color:documentColors[2]
                     )
                 }
             }
@@ -52,14 +52,14 @@ content-slide(title:"Complex 3D Scenes",variant:5){
             }){
               // Multi-tier pedestal & monument
               box(size:(60,12,60), position:(0,0,0),
-                  faces:{top:{background:documentColors[1]}})
+                  faces:{top:{background-color:documentColors[1]}})
               box(size:(44,14,44), position:(8,12,8),
-                  faces:{top:{background:documentColors[6]}})
+                  faces:{top:{background-color:documentColors[6]}})
               pyramid(size:(32,28,32), position:(14,26,14),
-                  faces:{front:{background:documentColors[0]},
-                         right:{background:documentColors[3]}})
+                  faces:{front:{background-color:documentColors[0]},
+                         right:{background-color:documentColors[3]}})
               sphere(radius:(16,16,16), position:(30,66,30),
-                  background:documentColors[2])
+                  background-color:documentColors[2])
             }
             """
             )
@@ -76,8 +76,8 @@ content-slide(title:"Complex 3D Scenes",variant:5){
                 ){
                     // Foundation base
                     box(size:(50,8,50), position:(0,0,0),
-                        background:documentColors[10],
-                        faces:{top:{background:documentColors[5]}}
+                        background-color:documentColors[10],
+                        faces:{top:{background-color:documentColors[5]}}
                     )
                     // Ascending helix
                     helix(position:(25,8,25),
@@ -89,12 +89,12 @@ content-slide(title:"Complex 3D Scenes",variant:5){
                     )
                     // Center pillar
                     box(size:(10,50,10), position:(20,8,20),
-                        background:documentColors[7]
+                        background-color:documentColors[7]
                     )
                     // Apex floating sphere
                     sphere(radius:(16,16,16), position:(25,66,25),
                         meridians:24, parallels:16,
-                        background:documentColors[4]
+                        background-color:documentColors[4]
                     )
                 }
             }
@@ -106,16 +106,16 @@ content-slide(title:"Complex 3D Scenes",variant:5){
               scale:0.65
             }){
               box(size:(50,8,50), position:(0,0,0),
-                  background:documentColors[10])
+                  background-color:documentColors[10])
               helix(position:(25,8,25),
                     radius:(18,18,18),
                     height:55, turns:3.0,
                     line-color:documentColors[0],
                     stroke:basic(width:2))
               box(size:(10,50,10), position:(20,8,20),
-                  background:documentColors[7])
+                  background-color:documentColors[7])
               sphere(radius:(16,16,16), position:(25,66,25),
-                  background:documentColors[4])
+                  background-color:documentColors[4])
             }
             """
             )

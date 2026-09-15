@@ -14,7 +14,7 @@ content-slide(title: "Custom Components (@define)", variant: 3){
             // 1. Define badge with arguments
             @define info-badge(label, count: 1, accent: documentColors[0]){
                 group(margin: 1, size: (100, 22)){
-                    rectangle(background: accent, round-corner: 4)
+                    rectangle(background-color: accent, round-corner: 4)
                     text("${label}: ${count}", color: white,
                          font-bold, font-size: 2.2%P, at: center)
                 }
@@ -23,10 +23,10 @@ content-slide(title: "Custom Components (@define)", variant: 3){
             // 2. Define component wrapping inner 'body'
             @define feature-box(title, accent: documentColors[1]){
                 group(margin: 1){
-                    rectangle(background: documentSurface,
+                    rectangle(background-color: documentSurface,
                               color: documentLine,
                               draw-contour: true, round-corner: 6)
-                    rectangle(background: accent, position: (0, 0),
+                    rectangle(background-color: accent, position: (0, 0),
                               size: (0.35%P, 100))
                     text("${title}", position: (6, 14), origin: left,
                          font-bold, font-size: 2.4%P, color: accent)
@@ -42,15 +42,15 @@ content-slide(title: "Custom Components (@define)", variant: 3){
             miniPage{
                 @define info-badge(label, count: 1, accent: documentColors[0]){
                     group(margin: 1, size: (100, 22)){
-                        rectangle(background: accent, round-corner: 4)
+                        rectangle(background-color: accent, round-corner: 4)
                         text("${label}: ${count}", color: white, font-bold, font-size: 2.2%P, at: center)
                     }
                 }
 
                 @define feature-box(title, accent: documentColors[1]){
                     group(margin: 1){
-                        rectangle(background: documentSurface, color: documentLine, draw-contour: true, round-corner: 6)
-                        rectangle(background: accent, position: (0, 0), size: (0.35%P, 100))
+                        rectangle(background-color: documentSurface, color: documentLine, draw-contour: true, round-corner: 6)
+                        rectangle(background-color: accent, position: (0, 0), size: (0.35%P, 100))
                         text("${title}", position: (6, 14), origin: left, font-bold, font-size: 2.4%P, color: accent)
                         group(position: (6, 32), size: (88, 62), origin: top-left){
                             body

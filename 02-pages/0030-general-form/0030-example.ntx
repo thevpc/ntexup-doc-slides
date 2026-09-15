@@ -4,7 +4,7 @@ content-slide(title:"More Elaborate Example",variant:2){
             miniCode{
                 source(ntexup,file:"0030-example.tson", position: (2,2),font-size:2%P)
             }
-            grid(2,2,draw-contour,background:white){
+            grid(2,2,draw-contour,background-color:white){
                 styles:{
                     "*":{
                         margin:5
@@ -12,7 +12,7 @@ content-slide(title:"More Elaborate Example",variant:2){
                 }
                 group{ // supports shapes
                     rectangle(at:center,size:(80),
-                        background:yellow,
+                        background-color:yellow,
                         color:red,
                         stroke:4
                     )

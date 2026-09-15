@@ -6,7 +6,7 @@ content-slide(title:"Positions",variant:4){
             }
             // Row
             miniPage{
-                rectangle(at:center, size:(30,30), background:documentColors[4], color:documentColors[2])
+                rectangle(at:center, size:(30,30), background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
             """
@@ -18,7 +18,7 @@ content-slide(title:"Positions",variant:4){
 
             // Row
             miniPage{
-                rectangle(at:top, size:(30,30), background:documentColors[4], color:documentColors[2])
+                rectangle(at:top, size:(30,30), background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
             """
@@ -29,7 +29,7 @@ content-slide(title:"Positions",variant:4){
 
             // Row
             miniPage{
-                rectangle(at:top-left, size:(30,30), background:documentColors[4], color:documentColors[2])
+                rectangle(at:top-left, size:(30,30), background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
             """
@@ -41,7 +41,7 @@ content-slide(title:"Positions",variant:4){
 
             // Row
             miniPage{
-                rectangle(at:bottom-right, size:(30,30), background:documentColors[4], color:documentColors[2])
+                rectangle(at:bottom-right, size:(30,30), background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
             """
@@ -52,7 +52,7 @@ content-slide(title:"Positions",variant:4){
 
             // Row
             miniPage{
-                rectangle(origin:(50,50), position:(50,50), size:(30,30), background:documentColors[4], color:documentColors[2])
+                rectangle(origin:(50,50), position:(50,50), size:(30,30), background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
             """
@@ -67,7 +67,7 @@ content-slide(title:"Positions",variant:4){
 
             // Row
             miniPage{
-                rectangle(origin:(60,60), position:(100,100), size:(30,30), background:documentColors[4], color:documentColors[2])
+                rectangle(origin:(60,60), position:(100,100), size:(30,30), background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
             """
@@ -82,7 +82,7 @@ content-slide(title:"Positions",variant:4){
 
             // Row
             miniPage{
-                rectangle(origin:(100,100), position:(100,100), size:(30,30), background:documentColors[4], color:documentColors[2])
+                rectangle(origin:(100,100), position:(100,100), size:(30,30), background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
             """
@@ -97,7 +97,7 @@ content-slide(title:"Positions",variant:4){
 
             // Row
             miniPage{
-                rectangle(origin:(100,100), position:(50,50), size:(30,30), background:documentColors[4], color:documentColors[2])
+                rectangle(origin:(100,100), position:(50,50), size:(30,30), background-color:documentColors[4], color:documentColors[2])
             }
             miniCodeNTexup(
             """

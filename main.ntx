@@ -1,5 +1,5 @@
-themeName=eniso // use classic, meridian, or avidea
-alternativeLocalThemeRepository:= "$HOME/xprojects/work-presentations/templates/"
+themeName=classic // use classic, meridian, or eniso
+//alternativeLocalThemeRepository:= "$HOME/xprojects/work-presentations/templates/"
 
 
 documentColorAccent=0 // use a number from 0 to 11
