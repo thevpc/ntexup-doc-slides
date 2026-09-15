@@ -9,7 +9,7 @@ content-slide(title:"Source Code",variant:3){
             }
 
             // Row
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 source(java
                     """
                         public static class
@@ -41,7 +41,7 @@ content-slide(title:"Source Code",variant:3){
                 )
 
             // Row
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 styles:{
                     "*":{font-size:5%P}
                 }
@@ -68,7 +68,7 @@ content-slide(title:"Source Code",variant:3){
                 )
 
             // Row
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 styles:{
                     "*":{font-size:5%P}
                 }
@@ -94,7 +94,7 @@ content-slide(title:"Source Code",variant:3){
                 ```
                 )
 
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 styles:{
                     "*":{font-size:10%P}
                 }

@@ -33,7 +33,7 @@ Compile and open this folder
 nuts ntexup show .
 ```
 
-Note that you don’t need to clone or download this repository to render it; you can simply run:
+Note that you don’t need to clone or download this repository to render it; you can run:
 
 
 ```bash

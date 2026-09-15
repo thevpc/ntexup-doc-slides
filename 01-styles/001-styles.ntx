@@ -1,7 +1,9 @@
+alternativeLocalThemeRepository:= "$HOME/xprojects/nuts-world/nuts-productivity/ntexup/ntexup-templates"
+alternativeRemoteThemeRepository:= "github://thevpc/ntexup-templates"
 include(
     eitherPath(
-        "$HOME/xprojects/nuts-world/nuts-productivity/ntexup/ntexup-templates/${themeName}/v1.0/theme"
-//        "github://thevpc/ntexup-templates/${themeName}/v1.0/theme"
+        "$alternativeLocalThemeRepository/${themeName}/v1.0/theme"
+        "$alternativeRemoteThemeRepository/${themeName}/v1.0/theme"
     )
 )
 

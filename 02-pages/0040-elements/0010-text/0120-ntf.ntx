@@ -9,7 +9,7 @@ content-slide(title:"NTF format",variant:3){
             }
 
             // Row
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 styles:{
                     "*":{font-size:4%P}
                 }
@@ -29,7 +29,7 @@ content-slide(title:"NTF format",variant:3){
                 ```)
 
             // Row
-            grid(1,2,background:white,draw-contour){
+            miniPage{
                 styles:{
                     "*":{font-size:4%P}
                 }
