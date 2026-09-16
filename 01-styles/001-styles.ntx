@@ -21,6 +21,6 @@ include(
 
 @define miniCodeNTexup(code){
     group(/*background-color:black,draw-contour,*/margin:5,padding:0.5%P){
-        source(ntexup, code,font-size:2%P,at:top-left,width:4in,height:2in)
+        source(ntexup, code,font-size:2%P,at:top-left)
     }
 }

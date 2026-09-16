@@ -10,11 +10,12 @@ content-slide(title:"Complex 3D Scenes",variant:5){
 
             // Row 1: Layered Architectural Composition
             miniPage{
-                scene3d(size:(4.2in,2.2in),
+                scene3d(
                     draw-contour,
+                    real-position:(0,0,0),
+                    real-size:(60,82,60),
                     transform:{
                         rotate(to:(0,100,0), angle:30)
-                        translate(-30, -41, -30)
                         scale:0.65
                     }
                 ){
@@ -45,9 +46,8 @@ content-slide(title:"Complex 3D Scenes",variant:5){
             }
             miniCodeNTexup(
             """
-            scene3d(transform:{
+            scene3d(real-position:(0,0,0), real-size:(60,82,60), transform:{
               rotate(to:(0,100,0), angle:30)
-              translate(-30, -41, -30)
               scale:0.65
             }){
               // Multi-tier pedestal & monument
@@ -66,11 +66,12 @@ content-slide(title:"Complex 3D Scenes",variant:5){
 
             // Row 2: Spiral Helix with Polyline Trajectory & Floating Spheres
             miniPage{
-                scene3d(size:(4.2in,2.2in),
+                scene3d(
                     draw-contour,
+                    real-position:(0,0,0),
+                    real-size:(50,82,50),
                     transform:{
                         rotate(to:(0,100,0), angle:25)
-                        translate(-25, -41, -25)
                         scale:0.65
                     }
                 ){
@@ -100,9 +101,8 @@ content-slide(title:"Complex 3D Scenes",variant:5){
             }
             miniCodeNTexup(
             """
-            scene3d(transform:{
+            scene3d(real-position:(0,0,0), real-size:(50,82,50), transform:{
               rotate(to:(0,100,0), angle:25)
-              translate(-25, -41, -25)
               scale:0.65
             }){
               box(size:(50,8,50), position:(0,0,0),

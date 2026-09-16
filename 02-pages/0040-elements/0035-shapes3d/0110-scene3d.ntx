@@ -12,6 +12,8 @@ content-slide(title:"3D Primitives",variant:4){
             miniPage{
                 scene3d(
                     draw-contour,
+                    real-position:(-22.5,-17.5,-12.5),
+                    real-size:(45,35,25),
                     transform:{
                         rotate(to:(0,100,0), angle:35)
                         scale:0.75
@@ -30,7 +32,7 @@ content-slide(title:"3D Primitives",variant:4){
             }
             miniCodeNTexup(
             """
-            scene3d(transform:{
+            scene3d(real-position:(-22.5,-17.5,-12.5), real-size:(45,35,25), transform:{
               rotate(to:(0,100,0), angle:35)
               scale:0.75
             }){
@@ -50,6 +52,8 @@ content-slide(title:"3D Primitives",variant:4){
             miniPage{
                 scene3d(
                     draw-contour,
+                    real-position:(-28,-28,-28),
+                    real-size:(56,56,56),
                     transform:{
                         scale:0.75
                     }
@@ -63,7 +67,7 @@ content-slide(title:"3D Primitives",variant:4){
             }
             miniCodeNTexup(
             """
-            scene3d(transform:{scale:0.75}){
+            scene3d(real-position:(-28,-28,-28), real-size:(56,56,56), transform:{scale:0.75}){
               sphere(radius:(28,28,28),
                 meridians:24,
                 parallels:16,
@@ -77,6 +81,8 @@ content-slide(title:"3D Primitives",variant:4){
             miniPage{
                 scene3d(
                     draw-contour,
+                    real-position:(-22.5,-20,-17.5),
+                    real-size:(45,40,35),
                     transform:{
                         rotate(to:(0,100,0), angle:35)
                         scale:0.75
@@ -95,7 +101,7 @@ content-slide(title:"3D Primitives",variant:4){
             }
             miniCodeNTexup(
             """
-            scene3d(transform:{
+            scene3d(real-position:(-22.5,-20,-17.5), real-size:(45,40,35), transform:{
               rotate(to:(0,100,0), angle:35)
               scale:0.75
             }){
@@ -115,6 +121,8 @@ content-slide(title:"3D Primitives",variant:4){
             miniPage{
                 scene3d(
                     draw-contour,
+                    real-position:(-20,-22,-20),
+                    real-size:(40,45,40),
                     transform:{
                         rotate(to:(0,100,0), angle:25)
                         scale:0.75
@@ -131,7 +139,7 @@ content-slide(title:"3D Primitives",variant:4){
             }
             miniCodeNTexup(
             """
-            scene3d(transform:{
+            scene3d(real-position:(-20,-22,-20), real-size:(40,45,40), transform:{
               rotate(to:(0,100,0), angle:25)
               scale:0.75
             }){
