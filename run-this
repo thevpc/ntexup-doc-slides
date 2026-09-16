@@ -1,2 +1,2 @@
 #!/bin/bash
-nuts-dev -y ntexup show
+nuts-dev -Zy ntexup show

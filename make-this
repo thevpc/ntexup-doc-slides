@@ -1,2 +1,2 @@
 #!/bin/bash
-nuts-dev -y ntexup pdf
+nuts-dev -Zy ntexup pdf

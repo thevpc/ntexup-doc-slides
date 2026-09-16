@@ -10,7 +10,7 @@ content-slide(title:"Complex 3D Scenes",variant:5){
 
             // Row 1: Layered Architectural Composition
             miniPage{
-                scene3d(
+                scene3d(size:(4.2in,2.2in),
                     draw-contour,
                     transform:{
                         rotate(to:(0,100,0), angle:30)
@@ -66,7 +66,7 @@ content-slide(title:"Complex 3D Scenes",variant:5){
 
             // Row 2: Spiral Helix with Polyline Trajectory & Floating Spheres
             miniPage{
-                scene3d(
+                scene3d(size:(4.2in,2.2in),
                     draw-contour,
                     transform:{
                         rotate(to:(0,100,0), angle:25)
