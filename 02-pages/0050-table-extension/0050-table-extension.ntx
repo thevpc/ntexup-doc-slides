@@ -1,0 +1,36 @@
+import("table")
+content-slide(title:"Table Extension"){
+    body{
+        grid(1,3){
+            ul{
+                •¶ The table extension provides a easy way to create tabular data.
+                •¶ Supports data, headerData, bodyData, footerData parameters.
+                •¶ Supports common style properties (background, padding, font-size, draw-grid, grid-color, columns-weight).
+            }
+            // Example 1: Simple data
+            group{
+                text("**Simple Table:**",font-size:2.5%P)
+                table(data: [
+                    ["Name", "Age"],
+                    ["Alice", 30],
+                    ["Bob", 25]
+                ],draw-grid:true,padding:1)
+            }
+            // Example 2: With header, body, footer and styling
+            group{
+                text("**Styled Table:**",font-size:2.5%P)
+                table(
+                    header-data: [["Item", "Qty", "Price"]],
+                    data: [
+                        ["Apple", 5, 0.5],
+                        ["Banana", 3, 0.3],
+                        ["Cherry",10, 0.2]
+                    ],
+                    footer-data: [["Total", "", "=SUM(C2:C4)"]],
+                    draw-grid:true
+                    padding:1
+                )
+            }
+        }
+    }
+}
