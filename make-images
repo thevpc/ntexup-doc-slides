@@ -1,3 +1,3 @@
 #!/bin/bash
 rm -Rf target/images
-$HOME/xprojects/nuts-world/nuts/scripts/nuts-dev -Zy ntexup image -o target/images/
+nuts -Ny ntexup image -o target/images/

@@ -1,2 +1,2 @@
 #!/bin/bash
-$HOME/xprojects/nuts-world/nuts/scripts/nuts-dev -Zy ntexup pdf -o target/
+nuts -Ny ntexup pdf -o target/
