@@ -20,7 +20,7 @@ content-slide(title: "Custom Components (@define)", variant: 3){
                 }
             }
 
-            // 2. Define component wrapping inner 'body'
+            // 2. Define component wrapping inner 'slot'
             @define feature-box(title, accent: documentColors[1]){
                 group(margin: 1){
                     rectangle(background-color: documentSurface,
@@ -31,7 +31,7 @@ content-slide(title: "Custom Components (@define)", variant: 3){
                     text("${title}", position: (6, 14), origin: left,
                          font-bold, font-size: 2.4%P, color: accent)
                     group(position: (6, 32), size: (88, 62), origin: top-left){
-                        body
+                        slot
                     }
                 }
             }
@@ -53,7 +53,7 @@ content-slide(title: "Custom Components (@define)", variant: 3){
                         rectangle(background-color: accent, position: (0, 0), size: (0.35%P, 100))
                         text("${title}", position: (6, 14), origin: left, font-bold, font-size: 2.4%P, color: accent)
                         group(position: (6, 32), size: (88, 62), origin: top-left){
-                            body
+                            slot
                         }
                     }
                 }
@@ -64,7 +64,7 @@ content-slide(title: "Custom Components (@define)", variant: 3){
                     feature-box(title: "Custom Component Box", accent: documentColors[1]){
                         ul{
                             • "Defined via `@define name(args){ ... }`"
-                            • "Embeds caller content using `body`"
+                            • "Embeds caller content using `slot`"
                             • "Reusable across slides and layouts"
                         }
                     }
