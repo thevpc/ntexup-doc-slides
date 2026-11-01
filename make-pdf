@@ -1,2 +1,2 @@
 #!/bin/bash
-nuts -Ny ntexup pdf -o target/
+nuts -Zy ntexup pdf -o target/
