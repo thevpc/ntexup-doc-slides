@@ -1,0 +1,99 @@
+content-slide(title:"Connectors — static vs animated",variant:5){
+    body{
+        grid(4,2,columns-weight:[1,1]){
+            styles:{
+                "*": {margin:2}
+            }
+
+            // Row 1: automatic border clipping
+            miniPage{
+                text("static", at:(5,5), font-size:3)
+                rectangle(name:"s1a", at:(10,22), size:(26,18), background-color:white, draw-contour){
+                    text("A", at:center)
+                }
+                rectangle(name:"s1b", at:(64,60), size:(26,18), background-color:white, draw-contour){
+                    text("B", at:center)
+                }
+                connector("s1a", "s1b", end-arrow:simple(), stroke:2)
+            }
+            miniPage{
+                text("animated", at:(5,5), font-size:3)
+                rectangle(name:"a1a", at:(10,22), size:(26,18), background-color:white, draw-contour){
+                    text("A", at:center)
+                }
+                rectangle(name:"a1b", at:(64,60), size:(26,18), background-color:white, draw-contour){
+                    text("B", at:center)
+                }
+                connector("a1a", "a1b", end-arrow:simple(), stroke:2,
+                    flow:dots(count:3,size:1.2,period:3))
+            }
+
+            // Row 2: explicit side anchors
+            miniPage{
+                text("static", at:(5,5), font-size:3)
+                rectangle(name:"s2a", at:(10,40), size:(26,18), background-color:white, draw-contour){
+                    text("A", at:center)
+                }
+                rectangle(name:"s2b", at:(64,40), size:(26,18), background-color:white, draw-contour){
+                    text("B", at:center)
+                }
+                connector(from:"s2a@right", to:"s2b@left", end-arrow:triangle(), stroke:2)
+            }
+            miniPage{
+                text("animated", at:(5,5), font-size:3)
+                rectangle(name:"a2a", at:(10,40), size:(26,18), background-color:white, draw-contour){
+                    text("A", at:center)
+                }
+                rectangle(name:"a2b", at:(64,40), size:(26,18), background-color:white, draw-contour){
+                    text("B", at:center)
+                }
+                connector(from:"a2a@right", to:"a2b@left", end-arrow:triangle(), stroke:2,
+                    flow:dots(count:3,size:1.2,period:3))
+            }
+
+            // Row 3: via points
+            miniPage{
+                text("static", at:(5,5), font-size:3)
+                rectangle(name:"s3a", at:(10,18), size:(24,16), background-color:white, draw-contour){
+                    text("A", at:center)
+                }
+                rectangle(name:"s3b", at:(66,66), size:(24,16), background-color:white, draw-contour){
+                    text("B", at:center)
+                }
+                connector("s3a", "s3b", via:((50,30),(50,70)), end-arrow:simple(), stroke:2)
+            }
+            miniPage{
+                text("animated", at:(5,5), font-size:3)
+                rectangle(name:"a3a", at:(10,18), size:(24,16), background-color:white, draw-contour){
+                    text("A", at:center)
+                }
+                rectangle(name:"a3b", at:(66,66), size:(24,16), background-color:white, draw-contour){
+                    text("B", at:center)
+                }
+                connector("a3a", "a3b", via:((50,30),(50,70)), end-arrow:simple(), stroke:2,
+                    flow:dots(count:3,size:1.2,period:3))
+            }
+
+            // Row 4: free points and mixed endpoints
+            miniPage{
+                text("static", at:(5,5), font-size:3)
+                rectangle(name:"s4", at:(10,22), size:(22,16), background-color:white, draw-contour){
+                    text("SRC", at:center)
+                }
+                connector(from:"s4", to:(88,30), end-arrow:simple(), stroke:2)
+                connector(from:(8,78), to:(92,78), start-arrow:simple(), end-arrow:simple(), stroke:2)
+            }
+            miniPage{
+                text("animated", at:(5,5), font-size:3)
+                rectangle(name:"a4", at:(10,22), size:(22,16), background-color:white, draw-contour){
+                    text("SRC", at:center)
+                }
+                connector(from:"a4", to:(88,30), end-arrow:simple(), stroke:2,
+                    flow:dots(count:3,size:1.2,period:3))
+                connector(from:(8,78), to:(92,78), start-arrow:simple(), end-arrow:simple(), stroke:2,
+                    flow:dots(count:2,size:1.2,period:3,reverse))
+            }
+
+        }
+    }
+}

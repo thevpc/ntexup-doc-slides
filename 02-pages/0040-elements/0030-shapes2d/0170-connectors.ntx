@@ -1,0 +1,96 @@
+content-slide(title:"Connectors — endpoints",variant:5){
+    body{
+        grid(4,2,columns-weight:[1,2]){
+            styles:{
+                "*": {margin:2}
+                source:{
+                    at:left
+                }
+            }
+
+            // Row 1: automatic border clipping
+            miniPage{
+                rectangle(name:"a1", at:(8,18), size:(28,20), background-color:white, draw-contour){
+                    text("API", at:center)
+                }
+                rectangle(name:"b1", at:(64,58), size:(28,20), background-color:white, draw-contour){
+                    text("DB", at:center)
+                }
+                connector("a1", "b1", end-arrow:simple(), stroke:2)
+            }
+            miniCodeNTexup(
+                """
+                connector(
+                    "api", "db",
+                    end-arrow: simple()
+                )
+                """
+            )
+
+            // Row 2: explicit side anchors
+            miniPage{
+                rectangle(name:"a2", at:(8,40), size:(28,20), background-color:white, draw-contour){
+                    text("API", at:center)
+                }
+                rectangle(name:"b2", at:(64,40), size:(28,20), background-color:white, draw-contour){
+                    text("DB", at:center)
+                }
+                connector(from:"a2@right", to:"b2@left", end-arrow:triangle(), stroke:2)
+            }
+            miniCodeNTexup(
+                """
+                connector(
+                    from: "api@right",
+                    to: "db@left",
+                    end-arrow: triangle()
+                )
+                """
+            )
+
+            // Row 3: via points turn the connector into a polyline
+            miniPage{
+                rectangle(name:"a3", at:(8,15), size:(26,18), background-color:white, draw-contour){
+                    text("API", at:center)
+                }
+                rectangle(name:"b3", at:(66,67), size:(26,18), background-color:white, draw-contour){
+                    text("DB", at:center)
+                }
+                connector("a3", "b3", via:((50,28),(50,72)), end-arrow:simple(), stroke:2)
+            }
+            miniCodeNTexup(
+                """
+                connector(
+                    "api", "db",
+                    via: ((50,28), (50,72)),
+                    end-arrow: simple()
+                )
+                """
+            )
+
+            // Row 4: free points and mixed node/free endpoints
+            miniPage{
+                rectangle(name:"src4", at:(8,20), size:(24,18), background-color:white, draw-contour){
+                    text("SRC", at:center)
+                }
+                connector(from:"src4", to:(88,28), end-arrow:simple(), stroke:2)
+                connector(from:(8,78), to:(92,78), start-arrow:simple(), end-arrow:simple(), stroke:2)
+            }
+            miniCodeNTexup(
+                """
+                connector(
+                    from: "src",
+                    to: (88, 28),
+                    end-arrow: simple()
+                )
+                connector(
+                    from: (8, 78),
+                    to: (92, 78),
+                    start-arrow: simple(),
+                    end-arrow: simple()
+                )
+                """
+            )
+
+        }
+    }
+}
