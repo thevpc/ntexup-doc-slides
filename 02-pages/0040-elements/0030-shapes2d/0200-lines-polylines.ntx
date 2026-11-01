@@ -1,0 +1,67 @@
+content-slide(title:"Lines and polylines — flow",variant:5){
+    body{
+        text("line — static", position:(2,2), origin:top-left, font-size:2.3)
+        line(from:(2,10), to:(46,10), start-arrow:simple(), end-arrow:triangle(), stroke:2)
+        source(ntexup
+            """
+            line(
+                from: (2, 10), to: (46, 10),
+                end-arrow: triangle()
+            )
+            """
+            font-size:1.4%P,
+            font-family:Monospaced,
+            position:(2,17),
+            origin:top-left
+        )
+
+        text("line — animated", position:(53,2), origin:top-left, font-size:2.3)
+        line(from:(53,10), to:(97,10), start-arrow:simple(), end-arrow:triangle(), stroke:2, flow:dots(count:4,size:1.2,period:3))
+        source(ntexup
+            """
+            line(
+                from: (53, 10), to: (97, 10),
+                flow: dots(count: 4)
+            )
+            """
+            font-size:1.4%P,
+            font-family:Monospaced,
+            position:(53,17),
+            origin:top-left
+        )
+
+        text("polyline — static", position:(2,38), origin:top-left, font-size:2.3)
+        polyline(points:((300,700),(600,600),(900,800),(1200,650)), start-arrow:simple(), end-arrow:triangle(), stroke:2)
+        source(ntexup
+            """
+            polyline(
+                points: ((300, 700), (600, 600),
+                         (900, 800), (1200, 650)),
+                end-arrow: triangle()
+            )
+            """
+            font-size:1.3%P,
+            font-family:Monospaced,
+            position:(2,55),
+            origin:top-left
+        )
+
+        text("polyline — animated", position:(53,38), origin:top-left, font-size:2.3)
+        polyline(points:((1400,700),(1700,600),(2000,800),(2250,650)), start-arrow:simple(), end-arrow:triangle(), stroke:2, flow:dots(count:4,size:1.2,period:3))
+        source(ntexup
+            """
+            polyline(
+                points: ((1400, 700), (1700, 600),
+                         (2000, 800), (2250, 650)),
+                flow: dots(count: 4)
+            )
+            """
+            font-size:1.3%P,
+            font-family:Monospaced,
+            position:(53,55),
+            origin:top-left
+        )
+
+        text("Static output shows evenly spaced flow dots; show mode animates them.", position:(2,88), origin:top-left, font-size:1.8)
+    }
+}

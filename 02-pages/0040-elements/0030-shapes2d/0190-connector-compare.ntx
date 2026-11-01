@@ -1,99 +1,44 @@
 content-slide(title:"Connectors — static vs animated",variant:5){
     body{
-        grid(4,2,columns-weight:[1,1]){
-            styles:{
-                "*": {margin:2}
-            }
+        text("static", position:(9,0), origin:top-left, font-size:2.2, font-bold)
+        text("animated", position:(56,0), origin:top-left, font-size:2.2, font-bold)
 
-            // Row 1: automatic border clipping
-            miniPage{
-                text("static", at:(5,5), font-size:3)
-                rectangle(name:"s1a", at:(10,22), size:(26,18), background-color:white, draw-contour){
-                    text("A", at:center)
-                }
-                rectangle(name:"s1b", at:(64,60), size:(26,18), background-color:white, draw-contour){
-                    text("B", at:center)
-                }
-                connector("s1a", "s1b", end-arrow:simple(), stroke:2)
-            }
-            miniPage{
-                text("animated", at:(5,5), font-size:3)
-                rectangle(name:"a1a", at:(10,22), size:(26,18), background-color:white, draw-contour){
-                    text("A", at:center)
-                }
-                rectangle(name:"a1b", at:(64,60), size:(26,18), background-color:white, draw-contour){
-                    text("B", at:center)
-                }
-                connector("a1a", "a1b", end-arrow:simple(), stroke:2,
-                    flow:dots(count:3,size:1.2,period:3))
-            }
+        // Row 1: automatic anchors
+        text("auto", position:(0,9), origin:top-left, font-size:1.8)
+        rectangle(name:"s1a", position:(9,8), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("A", at:center) }
+        rectangle(name:"s1b", position:(27,14), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("B", at:center) }
+        connector("s1a", "s1b", end-arrow:simple(), stroke:2)
+        rectangle(name:"a1a", position:(56,8), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("A", at:center) }
+        rectangle(name:"a1b", position:(74,14), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("B", at:center) }
+        connector("a1a", "a1b", end-arrow:simple(), stroke:2, flow:dots(count:3,size:1.2,period:3))
 
-            // Row 2: explicit side anchors
-            miniPage{
-                text("static", at:(5,5), font-size:3)
-                rectangle(name:"s2a", at:(10,40), size:(26,18), background-color:white, draw-contour){
-                    text("A", at:center)
-                }
-                rectangle(name:"s2b", at:(64,40), size:(26,18), background-color:white, draw-contour){
-                    text("B", at:center)
-                }
-                connector(from:"s2a@right", to:"s2b@left", end-arrow:triangle(), stroke:2)
-            }
-            miniPage{
-                text("animated", at:(5,5), font-size:3)
-                rectangle(name:"a2a", at:(10,40), size:(26,18), background-color:white, draw-contour){
-                    text("A", at:center)
-                }
-                rectangle(name:"a2b", at:(64,40), size:(26,18), background-color:white, draw-contour){
-                    text("B", at:center)
-                }
-                connector(from:"a2a@right", to:"a2b@left", end-arrow:triangle(), stroke:2,
-                    flow:dots(count:3,size:1.2,period:3))
-            }
+        // Row 2: explicit sides
+        text("sides", position:(0,31), origin:top-left, font-size:1.8)
+        rectangle(name:"s2a", position:(9,30), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("A", at:center) }
+        rectangle(name:"s2b", position:(27,30), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("B", at:center) }
+        connector(from:"s2a@right", to:"s2b@left", end-arrow:triangle(), stroke:2)
+        rectangle(name:"a2a", position:(56,30), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("A", at:center) }
+        rectangle(name:"a2b", position:(74,30), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("B", at:center) }
+        connector(from:"a2a@right", to:"a2b@left", end-arrow:triangle(), stroke:2, flow:dots(count:3,size:1.2,period:3))
 
-            // Row 3: via points
-            miniPage{
-                text("static", at:(5,5), font-size:3)
-                rectangle(name:"s3a", at:(10,18), size:(24,16), background-color:white, draw-contour){
-                    text("A", at:center)
-                }
-                rectangle(name:"s3b", at:(66,66), size:(24,16), background-color:white, draw-contour){
-                    text("B", at:center)
-                }
-                connector("s3a", "s3b", via:((50,30),(50,70)), end-arrow:simple(), stroke:2)
-            }
-            miniPage{
-                text("animated", at:(5,5), font-size:3)
-                rectangle(name:"a3a", at:(10,18), size:(24,16), background-color:white, draw-contour){
-                    text("A", at:center)
-                }
-                rectangle(name:"a3b", at:(66,66), size:(24,16), background-color:white, draw-contour){
-                    text("B", at:center)
-                }
-                connector("a3a", "a3b", via:((50,30),(50,70)), end-arrow:simple(), stroke:2,
-                    flow:dots(count:3,size:1.2,period:3))
-            }
+        // Row 3: via points
+        text("via", position:(0,53), origin:top-left, font-size:1.8)
+        rectangle(name:"s3a", position:(9,52), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("A", at:center) }
+        rectangle(name:"s3b", position:(27,58), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("B", at:center) }
+        connector("s3a", "s3b", via:(24,59), end-arrow:simple(), stroke:2)
+        rectangle(name:"a3a", position:(56,52), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("A", at:center) }
+        rectangle(name:"a3b", position:(74,58), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("B", at:center) }
+        connector("a3a", "a3b", via:(71,59), end-arrow:simple(), stroke:2, flow:dots(count:3,size:1.2,period:3))
 
-            // Row 4: free points and mixed endpoints
-            miniPage{
-                text("static", at:(5,5), font-size:3)
-                rectangle(name:"s4", at:(10,22), size:(22,16), background-color:white, draw-contour){
-                    text("SRC", at:center)
-                }
-                connector(from:"s4", to:(88,30), end-arrow:simple(), stroke:2)
-                connector(from:(8,78), to:(92,78), start-arrow:simple(), end-arrow:simple(), stroke:2)
-            }
-            miniPage{
-                text("animated", at:(5,5), font-size:3)
-                rectangle(name:"a4", at:(10,22), size:(22,16), background-color:white, draw-contour){
-                    text("SRC", at:center)
-                }
-                connector(from:"a4", to:(88,30), end-arrow:simple(), stroke:2,
-                    flow:dots(count:3,size:1.2,period:3))
-                connector(from:(8,78), to:(92,78), start-arrow:simple(), end-arrow:simple(), stroke:2,
-                    flow:dots(count:2,size:1.2,period:3,reverse))
-            }
+        // Row 4: free and mixed points
+        text("free", position:(0,75), origin:top-left, font-size:1.8)
+        rectangle(name:"s4src", position:(9,74), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("SRC", at:center) }
+        connector("s4src", (38,78), end-arrow:simple(), stroke:2)
+        connector((10,84), (38,84), end-arrow:simple(), stroke:2)
+        rectangle(name:"a4src", position:(56,74), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("SRC", at:center) }
+        connector("a4src", (85,78), end-arrow:simple(), stroke:2, flow:dots(count:2,size:1.2,period:2))
+        connector((57,84), (85,84), end-arrow:simple(), stroke:2, flow:dots(count:3,size:1.2,period:3))
 
-        }
+        text("Static export uses elapsed 0; show mode animates the flow dots.", position:(9,94), origin:top-left, font-size:1.8)
     }
 }
