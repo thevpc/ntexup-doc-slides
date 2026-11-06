@@ -1,0 +1,2 @@
+#!/bin/bash
+nuts-dev -Zy ntexup ntxp main.ntx -o target/ntpx/

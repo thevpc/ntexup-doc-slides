@@ -1,0 +1,2 @@
+#!/bin/bash
+nuts-dev -Zy ntexup html-static main.ntx --html-standalone -o target/html-standalone/site.html
