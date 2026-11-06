@@ -1,0 +1,54 @@
+import("scoreboard")
+content-slide(title:"Scoreboard Extension",variant:6){
+    body{
+        grid(2, 1, columns-weight:[3, 2]){
+            // The live component. In the screen viewer the scores count up,
+            // bars grow and rows reorder themselves; in PDF it renders the
+            // final sorted ranking.
+            scoreboard(
+                title:"Cartoon Duo Challenge",
+                subtitle:"Final round · 7 teams",
+                theme:"dark",
+                duration:3,
+                stagger:0.09,
+                pulse:true,
+                icon:"../../images/image.png",
+                scores: [
+                    {name:"Tom",          sub-name:"And Jerry",          score:62.5},
+                    {name:"Rick",         sub-name:"And Morty",   score:49.0},
+                    {name:"Timon",       sub-name:"And Pumbaa",         score:79.5},
+                    {name:"Pinky",   sub-name:"And The Brain",    score:57.75},
+                    {name:"Fred Flintstone",        sub-name:"And Barney Rubble",      score:42.75},
+                    {name:"Snoopy", sub-name:"And Woodstock",   score:69.5},
+                    {name:"Tweety",      sub-name:"And Sylvester", score:74.25}
+                ]
+            )
+
+            col(rows-weight:[12, 52, 36]){
+                text("**One import, one list.**", font-size:2.2%P)
+                miniCodeNTexup(
+                """
+                import("scoreboard")
+
+                scoreboard(
+                    title: "Cartoon Duo Challenge",
+                    scores: [
+                        {name:"Tom", score:62.5},
+                        {name:"Rick", score:79.5},
+                        {name:"Timon", score:74.25}
+                    ]
+                )
+
+                // or: scoreboard(file: "scores.csv")
+                """
+                )
+                group(margin:2){
+                    text(
+                        "Also accepts inline CSV, TSON/JSON/YAML files, custom palettes and themes.",
+                        font-size:1.8%P
+                    )
+                }
+            }
+        }
+    }
+}
