@@ -15,5 +15,6 @@ agenda-slide(title:"Rationale"){
             •¶ Themable : uses a **CSS** like styling
             •¶ Composable : you can combine multiple components to build reusable components
             •¶ Portable: works across platforms and environments with minimal setup
+        }
     }
 }
