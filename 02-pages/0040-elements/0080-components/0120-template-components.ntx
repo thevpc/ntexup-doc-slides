@@ -1,6 +1,6 @@
 content-slide(title: "Built-in Template Components", variant: 4){
     body{
-        grid((2, 3), columns-weight: [1, 1, 1], rows-weight: [1, 1]){
+        grid((3, 3), columns-weight: [1, 1, 1], rows-weight: [1, 1, 1]){
             styles:{
                 "*": { margin: 2 }
             }
@@ -26,23 +26,34 @@ content-slide(title: "Built-in Template Components", variant: 4){
                      font-size: 2.2%P, font-italic)
             }
 
-            // 4. Callout: hint-info
+            // 4. Image figure with title and legend
+            image-fig(src: "../../../images/image.png", title: "Reusable figure", legend: "Title and legend stay with the image.", size: 45)
+
+            // 5. Callout: hint-info
             hint-info("Information Callout"){
                 text("Provides contextual tips and info blocks with semantic coloring.")
             }
 
-            // 5. Callout: hint-warning
+            // 6. Callout: hint-error
+            hint-error("Important Callout"){
+                text("Use the error style for blocking issues, failed checks, and data loss risks.")
+            }
+
+            // 7. Callout: hint-warning
             hint-warning("Warning Callout"){
                 text("Highlights cautions or critical notices with warning accent colors.")
             }
 
-            // 6. Panel (light canvas)
-            panel{
-                group(size: (100, 100)){
-                    text("Panel: Light Canvas", font-bold, color: "#1e293b",
-                         position: (50, 30), origin: center, font-size: 2.3%P)
-                    text("Warm ivory surface for diagrams & light content",
-                         color: "#64748b", position: (50, 65), origin: center, font-size: 1.8%P)
+            // 8. Callout: hint-success
+            hint-success("Success Callout"){
+                text("Confirms a completed migration, a passed check, or a healthy service.")
+            }
+
+            // 9. Panel (light canvas)
+            panel(title: "Panel: light canvas"){
+                group(size: (100, 70)){
+                    text("A neutral surface for diagrams and supporting details",
+                         color: documentTextSecondary, position: (50, 65), origin: center, font-size: 1.8%P)
                 }
             }
         }
