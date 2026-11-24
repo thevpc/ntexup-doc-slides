@@ -1,0 +1,34 @@
+content-slide(title: "Callout & Academic Components", variant: 4){
+    body3a{
+        styles{
+            "*": { margin: 1.5 }
+        }
+        kicker("DIVIDER")
+        divider(width: 80, thickness: 0.4)
+        callout(title: "Custom Callout", accentColor: documentColors[1], bgColor: documentSurfaceAlt){
+            text("Compose semantic emphasis with custom colors.")
+        }
+    }
+    body3b{
+        styles{
+            "*": { margin: 1.5 }
+        }
+        definition("Definition"){
+            text("States a precise term or concept.")
+        }
+        theorem("Theorem"){
+            text("Highlights a formal result or proposition.")
+        }
+    }
+    body3c{
+        styles{
+            "*": { margin: 1.5 }
+        }
+        example("Example"){
+            text("Shows a concrete application or worked case.")
+        }
+        remark("Remark"){
+            text("Adds a clarification or important side note.")
+        }
+    }
+}

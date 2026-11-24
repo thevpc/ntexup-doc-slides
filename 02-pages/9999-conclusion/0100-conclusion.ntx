@@ -1,0 +1,30 @@
+conclusion-slide(title: "Conclusion"){
+    body{
+        grid((3, 1), columns-weight: [1, 1, 1]){
+            styles{
+                "*": { margin: 2 }
+            }
+            card(accentColor: documentColors[0]){
+                kicker("DECLARATIVE")
+                ul{
+                    • "Describe slides in readable text"
+                    • "Compose layouts from reusable nodes"
+                }
+            }
+            card(accentColor: documentColors[1]){
+                kicker("REUSABLE")
+                ul{
+                    • "Share components and styles"
+                    • "Keep every slide visually consistent"
+                }
+            }
+            card(accentColor: documentColors[2]){
+                kicker("THEME-AWARE")
+                ul{
+                    • "Switch themes without rewriting pages"
+                    • "Render to slides, images, or PDF"
+                }
+            }
+        }
+    }
+}
