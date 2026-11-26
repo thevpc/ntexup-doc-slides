@@ -2,10 +2,10 @@ content-slide(title: "Salt Wireframes") {
     body {
         col(rows-weight: [6, 86, 8]) {
             sectionLabel("Diagrams")
-            grid((2, 2), columns-weight: [1, 1.55]) {
+            grid((2, 2), columns-weight: [1.5, 1], rows-weight: [1, 1.08]) {
                 demoPanel("Login form · grid and buttons") {
                     wireframe(
-                        size: (90, 30),
+                        size: (100, 100),
                         at: center,
                         """
                         {+
@@ -17,23 +17,21 @@ content-slide(title: "Salt Wireframes") {
                     )
                 }
                 sourcePanel(
-                    ```
-wireframe(size:(90,30), at:center,
+                    '''wireframe(size:(100,100), at:center,
 """
 {+
   Login    | "MyName   "
   Password | "****     "
   [Cancel] | [  OK   ]
 }
-""")
-```,
+""")''',
                     title: "Wireframe · complete example",
-                    fontSize: 2.2%P
+                    fontSize: 1.75%P
                 )
 
                 demoPanel("Preferences · tabs, group, and controls") {
                     wireframe(
-                        size: (90, 30),
+                        size: (100, 100),
                         at: center,
                         """
                         {+
@@ -50,8 +48,7 @@ wireframe(size:(90,30), at:center,
                     )
                 }
                 sourcePanel(
-                    ```
-wireframe(size:(90,30), at:center,
+                    '''wireframe(size:(100,100), at:center,
 """
 {+
 {/ <b>General | Fullscreen | Behavior | Saving }
@@ -63,10 +60,9 @@ wireframe(size:(90,30), at:center,
 }
 [Close]
 }
-""")
-```,
+""")''',
                     title: "Wireframe · complete example",
-                    fontSize: 2.1%P
+                    fontSize: 1.5%P
                 )
             }
             pageNote("An outer { ... } block is required; {+ ... } adds the bordered grid used here. {/ starts tabs, | columns, and ^...^ a drop-down.")

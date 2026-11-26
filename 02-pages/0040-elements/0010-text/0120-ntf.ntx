@@ -7,36 +7,39 @@ content-slide(title:"NTF format", section:"Text & rich content"){
         {
             styles{
                 "*": {margin:1}
+                ntf{ source-primary-color:documentColors }
             }
             miniPage{
                 ntf("""
                     #) Heading 1
                     ##) Heading 2
                     ###) Heading 3
-                """, font-size:3.4%P)
+                """, font-size:3%P)
             }
             miniCodeNTexup(```
                 ntf("""
                     #) Heading 1
                     ##) Heading 2
                     ###) Heading 3
-                """, font-size:3.4%P)
-            ```, fontSize:2.3%P)
+                """, font-size:3%P)
+            ```, fontSize:2.1%P)
 
             miniPage{
                 ntf("""
-                    ##:p1 color 1## ##:p2 color 2##
-                    ##:p3 color 3## ##:p10 color 4##
-                    ##:/ italic##   ##:info hint##
-                """, font-size:3.2%P)
+                    ##:p1: Blue##  ##:p2: Violet##
+                    ##:p3: Emerald##  ##:p4: Amber##
+                    ##:p10: Fuchsia##  ##:/: Italic##
+                    ##:info: Info##
+                """, font-size:2.8%P)
             }
             miniCodeNTexup(```
                 ntf("""
-                    ##:p1 color 1## ##:p2 color 2##
-                    ##:p3 color 3## ##:p10 color 4##
-                    ##:/ italic##   ##:info hint##
-                """, font-size:3.2%P)
-            ```, fontSize:2.3%P)
+                    ##:p1: Blue##  ##:p2: Violet##
+                    ##:p3: Emerald##  ##:p4: Amber##
+                    ##:p10: Fuchsia##  ##:/: Italic##
+                    ##:info: Info##
+                """, font-size:2.8%P)
+            ```, fontSize:2.0%P)
         }
     }
 }

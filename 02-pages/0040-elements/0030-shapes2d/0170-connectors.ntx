@@ -18,21 +18,21 @@ content-slide(title:"Connectors — endpoints", section:"2D graphics"){
                 """, title:"Connector excerpt")
             }
             col(rows-weight:[62, 38]){
-                demoPanel("Explicit sides"){
+                demoPanel("Edge & radial anchors"){
                     rectangle(name:"a2", position:(8, 32), origin:top-left, size:(30, 26), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
                         text("API", at:center, font-size:2.6%P, font-bold)
                     }
                     rectangle(name:"b2", position:(64, 32), origin:top-left, size:(30, 26), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
                         text("DB", at:center, font-size:2.6%P, font-bold)
                     }
-                    connector(from:"a2@right", to:"b2@left", end-arrow:triangle-full(), stroke:2, color:documentColors[0])
+                    connector(from:"a2@right(20)", to:"b2@radial(270)", end-arrow:triangle-full(), stroke:2, color:documentColors[0])
                 }
                 sourcePanel("""
                     connector(
-                        from: "a2@right",
-                        to: "b2@left",
+                        from: "a2@right(20)",
+                        to: "b2@radial(270)",
                         end-arrow: triangle-full())
-                """, title:"Connector excerpt")
+                """, title:"Edge % and radial angle")
             }
             col(rows-weight:[62, 38]){
                 demoPanel("Waypoints"){

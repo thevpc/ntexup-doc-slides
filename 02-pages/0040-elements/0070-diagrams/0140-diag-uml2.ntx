@@ -2,12 +2,13 @@ content-slide(title: "UML Class Diagrams") {
     body {
         col(rows-weight: [6, 86, 8]) {
             sectionLabel("Diagrams")
-            grid((2, 2), columns-weight: [1, 1.55]) {
+            grid((2, 2), columns-weight: [1.5, 1], rows-weight: [1, 1.12]) {
                 demoPanel("Inheritance and interface realization") {
                     uml(
                         at: center,
-                        size: (100, 50),
+                        size: (100, 100),
                         """
+                        left to right direction
                         Object <|-- ArrayList
                         List <|.. ArrayList
                         interface List
@@ -18,26 +19,26 @@ content-slide(title: "UML Class Diagrams") {
                     )
                 }
                 sourcePanel(
-                    ```
-uml(at:center, size:(100,50),
+                    '''uml(at:center, size:(100,100),
 """
+left to right direction
 Object <|-- ArrayList
 List <|.. ArrayList
 interface List
 Object : equals()
 ArrayList : Object[] elementData
 ArrayList : size()
-""")
-```,
+""")''',
                     title: "Class diagram · complete example",
-                    fontSize: 2.1%P
+                    fontSize: 1.7%P
                 )
 
                 demoPanel("Repository injection and composition") {
                     uml(
                         at: center,
-                        size: (100, 50),
+                        size: (100, 100),
                         """
+                        left to right direction
                         interface Repository
                         class UserService {
                           -repository : Repository
@@ -52,9 +53,9 @@ ArrayList : size()
                     )
                 }
                 sourcePanel(
-                    ```
-uml(at:center, size:(100,50),
+                    '''uml(at:center, size:(100,100),
 """
+left to right direction
 interface Repository
 class UserService {
   -repository : Repository
@@ -65,10 +66,9 @@ class User
 Repository <|.. DatabaseRepository
 UserService o-- Repository
 UserService --> User
-""")
-```,
+""")''',
                     title: "Class diagram · fields and operations",
-                    fontSize: 2.1%P
+                    fontSize: 1.55%P
                 )
             }
             pageNote("<|-- inheritance; <|.. realization; o-- composition. Members show visibility, name, and type.")

@@ -1,6 +1,6 @@
 content-slide(title:"Source Code", section:"Text & rich content"){
     body{
-        sectionLabel("Highlighted, readable, reproducible")
+        sectionLabel("Light previews · C++, Scala, and verified language ids")
         grid(2, 4,
             position:(0, 8), size:(100, 86), origin:top-left,
             columns-weight:[1, 1.7])
@@ -9,6 +9,20 @@ content-slide(title:"Source Code", section:"Text & rich content"){
                 "*": {margin:1}
             }
             miniPage{
+                styles{
+                    source{
+                        background-color:documentBg
+                        color:documentTextPrimary
+                        draw-contour:false
+                        padding:0
+                        source-keyword-color:documentColors[5]
+                        source-entity-color:documentColors[0]
+                        source-string-color:documentColors[2]
+                        source-number-color:documentColors[3]
+                        source-operator-color:documentTextSecondary
+                        source-comments-color:documentTextMuted
+                    }
+                }
                 source(java
                     """
                         public class MyClass {
@@ -17,7 +31,7 @@ content-slide(title:"Source Code", section:"Text & rich content"){
                             }
                         }
                     """
-                    at:top-left, font-size:2.4%P
+                    at:top-left, font-size:2%P
                 )
             }
             miniCodeNTexup(```
@@ -27,64 +41,112 @@ content-slide(title:"Source Code", section:"Text & rich content"){
                             return 10 + b;
                         }
                     }
-                """, at:top-left, font-size:2.4%P)
-            ```, fontSize:2.1%P)
+                """, at:top-left, font-size:2%P)
+            ```, fontSize:1.75%P)
 
             miniPage{
-                source(sql
+                styles{
+                    source{
+                        background-color:documentBg
+                        color:documentTextPrimary
+                        draw-contour:false
+                        padding:0
+                        source-keyword-color:documentColors[5]
+                        source-entity-color:documentColors[0]
+                        source-string-color:documentColors[2]
+                        source-number-color:documentColors[3]
+                        source-operator-color:documentTextSecondary
+                        source-comments-color:documentTextMuted
+                    }
+                }
+                source(cpp
                     """
-                        SELECT *
-                        FROM Tab
-                        WHERE 1 = 1
+                        #include <iostream>
+                        int main() {
+                            std::cout << "Hello C++";
+                        }
                     """
-                    at:top-left, font-size:2.6%P
+                    at:top-left, font-size:2.2%P
                 )
             }
             miniCodeNTexup(```
-                source(sql """
-                    SELECT *
-                    FROM Tab
-                    WHERE 1 = 1
-                """, at:top-left, font-size:2.6%P)
-            ```, fontSize:2.2%P)
+                source(cpp """
+                    #include <iostream>
+                    int main() {
+                        std::cout << "Hello C++";
+                    }
+                """, at:top-left, font-size:2.2%P)
+            ```, fontSize:1.85%P)
 
             miniPage{
-                source(xml
+                styles{
+                    source{
+                        background-color:documentBg
+                        color:documentTextPrimary
+                        draw-contour:false
+                        padding:0
+                        source-keyword-color:documentColors[5]
+                        source-entity-color:documentColors[0]
+                        source-string-color:documentColors[2]
+                        source-number-color:documentColors[3]
+                        source-operator-color:documentTextSecondary
+                        source-comments-color:documentTextMuted
+                    }
+                }
+                source(scala
                     """
-                        <a value="text">
-                          <b value="text"></b>
-                        </a>
+                        object Hello {
+                            def main(args: Array[String]): Unit =
+                                println("Hello Scala")
+                        }
                     """
-                    at:top-left, font-size:2.6%P
+                    at:top-left, font-size:2.1%P
                 )
             }
             miniCodeNTexup(```
-                source(xml """
-                    <a value="text">
-                      <b value="text"></b>
-                    </a>
-                """, at:top-left, font-size:2.6%P)
-            ```, fontSize:2.2%P)
+                source(scala """
+                    object Hello {
+                        def main(args: Array[String]): Unit =
+                            println("Hello Scala")
+                    }
+                """, at:top-left, font-size:2.1%P)
+            ```, fontSize:1.85%P)
 
-            demoPanel("Verified language ids"){
+            miniPage{
+                styles{
+                    source{
+                        background-color:documentBg
+                        color:documentTextPrimary
+                        draw-contour:false
+                        padding:0
+                        source-keyword-color:documentColors[5]
+                        source-entity-color:documentColors[0]
+                        source-string-color:documentColors[2]
+                        source-number-color:documentColors[3]
+                        source-operator-color:documentTextSecondary
+                        source-comments-color:documentTextMuted
+                    }
+                }
                 source(text
                     """
-                        text, plain, java
-                        cpp, csharp, xml, html
-                        json, sql, bash, fish, cmd
-                        ntf, tson, ntexup
+                        Verified: C++ = cpp, Scala = scala
+                        text, plain, java, cpp, csharp, scala
+                        python, js, ts, rust, go, kotlin, swift
+                        xml, json, sql, yaml, toml, markdown
+                        bash, fish, cmd, ntf, tson, ntexup
                     """
-                    at:top-left, font-size:2.4%P
+                    at:top-left, font-size:1.45%P
                 )
             }
             miniCodeNTexup(```
                 source(text """
-                    text, plain, java
-                    cpp, csharp, xml, html
-                    json, sql, bash, fish, cmd
-                    ntf, tson, ntexup
-                """, at:top-left, font-size:2.4%P)
-            ```, fontSize:2.1%P)
+                    Verified: C++ = cpp, Scala = scala
+                    text, plain, java, cpp, csharp, scala
+                    python, js, ts, rust, go, kotlin, swift
+                    xml, json, sql, yaml, toml, markdown
+                    bash, fish, cmd, ntf, tson, ntexup
+                """, at:top-left, font-size:1.45%P)
+            ```, fontSize:1.55%P)
         }
     }
 }

@@ -1,6 +1,6 @@
 content-slide(title:"Simple Text", section:"Text & rich content"){
     body{
-        sectionLabel("plain() · literal text without markup")
+        sectionLabel("¶ / ¶¶ / plain() · literal text without markup")
         grid(2, 4,
             position:(0, 8), size:(100, 86), origin:top-left,
             columns-weight:[1, 1.6])
@@ -9,46 +9,42 @@ content-slide(title:"Simple Text", section:"Text & rich content"){
                 "*": {margin:1}
             }
             miniPage{
-                plain("Hello World", font-size:6%P)
+                ¶ Hello World
             }
             miniCodeNTexup("""
-                plain("Hello World", font-size:6%P)
-            """, fontSize:2.4%P)
+                ¶ Hello World
+            """, fontSize:2.2%P)
 
             miniPage{
-                plain("Hello World", font-italic, font-size:6%P)
+                ¶¶ Hello
+                ¶¶ World
+            }
+            miniCodeNTexup("""
+                ¶¶ Hello
+                ¶¶ World
+            """, fontSize:2.2%P)
+
+            miniPage{
+                plain("Hello World", font-italic, font-size:5%P)
             }
             miniCodeNTexup("""
                 plain("Hello World",
-                      font-italic, font-size:6%P)
-            """, fontSize:2.4%P)
-
-            miniPage{
-                plain("""
-                    Hello
-                    World
-                """, font-bold, font-size:6%P)
-            }
-            miniCodeNTexup(```
-                plain("""
-                    Hello
-                    World
-                """, font-bold, font-size:6%P)
-            ```, fontSize:2.3%P)
+                      font-italic, font-size:5%P)
+            """, fontSize:2.1%P)
 
             miniPage{
                 plain("""
                     Hello  World
                     This    Is    Me
-                """, font-family:monospaced, font-size:4%P)
+                """, font-family:monospaced, font-size:3.4%P)
             }
             miniCodeNTexup(```
                 plain("""
                     Hello  World
                     This    Is    Me
                 """, font-family:monospaced,
-                   font-size:4%P)
-            ```, fontSize:2.3%P)
+                   font-size:3.4%P)
+            ```, fontSize:2.0%P)
         }
     }
 }

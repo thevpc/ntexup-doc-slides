@@ -1,66 +1,63 @@
-content-slide(title:"Latex Equations", section:"Text & rich content"){
+content-slide(title:"LaTeX Equations", section:"Text & rich content"){
     body{
         sectionLabel("Standalone, Unicode, and inline equations")
         grid(2, 4,
             position:(0, 8), size:(100, 86), origin:top-left,
-            columns-weight:[1, 1.7])
+            columns-weight:[1, 1.7],
+            rows-weight:[1, 1, 1, 1.25])
         {
             styles{
                 "*": {margin:1}
             }
             miniPage{
                 eq("X^2=\sin(\pi x)",
-                   at:center, draw-contour:false, font-size:4%P)
+                   at:center, draw-contour:false, font-size:3.4%P)
             }
             miniCodeNTexup("""
                 eq("X^2=\sin(\pi x)",
                    at:center, draw-contour:false,
-                   font-size:4%P)
-            """, fontSize:2.3%P)
+                   font-size:3.4%P)
+            """, fontSize:1.9%P)
 
             miniPage{
                 eq("X²=\sin(πx)",
-                   at:center, draw-contour:false, font-size:4%P)
+                   at:center, draw-contour:false, font-size:3.4%P)
             }
             miniCodeNTexup("""
                 eq("X²=\sin(πx)",
                    at:center, draw-contour:false,
-                   font-size:4%P)
-            """, fontSize:2.3%P)
+                   font-size:3.4%P)
+            """, fontSize:1.9%P)
 
             miniPage{
                 text("[[eq: X^2=\cos(\pi x)]]",
-                     at:center, font-size:4%P,
+                     at:center, font-size:3.4%P,
                      color:documentTextPrimary)
             }
             miniCodeNTexup("""
                 text("[[eq: X^2=\cos(\pi x)]]",
-                     at:center, font-size:4%P,
+                     at:center, font-size:3.4%P,
                      color:documentTextPrimary)
-            """, fontSize:2.3%P)
+            """, fontSize:1.9%P)
 
             miniPage{
                 text("""
-                    ##Equation 1 (superscript)## =
+                    ## Equation 1 ##
                     [[eq: X²=\sin(πx) ]]
-                    ###Equation 2### =
-                    [[eq: X^2=\sin \left( \pi x \right) ]]
-                    ####Equation 3#### =
-                    [[eq: X^2=\sin(x) ]]
-                """, at:top-left, font-size:2.6%P,
+                    ### Equation 2 ###
+                    [[eq: X^2=\sin(\pi x) ]]
+                """, at:top-left, font-size:2.3%P,
                    color:documentTextPrimary)
             }
             miniCodeNTexup(```
                 text("""
-                    ##Equation 1 (superscript)## =
+                    ## Equation 1 ##
                     [[eq: X²=\sin(πx) ]]
-                    ###Equation 2### =
-                    [[eq: X^2=\sin \left( \pi x \right) ]]
-                    ####Equation 3#### =
-                    [[eq: X^2=\sin(x) ]]
-                """, at:top-left, font-size:2.6%P,
+                    ### Equation 2 ###
+                    [[eq: X^2=\sin(\pi x) ]]
+                """, at:top-left, font-size:2.3%P,
                    color:documentTextPrimary)
-            ```, fontSize:2.2%P)
+            ```, fontSize:1.55%P)
         }
     }
 }

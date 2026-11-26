@@ -8,85 +8,77 @@ content-slide(title:"Margins", section:"Layout & styling"){
             demoPanel("Uniform margin · 10"){
                 styles{
                     rectangle{
-                        size:(16,16),
-                        background-color:documentColors[4],
-                        color:documentColors[2], draw-contour
+                        size:(24,20),
+                        background-color:documentColors[4]
                     }
                 }
                 rectangle(at:top, margin:10)
-                rectangle(at:left, margin:10)
-                rectangle(at:bottom, margin:10)
                 rectangle(at:right, margin:10)
             }
             sourcePanel("""
+                styles{
+                  rectangle{size:(24,20),background-color:documentColors[4]}
+                }
                 rectangle(at:top, margin:10)
-                rectangle(at:left, margin:10)
-                rectangle(at:bottom, margin:10)
                 rectangle(at:right, margin:10)
-            """, title:"Four anchors · shared size/fill omitted", fontSize:2.1%P)
+            """, title:"Top and right anchors", fontSize:1.8%P)
 
             demoPanel("Uniform margin · 20"){
                 styles{
                     rectangle{
-                        size:(16,16),
-                        background-color:documentColors[4],
-                        color:documentColors[2], draw-contour
+                        size:(24,20),
+                        background-color:documentColors[4]
                     }
                 }
-                rectangle(at:top, margin:20)
                 rectangle(at:left, margin:20)
                 rectangle(at:bottom, margin:20)
-                rectangle(at:right, margin:20)
             }
             sourcePanel("""
-                rectangle(at:top, margin:20)
+                styles{
+                  rectangle{size:(24,20),background-color:documentColors[4]}
+                }
                 rectangle(at:left, margin:20)
                 rectangle(at:bottom, margin:20)
-                rectangle(at:right, margin:20)
-            """, title:"Four anchors · shared size/fill omitted", fontSize:2.1%P)
+            """, title:"Left and bottom anchors", fontSize:1.8%P)
 
             demoPanel("Two-value margin · (5,30)"){
                 styles{
                     rectangle{
-                        size:(16,16),
-                        background-color:documentColors[4],
-                        color:documentColors[2], draw-contour
+                        size:(24,20),
+                        background-color:documentColors[4]
                     }
                 }
                 rectangle(at:top, margin:(5,30))
                 rectangle(at:left, margin:(5,30))
-                rectangle(at:bottom, margin:(5,30))
-                rectangle(at:right, margin:(5,30))
             }
             sourcePanel("""
+                styles{
+                  rectangle{size:(24,20),background-color:documentColors[4]}
+                }
                 rectangle(at:top, margin:(5,30))
                 rectangle(at:left, margin:(5,30))
-                rectangle(at:bottom, margin:(5,30))
-                rectangle(at:right, margin:(5,30))
-            """, title:"Four anchors · shared size/fill omitted", fontSize:2.1%P)
+            """, title:"Horizontal and vertical spacing", fontSize:1.8%P)
 
             demoPanel("Four-value margin · (5,30,0,0)"){
                 styles{
                     rectangle{
-                        size:(16,16),
-                        background-color:documentColors[4],
-                        color:documentColors[2], draw-contour
+                        size:(24,20),
+                        background-color:documentColors[4]
                     }
                 }
-                rectangle(at:top, margin:(5,30,0,0))
-                rectangle(at:left, margin:(5,30,0,0))
                 rectangle(at:bottom, margin:(5,30,0,0))
                 rectangle(at:right, margin:(5,30,0,0))
             }
             sourcePanel("""
-                rectangle(at:top, margin:(5,30,0,0))
-                rectangle(at:left, margin:(5,30,0,0))
+                styles{
+                  rectangle{size:(24,20),background-color:documentColors[4]}
+                }
                 rectangle(at:bottom, margin:(5,30,0,0))
                 rectangle(at:right, margin:(5,30,0,0))
-            """, title:"Four anchors · shared size/fill omitted", fontSize:2.1%P)
+            """, title:"Top, bottom, left, right", fontSize:1.8%P)
         }
         group(position:(0, 95), size:(100, 5), origin:top-left){
-            pageNote("Tuple margins are (horizontal, vertical) or (top, bottom, left, right).")
+            pageNote("Two anchors per card cover all sides; tuple margins are (horizontal, vertical) or (top, bottom, left, right).")
         }
     }
 }

@@ -7,69 +7,69 @@ content-slide(title:"Sizes", section:"Layout & styling"){
         {
             miniPage{
                 rectangle(at:center,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(at:center)
-            """)
+                rectangle(at:center,
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(at:center, size:(40,30),
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(at:center, size:(55,45),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(at:center, size:(40,30))
-            """)
+                rectangle(at:center, size:(55,45),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(at:center, size:40,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(at:center, size:60,
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(at:center, size:40)
-            """)
+                rectangle(at:center, size:60,
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(at:center, size:30,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(at:center, size:45,
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(at:center, size:30)
-            """)
+                rectangle(at:center, size:45,
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(at:center, size:20,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(at:center, size:32,
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(at:center, size:20)
-            """)
+                rectangle(at:center, size:32,
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(at:center, size:(20,40),
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(at:center, size:(30,55),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(at:center, size:(20,40))
-            """)
+                rectangle(at:center, size:(30,55),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(at:center, size:6%P,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(at:center, size:(12%P,6%P),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(at:center, size:6%P)
-            """)
+                rectangle(at:center, size:(12%P,6%P),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
         }
         group(position:(0, 95), size:(100, 5), origin:top-left){
-            pageNote("Bare sizes are points; %P is page-relative and is chosen here to fit inside the card.")
+            pageNote("Bare sizes are points; plain tuples are container-relative and %P is page-relative.")
         }
     }
 }

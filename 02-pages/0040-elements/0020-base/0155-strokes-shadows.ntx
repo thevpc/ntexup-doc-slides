@@ -6,67 +6,63 @@ content-slide(title:"Strokes & Shadows", section:"Layout & styling"){
             columns-weight:[1, 1.8])
         {
             demoPanel("Dashed contour"){
-                rectangle(at:center, size:(60,25),
-                    background-color:documentColors[4],
+                rectangle(at:center, size:(70,35),
+                    background-color:documentBg,
                     draw-contour, line-color:documentColors[0],
-                    stroke:dashed)
+                    stroke:basic(width:2, dash:[10,5], cap:round))
             }
             sourcePanel("""
-                rectangle(at:center, size:(60,25),
-                  background-color:documentColors[4],
-                  draw-contour,
-                  line-color:documentColors[0],
-                  stroke:dashed)
-            """, fontSize:2.1%P)
+                rectangle(at:center, size:(70,35),
+                  background-color:documentBg,
+                  draw-contour, line-color:documentColors[0],
+                  stroke:basic(width:2, dash:[10,5], cap:round))
+            """, title:"", fontSize:2%P)
 
             demoPanel("Custom width and dash"){
-                rectangle(at:center, size:(60,25),
-                    background-color:documentColors[4],
+                rectangle(at:center, size:(70,35),
+                    background-color:documentSurfaceAlt,
                     draw-contour, line-color:documentColors[1],
-                    stroke:basic(width:2,
-                        dash:[8,4], cap:round))
+                    stroke:basic(width:2.5, dash:[4,4], cap:round))
             }
             sourcePanel("""
-                rectangle(at:center, size:(60,25),
-                  background-color:documentColors[4],
-                  draw-contour,
-                  line-color:documentColors[1],
-                  stroke:basic(width:2,
-                    dash:[8,4], cap:round))
-            """, fontSize:2.1%P)
+                rectangle(at:center, size:(70,35),
+                  background-color:documentSurfaceAlt,
+                  draw-contour, line-color:documentColors[1],
+                  stroke:basic(width:2.5, dash:[4,4], cap:round))
+            """, title:"", fontSize:2%P)
 
             demoPanel("Shadow with visible contour"){
-                rectangle(at:center, size:(55,22),
+                rectangle(at:center, size:(60,30),
                     background-color:documentColors[0],
-                    draw-contour, line-color:white,
-                    shadow:{distance:(4,4),
-                        radius:6, color:gray})
+                    draw-contour, line-color:white, stroke:2,
+                    shadow:{distance:(4,4), radius:6,
+                        color:"#64748b"})
             }
             sourcePanel("""
-                rectangle(at:center, size:(55,22),
+                rectangle(at:center, size:(60,30),
                   background-color:documentColors[0],
-                  draw-contour, line-color:white,
-                  shadow:{distance:(4,4),
-                    radius:6, color:gray})
-            """, fontSize:2.1%P)
+                  draw-contour, line-color:white, stroke:2,
+                  shadow:{distance:(4,4), radius:6,
+                    color:"#64748b"})
+            """, title:"", fontSize:2%P)
 
             demoPanel("Text shadow"){
                 text("Elevated Text", font-bold,
-                    at:center, font-size:3%P,
+                    at:center, font-size:3.2%P,
                     color:documentColors[1],
-                    shadow:{distance:(3,3),
-                        radius:4, color:gray})
+                    shadow:{distance:(2,2), radius:3,
+                        color:"#94a3b8"})
             }
             sourcePanel("""
                 text("Elevated Text", font-bold,
-                  at:center, font-size:3%P,
+                  at:center, font-size:3.2%P,
                   color:documentColors[1],
-                  shadow:{distance:(3,3),
-                    radius:4, color:gray})
-            """, fontSize:2.1%P)
+                  shadow:{distance:(2,2), radius:3,
+                    color:"#94a3b8"})
+            """, title:"", fontSize:2%P)
         }
         group(position:(0, 95), size:(100, 5), origin:top-left){
-            pageNote("Contours require draw-contour; line-color paints the stroke and font-size controls text shadows.")
+            pageNote("Use a light surface with dark dashes; contours require draw-contour.")
         }
     }
 }

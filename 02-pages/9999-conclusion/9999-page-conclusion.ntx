@@ -1,1 +1,24 @@
-thankyou-slide(title:"Thank you", subtitle:"Readable source. Precise layout. Portable output.")
+thankyou-slide(title:"Thank you", subtitle:"Readable source. Precise layout. Portable output."){
+    styles{
+        @thankyou-kicker{
+            font-size: 1.9%P
+            position: (8, 23)
+        }
+        @thankyou-title{
+            font-size: 6.2%P
+            position: (8, 35)
+        }
+        @thankyou-subtitle{
+            font-size: 2.6%P
+            position: (8, 49)
+        }
+        @thankyou-author{
+            font-size: 2.4%P
+            position: (8, 72)
+        }
+        @thankyou-email{
+            font-size: 2.0%P
+            position: (8, 78)
+        }
+    }
+}

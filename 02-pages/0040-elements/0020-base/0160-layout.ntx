@@ -2,103 +2,64 @@ content-slide(title:"Layout", section:"Layout & styling"){
     body{
         sectionLabel("Base elements · groups and weighted grids")
         grid(2, 3,
-            position:(0, 7), size:(100, 86), origin:top-left,
-            columns-weight:[1, 1.8],
-            rows-weight:[1.2, 1.4, 1.4])
+            position:(0, 7), size:(100, 88), origin:top-left,
+            columns-weight:[1, 3])
         {
             demoPanel("Group · two placed shapes"){
                 group{
-                    rectangle(at:top, size:(50,50),
-                        background-color:documentColors[4],
-                        color:documentColors[2], draw-contour,
-                        margin:10)
-                    triangle(at:left, size:(50,50),
-                        background-color:documentColors[5],
-                        color:documentColors[0], draw-contour,
-                        margin:10)
+                    rectangle(at:top, size:(55,55), margin:8,
+                        background-color:documentColors[4])
+                    triangle(at:left, size:(55,55), margin:8,
+                        background-color:documentColors[5])
                 }
             }
             miniCodeNTexup("""
                 group{
-                  rectangle(at:top, size:(50,50),
-                    background-color:documentColors[4],
-                    color:documentColors[2], draw-contour,
-                    margin:10)
-                  triangle(at:left, size:(50,50),
-                    background-color:documentColors[5],
-                    color:documentColors[0], draw-contour,
-                    margin:10)
+                  rectangle(at:top,size:(55,55),margin:8,background-color:documentColors[4])
+                  triangle(at:left,size:(55,55),margin:8,background-color:documentColors[5])
                 }
-            """, fontSize:2.1%P)
+            """, fontSize:1.7%P)
 
             demoPanel("Grid · shapes and text"){
                 grid(2, 2){
-                    rectangle(at:top, size:(50,50),
-                        background-color:documentColors[4],
-                        color:documentColors[2], draw-contour,
-                        margin:10)
-                    triangle(at:left, size:(50,50),
-                        background-color:documentColors[5],
-                        color:documentColors[0], draw-contour,
-                        margin:10)
+                    rectangle(at:top, size:(55,55), margin:8,
+                        background-color:documentColors[4])
+                    triangle(at:left, size:(55,55), margin:8,
+                        background-color:documentColors[5])
                     "Hello"
                 }
             }
             miniCodeNTexup("""
-                grid(2, 2){
-                  rectangle(at:top, size:(50,50),
-                    background-color:documentColors[4],
-                    color:documentColors[2], draw-contour,
-                    margin:10)
-                  triangle(at:left, size:(50,50),
-                    background-color:documentColors[5],
-                    color:documentColors[0], draw-contour,
-                    margin:10)
+                grid(2,2){
+                  rectangle(at:top,size:(55,55),margin:8,background-color:documentColors[4])
+                  triangle(at:left,size:(55,55),margin:8,background-color:documentColors[5])
                   "Hello"
                 }
-            """, fontSize:2.1%P)
+            """, fontSize:1.7%P)
 
-            demoPanel("Weighted grid · repeated pair"){
-                grid(3, 2,
-                    columns-weight:[1,4],
-                    rows-weight:[1,4])
-                {
-                    rectangle(background-color:documentColors[4],
-                        color:documentColors[2], draw-contour,
-                        margin:10)
-                    triangle(background-color:documentColors[5],
-                        color:documentColors[0], draw-contour,
-                        margin:10)
-                    rectangle(background-color:documentColors[4],
-                        color:documentColors[2], draw-contour,
-                        margin:10)
-                    triangle(background-color:documentColors[5],
-                        color:documentColors[0], draw-contour,
-                        margin:10)
-                    rectangle(background-color:documentColors[4],
-                        color:documentColors[2], draw-contour,
-                        margin:10)
-                    triangle(background-color:documentColors[5],
-                        color:documentColors[0], draw-contour,
-                        margin:10)
+            demoPanel("Weighted grid · child weights"){
+                grid(3, 2){
+                    for(i:[1 -> 3]){
+                        rectangle(grid-weight:1, margin:8,
+                            background-color:documentColors[4])
+                        triangle(grid-weight:4, margin:8,
+                            background-color:documentColors[5])
+                    }
                 }
             }
             miniCodeNTexup("""
-                grid(3, 2,
-                  columns-weight:[1,4],
-                  rows-weight:[1,4]){
-                  rectangle(margin:10, draw-contour,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
-                  triangle(margin:10, draw-contour,
-                    background-color:documentColors[5],
-                    color:documentColors[0])
-                  // Repeat this pair three times.
+                grid(3,2){
+                  for(i:[1 -> 3]){
+                    rectangle(grid-weight:1,margin:8,
+                      background-color:documentColors[4])
+                    triangle(grid-weight:4,margin:8,
+                      background-color:documentColors[5])
+                  }
                 }
-            """, fontSize:2.1%P)
+            """, fontSize:1.6%P)
         }
-        group(position:(0, 95), size:(100, 5), origin:top-left){
-            pageNote("Margins stay outside each shape; contrasting contours keep fills and edges distinct.")
+        group(position:(0, 96), size:(100, 4), origin:top-left){
+            pageNote("Fills keep layout legible; triangles omit draw-contour to avoid the engine bounds overlay.")
         }
     }
 }

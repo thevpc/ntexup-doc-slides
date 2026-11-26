@@ -1,98 +1,79 @@
 content-slide(title:"Other Shapes", section:"2D graphics"){
     body{
         sectionLabel("2D graphics · arrows and pseudo-3D solids")
-        grid(4, 2,
-            position:(0, 7), size:(100, 86), origin:top-left,
-            columns-weight:[1, 2.2])
+        grid(2, 4,
+            position:(0, 6), size:(100, 88), origin:top-left,
+            columns-weight:[1, 2.4])
         {
             demoPanel("Directional arrow"){
-                arrow(at:center, color:documentColors[2],
-                    rotate:-45)
+                arrow(at:center, size:(55,65),
+                    color:documentColors[2], rotate:-45)
             }
             sourcePanel("""
-                arrow(at:center,
+                arrow(at:center, size:(55,65),
                   color:documentColors[2], rotate:-45)
-            """, fontSize:2.1%P)
+            """, title:"", fontSize:1.9%P)
 
             demoPanel("Cylinder segments"){
-                cylinder(origin:center, position:(50,20),
-                    size:(30,25), stroke:5, ellipse-height:20,
+                styles{
+                    cylinder{
+                        size:(40,45), stroke:1.2, ellipse-height:25
+                    }
+                }
+                cylinder(origin:center, position:(50,30),
                     segment-count:5,
                     background-color:documentColors[0])
-                cylinder(origin:center, position:(50,50),
-                    size:(30,25), stroke:5, ellipse-height:20,
+                cylinder(origin:center, position:(50,75),
                     segment-count:3,
                     background-color:documentColors[3])
-                cylinder(origin:center, position:(50,80),
-                    size:(30,25), stroke:5, ellipse-height:20,
-                    background-color:documentColors[4])
             }
             sourcePanel("""
-                cylinder(origin:center, position:(50,20),
-                  size:(30,25), stroke:5, ellipse-height:20,
-                  segment-count:5,
+                styles{cylinder{size:(40,45),stroke:1.2,ellipse-height:25}}
+                cylinder(origin:center, position:(50,30),segment-count:5,
                   background-color:documentColors[0])
-                cylinder(origin:center, position:(50,50),
-                  size:(30,25), stroke:5, ellipse-height:20,
-                  segment-count:3,
+                cylinder(origin:center, position:(50,75),segment-count:3,
                   background-color:documentColors[3])
-                cylinder(origin:center, position:(50,80),
-                  size:(30,25), stroke:5, ellipse-height:20,
-                  background-color:documentColors[4])
-            """, fontSize:2.1%P)
+            """, title:"", fontSize:1.6%P)
 
             demoPanel("Donut radii and angles"){
-                donut(origin:center, position:(50,15),
-                    size:40, stroke:5,
-                    background-color:documentColors[0],
-                    inner-radius:50, start-angle:0,
-                    extent-angle:270)
-                donut(origin:center, position:(50,45),
-                    size:40, stroke:5,
-                    background-color:documentColors[3],
-                    inner-radius:30)
+                styles{
+                    donut{size:42, stroke:2}
+                }
+                donut(origin:center, position:(50,30),
+                    inner-radius:50, extent-angle:270,
+                    background-color:documentColors[0])
                 donut(origin:center, position:(50,75),
-                    size:40, stroke:5,
-                    background-color:documentColors[4],
-                    inner-radius:80)
-            }
-            sourcePanel("""
-                donut(origin:center, position:(50,15),
-                  size:40, stroke:5,
-                  background-color:documentColors[0],
-                  inner-radius:50, start-angle:0,
-                  extent-angle:270)
-                donut(origin:center, position:(50,45),
-                  size:40, stroke:5,
-                  background-color:documentColors[3],
-                  inner-radius:30)
-                donut(origin:center, position:(50,75),
-                  size:40, stroke:5,
-                  background-color:documentColors[4],
-                  inner-radius:80)
-            """, fontSize:2.1%P)
-
-            demoPanel("Pie extents"){
-                pie(origin:center, position:(50,30),
-                    size:40, stroke:5,
-                    background-color:documentColors[0],
-                    start-angle:0, extent-angle:270)
-                pie(origin:center, position:(50,75),
-                    size:40, stroke:5,
+                    inner-radius:30,
                     background-color:documentColors[3])
             }
             sourcePanel("""
-                pie(origin:center, position:(50,30),
-                  size:40, stroke:5,
-                  background-color:documentColors[0],
-                  start-angle:0, extent-angle:270)
-                pie(origin:center, position:(50,75),
-                  size:40, stroke:5,
+                styles{donut{size:42,stroke:2}}
+                donut(origin:center, position:(50,30),inner-radius:50,extent-angle:270,
+                  background-color:documentColors[0])
+                donut(origin:center, position:(50,75),inner-radius:30,
                   background-color:documentColors[3])
-            """, fontSize:2.1%P)
+            """, title:"", fontSize:1.7%P)
+
+            demoPanel("Pie extents"){
+                styles{
+                    pie{size:42, stroke:2}
+                }
+                pie(origin:center, position:(50,30),
+                    extent-angle:270,
+                    background-color:documentColors[0])
+                pie(origin:center, position:(50,75),
+                    background-color:documentColors[3])
+            }
+            sourcePanel("""
+                styles{pie{size:42,stroke:2}}
+                pie(origin:center, position:(50,30),extent-angle:270,
+                  background-color:documentColors[0])
+                pie(origin:center, position:(50,75),
+                  background-color:documentColors[3])
+            """, title:"", fontSize:1.7%P)
         }
         group(position:(0, 95), size:(100, 5), origin:top-left){
-            pageNote("These solids use background-color; start-angle and extent-angle are expressed in degrees.")
+            pageNote("Solids use background-color; thin cylinder strokes keep the small caps and segments crisp.")
         }
     }
 }

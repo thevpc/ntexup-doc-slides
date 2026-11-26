@@ -3,9 +3,10 @@ content-slide(title: "Callout & Academic Components"){
         col(rows-weight: [6, 86, 8]){
             sectionLabel("Components")
 
-            grid((3, 1), columns-weight: [1, 1, 1]){
+            grid(3, 1, columns-weight: [1, 1, 1]){
                 styles{
                     "*": { margin: 1.5 }
+                    text{ font-size: 1.65%P }
                 }
 
                 col(rows-weight: [14, 86]){

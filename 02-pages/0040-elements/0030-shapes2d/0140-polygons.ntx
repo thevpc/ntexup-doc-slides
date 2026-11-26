@@ -1,97 +1,122 @@
 content-slide(title:"Polygons", section:"2D graphics"){
     body{
         sectionLabel("2D graphics · regular and custom polygons")
-        grid(2, 9,
-            position:(0, 7), size:(100, 86), origin:top-left,
-            columns-weight:[1, 2.2],
-            rows-weight:[1,1,1,1,1,1,1,1,1.5])
+        grid(3, 3,
+            position:(0, 7), size:(100, 88), origin:top-left)
         {
-            miniPage{
-                pentagon(at:center, size:26,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+            group(margin:2){
+                grid(1, 2){
+                    miniPage{
+                        pentagon(at:center, size:(80,80),
+                            background-color:documentColors[4])
+                    }
+                    miniCodeNTexup("""
+                        pentagon(at:center, size:(80,80),
+                          background-color:documentColors[4])
+                    """, fontSize:1.7%P)
+                }
             }
-            miniCodeNTexup("""
-                pentagon(at:center, size:26)
-            """)
-
-            miniPage{
-                hexagon(at:center, size:26,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+            group(margin:2){
+                grid(1, 2){
+                    miniPage{
+                        hexagon(at:center, size:(80,80),
+                            background-color:documentColors[4])
+                    }
+                    miniCodeNTexup("""
+                        hexagon(at:center, size:(80,80),
+                          background-color:documentColors[4])
+                    """, fontSize:1.7%P)
+                }
             }
-            miniCodeNTexup("""
-                hexagon(at:center, size:26)
-            """)
-
-            miniPage{
-                heptagon(at:center, size:26,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+            group(margin:2){
+                grid(1, 2){
+                    miniPage{
+                        heptagon(at:center, size:(80,80),
+                            background-color:documentColors[4])
+                    }
+                    miniCodeNTexup("""
+                        heptagon(at:center, size:(80,80),
+                          background-color:documentColors[4])
+                    """, fontSize:1.7%P)
+                }
             }
-            miniCodeNTexup("""
-                heptagon(at:center, size:26)
-            """)
-
-            miniPage{
-                octagon(at:center, size:26,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+            group(margin:2){
+                grid(1, 2){
+                    miniPage{
+                        octagon(at:center, size:(80,80),
+                            background-color:documentColors[4])
+                    }
+                    miniCodeNTexup("""
+                        octagon(at:center, size:(80,80),
+                          background-color:documentColors[4])
+                    """, fontSize:1.7%P)
+                }
             }
-            miniCodeNTexup("""
-                octagon(at:center, size:26)
-            """)
-
-            miniPage{
-                nonagon(at:center, size:26,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+            group(margin:2){
+                grid(1, 2){
+                    miniPage{
+                        nonagon(at:center, size:(80,80),
+                            background-color:documentColors[4])
+                    }
+                    miniCodeNTexup("""
+                        nonagon(at:center, size:(80,80),
+                          background-color:documentColors[4])
+                    """, fontSize:1.7%P)
+                }
             }
-            miniCodeNTexup("""
-                nonagon(at:center, size:26)
-            """)
-
-            miniPage{
-                decagon(at:center, size:26,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+            group(margin:2){
+                grid(1, 2){
+                    miniPage{
+                        decagon(at:center, size:(80,80),
+                            background-color:documentColors[4])
+                    }
+                    miniCodeNTexup("""
+                        decagon(at:center, size:(80,80),
+                          background-color:documentColors[4])
+                    """, fontSize:1.7%P)
+                }
             }
-            miniCodeNTexup("""
-                decagon(at:center, size:26)
-            """)
-
-            miniPage{
-                polygon(at:center, size:26,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+            group(margin:2){
+                grid(1, 2){
+                    miniPage{
+                        polygon(at:center, size:(80,80),
+                            background-color:documentColors[4])
+                    }
+                    miniCodeNTexup("""
+                        polygon(at:center, size:(80,80),
+                          background-color:documentColors[4])
+                    """, fontSize:1.7%P)
+                }
             }
-            miniCodeNTexup("""
-                polygon(at:center, size:26)
-            """)
-
-            miniPage{
-                polygon(at:center, size:26, count:8,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+            group(margin:2){
+                grid(1, 2){
+                    miniPage{
+                        polygon(at:center, size:(80,80), count:8,
+                            background-color:documentColors[4])
+                    }
+                    miniCodeNTexup("""
+                        polygon(at:center, size:(80,80), count:8,
+                          background-color:documentColors[4])
+                    """, fontSize:1.7%P)
+                }
             }
-            miniCodeNTexup("""
-                polygon(at:center, size:26, count:8)
-            """)
-
-            miniPage{
-                polygon(at:center, size:26,
-                    points:[(0,0),(20,0),(40,8),(32,32)],
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+            group(margin:2){
+                grid(1, 2){
+                    miniPage{
+                        polygon(at:center, size:(80,80),
+                            points:[(0,0),(60,0),(100,35),(80,100)],
+                            background-color:documentColors[4])
+                    }
+                    miniCodeNTexup("""
+                        polygon(at:center, size:(80,80),
+                          points:[(0,0),(60,0),(100,35),(80,100)],
+                          background-color:documentColors[4])
+                    """, fontSize:1.6%P)
+                }
             }
-            miniCodeNTexup("""
-                polygon(at:center, size:26,
-                  points:[(0,0),(20,0),
-                    (40,8),(32,32)])
-            """)
         }
         group(position:(0, 95), size:(100, 5), origin:top-left){
-            pageNote("Snippets isolate polygon geometry; previews share accent fill and contour.")
+            pageNote("Regular and custom polygons share one accent fill; each preview keeps its own source snippet.")
         }
     }
 }

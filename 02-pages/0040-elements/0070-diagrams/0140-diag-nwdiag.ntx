@@ -2,13 +2,12 @@ content-slide(title: "Network Diagrams — Groups & Addresses") {
     body {
         col(rows-weight: [6, 86, 8]) {
             sectionLabel("Diagrams")
-            grid((2, 2), columns-weight: [1, 1.55], rows-weight: [1, 1.1]) {
+            grid((2, 2), columns-weight: [1.55, 1], rows-weight: [1, 1.15]) {
                 demoPanel("Shared group across networks") {
                     nwdiag(
-                        size: (100, 50),
+                        size: (100, 100),
                         at: center,
                         """
-                        // A top-level group collects nodes from both networks.
                         group {
                           color = "#FFAAAA"
 
@@ -31,28 +30,34 @@ content-slide(title: "Network Diagrams — Groups & Addresses") {
                     )
                 }
                 sourcePanel(
-                    ```
-nwdiag(size:(100,50), at:center,
+                    '''nwdiag(size:(100,100), at:center,
 """
 group {
   color = "#FFAAAA"
+
   web01;
   web02;
   db01;
 }
+
 network dmz {
   web01;
   web02;
 }
-""")
-```,
-                    title: "Shared group · excerpt",
-                    fontSize: 2.1%P
+network internal {
+  web01;
+  web02;
+  db01;
+  db02;
+}
+""")''',
+                    title: "Shared group · complete example",
+                    fontSize: 1.45%P
                 )
 
                 demoPanel("Network-specific addresses and groups") {
                     nwdiag(
-                        size: (100, 50),
+                        size: (100, 100),
                         at: center,
                         """
                         network Sample_front {
@@ -79,20 +84,31 @@ network dmz {
                     )
                 }
                 sourcePanel(
-                    ```
-nwdiag(size:(100,50), at:center,
+                    '''nwdiag(size:(100,100), at:center,
 """
 network Sample_front {
   address = "192.168.10.0/24"
+  color = "red"
   group web {
     web01 [address = ".1", shape = "node"]
     web02 [address = ".2"]
   }
 }
-""")
-```,
-                    title: "Front network · corrected addresses",
-                    fontSize: 2.1%P
+network Sample_back {
+  address = "192.168.20.0/24"
+  color = "palegreen"
+  web01 [address = ".1"]
+  web02 [address = ".2"]
+  db01 [address = ".101", shape = database]
+  db02 [address = ".102"]
+  group db {
+    db01;
+    db02;
+  }
+}
+""")''',
+                    title: "Addresses + groups · complete example",
+                    fontSize: 1.25%P
                 )
             }
             pageNote("Repeated names are shared servers; groups collect references. Networks set base addresses.")

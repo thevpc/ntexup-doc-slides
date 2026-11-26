@@ -7,77 +7,77 @@ content-slide(title:"Color Functions & Gradients", section:"Layout & styling"){
         {
             demoPanel("Linear gradients"){
                 grid(2, 1){
-                    rectangle(at:center, size:(35,25),
+                    rectangle(at:center, size:(80,65),
                         background-color:linearGradientColor(
                             documentColors[0], documentColors[2]))
-                    rectangle(at:center, size:(35,25),
+                    rectangle(at:center, size:(80,65),
                         background-color:linearGradientColor(
                             documentColors[1], documentColors[4], 45))
                 }
             }
             sourcePanel("""
-                rectangle(at:center, size:(35,25),
+                rectangle(at:center, size:(80,65),
                   background-color:linearGradientColor(
                     documentColors[0], documentColors[2]))
-                rectangle(at:center, size:(35,25),
+                rectangle(at:center, size:(80,65),
                   background-color:linearGradientColor(
                     documentColors[1], documentColors[4], 45))
-            """, fontSize:2.1%P)
+            """, title:"", fontSize:2%P)
 
             demoPanel("Lighter and darker"){
                 grid(2, 1){
-                    rectangle(at:center, size:(30,25),
+                    rectangle(at:center, size:(80,65),
                         background-color:lighterColor(
                             documentColors[0], 0.4))
-                    rectangle(at:center, size:(30,25),
+                    rectangle(at:center, size:(80,65),
                         background-color:darkerColor(
                             documentColors[0], 0.4))
                 }
             }
             sourcePanel("""
-                rectangle(at:center, size:(30,25),
+                rectangle(at:center, size:(80,65),
                   background-color:lighterColor(
                     documentColors[0], 0.4))
-                rectangle(at:center, size:(30,25),
+                rectangle(at:center, size:(80,65),
                   background-color:darkerColor(
                     documentColors[0], 0.4))
-            """, fontSize:2.1%P)
+            """, title:"", fontSize:2%P)
 
             demoPanel("Complementary and invert"){
                 grid(2, 1){
-                    rectangle(at:center, size:(30,25),
+                    rectangle(at:center, size:(80,65),
                         background-color:complementaryColor(
                             documentColors[1]))
-                    rectangle(at:center, size:(30,25),
+                    rectangle(at:center, size:(80,65),
                         background-color:invertColor(
                             documentColors[1]))
                 }
             }
             sourcePanel("""
-                rectangle(at:center, size:(30,25),
+                rectangle(at:center, size:(80,65),
                   background-color:complementaryColor(
                     documentColors[1]))
-                rectangle(at:center, size:(30,25),
+                rectangle(at:center, size:(80,65),
                   background-color:invertColor(
                     documentColors[1]))
-            """, fontSize:2.1%P)
+            """, title:"", fontSize:2%P)
 
             demoPanel("Hue rotation and sinebow"){
                 grid(2, 1){
-                    rectangle(at:center, size:(30,25),
+                    rectangle(at:center, size:(80,65),
                         background-color:rotateHueColor(
                             documentColors[0], 120))
-                    rectangle(at:center, size:(30,25),
+                    rectangle(at:center, size:(80,65),
                         background-color:sinebowColor(0.7))
                 }
             }
             sourcePanel("""
-                rectangle(at:center, size:(30,25),
+                rectangle(at:center, size:(80,65),
                   background-color:rotateHueColor(
                     documentColors[0], 120))
-                rectangle(at:center, size:(30,25),
+                rectangle(at:center, size:(80,65),
                   background-color:sinebowColor(0.7))
-            """, fontSize:2.1%P)
+            """, title:"", fontSize:2%P)
         }
         group(position:(0, 95), size:(100, 5), origin:top-left){
             pageNote("Gradient angles are degrees; color functions are provided by the stdlib extension.")

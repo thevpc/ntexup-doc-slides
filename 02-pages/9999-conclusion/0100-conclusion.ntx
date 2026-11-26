@@ -1,18 +1,19 @@
 conclusion-slide(title: "Conclusion"){
     body{
-        col(rows-weight: [6, 18, 62, 14]){
+        col(rows-weight: [6, 16, 58, 20]){
             sectionLabel("Summary")
 
             text("Write once. Compose clearly. Render anywhere.",
-                 font-size: 3.6%P, font-bold,
+                 font-size: 2.9%P, font-bold,
                  color: documentTextPrimary, text-align: center)
 
             grid((3, 1), columns-weight: [1, 1, 1]){
                 styles{
-                    "*": { margin: 1.5 }
+                    "*": { margin: 0.8 }
+                    ul{ font-size: 1.75%P }
                     @ul-item{
-                        font-size: 2.45%P
-                        margin: (1.4, 0)
+                        font-size: 1.75%P
+                        margin: (0.8, 0)
                         text-wrap: wrap
                     }
                 }

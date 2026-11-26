@@ -15,7 +15,17 @@ content-slide(title: "Table Extension"){
             sectionLabel("Extensions")
 
             grid(2, 1, columns-weight: [0.85, 1.8]){
-                ul(font-size: 2%P){
+                styles{
+                    @ul-item{
+                        font-size: 1.55%P
+                        margin: (0.6, 0)
+                        text-wrap: wrap
+                    }
+                    @ul-bullet{
+                        size: 1.0%P
+                    }
+                }
+                ul(font-size: 1.55%P){
                     • "Theme defaults style headers, zebra rows and grid lines."
                     • "header-data, data and footer-data define table content."
                     • "table-striped and table-bordered style headers."

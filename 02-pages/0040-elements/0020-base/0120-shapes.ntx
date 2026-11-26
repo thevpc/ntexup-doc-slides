@@ -6,80 +6,79 @@ content-slide(title:"Shapes", section:"Layout & styling"){
             columns-weight:[1, 2.2])
         {
             miniPage{
-                rectangle(at:center, size:(50,20),
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(at:center, size:(80,55),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(at:center, size:(50,20))
-            """)
+                rectangle(at:center, size:(80,55),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                triangle(at:center, size:32,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                triangle(at:center, size:(75,75),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                triangle(at:center, size:32)
-            """)
+                triangle(at:center, size:(75,75),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                square(at:center, size:32,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                square(at:center, size:(75,75),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                square(at:center, size:32)
-            """)
+                square(at:center, size:(75,75),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rhombus(at:center, size:32,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rhombus(at:center, size:(80,65),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rhombus(at:center, size:32)
-                diamond(at:center, size:32) // alias
-            """)
+                rhombus(at:center, size:(80,65),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                parallelogram(at:center, size:32,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                parallelogram(at:center, size:(80,60),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                parallelogram(at:center, size:32)
-            """)
+                parallelogram(at:center, size:(80,60),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                trapezoid(at:center, size:32,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                trapezoid(at:center, size:(80,60),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                trapezoid(at:center, size:32)
-            """)
+                trapezoid(at:center, size:(80,60),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                circle(at:center, size:32,
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                circle(at:center, size:(75,75),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                circle(at:center, size:32)
-            """)
+                circle(at:center, size:(75,75),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                ellipse(at:center, size:(60,24),
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                ellipse(at:center, size:(85,65),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                ellipse(at:center, size:(60,24))
-            """)
+                ellipse(at:center, size:(85,65),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
         }
         group(position:(0, 95), size:(100, 5), origin:top-left){
-            pageNote("Snippets isolate geometry; every preview uses the same accent fill and contour.")
+            pageNote("Snippets isolate geometry; every preview uses the same accent fill.")
         }
     }
 }

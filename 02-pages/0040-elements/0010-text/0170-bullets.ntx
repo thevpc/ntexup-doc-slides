@@ -1,73 +1,54 @@
 content-slide(title:"Bullets", section:"Text & rich content"){
     body{
-        sectionLabel("Unordered, nested, and ordered lists")
+        sectionLabel("TSON markers · unordered, ordered, and nested lists")
         grid(2, 3,
             position:(0, 8), size:(100, 86), origin:top-left,
-            columns-weight:[1, 1.2])
+            columns-weight:[1, 1.25])
         {
-            styles{
-                "*": {margin:1}
-            }
             miniPage{
-                ul(font-size:3%P){
-                    text("Hello ##World##")
-                    text("Hello ###World###")
-                    text("Hello ####World####")
+                ul(font-size:2.2%P){
+                    • "Circle marker"
+                    [.] "Dot marker"
+                    [..] "Nested dot"
                 }
             }
             miniCodeNTexup("""
-                ul(font-size:3%P){
-                    text("Hello ##World##")
-                    text("Hello ###World###")
-                    text("Hello ####World####")
+                ul(font-size:2.2%P){
+                  • "Circle marker"
+                  [.] "Dot marker"
+                  [..] "Nested dot"
                 }
-            """, fontSize:2.2%P)
+            """, fontSize:2.1%P)
 
             miniPage{
-                ul(font-size:3%P){
-                    text("Hello ##World##")
-                    ul{
-                        text("Sub 1")
-                        text("Sub 2")
-                    }
-                    text("Hello ###World###")
-                    text("Hello ####World####")
+                ul(font-size:2.2%P){
+                    • "Parent item"
+                    •• "Child one"
+                    •• "Child two"
+                    • "Sibling item"
                 }
             }
             miniCodeNTexup("""
-                ul(font-size:3%P){
-                    text("Hello ##World##")
-                    ul{
-                        text("Sub 1")
-                        text("Sub 2")
-                    }
-                    text("Hello ###World###")
-                    text("Hello ####World####")
+                ul(font-size:2.2%P){
+                  • "Parent item"
+                  •• "Child one"
+                  •• "Child two"
+                  • "Sibling item"
                 }
-            """, fontSize:2.2%P)
+            """, fontSize:2.1%P)
 
             miniPage{
-                ol(font-size:3%P){
-                    text("Hello ##World##")
-                    ol{
-                        text("Sub 1")
-                        text("Sub 2")
-                    }
-                    text("Hello ###World###")
-                    text("Hello ####World####")
+                ol(numbering:"a", font-size:2.2%P){
+                    ▪ "Square shorthand"
+                    [#] "Hash shorthand"
                 }
             }
             miniCodeNTexup("""
-                ol(font-size:3%P){
-                    text("Hello ##World##")
-                    ol{
-                        text("Sub 1")
-                        text("Sub 2")
-                    }
-                    text("Hello ###World###")
-                    text("Hello ####World####")
+                ol(numbering:"a", font-size:2.2%P){
+                  ▪ "Square shorthand"
+                  [#] "Hash shorthand"
                 }
-            """, fontSize:2.2%P)
+            """, fontSize:2.1%P)
         }
     }
 }

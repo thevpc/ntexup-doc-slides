@@ -1,4 +1,4 @@
-content-slide(title:"Why ntexup?", section:"Get started"){
+content-slide(title:"Why ntexup?", section:"Chapter 01 · Get started"){
     body{
         sectionLabel("Text-first documents, built to last")
         grid(2, 2,
@@ -7,37 +7,43 @@ content-slide(title:"Why ntexup?", section:"Get started"){
         {
             styles{
                 "*": {margin:1}
+                @ul-item{
+                    font-size:1.65%P
+                    margin:(0.6, 0)
+                    text-wrap:wrap
+                }
+                @ul-bullet{ size:1.1%P }
             }
             card(accentColor:documentColors[0]){
                 kicker("READABLE")
                 ul(bullet-align:top){
-                    • "Declarative TSON stays easy to read and write"
-                    • "What you author is what you render"
-                    • "Variables and conditions parameterize output"
+                    • "Declarative TSON is easy to read and write"
+                    • "Author once, render consistently"
+                    • "Variables and conditions shape output"
                 }
             }
             card(accentColor:documentColors[1]){
                 kicker("REUSABLE")
                 ul(bullet-align:top){
-                    • "Fine-grained control over every rendered element"
-                    • "Compose nodes into reusable components"
-                    • "Define templates with CSS-like styles"
+                    • "Precise control over rendered elements"
+                    • "Reusable, composable nodes"
+                    • "CSS-like styles and templates"
                 }
             }
             card(accentColor:documentColors[2]){
                 kicker("MAINTAINABLE")
                 ul(bullet-align:top){
                     • "Multi-file projects scale naturally"
-                    • "Git-friendly source stays easy to review"
-                    • "Themes keep long-lived documents consistent"
+                    • "Git-friendly, reviewable source"
+                    • "Consistent, long-lived themes"
                 }
             }
             card(accentColor:documentColors[3]){
                 kicker("PORTABLE")
                 ul(bullet-align:top){
-                    • "Run across platforms with minimal setup"
-                    • "Integrate LaTeX, UML, and more"
-                    • "Render one source to slides, images, or PDF"
+                    • "Cross-platform with minimal setup"
+                    • "LaTeX, UML, and integrations"
+                    • "Slides, images, and PDF from one source"
                 }
             }
         }

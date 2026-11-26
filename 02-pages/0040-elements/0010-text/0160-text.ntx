@@ -4,10 +4,12 @@ content-slide(title:"Rich Text", section:"Text & rich content"){
         grid(2, 4,
             position:(0, 8), size:(100, 86), origin:top-left,
             columns-weight:[1, 1.75],
-            rows-weight:[1.1, 1.2, 0.7, 1.4])
+            rows-weight:[1.1, 1.2, 0.7, 1.6])
         {
             styles{
                 "*": {margin:1}
+                text{ source-primary-color:documentColors }
+                ntf{ source-primary-color:documentColors }
             }
             miniPage{
                 grid(1, 2, font-size:3%P){
@@ -60,26 +62,37 @@ content-slide(title:"Rich Text", section:"Text & rich content"){
             ```, fontSize:2.0%P)
 
             miniPage{
-                text("""
-                    #) Equation 1 =
-                    [[eq: X²=\sin(πx) ]]
-                    ##) Equation 2 =
-                    [[eq: X^2=\sin(\pi x) ]]
-                    ###) Equation 3 =
-                    [[eq: X^2=\sin(x) ]]
-                """, font-size:2.4%P, color:documentTextPrimary)
+                grid(1, 3, font-size:2.2%P,
+                    color:documentTextPrimary)
+                {
+                    col(rows-weight:[30, 70]){
+                        ntf("#) Equation 1", font-size:1.7%P)
+                        text("[[eq: X²=\sin(πx)]]", at:center)
+                    }
+                    col(rows-weight:[30, 70]){
+                        ntf("##) Equation 2", font-size:1.7%P)
+                        text("[[eq: X^2=\sin(\pi x)]]", at:center)
+                    }
+                    col(rows-weight:[30, 70]){
+                        ntf("###) Equation 3", font-size:1.7%P)
+                        text("[[eq: X^2=\sin(x)]]", at:center)
+                    }
+                }
             }
             miniCodeNTexup(```
-                text("""
-                    #) Equation 1 =
-                    [[eq: X²=\sin(πx) ]]
-                    ##) Equation 2 =
-                    [[eq: X^2=\sin(\pi x) ]]
-                    ###) Equation 3 =
-                    [[eq: X^2=\sin(x) ]]
-                """, font-size:2.4%P,
-                  color:documentTextPrimary)
-            ```, fontSize:2.0%P)
+                grid(1,3,font-size:2.2%P,
+                  color:documentTextPrimary){
+                  col(rows-weight:[30,70]){
+                    ntf("#) Equation 1",font-size:1.7%P)
+                    text("[[eq: X²=\sin(πx)]]",at:center)}
+                  col(rows-weight:[30,70]){
+                    ntf("##) Equation 2",font-size:1.7%P)
+                    text("[[eq: X^2=\sin(\pi x)]]",at:center)}
+                  col(rows-weight:[30,70]){
+                    ntf("###) Equation 3",font-size:1.7%P)
+                    text("[[eq: X^2=\sin(x)]]",at:center)}
+                }
+            ```, fontSize:1.35%P)
         }
     }
 }

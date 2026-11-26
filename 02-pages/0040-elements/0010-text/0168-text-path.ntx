@@ -3,61 +3,58 @@ content-slide(title:"Text along Path", section:"Text & rich content"){
         sectionLabel("Alignment on curved and segmented paths")
         grid(2, 3,
             position:(0, 8), size:(100, 86), origin:top-left,
-            columns-weight:[1, 1.2])
+            columns-weight:[1, 1.25])
         {
-            styles{
-                "*": {margin:1}
-            }
             miniPage{
-                text("Non-linear Arc Centered Text",
-                     text-path:{arc(cx:50, cy:75, rx:42, ry:25,
-                                    from:-25, to:205)},
+                text("Centered Arc Text",
+                     text-path:{arc(cx:50, cy:70, rx:38, ry:22,
+                                    from:-20, to:200)},
                      text-align:center, font-bold,
                      font-size:2.5%P, color:documentColors[0])
             }
             miniCodeNTexup("""
-                text("Non-linear Arc Centered Text",
-                     text-path:{arc(cx:50, cy:75, rx:42, ry:25,
-                                    from:-25, to:205)},
-                     text-align:center, font-bold,
-                     font-size:2.5%P, color:documentColors[0])
-            """, fontSize:2.2%P)
+                text("Centered Arc Text",
+                  text-path:{arc(cx:50, cy:70, rx:38, ry:22,
+                    from:-20, to:200)},
+                  text-align:center, font-bold,
+                  font-size:2.5%P, color:documentColors[0])
+            """, fontSize:2.1%P)
 
             miniPage{
-                text("Justified Curved Text Along Arc Path",
-                     text-path:{arc(cx:50, cy:75, rx:42, ry:25,
-                                    from:-25, to:205)},
+                text("Justify text now",
+                     text-path:{arc(cx:50, cy:70, rx:38, ry:22,
+                                    from:300, to:240)},
                      text-align:justify, font-bold,
-                     font-size:2.3%P, color:documentColors[1])
+                     font-size:2.1%P, color:documentColors[1])
             }
             miniCodeNTexup("""
-                text("Justified Curved Text Along Arc Path",
-                     text-path:{arc(cx:50, cy:75, rx:42, ry:25,
-                                    from:-25, to:205)},
-                     text-align:justify, font-bold,
-                     font-size:2.3%P, color:documentColors[1])
-            """, fontSize:2.2%P)
+                text("Justify text now",
+                  text-path:{arc(cx:50, cy:70, rx:38, ry:22,
+                    from:300, to:240)},
+                  text-align:justify, font-bold,
+                  font-size:2.1%P, color:documentColors[1])
+            """, fontSize:2.1%P)
 
             miniPage{
-                text("Left aligned path",
-                     text-path:{(5,30), (35,70), (65,30), (95,70)},
-                     text-align:left, font-size:2.2%P,
+                text("Left path",
+                     text-path:{(8,35), (35,70), (65,35), (92,70)},
+                     text-align:left, font-size:2.4%P,
                      color:documentColors[2])
-                text("Right aligned path",
-                     text-path:{(5,45), (35,85), (65,45), (95,85)},
-                     text-align:right, font-size:2.2%P,
+                text("Right path",
+                     text-path:{(8,55), (35,90), (65,55), (92,90)},
+                     text-align:right, font-size:2.4%P,
                      color:documentColors[3])
             }
             miniCodeNTexup("""
-                text("Left aligned path",
-                     text-path:{(5,30), (35,70), (65,30), (95,70)},
-                     text-align:left, font-size:2.2%P,
-                     color:documentColors[2])
-                text("Right aligned path",
-                     text-path:{(5,45), (35,85), (65,45), (95,85)},
-                     text-align:right, font-size:2.2%P,
-                     color:documentColors[3])
-            """, fontSize:2.2%P)
+                text("Left path",
+                  text-path:{(8,35), (35,70), (65,35), (92,70)},
+                  text-align:left, font-size:2.4%P,
+                  color:documentColors[2])
+                text("Right path",
+                  text-path:{(8,55), (35,90), (65,55), (92,90)},
+                  text-align:right, font-size:2.4%P,
+                  color:documentColors[3])
+            """, fontSize:1.9%P)
         }
     }
 }

@@ -4,64 +4,60 @@ content-slide(title: "Images — Formats & Paths") {
             sectionLabel("Media")
             grid((2, 3), columns-weight: [1, 2.2]) {
                 demoPanel("PNG · image.png") {
-                    image("../../../images/image.png", size: (50, 50), at: center)
+                    image("../../../images/image.png", size: (50, 50), at: center, preserve-aspect-ratio)
                 }
                 sourcePanel(
-                    """image("../../../images/image.png", size:(50,50), at:center)""",
+                    """image("../../../images/image.png", size:(50,50), at:center, preserve-aspect-ratio)""",
                     title: "PNG · path relative to this file",
-                    fontSize: 2.3%P
+                    fontSize: 2.0%P
                 )
 
                 demoPanel("JPEG · image.jpg") {
-                    image("../../../images/image.jpg", size: (50, 50), at: center)
+                    image("../../../images/image.jpg", size: (50, 50), at: center, preserve-aspect-ratio)
                 }
                 sourcePanel(
-                    """image("../../../images/image.jpg", size:(50,50), at:center)""",
+                    """image("../../../images/image.jpg", size:(50,50), at:center, preserve-aspect-ratio)""",
                     title: "JPEG · path relative to this file",
-                    fontSize: 2.3%P
+                    fontSize: 2.0%P
                 )
 
                 demoPanel("GIF · image.gif") {
-                    image("../../../images/image.gif", size: (50, 50), at: center)
+                    image("../../../images/image.gif", size: (50, 50), at: center, preserve-aspect-ratio)
                 }
                 sourcePanel(
-                    """image("../../../images/image.gif", size:(50,50), at:center)""",
+                    """image("../../../images/image.gif", size:(50,50), at:center, preserve-aspect-ratio)""",
                     title: "GIF · animated in the viewer",
-                    fontSize: 2.3%P
+                    fontSize: 2.0%P
                 )
 
                 demoPanel("SVG · image.svg") {
-                    image("../../../images/image.svg", size: (50, 50), at: center)
+                    image("../../../images/image.svg", size: (50, 50), at: center, preserve-aspect-ratio)
                 }
                 sourcePanel(
-                    """image("../../../images/image.svg", size:(50,50), at:center)""",
+                    """image("../../../images/image.svg", size:(50,50), at:center, preserve-aspect-ratio)""",
                     title: "SVG · vector asset",
-                    fontSize: 2.3%P
+                    fontSize: 2.0%P
                 )
 
                 demoPanel("AVIF · image.avif") {
-                    rectangle(size: (50, 50), at: center, background-color: documentSurface, round-corner: 6)
-                    image("../../../images/image.avif", size: (45, 45), at: center)
-                    text("AVIF", at: bottom, font-size: 2%P, color: documentTextSecondary)
+                    image("../../../images/image.avif", size: (50, 50), at: center, preserve-aspect-ratio)
                 }
                 sourcePanel(
-                    """image("../../../images/image.avif", size:(45,45), at:center)""",
-                    title: "AVIF · path relative to this file",
-                    fontSize: 2.3%P
+                    """image("../../../images/image.avif", size:(50,50), at:center, preserve-aspect-ratio)""",
+                    title: "AVIF · included ImageIO decoder",
+                    fontSize: 2.0%P
                 )
 
                 demoPanel("WebP · image.webp") {
-                    rectangle(size: (50, 50), at: center, background-color: documentSurface, round-corner: 6)
-                    image("../../../images/image.webp", size: (45, 45), at: center)
-                    text("WebP", at: bottom, font-size: 2%P, color: documentTextSecondary)
+                    image("../../../images/image.webp", size: (50, 50), at: center, preserve-aspect-ratio)
                 }
                 sourcePanel(
-                    """image("../../../images/image.webp", size:(45,45), at:center)""",
-                    title: "WebP · path relative to this file",
-                    fontSize: 2.3%P
+                    """image("../../../images/image.webp", size:(50,50), at:center, preserve-aspect-ratio)""",
+                    title: "WebP · included ImageIO decoder",
+                    fontSize: 2.0%P
                 )
             }
-            pageNote("Paths are relative to this file. AVIF/WebP previews need runtime decoders; labels are fallbacks.")
+            pageNote("Paths are relative to this file. AVIF and WebP use included ImageIO decoders; all previews preserve their aspect ratio.")
         }
     }
 }

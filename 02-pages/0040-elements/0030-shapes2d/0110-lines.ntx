@@ -6,44 +6,44 @@ content-slide(title:"Lines", section:"2D graphics"){
             columns-weight:[1, 1.8])
         {
             demoPanel("Straight line"){
-                line(from:(10,10), to:(80,90),
-                    color:documentColors[1], stroke:3)
+                line(from:(8,8), to:(92,92),
+                    color:documentColors[1], stroke:4)
             }
             sourcePanel("""
-                line(from:(10,10), to:(80,90),
-                  color:documentColors[1], stroke:3)
-            """, fontSize:2.1%P)
+                line(from:(8,8), to:(92,92),
+                  color:documentColors[1], stroke:4)
+            """, title:"", fontSize:2.1%P)
 
             demoPanel("Arc"){
-                arc(from:30, to:180,
-                    color:documentColors[1], stroke:3)
+                arc(from:20, to:200,
+                    color:documentColors[1], stroke:4)
             }
             sourcePanel("""
-                arc(from:30, to:180,
-                  color:documentColors[1], stroke:3)
-            """, fontSize:2.1%P)
+                arc(from:20, to:200,
+                  color:documentColors[1], stroke:4)
+            """, title:"", fontSize:2.1%P)
 
             demoPanel("Quadratic curve"){
-                quad-curve(from:(10,10), to:(80,90),
-                    ctrl:(60,30),
-                    color:documentColors[1], stroke:3)
+                quad-curve(from:(8,8), to:(92,92),
+                    ctrl:(65,25),
+                    color:documentColors[1], stroke:4)
             }
             sourcePanel("""
-                quad-curve(from:(10,10), to:(80,90),
-                  ctrl:(60,30),
-                  color:documentColors[1], stroke:3)
-            """, fontSize:2.1%P)
+                quad-curve(from:(8,8), to:(92,92),
+                  ctrl:(65,25),
+                  color:documentColors[1], stroke:4)
+            """, title:"", fontSize:2.1%P)
 
             demoPanel("Cubic curve"){
-                cubic-curve(from:(10,10), to:(80,90),
-                    ctrl1:(60,30), ctrl2:(30,60),
-                    color:documentColors[1], stroke:3)
+                cubic-curve(from:(8,8), to:(92,92),
+                    ctrl1:(65,25), ctrl2:(25,65),
+                    color:documentColors[1], stroke:4)
             }
             sourcePanel("""
-                cubic-curve(from:(10,10), to:(80,90),
-                  ctrl1:(60,30), ctrl2:(30,60),
-                  color:documentColors[1], stroke:3)
-            """, fontSize:2.1%P)
+                cubic-curve(from:(8,8), to:(92,92),
+                  ctrl1:(65,25), ctrl2:(25,65),
+                  color:documentColors[1], stroke:4)
+            """, title:"", fontSize:2.1%P)
         }
         group(position:(0, 95), size:(100, 5), origin:top-left){
             pageNote("Line and curve endpoints are parent-relative; arc from/to values are angles in degrees.")

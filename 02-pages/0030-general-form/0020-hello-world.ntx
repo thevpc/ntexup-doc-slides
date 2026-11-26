@@ -1,48 +1,66 @@
-content-slide(title:"Hello World", section:"Get started"){
+content-slide(title:"Hello World", section:"Chapter 01 · Get started"){
     body{
-        sectionLabel("Three ways to say hello")
-        grid(2, 3,
+        sectionLabel("Four ways to say hello")
+        grid(2, 4,
             position:(0, 8), size:(100, 86), origin:top-left,
-            columns-weight:[1, 1.6])
+            columns-weight:[1, 1.6],
+            rows-weight:[0.8, 0.9, 1.25, 1.05])
         {
             styles{
                 "*": {margin:1}
             }
             miniPage{
-                "Hello World"
+                ¶ Hello World
             }
-            miniCodeNTexup(""" "Hello World" """, fontSize:2.4%P)
+            miniCodeNTexup("""
+                ¶ Hello World
+            """, fontSize:2.2%P)
 
             miniPage{
-                text("""
+                ¶¶ Hello World
+                ¶¶ This is one paragraph.
+            }
+            miniCodeNTexup("""
+                ¶¶ Hello World
+                ¶¶ This is one paragraph.
+            """, fontSize:2.2%P)
+
+            miniPage{
+                styles{
+                    ntf{ source-primary-color:documentColors }
+                }
+                ntf("""
                     Hello ##World##
                     Hello ###World###
                     Hello ####World####
-                """, font-size:3.2%P, color:documentTextPrimary)
+                """, font-size:2.8%P, color:documentTextPrimary)
             }
             miniCodeNTexup(```
-                text("""
-                    Hello ##World##
-                    Hello ###World###
-                    Hello ####World####
-                """, font-size:3.2%P,
+                styles{
+                  ntf{source-primary-color:documentColors}
+                }
+                ntf("""
+                  Hello ##World##
+                  Hello ###World###
+                  Hello ####World####
+                """, font-size:2.8%P,
                    color:documentTextPrimary)
-            ```, fontSize:2.3%P)
+            ```, fontSize:1.45%P)
 
             miniPage{
-                ul(font-size:3.2%P){
+                ul(font-size:2.8%P){
                     text("Hello **World**")
                     text("Hello *World*")
                     text("Hello `World`")
                 }
             }
             miniCodeNTexup(```
-                ul(font-size:3.2%P){
+                ul(font-size:2.8%P){
                     text("Hello **World**")
                     text("Hello *World*")
                     text("Hello `World`")
                 }
-            ```, fontSize:2.3%P)
+            ```, fontSize:1.9%P)
         }
     }
 }

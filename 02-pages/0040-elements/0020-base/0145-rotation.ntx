@@ -6,69 +6,60 @@ content-slide(title:"Rotation", section:"Layout & styling"){
             columns-weight:[1, 1.8])
         {
             demoPanel("Rotated rectangle"){
-                rectangle(at:center, size:(40,25),
+                rectangle(origin:center, position:(50,60), size:(50,32),
                     background-color:documentColors[4],
-                    color:documentColors[0], rotate:45)
+                    rotate:45)
             }
             sourcePanel("""
-                rectangle(at:center, size:(40,25),
+                rectangle(origin:center, position:(50,60), size:(50,32),
+                  background-color:documentColors[4],
                   rotate:45)
-            """, fontSize:2.1%P)
+            """, title:"", fontSize:2%P)
 
             demoPanel("Rotated text"){
                 text("Rotated Label", font-bold,
                     rotate:-25, at:center,
+                    font-size:3.2%P,
                     color:documentColors[1])
             }
             sourcePanel("""
                 text("Rotated Label", font-bold,
                   rotate:-25, at:center,
+                  font-size:3.2%P,
                   color:documentColors[1])
-            """, fontSize:2.1%P)
+            """, title:"", fontSize:2%P)
 
             demoPanel("Center vs top-left pivot"){
                 grid(2, 1){
                     miniPage{
-                        rectangle(at:center, size:(45,20),
-                            background-color:documentColors[4],
-                            color:documentColors[0], rotate:30)
-                        text("center", at:bottom,
-                            font-size:2%P,
-                            color:documentTextSecondary)
+                        rectangle(at:center, size:(60,35),
+                            background-color:documentColors[4], rotate:30)
                     }
                     miniPage{
-                        rectangle(at:center, size:(45,20),
-                            background-color:documentColors[4],
-                            color:documentColors[0], rotate:(30,0,0))
-                        text("top-left", at:bottom,
-                            font-size:2%P,
-                            color:documentTextSecondary)
+                        rectangle(at:center, size:(60,35),
+                            background-color:documentColors[4], rotate:(30,0,0))
                     }
                 }
             }
             sourcePanel("""
-                // left: center pivot
-                rectangle(at:center, size:(45,20),
-                  rotate:30)
-                // right: top-left pivot
-                rectangle(at:center, size:(45,20),
-                  rotate:(30,0,0))
-            """, title:"Pivot comparison · labels omitted", fontSize:2.1%P)
+                rectangle(at:center, size:(60,35),
+                  background-color:documentColors[4], rotate:30)
+                rectangle(at:center, size:(60,35),
+                  background-color:documentColors[4], rotate:(30,0,0))
+            """, title:"Center and top-left pivots", fontSize:2%P)
 
             demoPanel("Multiple rotations"){
-                rectangle(at:center, size:(35,35),
-                    background-color:documentColors[4],
-                    color:documentColors[2], rotate:15)
-                rectangle(at:center, size:(35,35),
-                    background-color:documentColors[3],
-                    color:documentColors[1], rotate:60)
+                rectangle(origin:center, position:(50,60), size:(42,42),
+                    background-color:documentColors[4], rotate:15)
+                rectangle(origin:center, position:(50,60), size:(42,42),
+                    background-color:documentColors[3], rotate:60)
             }
             sourcePanel("""
-                rectangle(at:center, size:(35,35),
-                  rotate:15)
-                rectangle(at:center, size:(35,35),
-                  rotate:60)
-            """, title:"Rotation excerpt · colors omitted", fontSize:2.1%P)
+                rectangle(origin:center, position:(50,60), size:(42,42),
+                  background-color:documentColors[4], rotate:15)
+                rectangle(origin:center, position:(50,60), size:(42,42),
+                  background-color:documentColors[3], rotate:60)
+            """, title:"", fontSize:2%P)
         }
         group(position:(0, 95), size:(100, 5), origin:top-left){
             pageNote("rotate uses degrees; a tuple supplies (angle, x-pivot, y-pivot) in element percentages.")

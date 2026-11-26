@@ -2,11 +2,11 @@ content-slide(title: "UML Use Cases") {
     body {
         col(rows-weight: [6, 88, 6]) {
             sectionLabel("Diagrams")
-            grid((2, 2), columns-weight: [1, 1.55]) {
+            grid((2, 2), columns-weight: [1.55, 1], rows-weight: [1, 1.08]) {
                 demoPanel("Restaurant actors and goals") {
                     uml(
                         at: center,
-                        size: (100, 50),
+                        size: (100, 100),
                         """
                         left to right direction
                         actor "Food Critic" as fc
@@ -22,8 +22,7 @@ content-slide(title: "UML Use Cases") {
                     )
                 }
                 sourcePanel(
-                    ```
-uml(at:center, size:(100,50),
+                    '''uml(at:center, size:(100,100),
 """
 left to right direction
 actor "Food Critic" as fc
@@ -35,16 +34,15 @@ rectangle Restaurant {
 fc --> UC1
 fc --> UC2
 fc --> UC3
-""")
-```,
+""")''',
                     title: "Use-case diagram · complete example",
-                    fontSize: 2.1%P
+                    fontSize: 1.6%P
                 )
 
                 demoPanel("Checkout with included payment") {
                     uml(
                         at: center,
-                        size: (100, 50),
+                        size: (100, 100),
                         """
                         left to right direction
                         actor "Customer" as customer
@@ -62,8 +60,7 @@ fc --> UC3
                     )
                 }
                 sourcePanel(
-                    ```
-uml(at:center, size:(100,50),
+                    '''uml(at:center, size:(100,100),
 """
 left to right direction
 actor "Customer" as customer
@@ -77,10 +74,9 @@ customer --> browse
 customer --> order
 order .> pay : <<include>>
 payment --> pay
-""")
-```,
+""")''',
                     title: "Use-case diagram · include relationship",
-                    fontSize: 1.5%P
+                    fontSize: 1.4%P
                 )
             }
             pageNote("Actors sit outside the boundary; <<include>> adds mandatory Pay behavior to Place Order.")

@@ -3,11 +3,13 @@ content-slide(title: "Built-in Template Components"){
         col(rows-weight: [6, 94]){
             sectionLabel("Components")
 
-            grid((3, 3), columns-weight: [1, 1, 1], rows-weight: [1.2, 0.9, 1.1]){
+            grid(3, 3, columns-weight: [1, 1, 1], rows-weight: [1.2, 0.9, 1.1]){
                 styles{
+                    text{ font-size: 1.55%P }
+                    ul{ font-size: 1.55%P }
                     @ul-item{
-                        font-size: 1.95%P
-                        margin: (0.6, 0)
+                        font-size: 1.55%P
+                        margin: (0.5, 0)
                         text-wrap: wrap
                     }
                 }
@@ -22,12 +24,13 @@ content-slide(title: "Built-in Template Components"){
                 }
 
                 card(accentColor: documentColors[1]){
-                    stat(value: "99.9%", label: "Example availability")
+                    stat(value: "99.9%", label: "Example availability",
+                         accentColor: documentColors[1])
                 }
 
-                quote(author: "Alan Kay"){
+                quote(author: "— Alan Kay"){
                     text("The best way to predict the future is to invent it.",
-                         font-size: 2.1%P, font-italic, text-wrap: wrap)
+                         font-size: 1.65%P, font-italic, text-wrap: wrap)
                 }
 
                 image-fig(src: "../../../images/image.png",
@@ -36,26 +39,26 @@ content-slide(title: "Built-in Template Components"){
                           size: 32)
 
                 hint-info("Information"){
-                    text("Contextual tips for the current step.")
+                    text("Contextual tips for the current step.", font-size: 1.55%P)
                 }
 
-                hint-error("Error"){
-                    text("Blocking issues or failed checks.")
+                hint-error("Important"){
+                    text("Blocking issues or failed checks.", font-size: 1.55%P)
                 }
 
                 hint-warning("Warning"){
-                    text("Cautions before continuing.")
+                    text("Cautions before continuing.", font-size: 1.55%P)
                 }
 
-                hint-success("Success"){
-                    text("Passed checks or healthy services.")
+                hint-success("Note"){
+                    text("Passed checks or healthy services.", font-size: 1.55%P)
                 }
 
                 panel(title: "Panel"){
                     group(size: (100, 70)){
                         text("A neutral canvas for diagrams and details.",
                              color: documentTextSecondary, position: (50, 60),
-                             origin: center, font-size: 1.9%P, text-wrap: wrap)
+                             origin: center, font-size: 1.55%P, text-wrap: wrap)
                     }
                 }
             }

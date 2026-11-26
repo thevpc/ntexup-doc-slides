@@ -3,71 +3,65 @@ content-slide(title:"Text Wrap & Alignment", section:"Text & rich content"){
         sectionLabel("Wrapping and alignment in width-bounded containers")
         grid(2, 3,
             position:(0, 8), size:(100, 86), origin:top-left,
-            columns-weight:[1, 1.2])
+            columns-weight:[1, 1.25])
         {
-            styles{
-                "*": {margin:1}
-            }
             miniPage{
                 grid(1, 3){
-                    text("Left aligned text wraps within its column.",
+                    text("Left aligned text wraps here.",
                          text-wrap:wrap, text-align:left,
-                         font-size:2.4%P)
-                    text("Right aligned text wraps within its column.",
+                         font-size:2.2%P)
+                    text("Right aligned text wraps here.",
                          text-wrap:wrap, text-align:right,
-                         font-size:2.4%P)
-                    text("Centered text wraps within its column.",
+                         font-size:2.2%P)
+                    text("Centered text wraps here.",
                          text-wrap:wrap, text-align:center,
-                         font-size:2.4%P)
+                         font-size:2.2%P)
                 }
             }
             miniCodeNTexup("""
                 grid(1,3){
-                    text("Left aligned text wraps within its column.",
-                         text-wrap:wrap, text-align:left,
-                         font-size:2.4%P)
-                    text("Right aligned text wraps within its column.",
-                         text-wrap:wrap, text-align:right,
-                         font-size:2.4%P)
-                    text("Centered text wraps within its column.",
-                         text-wrap:wrap, text-align:center,
-                         font-size:2.4%P)
+                  text("Left aligned text wraps here.",
+                    text-wrap:wrap, text-align:left, font-size:2.2%P)
+                  text("Right aligned text wraps here.",
+                    text-wrap:wrap, text-align:right, font-size:2.2%P)
+                  text("Centered text wraps here.",
+                    text-wrap:wrap, text-align:center, font-size:2.2%P)
                 }
+            """, fontSize:2%P)
+
+            miniPage{
+                text(stringJoin(" ",
+                    "Justified text spreads words",
+                    "evenly across full lines.",
+                    "The final line stays left-aligned."
+                ), text-wrap:wrap, text-align:justify,
+                   font-size:2.2%P)
+            }
+            miniCodeNTexup("""
+                text(stringJoin(" ",
+                  "Justified text spreads words",
+                  "evenly across full lines.",
+                  "The final line stays left-aligned."
+                ), text-wrap:wrap, text-align:justify,
+                   font-size:2.2%P)
             """, fontSize:2.1%P)
 
             miniPage{
                 text(stringJoin(" ",
-                    "Justified text distributes extra space",
-                    "between words on each full line.",
-                    "The final line remains left-aligned."
-                ), text-wrap:wrap, text-align:justify,
-                   font-size:2.4%P)
-            }
-            miniCodeNTexup(```
-                text(stringJoin(" ",
-                  "Justified text distributes extra space",
-                  "between words on each full line.",
-                  "The final line remains left-aligned."
-                ), text-wrap:wrap, text-align:justify,
-                   font-size:2.4%P)
-            ```, fontSize:2.2%P)
-
-            miniPage{
-                text(stringJoin(" ",
-                    "Mixed text combines **bold words** with",
-                    "inline equations [[eq: E=mc^2 ]] and",
+                    "Mixed **bold words** with",
+                    "[[eq: E=mc^2 ]] and",
                     "[[eq: a^2+b^2=c^2 ]] while wrapping."
                 ), text-wrap:wrap, text-align:justify,
-                   font-size:2.4%P)
+                   font-size:2.2%P)
             }
-            miniCodeNTexup(```
+            miniCodeNTexup("""
                 text(stringJoin(" ",
-                  "Mixed text combines **bold words** with",
-                  "inline equations [[eq: E=mc^2 ]] and",
+                  "Mixed **bold words** with",
+                  "[[eq: E=mc^2 ]] and",
                   "[[eq: a^2+b^2=c^2 ]] while wrapping."
                 ), text-wrap:wrap, text-align:justify,
-                   font-size:2.4%P)
-            ```, fontSize:2.2%P)
+                   font-size:2.2%P)
+            """, fontSize:2.1%P)
         }
     }
 }

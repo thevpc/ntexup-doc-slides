@@ -6,84 +6,84 @@ content-slide(title:"Positions", section:"Layout & styling"){
             columns-weight:[1, 2.2])
         {
             miniPage{
-                rectangle(at:center, size:(24,24),
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(at:center, size:(35,50),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(at:center, size:(24,24))
-            """)
+                rectangle(at:center, size:(35,50),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(at:top, size:(24,24),
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(at:top, size:(35,50),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(at:top, size:(24,24))
-            """)
+                rectangle(at:top, size:(35,50),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(at:top-left, size:(24,24),
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(at:top-left, size:(35,50),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(at:top-left, size:(24,24))
-            """)
+                rectangle(at:top-left, size:(35,50),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(at:bottom-right, size:(24,24),
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(at:bottom-right, size:(35,50),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(at:bottom-right, size:(24,24))
-            """)
+                rectangle(at:bottom-right, size:(35,50),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(origin:(50,50), position:(25,25),
-                    size:(24,24),
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(origin:(50,50), position:(50,50),
+                    size:(35,50),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(origin:(50,50),
-                  position:(25,25), size:(24,24))
-            """)
+                rectangle(origin:(50,50), position:(50,50),
+                  size:(35,50),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(origin:(75,75), position:(30,30),
-                    size:(24,24),
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(origin:(75,75), position:(65,65),
+                    size:(35,50),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(origin:(75,75),
-                  position:(30,30), size:(24,24))
-            """)
+                rectangle(origin:(75,75), position:(65,65),
+                  size:(35,50),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(origin:(100,100), position:(35,35),
-                    size:(24,24),
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(origin:(100,100), position:(80,75),
+                    size:(35,50),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(origin:(100,100),
-                  position:(35,35), size:(24,24))
-            """)
+                rectangle(origin:(100,100), position:(80,75),
+                  size:(35,50),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
 
             miniPage{
-                rectangle(origin:(100,100), position:(25,25),
-                    size:(24,24),
-                    background-color:documentColors[4],
-                    color:documentColors[2])
+                rectangle(origin:(100,100), position:(70,80),
+                    size:(35,50),
+                    background-color:documentColors[4])
             }
             miniCodeNTexup("""
-                rectangle(origin:(100,100),
-                  position:(25,25), size:(24,24))
-            """)
+                rectangle(origin:(100,100), position:(70,80),
+                  size:(35,50),
+                  background-color:documentColors[4])
+            """, fontSize:2%P)
         }
         group(position:(0, 95), size:(100, 5), origin:top-left){
             pageNote("Keep explicit positions inside the card; origin shifts the reference point within the shape.")
