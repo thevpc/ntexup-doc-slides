@@ -25,7 +25,7 @@ content-slide(title: "Scoreboard Extension"){
                     ]
                 )
 
-                col(rows-weight: [10, 66, 24]){
+                col(rows-weight: [10, 66, 24], margin: (0, 0, 2.5, 0)){
                     text("**One component, one ranked list.**", font-size: 2.3%P)
 
                     sourcePanel(
@@ -56,7 +56,7 @@ scoreboard(
                 }
             }
 
-            pageNote("Classic already imports scoreboard. The excerpt omits the icon, animation options and four lower-ranked entries.")
+            pageNote("Every bundled theme imports scoreboard. The excerpt omits the icon, animation options and four lower-ranked entries.")
         }
     }
 }

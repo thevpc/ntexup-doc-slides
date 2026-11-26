@@ -8,10 +8,12 @@ content-slide(title:"Polygons", section:"2D graphics"){
                 grid(1, 2){
                     miniPage{
                         pentagon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                             background-color:documentColors[4])
                     }
                     miniCodeNTexup("""
                         pentagon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                           background-color:documentColors[4])
                     """, fontSize:1.7%P)
                 }
@@ -20,10 +22,12 @@ content-slide(title:"Polygons", section:"2D graphics"){
                 grid(1, 2){
                     miniPage{
                         hexagon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                             background-color:documentColors[4])
                     }
                     miniCodeNTexup("""
                         hexagon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                           background-color:documentColors[4])
                     """, fontSize:1.7%P)
                 }
@@ -32,10 +36,12 @@ content-slide(title:"Polygons", section:"2D graphics"){
                 grid(1, 2){
                     miniPage{
                         heptagon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                             background-color:documentColors[4])
                     }
                     miniCodeNTexup("""
                         heptagon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                           background-color:documentColors[4])
                     """, fontSize:1.7%P)
                 }
@@ -44,10 +50,12 @@ content-slide(title:"Polygons", section:"2D graphics"){
                 grid(1, 2){
                     miniPage{
                         octagon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                             background-color:documentColors[4])
                     }
                     miniCodeNTexup("""
                         octagon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                           background-color:documentColors[4])
                     """, fontSize:1.7%P)
                 }
@@ -56,10 +64,12 @@ content-slide(title:"Polygons", section:"2D graphics"){
                 grid(1, 2){
                     miniPage{
                         nonagon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                             background-color:documentColors[4])
                     }
                     miniCodeNTexup("""
                         nonagon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                           background-color:documentColors[4])
                     """, fontSize:1.7%P)
                 }
@@ -68,10 +78,12 @@ content-slide(title:"Polygons", section:"2D graphics"){
                 grid(1, 2){
                     miniPage{
                         decagon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                             background-color:documentColors[4])
                     }
                     miniCodeNTexup("""
                         decagon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                           background-color:documentColors[4])
                     """, fontSize:1.7%P)
                 }
@@ -80,22 +92,12 @@ content-slide(title:"Polygons", section:"2D graphics"){
                 grid(1, 2){
                     miniPage{
                         polygon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                             background-color:documentColors[4])
                     }
                     miniCodeNTexup("""
                         polygon(at:center, size:(80,80),
-                          background-color:documentColors[4])
-                    """, fontSize:1.7%P)
-                }
-            }
-            group(margin:2){
-                grid(1, 2){
-                    miniPage{
-                        polygon(at:center, size:(80,80), count:8,
-                            background-color:documentColors[4])
-                    }
-                    miniCodeNTexup("""
-                        polygon(at:center, size:(80,80), count:8,
+                          preserve-aspect-ratio,
                           background-color:documentColors[4])
                     """, fontSize:1.7%P)
                 }
@@ -104,11 +106,27 @@ content-slide(title:"Polygons", section:"2D graphics"){
                 grid(1, 2){
                     miniPage{
                         polygon(at:center, size:(80,80),
+                          preserve-aspect-ratio, count:8,
+                            background-color:documentColors[4])
+                    }
+                    miniCodeNTexup("""
+                        polygon(at:center, size:(80,80),
+                          preserve-aspect-ratio, count:8,
+                          background-color:documentColors[4])
+                    """, fontSize:1.7%P)
+                }
+            }
+            group(margin:2){
+                grid(1, 2){
+                    miniPage{
+                        polygon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                             points:[(0,0),(60,0),(100,35),(80,100)],
                             background-color:documentColors[4])
                     }
                     miniCodeNTexup("""
                         polygon(at:center, size:(80,80),
+                          preserve-aspect-ratio,
                           points:[(0,0),(60,0),(100,35),(80,100)],
                           background-color:documentColors[4])
                     """, fontSize:1.6%P)
@@ -116,7 +134,7 @@ content-slide(title:"Polygons", section:"2D graphics"){
             }
         }
         group(position:(0, 95), size:(100, 5), origin:top-left){
-            pageNote("Regular and custom polygons share one accent fill; each preview keeps its own source snippet.")
+            pageNote("preserve-aspect-ratio keeps shapes undistorted in any box; regular polygons and squares default to it.")
         }
     }
 }

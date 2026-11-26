@@ -1,99 +1,95 @@
 content-slide(title:"A Live Release Dashboard", section:"Chapter 01 · Get started"){
     body{
-        sectionLabel("Shapes, connectors, plots, equations, and UML")
+        sectionLabel("Shapes, connectors, plots, equations and UML in one grid")
         grid(2, 1,
-            position:(0, 8), size:(100, 86), origin:top-left,
-            columns-weight:[1.05, 1])
+            position:(0, 8), size:(100, 88), origin:top-left,
+            columns-weight:[0.95, 1.05])
         {
             sourcePanel(```
-                grid(2,3,columns-weight:[1.55,1],
-                  rows-weight:[0.62,1.45,1]){
-                  text("Release readiness",colspan:2,
-                    font-size:3.2%P,font-bold)
+                grid(2,3,columns-weight:[1,1.4],rows-weight:[0.4,1,1.45]){
+                  text("Release readiness",colspan:2,font-size:2.8%P,font-bold)
                   group{
-                    rectangle(background:documentColors[2],round-corner:5)
-                    text("98.7%",position:(50,36),origin:center,
-                      font-size:3.2%P,font-bold,color:white)
+                    rectangle(background:documentColors[2],round-corner:2)
+                    text("98.7%",position:(50,40),origin:center,font-size:3.6%P,
+                      font-bold,color:white)
                     text("PASS RATE",position:(50,72),origin:center,
-                      font-size:1.3%P,font-bold,color:white)
+                      font-size:1.4%P,font-bold,color:white)
                   }
-                  group{
-                    rectangle(name:"src",position:(2,50),origin:left,
-                      size:(26,48),background-color:documentSurface,
-                      line-color:documentLine,draw-contour,round-corner:2){text("SOURCE",at:center,font-size:1.4%P,font-bold)}
-                    rectangle(name:"build",position:(37,50),origin:left,
-                      size:(26,48),background-color:documentSurface,
-                      line-color:documentLine,draw-contour,round-corner:2){text("BUILD",at:center,font-size:1.4%P,font-bold)}
-                    rectangle(name:"ship",position:(72,50),origin:left,
-                      size:(26,48),background-color:documentSurface,
-                      line-color:documentLine,draw-contour,round-corner:2){text("DEPLOY",at:center,font-size:1.4%P,font-bold)}
-                    connector(from:"src@right",to:"build@left",end-arrow:simple(),stroke:2,color:documentColors[0])
-                    connector(from:"build@right",to:"ship@left",end-arrow:simple(),stroke:2,color:documentColors[0])
+                  col(rows-weight:[52,48]){
+                    group{
+                      rectangle(name:"src",position:(1,50),origin:left,size:(28,40),
+                        background-color:documentSurface,line-color:documentLine,
+                        draw-contour,round-corner:2){text("SOURCE",at:center)}
+                      rectangle(name:"build",position:(36,50),...){text("BUILD",...)}
+                      rectangle(name:"ship",position:(71,50),...){text("DEPLOY",...)}
+                      connector(from:"src@right",to:"build@left",
+                        end-arrow:triangle-full(7,4),color:documentColors[0])
+                      connector(from:"build@right",to:"ship@left",...)
+                    }
+                    eq("E = 1 - \frac{n_{errors}}{n_{requests}}",font-size:2.3%P)
                   }
-                  plot2d(x:dtimes(0,10,80),background:documentSurface,
-                    draw-contour,round-corner:4,padding:1){
+                  plot2d(x:dtimes(0,10,80),draw-contour,padding:1){
                     curve{f(x):"80+8*sin(x)" title:'Latency'}
                     curve{f(x):"92+3*cos(x)" title:'Budget'}
                   }
-                  col(colspan:2,rows-weight:[22,78]){
-                    text("Error budget",font-size:1.8%P,font-bold,
-                      color:documentColors[0])
-                    eq("E = 1 - \frac{n_{errors}}{n_{requests}}",
-                      at:center,font-size:2.2%P)
-                  }
-                  uml(at:center,size:(100,100),"""
-                    skinparam monochrome true
+                  uml("""
                     actor Developer as dev
                     participant "CI" as ci
                     participant "Registry" as reg
                     dev -> ci : push
                     ci -> ci : test
                     ci -> reg : publish
+                    reg --> dev : release 1.2
                   """)
                 }
-            ```, title:"Complete dashboard source", fontSize:1.05%P)
+            ```, title:"Dashboard source (abridged)", fontSize:1.2%P)
 
             demoPanel("Live release dashboard"){
                 grid(2, 3,
-                    columns-weight:[1.55, 1],
-                    rows-weight:[0.62, 1.45, 1])
+                    columns-weight:[1, 1.4],
+                    rows-weight:[0.4, 1, 1.45])
                 {
                     text("Release readiness", colspan:2,
-                        font-size:3.2%P, font-bold)
-                    group{
-                        rectangle(background:documentColors[2], round-corner:5)
-                        text("98.7%", position:(50, 36), origin:center,
-                            font-size:3.2%P, font-bold, color:white)
+                        font-size:2.8%P, font-bold)
+                    group(margin:2){
+                        rectangle(background:documentColors[2], round-corner:2)
+                        text("98.7%", position:(50, 40), origin:center,
+                            font-size:3.6%P, font-bold, color:white)
                         text("PASS RATE", position:(50, 72), origin:center,
-                            font-size:1.3%P, font-bold, color:white)
+                            font-size:1.4%P, font-bold, color:white)
                     }
-                    group{
-                        rectangle(name:"src", position:(2, 50), origin:left,
-                            size:(26, 48), background-color:documentSurface,
-                            line-color:documentLine, draw-contour, round-corner:2){
-                            text("SOURCE", at:center,
-                                font-size:1.4%P, font-bold)
+                    col(rows-weight:[52, 48]){
+                        group{
+                            rectangle(name:"src", position:(1, 50), origin:left,
+                                size:(28, 40), background-color:documentSurface,
+                                line-color:documentLine, draw-contour, round-corner:2){
+                                text("SOURCE", at:center, font-size:1.3%P, font-bold)
+                            }
+                            rectangle(name:"build", position:(36, 50), origin:left,
+                                size:(28, 40), background-color:documentSurface,
+                                line-color:documentLine, draw-contour, round-corner:2){
+                                text("BUILD", at:center, font-size:1.3%P, font-bold)
+                            }
+                            rectangle(name:"ship", position:(71, 50), origin:left,
+                                size:(28, 40), background-color:documentSurface,
+                                line-color:documentLine, draw-contour, round-corner:2){
+                                text("DEPLOY", at:center, font-size:1.3%P, font-bold)
+                            }
+                            connector(from:"src@right", to:"build@left",
+                                end-arrow:triangle-full(7, 4), stroke:1.5, color:documentColors[0])
+                            connector(from:"build@right", to:"ship@left",
+                                end-arrow:triangle-full(7, 4), stroke:1.5, color:documentColors[0])
                         }
-                        rectangle(name:"build", position:(37, 50), origin:left,
-                            size:(26, 48), background-color:documentSurface,
-                            line-color:documentLine, draw-contour, round-corner:2){
-                            text("BUILD", at:center,
-                                font-size:1.4%P, font-bold)
+                        group(margin:2){
+                            text("Error budget", position:(0, 10), origin:left,
+                                font-size:1.7%P, font-bold, color:documentColors[0])
+                            eq("E = 1 - \frac{n_{errors}}{n_{requests}}",
+                                position:(50, 62), origin:center, font-size:2.3%P)
                         }
-                        rectangle(name:"ship", position:(72, 50), origin:left,
-                            size:(26, 48), background-color:documentSurface,
-                            line-color:documentLine, draw-contour, round-corner:2){
-                            text("DEPLOY", at:center,
-                                font-size:1.4%P, font-bold)
-                        }
-                        connector(from:"src@right", to:"build@left",
-                            end-arrow:simple(), stroke:2, color:documentColors[0])
-                        connector(from:"build@right", to:"ship@left",
-                            end-arrow:simple(), stroke:2, color:documentColors[0])
                     }
                     plot2d(x:dtimes(0, 10, 80),
                         background:documentSurface,
-                        draw-contour, round-corner:4, padding:1)
+                        draw-contour, padding:1, margin:2)
                     {
                         curve{
                             f(x):"80+8*sin(x)"
@@ -104,20 +100,14 @@ content-slide(title:"A Live Release Dashboard", section:"Chapter 01 · Get start
                             title:'Budget'
                         }
                     }
-                    col(colspan:2, rows-weight:[22, 78]){
-                        text("Error budget", font-size:1.8%P,
-                            font-bold, color:documentColors[0])
-                        eq("E = 1 - \frac{n_{errors}}{n_{requests}}",
-                            at:center, font-size:2.2%P)
-                    }
-                    uml(at:center, size:(100, 100), """
-                        skinparam monochrome true
+                    uml(margin:2, """
                         actor Developer as dev
                         participant "CI" as ci
                         participant "Registry" as reg
                         dev -> ci : push
                         ci -> ci : test
                         ci -> reg : publish
+                        reg --> dev : release 1.2
                     """)
                 }
             }

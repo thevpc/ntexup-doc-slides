@@ -8,11 +8,11 @@ content-slide(title:"Why ntexup?", section:"Chapter 01 · Get started"){
             styles{
                 "*": {margin:1}
                 @ul-item{
-                    font-size:1.65%P
-                    margin:(0.6, 0)
+                    font-size:2.5%P
+                    margin:(1, 0)
                     text-wrap:wrap
                 }
-                @ul-bullet{ size:1.1%P }
+                @ul-bullet{ size:1%P }
             }
             card(accentColor:documentColors[0]){
                 kicker("READABLE")

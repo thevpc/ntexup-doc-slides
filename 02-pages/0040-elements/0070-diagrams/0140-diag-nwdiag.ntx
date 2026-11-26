@@ -2,7 +2,7 @@ content-slide(title: "Network Diagrams — Groups & Addresses") {
     body {
         col(rows-weight: [6, 86, 8]) {
             sectionLabel("Diagrams")
-            grid((2, 2), columns-weight: [1.55, 1], rows-weight: [1, 1.15]) {
+            grid((2, 2), columns-weight: [1.25, 1], rows-weight: [1, 1.2]) {
                 demoPanel("Shared group across networks") {
                     nwdiag(
                         size: (100, 100),
@@ -10,21 +10,19 @@ content-slide(title: "Network Diagrams — Groups & Addresses") {
                         """
                         group {
                           color = "#FFAAAA"
-
-                          web01;
-                          web02;
-                          db01;
+                          web01
+                          web02
+                          db01
                         }
-
                         network dmz {
-                          web01;
-                          web02;
+                          web01
+                          web02
                         }
                         network internal {
-                          web01;
-                          web02;
-                          db01;
-                          db02;
+                          web01
+                          web02
+                          db01
+                          db02
                         }
                         """
                     )
@@ -34,25 +32,23 @@ content-slide(title: "Network Diagrams — Groups & Addresses") {
 """
 group {
   color = "#FFAAAA"
-
-  web01;
-  web02;
-  db01;
+  web01
+  web02
+  db01
 }
-
 network dmz {
-  web01;
-  web02;
+  web01
+  web02
 }
 network internal {
-  web01;
-  web02;
-  db01;
-  db02;
+  web01
+  web02
+  db01
+  db02
 }
 """)''',
                     title: "Shared group · complete example",
-                    fontSize: 1.45%P
+                    fontSize: 1.15%P
                 )
 
                 demoPanel("Network-specific addresses and groups") {
@@ -76,8 +72,8 @@ network internal {
                           db01 [address = ".101", shape = database]
                           db02 [address = ".102"]
                           group db {
-                            db01;
-                            db02;
+                            db01
+                            db02
                           }
                         }
                         """
@@ -102,13 +98,13 @@ network Sample_back {
   db01 [address = ".101", shape = database]
   db02 [address = ".102"]
   group db {
-    db01;
-    db02;
+    db01
+    db02
   }
 }
 """)''',
                     title: "Addresses + groups · complete example",
-                    fontSize: 1.25%P
+                    fontSize: 1.15%P
                 )
             }
             pageNote("Repeated names are shared servers; groups collect references. Networks set base addresses.")

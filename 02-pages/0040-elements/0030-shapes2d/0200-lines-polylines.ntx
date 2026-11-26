@@ -1,6 +1,6 @@
 content-slide(title:"Lines and polylines — flow", section:"2D graphics"){
     body{
-        sectionLabel("Static and animated flow · line % / polyline page pixels")
+        sectionLabel("Static and animated flow · line and relative polyline points are % of the box")
         grid(2, 4,
             position:(0, 6), size:(100, 90), origin:top-left,
             columns-weight:[1, 2.4])
@@ -30,28 +30,28 @@ content-slide(title:"Lines and polylines — flow", section:"2D graphics"){
             """, title:"", fontSize:2%P)
 
             demoPanel("polyline — static"){
-                polyline(points:((220,1040),(330,1100),
-                    (440,1040),(550,1100)),
+                polyline(points:((10,70),(37,30),
+                    (63,70),(90,30)), relative,
                     start-arrow:simple(), end-arrow:triangle(),
                     stroke:2, color:documentColors[1])
             }
             sourcePanel("""
-                polyline(points:((220,1040),(330,1100),
-                  (440,1040),(550,1100)),
+                polyline(points:((10,70),(37,30),
+                  (63,70),(90,30)), relative,
                   start-arrow:simple(), end-arrow:triangle(),
                   stroke:2, color:documentColors[1])
             """, title:"", fontSize:2%P)
 
             demoPanel("polyline — animated"){
-                polyline(points:((220,1350),(330,1410),
-                    (440,1350),(550,1410)),
+                polyline(points:((10,70),(37,30),
+                    (63,70),(90,30)), relative,
                     start-arrow:simple(), end-arrow:triangle(),
                     stroke:2, color:documentColors[1],
                     flow:dots(count:4, size:1.2, period:3))
             }
             sourcePanel("""
-                polyline(points:((220,1350),(330,1410),
-                  (440,1350),(550,1410)),
+                polyline(points:((10,70),(37,30),
+                  (63,70),(90,30)), relative,
                   start-arrow:simple(), end-arrow:triangle(),
                   stroke:2, color:documentColors[1],
                   flow:dots(count:4, size:1.2, period:3))

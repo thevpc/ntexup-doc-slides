@@ -5,10 +5,10 @@ content-slide(title: "Built-in Template Components"){
 
             grid(3, 3, columns-weight: [1, 1, 1], rows-weight: [1.2, 0.9, 1.1]){
                 styles{
-                    text{ font-size: 1.55%P }
-                    ul{ font-size: 1.55%P }
+                    text{ font-size: 2%P }
+                    ul{ font-size: 2%P }
                     @ul-item{
-                        font-size: 1.55%P
+                        font-size: 2%P
                         margin: (0.5, 0)
                         text-wrap: wrap
                     }
@@ -39,26 +39,26 @@ content-slide(title: "Built-in Template Components"){
                           size: 32)
 
                 hint-info("Information"){
-                    text("Contextual tips for the current step.", font-size: 1.55%P)
+                    text("Contextual tips for the current step.", font-size: 2%P)
                 }
 
                 hint-error("Important"){
-                    text("Blocking issues or failed checks.", font-size: 1.55%P)
+                    text("Blocking issues or failed checks.", font-size: 2%P)
                 }
 
                 hint-warning("Warning"){
-                    text("Cautions before continuing.", font-size: 1.55%P)
+                    text("Cautions before continuing.", font-size: 2%P)
                 }
 
                 hint-success("Note"){
-                    text("Passed checks or healthy services.", font-size: 1.55%P)
+                    text("Passed checks or healthy services.", font-size: 2%P)
                 }
 
                 panel(title: "Panel"){
                     group(size: (100, 70)){
                         text("A neutral canvas for diagrams and details.",
                              color: documentTextSecondary, position: (50, 60),
-                             origin: center, font-size: 1.55%P, text-wrap: wrap)
+                             origin: center, font-size: 2%P, text-wrap: wrap)
                     }
                 }
             }

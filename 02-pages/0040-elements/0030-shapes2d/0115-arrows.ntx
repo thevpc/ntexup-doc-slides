@@ -1,6 +1,6 @@
 content-slide(title:"Arrows", section:"2D graphics"){
     body{
-        sectionLabel("2D graphics · start/end chevrons and filled heads")
+        sectionLabel("2D graphics · open heads at the start, filled heads at the end")
         grid(2, 5,
             position:(0, 6), size:(100, 88), origin:top-left,
             columns-weight:[1, 2.4])
@@ -18,51 +18,51 @@ content-slide(title:"Arrows", section:"2D graphics"){
 
             miniPage{
                 line(from:(12,50), to:(88,50),
-                    start-arrow:triangle(10,7),
-                    end-arrow:triangle-full(10,7),
+                    start-arrow:triangle(12,6), end-arrow:triangle-full(12,6),
                     color:documentColors[1], stroke:2)
             }
             miniCodeNTexup("""
                 line(from:(12,50), to:(88,50),
-                  start-arrow:triangle(10,7), end-arrow:triangle-full(10,7),
+                  start-arrow:triangle(12,6), end-arrow:triangle-full(12,6),
                   color:documentColors[1], stroke:2)
             """, fontSize:1.9%P)
 
             miniPage{
                 line(from:(12,50), to:(88,50),
-                    end-arrow:oval-full(14,9),
+                    start-arrow:diamond(16,6), end-arrow:diamond-full(16,6),
                     color:documentColors[1], stroke:2)
             }
             miniCodeNTexup("""
                 line(from:(12,50), to:(88,50),
-                  end-arrow:oval-full(14,9),
+                  start-arrow:diamond(16,6), end-arrow:diamond-full(16,6),
                   color:documentColors[1], stroke:2)
             """, fontSize:1.9%P)
 
             miniPage{
                 line(from:(12,50), to:(88,50),
-                    end-arrow:diamond-full(14,9),
+                    start-arrow:oval(10,5), end-arrow:oval-full(10,5),
                     color:documentColors[1], stroke:2)
             }
             miniCodeNTexup("""
                 line(from:(12,50), to:(88,50),
-                  end-arrow:diamond-full(14,9),
+                  start-arrow:oval(10,5), end-arrow:oval-full(10,5),
                   color:documentColors[1], stroke:2)
             """, fontSize:1.9%P)
 
             miniPage{
                 line(from:(12,50), to:(88,50),
-                    end-arrow:rectangle-full(14,9),
+                    start-arrow:rectangle(10,5), end-arrow:rectangle-full(10,5),
                     color:documentColors[1], stroke:2)
             }
             miniCodeNTexup("""
                 line(from:(12,50), to:(88,50),
-                  end-arrow:rectangle-full(14,9),
+                  start-arrow:rectangle(10,5), end-arrow:rectangle-full(10,5),
                   color:documentColors[1], stroke:2)
             """, fontSize:1.9%P)
+
         }
         group(position:(0, 95), size:(100, 5), origin:top-left){
-            pageNote("Explicit head sizes isolate each shape; open and filled variants can share a line.")
+            pageNote("Head sizes are (length, half-width); the shaft stops at the base of every head, so open heads stay hollow.")
         }
     }
 }

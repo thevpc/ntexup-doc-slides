@@ -2,7 +2,7 @@ content-slide(title: "Composed 3D Scenes") {
     body {
         col(rows-weight: [6, 88, 6]) {
             sectionLabel("3D graphics")
-            grid((2, 2), columns-weight: [1, 1.55]) {
+            grid((2, 2), columns-weight: [1, 1.7]) {
                 demoPanel("Architectural composition") {
                     scene3d(
                         draw-contour,
@@ -48,13 +48,10 @@ content-slide(title: "Composed 3D Scenes") {
                     """
 scene3d(draw-contour,
   real-position:(0,0,0), real-size:(60,82,60),
-  transform:{rotate(to:(0,100,0), angle:30)
-            scale:0.65}){
-  box(size:(60,12,60), position:(0,0,0),
-    background-color:documentColors[10],
+  transform:{rotate(to:(0,100,0), angle:30) scale:0.65}){
+  box(size:(60,12,60), position:(0,0,0), background-color:documentColors[10],
     faces:{top:{background-color:documentColors[1]}})
-  box(size:(44,14,44), position:(8,12,8),
-    background-color:documentColors[5],
+  box(size:(44,14,44), position:(8,12,8), background-color:documentColors[5],
     faces:{top:{background-color:documentColors[6]}})
   pyramid(size:(32,28,32), position:(14,26,14),
     background-color:documentColors[7],
@@ -64,7 +61,7 @@ scene3d(draw-contour,
 }
 """,
                     title: "Pedestal excerpt · orb omitted",
-                    fontSize: 1.8%P
+                    fontSize: 1.6%P
                 )
 
                 demoPanel("Helix, pillar & floating orb") {
@@ -109,15 +106,11 @@ scene3d(draw-contour,
                     """
 scene3d(draw-contour,
   real-position:(0,0,0), real-size:(50,82,50),
-  transform:{rotate(to:(0,100,0), angle:25)
-            scale:0.65}){
-  box(size:(50,8,50), position:(0,0,0),
-    background-color:documentColors[10],
+  transform:{rotate(to:(0,100,0), angle:25) scale:0.65}){
+  box(size:(50,8,50), position:(0,0,0), background-color:documentColors[10],
     faces:{top:{background-color:documentColors[5]}})
-  helix(position:(25,8,25), radius:(18,18,18),
-    height:55, turns:3.0,
-    line-color:documentColors[0],
-    stroke:basic(width:2))
+  helix(position:(25,8,25), radius:(18,18,18), height:55, turns:3.0,
+    line-color:documentColors[0], stroke:basic(width:2))
   box(size:(10,50,10), position:(20,8,20),
     background-color:documentColors[7])
   sphere(radius:(16,16,16), position:(25,66,25),
@@ -125,7 +118,7 @@ scene3d(draw-contour,
 }
 """,
                     title: "Helix scene excerpt · mesh detail omitted",
-                    fontSize: 1.55%P
+                    fontSize: 1.6%P
                 )
             }
             pageNote("Previews show all geometry; compact source excerpts omit only the details named in each panel.")

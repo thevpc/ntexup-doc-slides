@@ -10,10 +10,10 @@ include(
 @define miniPage{
     group{
         rectangle(
-            background-color:either(documentBg, white),
+            background-color:either(documentSurface, white),
             draw-contour,
             line-color:either(documentLine, Gray89),
-            round-corner:6
+            round-corner:2
         )
         group(padding:1%P){
             slot
@@ -27,7 +27,7 @@ include(
             background-color:either(documentSurfaceAlt, Gray89),
             draw-contour,
             line-color:either(documentLine, Gray80),
-            round-corner:6
+            round-corner:2
         )
         group(padding:1%P){
             slot
@@ -37,16 +37,16 @@ include(
 
 @define miniCodeNTexup(code, fontSize:""){
     group(margin:4){
-        rectangle(background-color:"#0f172a", draw-contour, line-color:"#334155", round-corner:6)
+        rectangle(background-color:either(themeCodeBg, "#0f172a"), draw-contour, line-color:either(themeCodeLine, "#334155"), round-corner:2)
         group(padding:0.8%P){
             source(
                 ntexup,
                 "${code}",
                 font-size:either(fontSize, 2.2%P),
                 at:top-left,
-                background-color:"#0f172a",
+                background-color:either(themeCodeBg, "#0f172a"),
                 color:"#f8fafc",
-                line-color:"#334155",
+                line-color:either(themeCodeLine, "#334155"),
                 draw-contour:false,
                 padding:0
             )
@@ -57,19 +57,19 @@ include(
 @define sectionLabel(text){
     group(size:(100, 5), origin:top-left){
         rectangle(position:(0, 50), size:(1.4%P, 0.35%P), origin:left, background-color:documentColors[0])
-        text("${text}", position:(2.2%P, 50), origin:left, font-size:1.8%P, font-bold, color:documentTextSecondary)
+        text("${text}", position:(2.2%P, 50), origin:left, font-size:2%P, font-bold, color:documentTextSecondary)
     }
 }
 
 @define pageNote(text){
     group(margin:2){
-        text("${text}", font-size:2%P, color:documentTextSecondary, text-wrap:wrap)
+        text("${text}", font-size:2.1%P, color:documentTextMuted, text-wrap:wrap)
     }
 }
 
 @define demoPanel(title){
     group(margin:2){
-        rectangle(background-color:documentBg, draw-contour, line-color:documentLine, round-corner:6)
+        rectangle(background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:2)
         group(position:(3, 4), size:(94, 92), origin:top-left){
             text("${title}", position:(0, 0), origin:top-left, font-size:2.2%P, font-bold, color:documentTextPrimary)
             group(position:(0, 13), size:(100, 87), origin:top-left){
@@ -81,7 +81,7 @@ include(
 
 @define sourcePanel(code, title:"TSON", fontSize:""){
     group(margin:2){
-        rectangle(background-color:"#0f172a", draw-contour, line-color:"#334155", round-corner:6)
+        rectangle(background-color:either(themeCodeBg, "#0f172a"), draw-contour, line-color:either(themeCodeLine, "#334155"), round-corner:2)
         group(position:(3, 4), size:(94, 92), origin:top-left){
             text("${title}", position:(0, 0), origin:top-left, font-size:1.7%P, font-bold, color:"#94a3b8")
             group(position:(0, 11), size:(100, 89), origin:top-left){
@@ -90,7 +90,7 @@ include(
                     "${code}",
                     font-size:either(fontSize, 2%P),
                     at:top-left,
-                    background-color:"#0f172a",
+                    background-color:either(themeCodeBg, "#0f172a"),
                     color:"#f8fafc",
                     draw-contour:false,
                     padding:0
