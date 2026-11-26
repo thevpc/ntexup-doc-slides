@@ -1,69 +1,92 @@
-content-slide(title:"Margins",variant:4){
+content-slide(title:"Margins", section:"Layout & styling"){
     body{
-        grid((6,3),columns-weight:[1,3]){
-            styles:{
-                "*": {margin:2}
+        sectionLabel("Base elements · outer spacing")
+        grid(2, 4,
+            position:(0, 7), size:(100, 86), origin:top-left,
+            columns-weight:[1, 1.8])
+        {
+            demoPanel("Uniform margin · 10"){
+                styles{
+                    rectangle{
+                        size:(16,16),
+                        background-color:documentColors[4],
+                        color:documentColors[2], draw-contour
+                    }
+                }
+                rectangle(at:top, margin:10)
+                rectangle(at:left, margin:10)
+                rectangle(at:bottom, margin:10)
+                rectangle(at:right, margin:10)
             }
-            // Row
-            miniPage{
-                rectangle(at:top, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:10)
-                rectangle(at:left, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:10)
-                rectangle(at:bottom, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:10)
-                rectangle(at:right, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:10)
-            }
-            miniCodeNTexup(
-            """
-            rectangle(
-              margin:10
-            )
-            """
-            )
+            sourcePanel("""
+                rectangle(at:top, margin:10)
+                rectangle(at:left, margin:10)
+                rectangle(at:bottom, margin:10)
+                rectangle(at:right, margin:10)
+            """, title:"Four anchors · shared size/fill omitted", fontSize:2.1%P)
 
-            // Row
-            miniPage{
-                rectangle(at:top, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:20)
-                rectangle(at:left, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:20)
-                rectangle(at:bottom, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:20)
-                rectangle(at:right, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:20)
+            demoPanel("Uniform margin · 20"){
+                styles{
+                    rectangle{
+                        size:(16,16),
+                        background-color:documentColors[4],
+                        color:documentColors[2], draw-contour
+                    }
+                }
+                rectangle(at:top, margin:20)
+                rectangle(at:left, margin:20)
+                rectangle(at:bottom, margin:20)
+                rectangle(at:right, margin:20)
             }
-            miniCodeNTexup(
-            """
-            rectangle(
-              margin:20
-            )
-            """
-            )
+            sourcePanel("""
+                rectangle(at:top, margin:20)
+                rectangle(at:left, margin:20)
+                rectangle(at:bottom, margin:20)
+                rectangle(at:right, margin:20)
+            """, title:"Four anchors · shared size/fill omitted", fontSize:2.1%P)
 
-            // Row
-            miniPage{
-                rectangle(at:top, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:(5,30))
-                rectangle(at:left, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:(5,30))
-                rectangle(at:bottom, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:(5,30))
-                rectangle(at:right, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:(5,30))
+            demoPanel("Two-value margin · (5,30)"){
+                styles{
+                    rectangle{
+                        size:(16,16),
+                        background-color:documentColors[4],
+                        color:documentColors[2], draw-contour
+                    }
+                }
+                rectangle(at:top, margin:(5,30))
+                rectangle(at:left, margin:(5,30))
+                rectangle(at:bottom, margin:(5,30))
+                rectangle(at:right, margin:(5,30))
             }
-            miniCodeNTexup(
-            """
-            rectangle(
-              margin:(5,30)
-            )
-            """)
+            sourcePanel("""
+                rectangle(at:top, margin:(5,30))
+                rectangle(at:left, margin:(5,30))
+                rectangle(at:bottom, margin:(5,30))
+                rectangle(at:right, margin:(5,30))
+            """, title:"Four anchors · shared size/fill omitted", fontSize:2.1%P)
 
-            // Row
-            miniPage{
-                rectangle(at:top, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:(5,30,0,0))
-                rectangle(at:left, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:(5,30,0,0))
-                rectangle(at:bottom, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:(5,30,0,0))
-                rectangle(at:right, size:(30,30), background-color:documentColors[4], color:documentColors[2], margin:(5,30,0,0))
+            demoPanel("Four-value margin · (5,30,0,0)"){
+                styles{
+                    rectangle{
+                        size:(16,16),
+                        background-color:documentColors[4],
+                        color:documentColors[2], draw-contour
+                    }
+                }
+                rectangle(at:top, margin:(5,30,0,0))
+                rectangle(at:left, margin:(5,30,0,0))
+                rectangle(at:bottom, margin:(5,30,0,0))
+                rectangle(at:right, margin:(5,30,0,0))
             }
-            miniCodeNTexup(
-            """
-            rectangle(
-              margin:
-                (5,30,0,0)
-            )
-            """)
-
+            sourcePanel("""
+                rectangle(at:top, margin:(5,30,0,0))
+                rectangle(at:left, margin:(5,30,0,0))
+                rectangle(at:bottom, margin:(5,30,0,0))
+                rectangle(at:right, margin:(5,30,0,0))
+            """, title:"Four anchors · shared size/fill omitted", fontSize:2.1%P)
+        }
+        group(position:(0, 95), size:(100, 5), origin:top-left){
+            pageNote("Tuple margins are (horizontal, vertical) or (top, bottom, left, right).")
         }
     }
-
 }

@@ -1,119 +1,75 @@
-content-slide(title:"Arrows",variant:5){
+content-slide(title:"Arrows", section:"2D graphics"){
     body{
-        grid(4,2,columns-weight:[1,2]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
-                }
-            }
-            // Row
+        sectionLabel("2D graphics · start and end arrowheads")
+        grid(2, 5,
+            position:(0, 7), size:(100, 86), origin:top-left,
+            columns-weight:[1, 2.2])
+        {
             miniPage{
-                line(
-                  from:(10,10),
-                  to:(80,90),
-                  end-arrow:simple()
-                  color:red,
-                  stroke:3
-                )
+                line(from:(10,10), to:(80,90),
+                    end-arrow:simple(),
+                    color:documentColors[1], stroke:3)
             }
-            miniCodeNTexup(
-                """
-                line(
-                    from:(10,10),
-                    to:(80,90)
-                    end-arrow:simple()
-                )
-                """
-            )
-            // Row
+            miniCodeNTexup("""
+                line(from:(10,10), to:(80,90),
+                  end-arrow:simple(),
+                  color:documentColors[1], stroke:3)
+            """)
+
             miniPage{
-                line(from:(10,10), to:(80,90), color:red
-                ,stroke:3
-                start-arrow:triangle()
-                end-arrow:triangle-full()
-                )
+                line(from:(10,10), to:(80,90),
+                    start-arrow:triangle(),
+                    end-arrow:triangle-full(),
+                    color:documentColors[1], stroke:3)
             }
-            miniCodeNTexup(
-                """
-                line(
-                    from:(10,10),
-                    to:(80,90)
-                    start-arrow:
-                      triangle()
-                    end-arrow:
-                      triangle-full()
-                )
-                """
-            )
+            miniCodeNTexup("""
+                line(from:(10,10), to:(80,90),
+                  start-arrow:triangle(),
+                  end-arrow:triangle-full(),
+                  color:documentColors[1], stroke:3)
+            """)
 
-            // Row
             miniPage{
-                line(from:(10,10), to:(80,90), color:red
-                ,stroke:3
-                start-arrow:oval()
-                end-arrow:oval-full()
-                )
+                line(from:(10,10), to:(80,90),
+                    start-arrow:oval(),
+                    end-arrow:oval-full(),
+                    color:documentColors[1], stroke:3)
             }
-            miniCodeNTexup(
-                """
-                line(
-                    from:(10,10),
-                    to:(80,90)
-                    start-arrow:
-                      circle()
-                    end-arrow:
-                      circle-full()
-                )
-                """
-            )
+            miniCodeNTexup("""
+                line(from:(10,10), to:(80,90),
+                  start-arrow:oval(),
+                  end-arrow:oval-full(),
+                  color:documentColors[1], stroke:3)
+            """)
 
-
-            // Row
             miniPage{
-                line(from:(10,10), to:(80,90), color:red
-                ,stroke:3
-                start-arrow:diamond()
-                end-arrow:diamond-full()
-                )
+                line(from:(10,10), to:(80,90),
+                    start-arrow:diamond(),
+                    end-arrow:diamond-full(),
+                    color:documentColors[1], stroke:3)
             }
-            miniCodeNTexup(
-                """
-                    line(
-                        from:(10,10)
-                        to:(80,90)
-                        start-arrow:
-                          diamond()
-                        end-arrow:
-                          diamond-full()
-                    )
-                """
-            )
+            miniCodeNTexup("""
+                line(from:(10,10), to:(80,90),
+                  start-arrow:diamond(),
+                  end-arrow:diamond-full(),
+                  color:documentColors[1], stroke:3)
+            """)
 
-            // Row
             miniPage{
-                line(from:(10,10), to:(80,90), color:red
-                ,stroke:3
-                start-arrow:rectangle()
-                end-arrow:rectangle-full()
-                )
+                line(from:(10,10), to:(80,90),
+                    start-arrow:rectangle(),
+                    end-arrow:rectangle-full(),
+                    color:documentColors[1], stroke:3)
             }
-            miniCodeNTexup(
-                """
-                    line(
-                        from:(10,10),
-                        to:(80,90)
-                        start-arrow:
-                          rectangle()
-                        end-arrow:
-                          rectangle-full()
-                    )
-                """
-            )
-
-
-
+            miniCodeNTexup("""
+                line(from:(10,10), to:(80,90),
+                  start-arrow:rectangle(),
+                  end-arrow:rectangle-full(),
+                  color:documentColors[1], stroke:3)
+            """)
+        }
+        group(position:(0, 95), size:(100, 5), origin:top-left){
+            pageNote("Arrowheads use function-call names; open and filled variants can be mixed at either end.")
         }
     }
-
 }

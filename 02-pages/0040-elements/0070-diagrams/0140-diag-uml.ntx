@@ -1,18 +1,13 @@
-content-slide(title:"UML Use Case",variant:7){
-    body{
-        grid((4,1),columns-weight:[2,3]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
-                }
-            }
-
-            // Row 1
-            // ---------------------------------------------
-            miniPage{
-                uml(at:center,size:(100,50)
-                    """
+content-slide(title: "UML Use Cases") {
+    body {
+        col(rows-weight: [6, 88, 6]) {
+            sectionLabel("Diagrams")
+            grid((2, 2), columns-weight: [1, 1.55]) {
+                demoPanel("Restaurant actors and goals") {
+                    uml(
+                        at: center,
+                        size: (100, 50),
+                        """
                         left to right direction
                         actor "Food Critic" as fc
                         rectangle Restaurant {
@@ -23,75 +18,72 @@ content-slide(title:"UML Use Case",variant:7){
                         fc --> UC1
                         fc --> UC2
                         fc --> UC3
-                    """
+                        """
+                    )
+                }
+                sourcePanel(
+                    ```
+uml(at:center, size:(100,50),
+"""
+left to right direction
+actor "Food Critic" as fc
+rectangle Restaurant {
+  usecase "Eat Food" as UC1
+  usecase "Pay for Food" as UC2
+  usecase "Drink" as UC3
+}
+fc --> UC1
+fc --> UC2
+fc --> UC3
+""")
+```,
+                    title: "Use-case diagram · complete example",
+                    fontSize: 2.1%P
                 )
-            }
 
-            miniCodeNTexup(
-            ```
-            uml(
-            """
-            left to right direction
-            actor "Food Critic" as fc
-            rectangle Restaurant {
-              usecase "Eat Food" as UC1
-              usecase "Pay for Food" as UC2
-              usecase "Drink" as UC3
-            }
-            fc --> UC1
-            fc --> UC2
-            fc --> UC3
-            """
-            )
-
-             ```
-             )
-
-            // Row 2
-            // ---------------------------------------------
-            miniPage{
-                uml(at:center,size:(100,50)
-                    """
-                        [c]
-                        node node {
-                          port p1
-                          port p2
-                          port p3
-                          file f1
+                demoPanel("Checkout with included payment") {
+                    uml(
+                        at: center,
+                        size: (100, 50),
+                        """
+                        left to right direction
+                        actor "Customer" as customer
+                        actor "Payment Service" as payment
+                        rectangle "Online Store" {
+                          usecase "Browse Catalog" as browse
+                          usecase "Place Order" as order
+                          usecase "Pay" as pay
                         }
-
-                        c --> p1
-                        c --> p2
-                        c --> p3
-                        p1 --> f1
-                        p2 --> f1
-                    """
+                        customer --> browse
+                        customer --> order
+                        order .> pay : <<include>>
+                        payment --> pay
+                        """
+                    )
+                }
+                sourcePanel(
+                    ```
+uml(at:center, size:(100,50),
+"""
+left to right direction
+actor "Customer" as customer
+actor "Payment Service" as payment
+rectangle "Online Store" {
+  usecase "Browse Catalog" as browse
+  usecase "Place Order" as order
+  usecase "Pay" as pay
+}
+customer --> browse
+customer --> order
+order .> pay : <<include>>
+payment --> pay
+""")
+```,
+                    title: "Use-case diagram · include relationship",
+                    fontSize: 1.5%P
                 )
             }
-
-            miniCodeNTexup(
-            ```
-            uml(
-              """
-                 [c]
-                 node node {
-                   port p1
-                   port p2
-                   port p3
-                   file f1
-                 }
-
-                 c --> p1
-                 c --> p2
-                 c --> p3
-                 p1 --> f1
-                 p2 --> f1
-              """
-            )
-
-             ```
-             )
+            pageNote("Actors sit outside the boundary; <<include>> adds mandatory Pay behavior to Place Order.")
         }
     }
-
 }

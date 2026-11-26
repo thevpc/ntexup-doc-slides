@@ -1,69 +1,79 @@
-content-slide(title:"Table Extension"){
+content-slide(title: "Table Extension"){
     styles{
         @highlight{
             background-color: documentSurfaceAlt
             table-header{
                 font-bold
-                color: documentBg
-                background-color: documentColors[0]
+                color: white
+                background-color: documentColors[2]
             }
         }
     }
-    body2a{
-        ul{
-            •¶ Theme defaults provide semantic headers, zebra rows, padding, and grid lines.
-            •¶ header-data, data, and footer-data define headers, body rows, and totals.
-            •¶ Use table-striped for accent headers or table-bordered for neutral headers.
-            •¶ Selectors target headers, rows, footers, columns, cells, and classes.
-            •¶ row-weight and column-weight use data-relative row and column indices.
-        }
-    }
-    body2b{
-        grid((2, 2), columns-weight: [1, 1], rows-weight: [1.4, 1]){
-            styles{
-                "*": { margin: 1 }
-                table{ font-size: 2.3%P }
-                table-cell{ padding: (0.4%P, 0.2%P) }
-            }
-            col{
-                text("**Default Table**", font-size: 2.2%P)
-                table(
-                    header-data: [["Name", "Age"]],
-                    data: [
-                        ["Alice", 30],
-                        ["Bob", 25]
-                    ]
-                )
-            }
-            col{
-                text("**Striped Table**", font-size: 2.2%P)
-                @(table-striped) table(
-                    header-data: [["Item", "Qty", "Price"]],
-                    data: [
-                        ["Apple", 5, 0.5],
-                        ["Banana", 3, 0.3]
-                    ]
-                )
-            }
-            col{
-                text("**Bordered Table**", font-size: 2.2%P)
-                @(table-bordered) table(
-                    header-data: [["Name", "Role"]],
-                    data: [
-                        ["Ada", "Engineer"],
-                        ["Grace", "Admiral"]
-                    ]
-                )
-            }
-            col{
-                text("**Custom Class**", font-size: 2.2%P)
-                @(highlight) table(
-                    header-data: [["x", "y", "xy"]],
-                    data: [
-                        ["1", "2", "2"],
-                        ["3", "4", "12"]
-                    ]
-                )
+
+    body{
+        col(rows-weight: [6, 94]){
+            sectionLabel("Extensions")
+
+            grid(2, 1, columns-weight: [0.85, 1.8]){
+                ul(font-size: 2%P){
+                    • "Theme defaults style headers, zebra rows and grid lines."
+                    • "header-data, data and footer-data define table content."
+                    • "table-striped and table-bordered style headers."
+                    • "Selectors target rows, columns, cells and classes."
+                    • "Weights use data-relative indices."
+                }
+
+                grid((2, 2), columns-weight: [1, 1], rows-weight: [1.25, 1]){
+                    styles{
+                        col{ margin: 0.6 }
+                        table{ font-size: 2.5%P }
+                        table-cell{ padding: (0.18%P, 0.12%P) }
+                    }
+
+                    col{
+                        text("**Default Table**", font-size: 2.1%P)
+                        table(
+                            header-data: [["Name", "Age"]],
+                            data: [
+                                ["Alice", 30],
+                                ["Bob", 25]
+                            ]
+                        )
+                    }
+
+                    col{
+                        text("**Striped Table**", font-size: 2.1%P)
+                        @(table-striped) table(
+                            header-data: [["Item", "Qty", "Price"]],
+                            data: [
+                                ["Apple", 5, 0.5],
+                                ["Banana", 3, 0.3]
+                            ]
+                        )
+                    }
+
+                    col{
+                        text("**Bordered Table**", font-size: 2.1%P)
+                        @(table-bordered) table(
+                            header-data: [["Name", "Role"]],
+                            data: [
+                                ["Ada", "Engineer"],
+                                ["Grace", "Admiral"]
+                            ]
+                        )
+                    }
+
+                    col{
+                        text("**Custom Class**", font-size: 2.1%P)
+                        @(highlight) table(
+                            header-data: [["x", "y", "xy"]],
+                            data: [
+                                ["1", "2", "2"],
+                                ["3", "4", "12"]
+                            ]
+                        )
+                    }
+                }
             }
         }
     }

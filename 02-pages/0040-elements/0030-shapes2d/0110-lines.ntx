@@ -1,71 +1,52 @@
-content-slide(title:"Lines",variant:5){
+content-slide(title:"Lines", section:"2D graphics"){
     body{
-        grid(4,2,columns-weight:[1,2]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
-                }
+        sectionLabel("2D graphics · lines, arcs and curves")
+        grid(2, 4,
+            position:(0, 7), size:(100, 86), origin:top-left,
+            columns-weight:[1, 1.8])
+        {
+            demoPanel("Straight line"){
+                line(from:(10,10), to:(80,90),
+                    color:documentColors[1], stroke:3)
             }
-            // Row
-            miniPage{
-                line(from:(10,10), to:(80,90), color:red,stroke:3)
+            sourcePanel("""
+                line(from:(10,10), to:(80,90),
+                  color:documentColors[1], stroke:3)
+            """, fontSize:2.1%P)
+
+            demoPanel("Arc"){
+                arc(from:30, to:180,
+                    color:documentColors[1], stroke:3)
             }
-            miniCodeNTexup(
-            """
-            line(
-              from:(0,0),
-              to:(80,20)
-            )
-            """
-            )
+            sourcePanel("""
+                arc(from:30, to:180,
+                  color:documentColors[1], stroke:3)
+            """, fontSize:2.1%P)
 
-            // Row
-            miniPage{
-                arc(from:30, to:180, color:red,stroke:3)
+            demoPanel("Quadratic curve"){
+                quad-curve(from:(10,10), to:(80,90),
+                    ctrl:(60,30),
+                    color:documentColors[1], stroke:3)
             }
-            miniCodeNTexup(
-            """
-            arc(
-                from:30,
-                to:180
-            )
-            """
-            )
+            sourcePanel("""
+                quad-curve(from:(10,10), to:(80,90),
+                  ctrl:(60,30),
+                  color:documentColors[1], stroke:3)
+            """, fontSize:2.1%P)
 
-            // Row
-            miniPage{
-                quad-curve(from:(10,10), to:(80,90), ctrl:(60,30), color:red,stroke:3)
-            }
-            miniCodeNTexup(
-                """
-                quad-curve(
-                    from:(10,10),
-                    ctrl:(60,30)
-                    to:(80,90),
-                )
-                """)
-
-
-            // Row
-            miniPage{
+            demoPanel("Cubic curve"){
                 cubic-curve(from:(10,10), to:(80,90),
                     ctrl1:(60,30), ctrl2:(30,60),
-                    color:red,
-                    stroke:3)
+                    color:documentColors[1], stroke:3)
             }
-            miniCodeNTexup(
-                """
-                    cubic-curve(
-                    from:(10,10),
-                    ctrl1:(60,30),
-                    ctrl2:(30,60)
-                    to:(80,90),
-                    )
-                """)
-
-
+            sourcePanel("""
+                cubic-curve(from:(10,10), to:(80,90),
+                  ctrl1:(60,30), ctrl2:(30,60),
+                  color:documentColors[1], stroke:3)
+            """, fontSize:2.1%P)
+        }
+        group(position:(0, 95), size:(100, 5), origin:top-left){
+            pageNote("Line and curve endpoints are parent-relative; arc from/to values are angles in degrees.")
         }
     }
-
 }

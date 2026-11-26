@@ -1,74 +1,71 @@
-content-slide(title:"Connectors — endpoints",variant:5){
+content-slide(title:"Connectors — endpoints", section:"2D graphics"){
     body{
-        // Row 1, left: automatic border clipping
-        text("1. Automatic anchors", position:(2,1), origin:top-left, font-size:2.3)
-        rectangle(name:"a1", position:(2,10), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("API", at:center) }
-        rectangle(name:"b1", position:(28,20), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("DB", at:center) }
-        connector("a1", "b1", end-arrow:simple(), stroke:2)
-        source(ntexup
-            """
-            connector(
-                "api", "db",
-                end-arrow: simple()
-            )
-            """
-            font-size:1.4%P,
-            font-family:Monospaced,
-            position:(2,38),
-            origin:top-left
-        )
-
-        // Row 1, right: explicit side anchors
-        text("2. Explicit sides", position:(53,1), origin:top-left, font-size:2.3)
-        rectangle(name:"a2", position:(53,10), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("API", at:center) }
-        rectangle(name:"b2", position:(79,10), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("DB", at:center) }
-        connector(from:"a2@right", to:"b2@left", end-arrow:triangle(), stroke:2)
-        source(ntexup
-            """
-            connector(
-                from: "api@right", to: "db@left",
-                end-arrow: triangle()
-            )
-            """
-            font-size:1.4%P,
-            font-family:Monospaced,
-            position:(53,38),
-            origin:top-left
-        )
-
-        // Row 2, left: via points turn the connector into a polyline
-        text("3. Via points", position:(2,52), origin:top-left, font-size:2.3)
-        rectangle(name:"a3", position:(2,62), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("API", at:center) }
-        rectangle(name:"b3", position:(28,76), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("DB", at:center) }
-        connector("a3", "b3", via:(24,75), end-arrow:simple(), stroke:2)
-        source(ntexup
-            """
-            connector("api", "db",
-                via: (24, 75),
-                end-arrow: simple())
-            """
-            font-size:1.3%P,
-            font-family:Monospaced,
-            position:(2,90),
-            origin:top-left
-        )
-
-        // Row 2, right: free points and mixed node/free endpoints
-        text("4. Free and mixed points", position:(53,52), origin:top-left, font-size:2.3)
-        rectangle(name:"src4", position:(53,62), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("SRC", at:center) }
-        connector("src4", (92,72), end-arrow:simple(), stroke:2)
-        connector((55,88), (92,88), start-arrow:simple(), end-arrow:simple(), stroke:2)
-        source(ntexup
-            """
-            connector("src", (92, 72),
-                end-arrow: simple())
-            connector((55, 88), (92, 88),
-                end-arrow: simple())
-            """
-            font-size:1.3%P,
-            font-family:Monospaced,
-            position:(53,90),
-            origin:top-left
-        )
+        grid(2, 2, columns-weight:[1, 1], rows-weight:[1, 1]){
+            col(rows-weight:[62, 38]){
+                demoPanel("Automatic anchors"){
+                    rectangle(name:"a1", position:(8, 20), origin:top-left, size:(30, 26), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("API", at:center, font-size:2.6%P, font-bold)
+                    }
+                    rectangle(name:"b1", position:(64, 56), origin:top-left, size:(30, 26), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("DB", at:center, font-size:2.6%P, font-bold)
+                    }
+                    connector("a1", "b1", end-arrow:simple(), stroke:2, color:documentColors[0])
+                }
+                sourcePanel("""
+                    connector("a1", "b1",
+                        end-arrow: simple(),
+                        stroke: 2)
+                """, title:"Connector excerpt")
+            }
+            col(rows-weight:[62, 38]){
+                demoPanel("Explicit sides"){
+                    rectangle(name:"a2", position:(8, 32), origin:top-left, size:(30, 26), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("API", at:center, font-size:2.6%P, font-bold)
+                    }
+                    rectangle(name:"b2", position:(64, 32), origin:top-left, size:(30, 26), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("DB", at:center, font-size:2.6%P, font-bold)
+                    }
+                    connector(from:"a2@right", to:"b2@left", end-arrow:triangle-full(), stroke:2, color:documentColors[0])
+                }
+                sourcePanel("""
+                    connector(
+                        from: "a2@right",
+                        to: "b2@left",
+                        end-arrow: triangle-full())
+                """, title:"Connector excerpt")
+            }
+            col(rows-weight:[62, 38]){
+                demoPanel("Waypoints"){
+                    rectangle(name:"a3", position:(8, 18), origin:top-left, size:(30, 24), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("API", at:center, font-size:2.6%P, font-bold)
+                    }
+                    rectangle(name:"b3", position:(64, 58), origin:top-left, size:(30, 24), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("DB", at:center, font-size:2.6%P, font-bold)
+                    }
+                    connector("a3", "b3", via:(46, 70), route:"rounded", bend-radius:6, end-arrow:simple(), stroke:2, color:documentColors[0])
+                }
+                sourcePanel("""
+                    connector("a3", "b3",
+                        via: (46, 70),
+                        route: "rounded",
+                        bend-radius: 6)
+                """, title:"Rounded waypoint")
+            }
+            col(rows-weight:[62, 38]){
+                demoPanel("Free and mixed points"){
+                    rectangle(name:"src4", position:(8, 20), origin:top-left, size:(30, 24), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("SRC", at:center, font-size:2.6%P, font-bold)
+                    }
+                    connector("src4", (88, 38), end-arrow:simple(), stroke:2, color:documentColors[0])
+                    connector((12, 72), (86, 72), start-arrow:simple(), end-arrow:simple(), stroke:2, color:documentColors[1])
+                }
+                sourcePanel("""
+                    connector("src4", (88, 38),
+                        end-arrow: simple())
+                    connector((12, 72), (86, 72),
+                        arrow: simple())
+                """, title:"Free coordinates")
+            }
+        }
     }
 }

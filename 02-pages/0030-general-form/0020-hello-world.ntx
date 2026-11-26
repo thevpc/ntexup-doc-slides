@@ -1,50 +1,48 @@
-content-slide(title:"Hello World",variant:2){
+content-slide(title:"Hello World", section:"Get started"){
     body{
-        grid(4,2,columns-weight:[1]){
-            styles:{
-                "*": {margin:2}
+        sectionLabel("Three ways to say hello")
+        grid(2, 3,
+            position:(0, 8), size:(100, 86), origin:top-left,
+            columns-weight:[1, 1.6])
+        {
+            styles{
+                "*": {margin:1}
             }
-
-//            // Row
             miniPage{
-                //rectangle(at:center, color:documentColors[2])
-                text("Hello World")
+                "Hello World"
             }
-            miniCodeNTexup(""" "Hello World" """)
+            miniCodeNTexup(""" "Hello World" """, fontSize:2.4%P)
 
-            // Row
             miniPage{
-                //rectangle(at:center, color:documentColors[2])
-                """
-                    - Hello ##World##
-                    - Hello ###World###
-                    - Hello ####World####
-                """
+                text("""
+                    Hello ##World##
+                    Hello ###World###
+                    Hello ####World####
+                """, font-size:3.2%P, color:documentTextPrimary)
             }
+            miniCodeNTexup(```
+                text("""
+                    Hello ##World##
+                    Hello ###World###
+                    Hello ####World####
+                """, font-size:3.2%P,
+                   color:documentTextPrimary)
+            ```, fontSize:2.3%P)
 
-            miniCodeNTexup( """
-                    "
-                        - Hello ##World##
-                        - Hello ###World###
-                        - Hello ####World####
-                    "
-             """
-            )
-
-            // Row
             miniPage{
-                //rectangle(at:center, color:documentColors[2])
-                • ¶ Hello ##World##
-                • ¶ Hello ###World###
-                • ¶ Hello ####World####
+                ul(font-size:3.2%P){
+                    text("Hello **World**")
+                    text("Hello *World*")
+                    text("Hello `World`")
+                }
             }
-            miniCodeNTexup("""
-                • ¶ Hello ##World##
-                • ¶ Hello ###World###
-                • ¶ Hello ####World####
-             """
-            )
+            miniCodeNTexup(```
+                ul(font-size:3.2%P){
+                    text("Hello **World**")
+                    text("Hello *World*")
+                    text("Hello `World`")
+                }
+            ```, fontSize:2.3%P)
         }
     }
-
 }

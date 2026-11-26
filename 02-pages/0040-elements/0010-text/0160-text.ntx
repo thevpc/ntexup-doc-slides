@@ -1,113 +1,85 @@
-content-slide(title:"Rich Text",variant:3){
+content-slide(title:"Rich Text", section:"Text & rich content"){
     body{
-        grid(4,2,columns-weight:[1,2]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
-                }
+        sectionLabel("Typographic structure and inline flavors")
+        grid(2, 4,
+            position:(0, 8), size:(100, 86), origin:top-left,
+            columns-weight:[1, 1.75],
+            rows-weight:[1.1, 1.2, 0.7, 1.4])
+        {
+            styles{
+                "*": {margin:1}
             }
-
-            // Row
             miniPage{
-                styles:{
-                    "*":{font-size:3%P}
-                }
-                grid(1,2){
+                grid(1, 2, font-size:3%P){
                     "Hello World"
                     text("Hello World")
                     text("Hello World",font-italic)
                     text("Hello World",font-bold)
                 }
             }
-            miniCodeNTexup(
-                """
-                "Hello World"
-                text("Hello World")
-                text("Hello World",
-                    font-italic)
-                text("Hello World",
-                    font-bold)
-                """)
+            miniCodeNTexup("""
+                grid(1,2,font-size:3%P){
+                  "Hello World"
+                  text("Hello World")
+                  text("Hello World",font-italic)
+                  text("Hello World",font-bold)
+                }
+            """, fontSize:2.0%P)
 
-
-            // Row
             miniPage{
-                styles:{
-                    "*":{font-size:3%P}
-                }
-                grid(1,2){
-                    """
-                        **Bold X**
-                        __Italic Y__
-                        #Title 1#
-                        ##Title 2##
-                        ###Title 3###
-                    """
-                }
+                ntf("""
+                    ##:+ Bold X##
+                    ##:/ Italic Y##
+                    #) Title 1
+                    ##) Title 2
+                    ###) Title 3
+                """, font-size:2.8%P, color:documentTextPrimary)
             }
-            miniCodeNTexup(
-                ```
-                """
-                **Bold X**
-                __Italic Y__
-                #Title 1#
-                ##Title 2##
-                ###Title 3###
-                """
-                ```
-                )
+            miniCodeNTexup(```
+                ntf("""
+                    ##:+ Bold X##
+                    ##:/ Italic Y##
+                    #) Title 1
+                    ##) Title 2
+                    ###) Title 3
+                """, font-size:2.8%P,
+                  color:documentTextPrimary)
+            ```, fontSize:2.0%P)
 
-
-            // Row
             miniPage{
-                styles:{
-                    "*":{font-size:3%P}
-                }
-                grid(1,2){
-                    """
-                    [[ntf: ##:p1: hello##]] world
-                    """
-                }
+                text(
+                    "[[ntf: ##:p1: hello##]] world",
+                    font-size:3%P,
+                    color:documentTextPrimary)
             }
-            miniCodeNTexup(
-                ```
-                    """
-                    [[ntf: ##:p1: hello##]] world
-                    """
-                ```)
+            miniCodeNTexup(```
+                text(
+                  "[[ntf: ##:p1: hello##]] world",
+                  font-size:3%P,
+                  color:documentTextPrimary)
+            ```, fontSize:2.0%P)
 
-
-            // Row
             miniPage{
-                styles:{
-                    "*":{font-size:3%P}
-                }
-                grid(1,2){
-                    """
-                        #Equation 1 =
-                        [[eq: X²=\sin(πx) ]]
-                        ##Equation 2## =
-                        [[eq: X^2=\sin\left(\pi x\right) ]]
-                        ###Equation 3### =
-                        [[eq: X^2=\sin(x) ]]
-                    """
-                }
+                text("""
+                    #) Equation 1 =
+                    [[eq: X²=\sin(πx) ]]
+                    ##) Equation 2 =
+                    [[eq: X^2=\sin(\pi x) ]]
+                    ###) Equation 3 =
+                    [[eq: X^2=\sin(x) ]]
+                """, font-size:2.4%P, color:documentTextPrimary)
             }
-            miniCodeNTexup(
-                ```
-                """
-                #Equation 1# =
-                [[eq: X²=\sin(πx) ]]
-                ##Equation 2## =
-                [[eq: X^2=\sin\left(\pi x\right)]]
-                ###Equation 3### =
-                [[eq: X^2=\sin(x)]]
-                """
-                ```
-                )
-
+            miniCodeNTexup(```
+                text("""
+                    #) Equation 1 =
+                    [[eq: X²=\sin(πx) ]]
+                    ##) Equation 2 =
+                    [[eq: X^2=\sin(\pi x) ]]
+                    ###) Equation 3 =
+                    [[eq: X^2=\sin(x) ]]
+                """, font-size:2.4%P,
+                  color:documentTextPrimary)
+            ```, fontSize:2.0%P)
         }
     }
-
 }

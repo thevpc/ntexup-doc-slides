@@ -1,26 +1,19 @@
-content-slide(title:"More Elaborate Example",variant:2){
+content-slide(title:"More Elaborate Example", section:"Get started"){
     body{
-        grid(2,1){
-            miniCode{
-                source(ntexup,file:"0030-example.tson", position: (2,2),font-size:2%P)
-            }
-            grid(2,2,draw-contour,background-color:white){
-                styles:{
-                    "*":{
-                        margin:5
-                    }
-                }
+        sectionLabel("One source, several integrated features")
+        grid(2, 1,
+            position:(0, 8), size:(100, 86), origin:top-left,
+            columns-weight:[1.05, 1])
+        {
+            sourcePanel(```
                 group{ // supports shapes
-                    rectangle(at:center,size:(80),
+                    rectangle(at:center,size:(90),
                         background-color:yellow,
                         color:red,
                         stroke:4
                     )
-                    group(size:50,at:center){
-                        ul{
-                            "Item 1"
-                            "Item 2"
-                        }
+                    ul(origin:left, position:(20,50)){
+                        "Item 1" "Item 2"
                     }
                 }
                 plot2d(x:dtimes(-5,5,100)){
@@ -41,6 +34,42 @@ content-slide(title:"More Elaborate Example",variant:2){
                         fc --> UC1
                     """
                 )
+            ```, title:"0030-example.tson · excerpt", fontSize:2.1%P)
+
+            demoPanel("Live preview"){
+                grid(2, 2){
+                    styles{
+                        "*": {margin:1}
+                    }
+                    group{ // supports shapes
+                        rectangle(at:center,size:(90),
+                            background-color:yellow,
+                            color:red,
+                            stroke:4
+                        )
+                        ul(origin:left, position:(20,50)){
+                            "Item 1" "Item 2"
+                        }
+                    }
+                    plot2d(x:dtimes(-5,5,100)){
+                        curve{ // supports plot
+                            f(x):sin(x)
+                            title:'sin'
+                        }
+                    }
+                    // supports LATEX
+                    eq("f_1(x)=\int_x \sin(x^2)",font-size:4%P)
+                    uml(// supports PLANTUML
+                        """
+                            left to right direction
+                            actor "Food Critic" as fc
+                            rectangle Restaurant {
+                              usecase "Eat Food" as UC1
+                            }
+                            fc --> UC1
+                        """
+                    )
+                }
             }
         }
     }

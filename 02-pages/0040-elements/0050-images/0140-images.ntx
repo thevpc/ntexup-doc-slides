@@ -1,59 +1,67 @@
-content-slide(title:"Images",variant:6){
-    body{
-        grid((4,4),columns-weight:[1,3]){
-            // Row 2
-            image("../../../images/image.png",size:(50,50),at:center)
-            miniCodeNTexup(
-            """
-            image("../images/image.png")
-            """
-            )
+content-slide(title: "Images — Formats & Paths") {
+    body {
+        col(rows-weight: [6, 82, 12]) {
+            sectionLabel("Media")
+            grid((2, 3), columns-weight: [1, 2.2]) {
+                demoPanel("PNG · image.png") {
+                    image("../../../images/image.png", size: (50, 50), at: center)
+                }
+                sourcePanel(
+                    """image("../../../images/image.png", size:(50,50), at:center)""",
+                    title: "PNG · path relative to this file",
+                    fontSize: 2.3%P
+                )
 
-            // Row 2
-            image("../../../images/image.jpg",size:(50,50),at:center)
-            miniCodeNTexup(
-            """
-                image("../images/image.jpg")
-            """
-            )
+                demoPanel("JPEG · image.jpg") {
+                    image("../../../images/image.jpg", size: (50, 50), at: center)
+                }
+                sourcePanel(
+                    """image("../../../images/image.jpg", size:(50,50), at:center)""",
+                    title: "JPEG · path relative to this file",
+                    fontSize: 2.3%P
+                )
 
-            // Row 3
+                demoPanel("GIF · image.gif") {
+                    image("../../../images/image.gif", size: (50, 50), at: center)
+                }
+                sourcePanel(
+                    """image("../../../images/image.gif", size:(50,50), at:center)""",
+                    title: "GIF · animated in the viewer",
+                    fontSize: 2.3%P
+                )
 
-            image("../../../images/image.gif",size:(50,50),at:center)
-            miniCodeNTexup(
-            """
-            image("../images/image.gif")
-            """
-            )
+                demoPanel("SVG · image.svg") {
+                    image("../../../images/image.svg", size: (50, 50), at: center)
+                }
+                sourcePanel(
+                    """image("../../../images/image.svg", size:(50,50), at:center)""",
+                    title: "SVG · vector asset",
+                    fontSize: 2.3%P
+                )
 
-            // Row 4
+                demoPanel("AVIF · image.avif") {
+                    rectangle(size: (50, 50), at: center, background-color: documentSurface, round-corner: 6)
+                    image("../../../images/image.avif", size: (45, 45), at: center)
+                    text("AVIF", at: bottom, font-size: 2%P, color: documentTextSecondary)
+                }
+                sourcePanel(
+                    """image("../../../images/image.avif", size:(45,45), at:center)""",
+                    title: "AVIF · path relative to this file",
+                    fontSize: 2.3%P
+                )
 
-            image("../../../images/image.svg",size:(50,50),at:center)
-            miniCodeNTexup(
-            """
-            image("../images/image.svg")
-            """
-            )
-
-            // Row 4
-
-            image("../../../images/image.avif",size:(50,50),at:center)
-            miniCodeNTexup(
-            """
-            image("../images/image.avif")
-            """
-            )
-
-            // Row 4
-
-            image("../../../images/image.webp",size:(50,50),at:center)
-            miniCodeNTexup(
-            """
-            image("../images/image.webp")
-            """
-            )
-
+                demoPanel("WebP · image.webp") {
+                    rectangle(size: (50, 50), at: center, background-color: documentSurface, round-corner: 6)
+                    image("../../../images/image.webp", size: (45, 45), at: center)
+                    text("WebP", at: bottom, font-size: 2%P, color: documentTextSecondary)
+                }
+                sourcePanel(
+                    """image("../../../images/image.webp", size:(45,45), at:center)""",
+                    title: "WebP · path relative to this file",
+                    fontSize: 2.3%P
+                )
+            }
+            pageNote("Paths are relative to this file. AVIF/WebP previews need runtime decoders; labels are fallbacks.")
         }
     }
-
 }

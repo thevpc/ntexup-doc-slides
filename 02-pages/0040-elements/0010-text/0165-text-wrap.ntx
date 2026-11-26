@@ -1,107 +1,73 @@
-content-slide(title:"Text Wrap & Alignment",variant:3){
+content-slide(title:"Text Wrap & Alignment", section:"Text & rich content"){
     body{
-        grid(2, 3, columns-weight: [1, 1.2]){
-            styles:{
-                "*": {margin: 2}
-                source:{
-                    at: left
-                }
+        sectionLabel("Wrapping and alignment in width-bounded containers")
+        grid(2, 3,
+            position:(0, 8), size:(100, 86), origin:top-left,
+            columns-weight:[1, 1.2])
+        {
+            styles{
+                "*": {margin:1}
             }
-
-            // Row 1: Left vs Right vs Center
             miniPage{
-                styles:{
-                    "*": {font-size: 2.2%P}
-                }
                 grid(1, 3){
-                    text(
-                        "Left aligned: wraps cleanly at the specified width boundaries.",
-                        text-wrap: wrap,
-                        text-align: left
-                    )
-                    text(
-                        "Right aligned: lines end smoothly at the right boundary.",
-                        text-wrap: wrap,
-                        text-align: right,
-                        color: documentColors[1]
-                    )
-                    text(
-                        "Centered: each wrapped line is centered within the box.",
-                        text-wrap: wrap,
-                        text-align: center,
-                        color: documentColors[2]
-                    )
+                    text("Left aligned text wraps within its column.",
+                         text-wrap:wrap, text-align:left,
+                         font-size:2.4%P)
+                    text("Right aligned text wraps within its column.",
+                         text-wrap:wrap, text-align:right,
+                         font-size:2.4%P)
+                    text("Centered text wraps within its column.",
+                         text-wrap:wrap, text-align:center,
+                         font-size:2.4%P)
                 }
             }
-            miniCodeNTexup(```
-                grid(1, 3){
-                    text("Left aligned...",
-                         text-wrap: wrap,
-                         text-align: left)
-                    text("Right aligned...",
-                         text-wrap: wrap,
-                         text-align: right)
-                    text("Centered...",
-                         text-wrap: wrap,
-                         text-align: center)
+            miniCodeNTexup("""
+                grid(1,3){
+                    text("Left aligned text wraps within its column.",
+                         text-wrap:wrap, text-align:left,
+                         font-size:2.4%P)
+                    text("Right aligned text wraps within its column.",
+                         text-wrap:wrap, text-align:right,
+                         font-size:2.4%P)
+                    text("Centered text wraps within its column.",
+                         text-wrap:wrap, text-align:center,
+                         font-size:2.4%P)
                 }
-            ```)
+            """, fontSize:2.1%P)
 
-            // Row 2: Justified text
             miniPage{
-                styles:{
-                    "*": {font-size: 2.2%P}
-                }
-                text(
-                    """
-                    Justified text layout distributes available space evenly across all words on each line, creating crisp vertical margins on both sides while keeping the final paragraph line naturally left-aligned.
-                    """,
-                    text-wrap: wrap,
-                    text-align: justify
-                )
+                text(stringJoin(" ",
+                    "Justified text distributes extra space",
+                    "between words on each full line.",
+                    "The final line remains left-aligned."
+                ), text-wrap:wrap, text-align:justify,
+                   font-size:2.4%P)
             }
             miniCodeNTexup(```
-                text(
-                    """
-                    Justified text layout
-                    distributes available space
-                    evenly across all words
-                    on each line, creating crisp
-                    margins on both sides...
-                    """,
-                    text-wrap: wrap,
-                    text-align: justify
-                )
-            ```)
+                text(stringJoin(" ",
+                  "Justified text distributes extra space",
+                  "between words on each full line.",
+                  "The final line remains left-aligned."
+                ), text-wrap:wrap, text-align:justify,
+                   font-size:2.4%P)
+            ```, fontSize:2.2%P)
 
-            // Row 3: Justified Melee Text with Equations
             miniPage{
-                styles:{
-                    "*": {font-size: 2.2%P}
-                }
-                text(
-                    """
-                    Melee text supports mixed plain words, **bold text**, and inline LaTeX formulas like [[eq: E=mc^2 ]] or [[eq: a^2+b^2=c^2 ]] with smooth wrapping and justification.
-                    """,
-                    text-wrap: wrap,
-                    text-align: justify,
-                    color: documentColors[0]
-                )
+                text(stringJoin(" ",
+                    "Mixed text combines **bold words** with",
+                    "inline equations [[eq: E=mc^2 ]] and",
+                    "[[eq: a^2+b^2=c^2 ]] while wrapping."
+                ), text-wrap:wrap, text-align:justify,
+                   font-size:2.4%P)
             }
             miniCodeNTexup(```
-                text(
-                    """
-                    Melee text supports mixed plain
-                    words, **bold text**, and inline
-                    LaTeX formulas like [[eq: E=mc^2 ]]
-                    or [[eq: a^2+b^2=c^2 ]]
-                    with smooth wrapping and
-                    justification.
-                    """,
-                    text-wrap: wrap,
-                    text-align: justify
-                )
-            ```)
+                text(stringJoin(" ",
+                  "Mixed text combines **bold words** with",
+                  "inline equations [[eq: E=mc^2 ]] and",
+                  "[[eq: a^2+b^2=c^2 ]] while wrapping."
+                ), text-wrap:wrap, text-align:justify,
+                   font-size:2.4%P)
+            ```, fontSize:2.2%P)
         }
     }
 }

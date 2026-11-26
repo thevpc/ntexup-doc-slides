@@ -1,106 +1,86 @@
-content-slide(title:"Color Functions & Gradients",variant:3){
+content-slide(title:"Color Functions & Gradients", section:"Layout & styling"){
     body{
-        grid(4,2,columns-weight:[1,1.8]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
+        sectionLabel("Base elements · derived colors")
+        grid(2, 4,
+            position:(0, 7), size:(100, 86), origin:top-left,
+            columns-weight:[1, 1.8])
+        {
+            demoPanel("Linear gradients"){
+                grid(2, 1){
+                    rectangle(at:center, size:(35,25),
+                        background-color:linearGradientColor(
+                            documentColors[0], documentColors[2]))
+                    rectangle(at:center, size:(35,25),
+                        background-color:linearGradientColor(
+                            documentColors[1], documentColors[4], 45))
                 }
             }
+            sourcePanel("""
+                rectangle(at:center, size:(35,25),
+                  background-color:linearGradientColor(
+                    documentColors[0], documentColors[2]))
+                rectangle(at:center, size:(35,25),
+                  background-color:linearGradientColor(
+                    documentColors[1], documentColors[4], 45))
+            """, fontSize:2.1%P)
 
-            // Row 1: Linear Gradients
-            miniPage{
-                grid((1,2)){
-                    rectangle(at:center, size:(35,25), background-color:linearGradientColor(documentColors[0], documentColors[2]))
-                    rectangle(at:center, size:(35,25), background-color:linearGradientColor(documentColors[1], documentColors[4], 45))
+            demoPanel("Lighter and darker"){
+                grid(2, 1){
+                    rectangle(at:center, size:(30,25),
+                        background-color:lighterColor(
+                            documentColors[0], 0.4))
+                    rectangle(at:center, size:(30,25),
+                        background-color:darkerColor(
+                            documentColors[0], 0.4))
                 }
             }
-            miniCodeNTexup(
-            """
-            rectangle(size:(35,25),
-              background-color:
-                linearGradientColor(
-                  documentColors[0],
-                  documentColors[2]
-                )
-            )
-            rectangle(size:(35,25),
-              background-color:
-                linearGradientColor(
-                  documentColors[1],
-                  documentColors[4],
-                  45
-                )
-            )
-            """
-            )
+            sourcePanel("""
+                rectangle(at:center, size:(30,25),
+                  background-color:lighterColor(
+                    documentColors[0], 0.4))
+                rectangle(at:center, size:(30,25),
+                  background-color:darkerColor(
+                    documentColors[0], 0.4))
+            """, fontSize:2.1%P)
 
-            // Row 2: Lighter and Darker colors
-            miniPage{
-                grid((1,2)){
-                    rectangle(at:center, size:(30,25), background-color:lighterColor(documentColors[0], 0.4))
-                    rectangle(at:center, size:(30,25), background-color:darkerColor(documentColors[0], 0.4))
+            demoPanel("Complementary and invert"){
+                grid(2, 1){
+                    rectangle(at:center, size:(30,25),
+                        background-color:complementaryColor(
+                            documentColors[1]))
+                    rectangle(at:center, size:(30,25),
+                        background-color:invertColor(
+                            documentColors[1]))
                 }
             }
-            miniCodeNTexup(
-            """
-            rectangle(background-color:
-              lighterColor(
-                documentColors[0],
-                0.4
-              )
-            )
-            rectangle(background-color:
-              darkerColor(
-                documentColors[0],
-                0.4
-              )
-            )
-            """
-            )
+            sourcePanel("""
+                rectangle(at:center, size:(30,25),
+                  background-color:complementaryColor(
+                    documentColors[1]))
+                rectangle(at:center, size:(30,25),
+                  background-color:invertColor(
+                    documentColors[1]))
+            """, fontSize:2.1%P)
 
-            // Row 3: Complementary & Invert
-            miniPage{
-                grid((1,2)){
-                    rectangle(at:center, size:(30,25), background-color:complementaryColor(documentColors[1]))
-                    rectangle(at:center, size:(30,25), background-color:invertColor(documentColors[1]))
+            demoPanel("Hue rotation and sinebow"){
+                grid(2, 1){
+                    rectangle(at:center, size:(30,25),
+                        background-color:rotateHueColor(
+                            documentColors[0], 120))
+                    rectangle(at:center, size:(30,25),
+                        background-color:sinebowColor(0.7))
                 }
             }
-            miniCodeNTexup(
-            """
-            rectangle(background-color:
-              complementaryColor(
-                documentColors[1]
-              )
-            )
-            rectangle(background-color:
-              invertColor(
-                documentColors[1]
-              )
-            )
-            """
-            )
-
-            // Row 4: Rotate Hue & Sinebow
-            miniPage{
-                grid((1,2)){
-                    rectangle(at:center, size:(30,25), background-color:rotateHueColor(documentColors[0], 120))
-                    rectangle(at:center, size:(30,25), background-color:sinebowColor(0.7))
-                }
-            }
-            miniCodeNTexup(
-            """
-            rectangle(background-color:
-              rotateHueColor(
-                documentColors[0],
-                120
-              )
-            )
-            rectangle(background-color:
-              sinebowColor(0.7)
-            )
-            """
-            )
+            sourcePanel("""
+                rectangle(at:center, size:(30,25),
+                  background-color:rotateHueColor(
+                    documentColors[0], 120))
+                rectangle(at:center, size:(30,25),
+                  background-color:sinebowColor(0.7))
+            """, fontSize:2.1%P)
+        }
+        group(position:(0, 95), size:(100, 5), origin:top-left){
+            pageNote("Gradient angles are degrees; color functions are provided by the stdlib extension.")
         }
     }
 }

@@ -1,120 +1,90 @@
-content-slide(title:"Source Code",variant:3){
+content-slide(title:"Source Code", section:"Text & rich content"){
     body{
-        grid(4,2,columns-weight:[1,2]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
-                }
+        sectionLabel("Highlighted, readable, reproducible")
+        grid(2, 4,
+            position:(0, 8), size:(100, 86), origin:top-left,
+            columns-weight:[1, 1.7])
+        {
+            styles{
+                "*": {margin:1}
             }
-
-            // Row
             miniPage{
                 source(java
                     """
-                        public static class
-                        MyClass{
-                            int value = 10;
-                            int add(int b){
-                                value++;
+                        public class MyClass {
+                            int add(int b) {
+                                return 10 + b;
                             }
                         }
                     """
-                    font-size:2%P,
-                    font-family:Monospaced
+                    at:top-left, font-size:2.4%P
                 )
             }
-            miniCodeNTexup(
-                ```
-                    source(java
-                    """
-                        public static class
-                        MyClass{
-                            int value = 10;
-                            int add(int b){
-                                value++;
-                            }
+            miniCodeNTexup(```
+                source(java """
+                    public class MyClass {
+                        int add(int b) {
+                            return 10 + b;
                         }
-                    """
-                    )
-                ```
-                )
+                    }
+                """, at:top-left, font-size:2.4%P)
+            ```, fontSize:2.1%P)
 
-            // Row
             miniPage{
-                styles:{
-                    "*":{font-size:5%P}
-                }
                 source(sql
                     """
-                        Select *
-                        From Tab
-                        Where 1=1
+                        SELECT *
+                        FROM Tab
+                        WHERE 1 = 1
                     """
-                    font-size:2%P,
-                    font-family:Monospaced
+                    at:top-left, font-size:2.6%P
                 )
             }
-            miniCodeNTexup(
-                ```
-                    source(sql
-                    """
-                        Select *
-                        From Tab
-                        Where 1=1
-                    """
-                    )
-                ```
-                )
+            miniCodeNTexup(```
+                source(sql """
+                    SELECT *
+                    FROM Tab
+                    WHERE 1 = 1
+                """, at:top-left, font-size:2.6%P)
+            ```, fontSize:2.2%P)
 
-            // Row
             miniPage{
-                styles:{
-                    "*":{font-size:5%P}
-                }
                 source(xml
                     """
                         <a value="text">
                           <b value="text"></b>
                         </a>
                     """
-                    font-size:2%P,
-                    font-family:Monospaced
+                    at:top-left, font-size:2.6%P
                 )
             }
-            miniCodeNTexup(
-                ```
-                    source(xml
-                    """
-                        <a value="text">
-                          <b value="text"></b>
-                        </a>
-                    """
-                    )
-                ```
-                )
+            miniCodeNTexup(```
+                source(xml """
+                    <a value="text">
+                      <b value="text"></b>
+                    </a>
+                """, at:top-left, font-size:2.6%P)
+            ```, fontSize:2.2%P)
 
-            miniPage{
-                styles:{
-                    "*":{font-size:10%P}
-                }
+            demoPanel("Verified language ids"){
                 source(text
                     """
-                        text, java,
-                        c#, c++
-                        xml,html,json
-                        bash,fish,cmd
-                        sql,
-                        hd, ntf,hadra,
-                        tson,ntexup
+                        text, plain, java
+                        cpp, csharp, xml, html
+                        json, sql, bash, fish, cmd
+                        ntf, tson, ntexup
                     """
-                    font-size:2%P,
-                    font-family:Monospaced
+                    at:top-left, font-size:2.4%P
                 )
             }
-            text("Supported Languages", font-size:3%P)
-
+            miniCodeNTexup(```
+                source(text """
+                    text, plain, java
+                    cpp, csharp, xml, html
+                    json, sql, bash, fish, cmd
+                    ntf, tson, ntexup
+                """, at:top-left, font-size:2.4%P)
+            ```, fontSize:2.1%P)
         }
     }
-
 }

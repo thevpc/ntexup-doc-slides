@@ -1,20 +1,45 @@
-agenda-slide(title:"Rationale"){
+content-slide(title:"Why ntexup?", section:"Get started"){
     body{
-        ul(bullet-align: center){
-            •¶ Text-based, declarative, and intuitive syntax
-            •¶ Readable by humans, writable with ease
-            •¶ Designed for long-lived documents with effortless maintenance
-            •¶ Unmatched control over rendering
-            •¶ Seamless multi-file support
-            •¶ Version-control friendly (**Git** & more)
-            •¶ Integrates with LaTeX, UML, and beyond
-            •¶ Uses **TSON** which is a derivative of JSON format but with more readability
-            •¶ Declarative syntax : what you write is what you get
-            •¶ Parameterizable : variables and conditions are processed for rendering
-            •¶ Templatable : one can define his own components
-            •¶ Themable : uses a **CSS** like styling
-            •¶ Composable : you can combine multiple components to build reusable components
-            •¶ Portable: works across platforms and environments with minimal setup
+        sectionLabel("Text-first documents, built to last")
+        grid(2, 2,
+            position:(0, 8), size:(100, 86), origin:top-left,
+            rows-weight:[1, 1])
+        {
+            styles{
+                "*": {margin:1}
+            }
+            card(accentColor:documentColors[0]){
+                kicker("READABLE")
+                ul(bullet-align:top){
+                    • "Declarative TSON stays easy to read and write"
+                    • "What you author is what you render"
+                    • "Variables and conditions parameterize output"
+                }
+            }
+            card(accentColor:documentColors[1]){
+                kicker("REUSABLE")
+                ul(bullet-align:top){
+                    • "Fine-grained control over every rendered element"
+                    • "Compose nodes into reusable components"
+                    • "Define templates with CSS-like styles"
+                }
+            }
+            card(accentColor:documentColors[2]){
+                kicker("MAINTAINABLE")
+                ul(bullet-align:top){
+                    • "Multi-file projects scale naturally"
+                    • "Git-friendly source stays easy to review"
+                    • "Themes keep long-lived documents consistent"
+                }
+            }
+            card(accentColor:documentColors[3]){
+                kicker("PORTABLE")
+                ul(bullet-align:top){
+                    • "Run across platforms with minimal setup"
+                    • "Integrate LaTeX, UML, and more"
+                    • "Render one source to slides, images, or PDF"
+                }
+            }
         }
     }
 }

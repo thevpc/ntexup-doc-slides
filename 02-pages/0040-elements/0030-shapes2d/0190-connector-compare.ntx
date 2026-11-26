@@ -1,44 +1,44 @@
-content-slide(title:"Connectors — static vs animated",variant:5){
+content-slide(title:"Connectors — static vs animated", section:"2D graphics"){
     body{
-        text("static", position:(9,0), origin:top-left, font-size:2.2, font-bold)
-        text("animated", position:(56,0), origin:top-left, font-size:2.2, font-bold)
+        grid(2, 1, columns-weight:[1, 1]){
+            demoPanel("Static · exports use elapsed 0"){
+                text("automatic", position:(2, 4), origin:top-left, font-size:1.8%P, color:documentTextSecondary)
+                rectangle(name:"s1a", position:(20, 10), origin:top-left, size:(18, 10), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:3){ text("A", at:center, font-size:2%P) }
+                rectangle(name:"s1b", position:(68, 16), origin:top-left, size:(18, 10), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:3){ text("B", at:center, font-size:2%P) }
+                connector("s1a", "s1b", end-arrow:simple(), stroke:2, color:documentColors[0])
 
-        // Row 1: automatic anchors
-        text("auto", position:(0,9), origin:top-left, font-size:1.8)
-        rectangle(name:"s1a", position:(9,8), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("A", at:center) }
-        rectangle(name:"s1b", position:(27,14), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("B", at:center) }
-        connector("s1a", "s1b", end-arrow:simple(), stroke:2)
-        rectangle(name:"a1a", position:(56,8), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("A", at:center) }
-        rectangle(name:"a1b", position:(74,14), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("B", at:center) }
-        connector("a1a", "a1b", end-arrow:simple(), stroke:2, flow:dots(count:3,size:1.2,period:3))
+                text("explicit sides", position:(2, 28), origin:top-left, font-size:1.8%P, color:documentTextSecondary)
+                rectangle(name:"s2a", position:(20, 34), origin:top-left, size:(18, 10), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:3){ text("A", at:center, font-size:2%P) }
+                rectangle(name:"s2b", position:(68, 34), origin:top-left, size:(18, 10), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:3){ text("B", at:center, font-size:2%P) }
+                connector(from:"s2a@right", to:"s2b@left", end-arrow:triangle-full(), stroke:2, color:documentColors[0])
 
-        // Row 2: explicit sides
-        text("sides", position:(0,31), origin:top-left, font-size:1.8)
-        rectangle(name:"s2a", position:(9,30), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("A", at:center) }
-        rectangle(name:"s2b", position:(27,30), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("B", at:center) }
-        connector(from:"s2a@right", to:"s2b@left", end-arrow:triangle(), stroke:2)
-        rectangle(name:"a2a", position:(56,30), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("A", at:center) }
-        rectangle(name:"a2b", position:(74,30), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("B", at:center) }
-        connector(from:"a2a@right", to:"a2b@left", end-arrow:triangle(), stroke:2, flow:dots(count:3,size:1.2,period:3))
+                text("waypoints", position:(2, 52), origin:top-left, font-size:1.8%P, color:documentTextSecondary)
+                rectangle(name:"s3a", position:(20, 58), origin:top-left, size:(18, 10), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:3){ text("A", at:center, font-size:2%P) }
+                rectangle(name:"s3b", position:(68, 64), origin:top-left, size:(18, 10), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:3){ text("B", at:center, font-size:2%P) }
+                connector("s3a", "s3b", via:(58, 69), route:"rounded", bend-radius:4, end-arrow:simple(), stroke:2, color:documentColors[0])
 
-        // Row 3: via points
-        text("via", position:(0,53), origin:top-left, font-size:1.8)
-        rectangle(name:"s3a", position:(9,52), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("A", at:center) }
-        rectangle(name:"s3b", position:(27,58), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("B", at:center) }
-        connector("s3a", "s3b", via:(24,59), end-arrow:simple(), stroke:2)
-        rectangle(name:"a3a", position:(56,52), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("A", at:center) }
-        rectangle(name:"a3b", position:(74,58), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("B", at:center) }
-        connector("a3a", "a3b", via:(71,59), end-arrow:simple(), stroke:2, flow:dots(count:3,size:1.2,period:3))
+                text("free points", position:(2, 76), origin:top-left, font-size:1.8%P, color:documentTextSecondary)
+                connector((22, 84), (84, 84), end-arrow:simple(), stroke:2, color:documentColors[0])
+            }
+            demoPanel("Animated · show mode"){
+                text("automatic", position:(2, 4), origin:top-left, font-size:1.8%P, color:documentTextSecondary)
+                rectangle(name:"a1a", position:(20, 10), origin:top-left, size:(18, 10), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:3){ text("A", at:center, font-size:2%P) }
+                rectangle(name:"a1b", position:(68, 16), origin:top-left, size:(18, 10), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:3){ text("B", at:center, font-size:2%P) }
+                connector("a1a", "a1b", end-arrow:simple(), stroke:2, color:documentColors[0], flow:dots(count:3, size:1.2, period:3))
 
-        // Row 4: free and mixed points
-        text("free", position:(0,75), origin:top-left, font-size:1.8)
-        rectangle(name:"s4src", position:(9,74), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("SRC", at:center) }
-        connector("s4src", (38,78), end-arrow:simple(), stroke:2)
-        connector((10,84), (38,84), end-arrow:simple(), stroke:2)
-        rectangle(name:"a4src", position:(56,74), origin:top-left, size:(12,8), background-color:white, draw-contour){ text("SRC", at:center) }
-        connector("a4src", (85,78), end-arrow:simple(), stroke:2, flow:dots(count:2,size:1.2,period:2))
-        connector((57,84), (85,84), end-arrow:simple(), stroke:2, flow:dots(count:3,size:1.2,period:3))
+                text("explicit sides", position:(2, 28), origin:top-left, font-size:1.8%P, color:documentTextSecondary)
+                rectangle(name:"a2a", position:(20, 34), origin:top-left, size:(18, 10), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:3){ text("A", at:center, font-size:2%P) }
+                rectangle(name:"a2b", position:(68, 34), origin:top-left, size:(18, 10), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:3){ text("B", at:center, font-size:2%P) }
+                connector(from:"a2a@right", to:"a2b@left", end-arrow:triangle-full(), stroke:2, color:documentColors[0], flow:dots(count:3, size:1.2, period:3))
 
-        text("Static export uses elapsed 0; show mode animates the flow dots.", position:(9,94), origin:top-left, font-size:1.8)
+                text("waypoints", position:(2, 52), origin:top-left, font-size:1.8%P, color:documentTextSecondary)
+                rectangle(name:"a3a", position:(20, 58), origin:top-left, size:(18, 10), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:3){ text("A", at:center, font-size:2%P) }
+                rectangle(name:"a3b", position:(68, 64), origin:top-left, size:(18, 10), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:3){ text("B", at:center, font-size:2%P) }
+                connector("a3a", "a3b", via:(58, 69), route:"rounded", bend-radius:4, end-arrow:simple(), stroke:2, color:documentColors[0], flow:dots(count:3, size:1.2, period:3))
+
+                text("free points", position:(2, 76), origin:top-left, font-size:1.8%P, color:documentTextSecondary)
+                connector((22, 84), (84, 84), end-arrow:simple(), stroke:2, color:documentColors[0], flow:dots(count:3, size:1.2, period:3))
+            }
+        }
     }
 }

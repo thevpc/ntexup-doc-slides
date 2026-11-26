@@ -1,71 +1,80 @@
-content-slide(title: "Custom Components (@define)", variant: 3){
+@define info-badge(label, count: 1, accent: documentColors[0]){
+    group(margin: 1, size: (100, 22)){
+        rectangle(background-color: accent, round-corner: 4)
+        text("${label}: ${count}", color: white, font-bold,
+             font-size: 2.2%P, at: center)
+    }
+}
+
+@define feature-box(title, accent: documentColors[1]){
+    group(margin: 1, size: (100, 100)){
+        rectangle(background-color: documentSurface,
+                  color: documentLine, draw-contour, round-corner: 6)
+        rectangle(background-color: accent,
+                  position: (0, 0), size: (0.35%P, 100))
+        text("${title}", position: (6, 14), origin: left,
+             font-bold, font-size: 2.4%P, color: accent)
+        group(position: (6, 32), size: (88, 62),
+              origin: top-left){ slot }
+    }
+}
+
+content-slide(title: "Custom Components (@define)"){
     body{
-        grid(2, 1, columns-weight: [1.2, 1]){
-            styles:{
-                "*": { margin: 2 }
-                source:{
-                    at: left
-                }
-            }
+        col(rows-weight: [6, 94]){
+            sectionLabel("Components")
 
-            // Left side: Code explanation
-            miniCodeNTexup(
-            """
-            // 1. Define badge with arguments
-            @define info-badge(label, count: 1, accent: documentColors[0]){
-                group(margin: 1, size: (100, 22)){
-                    rectangle(background-color: accent, round-corner: 4)
-                    text("${label}: ${count}", color: white,
-                         font-bold, font-size: 2.2%P, at: center)
-                }
-            }
+            grid((2, 2), columns-weight: [1, 1], rows-weight: [0.75, 1.25]){
+                sourcePanel(
+                    """
+@define info-badge(label, count: 1,
+                  accent: documentColors[0]){
+  group(margin: 1, size: (100, 22)){
+    rectangle(background-color: accent, round-corner: 4)
+    text("${label}: ${count}", color: white, font-bold,
+         font-size: 2.2%P, at: center)
+  }
+}
+""",
+                    title: "1 · Parameters and defaults",
+                    fontSize: 1.8%P
+                )
 
-            // 2. Define component wrapping inner 'slot'
-            @define feature-box(title, accent: documentColors[1]){
-                group(margin: 1){
-                    rectangle(background-color: documentSurface,
-                              color: documentLine,
-                              draw-contour: true, round-corner: 6)
-                    rectangle(background-color: accent, position: (0, 0),
-                              size: (0.35%P, 100))
-                    text("${title}", position: (6, 14), origin: left,
-                         font-bold, font-size: 2.4%P, color: accent)
-                    group(position: (6, 32), size: (88, 62), origin: top-left){
-                        slot
+                demoPanel("Live badge"){
+                    group(position: (50, 38), size: (90, 24), origin: center){
+                        info-badge(label: "Pending Tasks", count: 7, accent: documentColors[0])
                     }
-                }
-            }
-            """
-            )
-
-            // Right side: Live Rendered Examples
-            miniPage{
-                @define info-badge(label, count: 1, accent: documentColors[0]){
-                    group(margin: 1, size: (100, 22)){
-                        rectangle(background-color: accent, round-corner: 4)
-                        text("${label}: ${count}", color: white, font-bold, font-size: 2.2%P, at: center)
-                    }
+                    text("count defaults to 1; accent accepts a color expression.",
+                         position: (50, 80), origin: center,
+                         font-size: 1.8%P, color: documentTextSecondary, text-wrap: wrap)
                 }
 
-                @define feature-box(title, accent: documentColors[1]){
-                    group(margin: 1){
-                        rectangle(background-color: documentSurface, color: documentLine, draw-contour: true, round-corner: 6)
-                        rectangle(background-color: accent, position: (0, 0), size: (0.35%P, 100))
-                        text("${title}", position: (6, 14), origin: left, font-bold, font-size: 2.4%P, color: accent)
-                        group(position: (6, 32), size: (88, 62), origin: top-left){
-                            slot
-                        }
-                    }
-                }
+                sourcePanel(
+                    """
+@define feature-box(title,
+                   accent: documentColors[1]){
+  group(margin: 1, size: (100, 100)){
+    rectangle(background-color: documentSurface,
+              color: documentLine, draw-contour, round-corner: 6)
+    rectangle(background-color: accent,
+              position: (0, 0), size: (0.35%P, 100))
+    text("${title}", position: (6, 14), origin: left,
+         font-bold, font-size: 2.4%P, color: accent)
+    group(position: (6, 32), size: (88, 62),
+          origin: top-left){ slot }
+  }
+}
+""",
+                    title: "2 · Caller content with slot",
+                    fontSize: 1.55%P
+                )
 
-                col(rows-weight: [22, 74]){
-                    info-badge(label: "Pending Tasks", count: 7, accent: documentColors[0])
-
+                demoPanel("Live feature box"){
                     feature-box(title: "Custom Component Box", accent: documentColors[1]){
-                        ul{
-                            • "Defined via `@define name(args){ ... }`"
-                            • "Embeds caller content using `slot`"
-                            • "Reusable across slides and layouts"
+                        ul(font-size: 1.8%P){
+                            • "`@define` components"
+                            • "Named arguments"
+                            • "Caller `slot`"
                         }
                     }
                 }

@@ -1,30 +1,48 @@
 conclusion-slide(title: "Conclusion"){
     body{
-        grid((3, 1), columns-weight: [1, 1, 1]){
-            styles{
-                "*": { margin: 2 }
-            }
-            card(accentColor: documentColors[0]){
-                kicker("DECLARATIVE")
-                ul{
-                    • "Describe slides in readable text"
-                    • "Compose layouts from reusable nodes"
+        col(rows-weight: [6, 18, 62, 14]){
+            sectionLabel("Summary")
+
+            text("Write once. Compose clearly. Render anywhere.",
+                 font-size: 3.6%P, font-bold,
+                 color: documentTextPrimary, text-align: center)
+
+            grid((3, 1), columns-weight: [1, 1, 1]){
+                styles{
+                    "*": { margin: 1.5 }
+                    @ul-item{
+                        font-size: 2.45%P
+                        margin: (1.4, 0)
+                        text-wrap: wrap
+                    }
+                }
+
+                card(accentColor: documentColors[0]){
+                    kicker("01 · DECLARATIVE")
+                    ul{
+                        • "Describe slides in readable text"
+                        • "Compose layouts from reusable nodes"
+                    }
+                }
+
+                card(accentColor: documentColors[1]){
+                    kicker("02 · REUSABLE")
+                    ul{
+                        • "Share components and styles"
+                        • "Keep every slide visually consistent"
+                    }
+                }
+
+                card(accentColor: documentColors[2]){
+                    kicker("03 · THEME-AWARE")
+                    ul{
+                        • "Switch themes without rewriting pages"
+                        • "Render to slides, images or PDF"
+                    }
                 }
             }
-            card(accentColor: documentColors[1]){
-                kicker("REUSABLE")
-                ul{
-                    • "Share components and styles"
-                    • "Keep every slide visually consistent"
-                }
-            }
-            card(accentColor: documentColors[2]){
-                kicker("THEME-AWARE")
-                ul{
-                    • "Switch themes without rewriting pages"
-                    • "Render to slides, images, or PDF"
-                }
-            }
+
+            pageNote("Start with one page, extract what repeats, and let the renderer handle the output.")
         }
     }
 }

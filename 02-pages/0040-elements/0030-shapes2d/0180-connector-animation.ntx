@@ -1,74 +1,73 @@
-content-slide(title:"Connectors — animated flow",variant:5){
+content-slide(title:"Connectors — animated flow", section:"2D graphics"){
     body{
-        // Row 1, left: automatic border clipping
-        text("1. Flow on automatic anchors", position:(2,1), origin:top-left, font-size:2.3)
-        rectangle(name:"fa1", position:(2,10), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("API", at:center) }
-        rectangle(name:"fb1", position:(28,20), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("DB", at:center) }
-        connector("fa1", "fb1", end-arrow:simple(), stroke:2, flow:dots(count:3,size:1.2,period:3))
-        source(ntexup
-            """
-            connector(
-                "api", "db",
-                flow: dots(count: 3)
-            )
-            """
-            font-size:1.4%P,
-            font-family:Monospaced,
-            position:(2,38),
-            origin:top-left
-        )
-
-        // Row 1, right: explicit side anchors
-        text("2. Flow between sides", position:(53,1), origin:top-left, font-size:2.3)
-        rectangle(name:"fa2", position:(53,10), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("API", at:center) }
-        rectangle(name:"fb2", position:(79,10), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("DB", at:center) }
-        connector(from:"fa2@right", to:"fb2@left", end-arrow:triangle(), stroke:2, flow:dots(count:3,size:1.2,period:3))
-        source(ntexup
-            """
-            connector(
-                from: "api@right", to: "db@left",
-                flow: dots(count: 3)
-            )
-            """
-            font-size:1.4%P,
-            font-family:Monospaced,
-            position:(53,38),
-            origin:top-left
-        )
-
-        // Row 2, left: via points
-        text("3. Flow along via points", position:(2,52), origin:top-left, font-size:2.3)
-        rectangle(name:"fa3", position:(2,62), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("API", at:center) }
-        rectangle(name:"fb3", position:(28,76), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("DB", at:center) }
-        connector("fa3", "fb3", via:(24,75), end-arrow:simple(), stroke:2, flow:dots(count:3,size:1.2,period:3))
-        source(ntexup
-            """
-            connector("api", "db",
-                via: (24, 75),
-                flow: dots(count: 3))
-            """
-            font-size:1.3%P,
-            font-family:Monospaced,
-            position:(2,90),
-            origin:top-left
-        )
-
-        // Row 2, right: free and mixed endpoints
-        text("4. Flow on free and mixed points", position:(53,52), origin:top-left, font-size:2.3)
-        rectangle(name:"fsrc4", position:(53,62), origin:top-left, size:(16,12), background-color:white, draw-contour){ text("SRC", at:center) }
-        connector("fsrc4", (92,72), end-arrow:simple(), stroke:2, flow:dots(count:2,size:1.2,period:2))
-        connector((55,88), (92,88), start-arrow:simple(), end-arrow:simple(), stroke:2, flow:dots(count:3,size:1.2,period:3))
-        source(ntexup
-            """
-            connector("src", (92, 72),
-                flow: dots(count: 2))
-            connector((55, 88), (92, 88),
-                flow: dots(count: 3))
-            """
-            font-size:1.3%P,
-            font-family:Monospaced,
-            position:(53,90),
-            origin:top-left
-        )
+        grid(2, 2, columns-weight:[1, 1], rows-weight:[1, 1]){
+            col(rows-weight:[62, 38]){
+                demoPanel("Flow on automatic anchors"){
+                    rectangle(name:"fa1", position:(8, 20), origin:top-left, size:(30, 26), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("API", at:center, font-size:2.6%P, font-bold)
+                    }
+                    rectangle(name:"fb1", position:(64, 56), origin:top-left, size:(30, 26), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("DB", at:center, font-size:2.6%P, font-bold)
+                    }
+                    connector("fa1", "fb1", end-arrow:simple(), stroke:2, color:documentColors[0], flow:dots(count:3, size:1.2, period:3))
+                }
+                sourcePanel("""
+                    connector("fa1", "fb1",
+                        end-arrow: simple(),
+                        flow: dots(count: 3,
+                            size: 1.2, period: 3))
+                """, title:"Animated connector")
+            }
+            col(rows-weight:[62, 38]){
+                demoPanel("Flow between sides"){
+                    rectangle(name:"fa2", position:(8, 32), origin:top-left, size:(30, 26), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("API", at:center, font-size:2.6%P, font-bold)
+                    }
+                    rectangle(name:"fb2", position:(64, 32), origin:top-left, size:(30, 26), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("DB", at:center, font-size:2.6%P, font-bold)
+                    }
+                    connector(from:"fa2@right", to:"fb2@left", end-arrow:triangle-full(), stroke:2, color:documentColors[0], flow:dots(count:3, size:1.2, period:3))
+                }
+                sourcePanel("""
+                    connector(
+                        from: "fa2@right",
+                        to: "fb2@left",
+                        flow: dots(count: 3,
+                            size: 1.2, period: 3))
+                """, title:"Animated connector")
+            }
+            col(rows-weight:[62, 38]){
+                demoPanel("Flow through rounded bends"){
+                    rectangle(name:"fa3", position:(8, 18), origin:top-left, size:(30, 24), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("API", at:center, font-size:2.6%P, font-bold)
+                    }
+                    rectangle(name:"fb3", position:(64, 58), origin:top-left, size:(30, 24), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("DB", at:center, font-size:2.6%P, font-bold)
+                    }
+                    connector("fa3", "fb3", via:((46, 30), (46, 70)), route:"rounded", bend-radius:6, end-arrow:simple(), stroke:2, color:documentColors[0], flow:dots(count:3, size:1.2, period:3))
+                }
+                sourcePanel("""
+                    connector("fa3", "fb3",
+                        via: ((46, 30), (46, 70)),
+                        route: "rounded",
+                        flow: dots(count: 3))
+                """, title:"Flow follows geometry")
+            }
+            col(rows-weight:[62, 38]){
+                demoPanel("Flow on free and mixed points"){
+                    rectangle(name:"fsrc4", position:(8, 20), origin:top-left, size:(30, 24), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){
+                        text("SRC", at:center, font-size:2.6%P, font-bold)
+                    }
+                    connector("fsrc4", (88, 38), end-arrow:simple(), stroke:2, color:documentColors[0], flow:dots(count:2, size:1.2, period:2))
+                    connector((12, 72), (86, 72), arrow:simple(), stroke:2, color:documentColors[1], flow:dots(count:3, size:1.2, period:3))
+                }
+                sourcePanel("""
+                    connector("fsrc4", (88, 38),
+                        flow: dots(count: 2))
+                    connector((12, 72), (86, 72),
+                        flow: dots(count: 3))
+                """, title:"Animated connectors")
+            }
+        }
     }
 }

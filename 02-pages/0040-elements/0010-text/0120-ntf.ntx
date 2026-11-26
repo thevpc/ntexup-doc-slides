@@ -1,56 +1,42 @@
-content-slide(title:"NTF format",variant:3){
+content-slide(title:"NTF format", section:"Text & rich content"){
     body{
-        grid(4,2,columns-weight:[1,2]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
-                }
+        sectionLabel("Headings, palette colors, and style tokens")
+        grid(2, 2,
+            position:(0, 8), size:(100, 86), origin:top-left,
+            columns-weight:[1, 1.6])
+        {
+            styles{
+                "*": {margin:1}
             }
-
-            // Row
             miniPage{
-                styles:{
-                    "*":{font-size:4%P}
-                }
-                ntf(
-                """
-                    ##Hello## ### World ###
-                """
-                )
+                ntf("""
+                    #) Heading 1
+                    ##) Heading 2
+                    ###) Heading 3
+                """, font-size:3.4%P)
             }
-            miniCodeNTexup(
-                ```
-                    ntf(
-                    """
-                    ##Hello## ### World ###
-                    """
-                    )
-                ```)
+            miniCodeNTexup(```
+                ntf("""
+                    #) Heading 1
+                    ##) Heading 2
+                    ###) Heading 3
+                """, font-size:3.4%P)
+            ```, fontSize:2.3%P)
 
-            // Row
             miniPage{
-                styles:{
-                    "*":{font-size:4%P}
-                }
-                ntf(
-                """
+                ntf("""
                     ##:p1 color 1## ##:p2 color 2##
                     ##:p3 color 3## ##:p10 color 4##
                     ##:/ italic##   ##:info hint##
-                """
-                )
+                """, font-size:3.2%P)
             }
-            miniCodeNTexup(
-                ```
-                    ntf(
-                    """
-                    ##:p1:color 1## ##:p2:color 2##
-                    ##:p3:color 3## ##:p10:color 4##
-                    ##:/:italic## ##:info hint##
-                    """
-                    )
-                ```)        }
+            miniCodeNTexup(```
+                ntf("""
+                    ##:p1 color 1## ##:p2 color 2##
+                    ##:p3 color 3## ##:p10 color 4##
+                    ##:/ italic##   ##:info hint##
+                """, font-size:3.2%P)
+            ```, fontSize:2.3%P)
+        }
     }
-
 }

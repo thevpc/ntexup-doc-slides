@@ -1,87 +1,77 @@
-content-slide(title:"UML Classes",variant:7){
-    body{
-        grid((4,1),columns-weight:[2,3]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
-                }
-            }
-
-            // Row 1
-            // ---------------------------------------------
-            miniPage{
-                uml(at:center,size:(100,50)
-                    """
+content-slide(title: "UML Class Diagrams") {
+    body {
+        col(rows-weight: [6, 86, 8]) {
+            sectionLabel("Diagrams")
+            grid((2, 2), columns-weight: [1, 1.55]) {
+                demoPanel("Inheritance and interface realization") {
+                    uml(
+                        at: center,
+                        size: (100, 50),
+                        """
                         Object <|-- ArrayList
                         List <|.. ArrayList
                         interface List
                         Object : equals()
                         ArrayList : Object[] elementData
                         ArrayList : size()
-                    """
+                        """
+                    )
+                }
+                sourcePanel(
+                    ```
+uml(at:center, size:(100,50),
+"""
+Object <|-- ArrayList
+List <|.. ArrayList
+interface List
+Object : equals()
+ArrayList : Object[] elementData
+ArrayList : size()
+""")
+```,
+                    title: "Class diagram · complete example",
+                    fontSize: 2.1%P
+                )
+
+                demoPanel("Repository injection and composition") {
+                    uml(
+                        at: center,
+                        size: (100, 50),
+                        """
+                        interface Repository
+                        class UserService {
+                          -repository : Repository
+                          +findUser(id : Long) : User
+                        }
+                        class DatabaseRepository
+                        class User
+                        Repository <|.. DatabaseRepository
+                        UserService o-- Repository
+                        UserService --> User
+                        """
+                    )
+                }
+                sourcePanel(
+                    ```
+uml(at:center, size:(100,50),
+"""
+interface Repository
+class UserService {
+  -repository : Repository
+  +findUser(id : Long) : User
+}
+class DatabaseRepository
+class User
+Repository <|.. DatabaseRepository
+UserService o-- Repository
+UserService --> User
+""")
+```,
+                    title: "Class diagram · fields and operations",
+                    fontSize: 2.1%P
                 )
             }
-
-            miniCodeNTexup(
-            ```
-            uml(
-             """
-             Object <|-- ArrayList
-             List <|.. ArrayList
-             interface List
-             Object : equals()
-             ArrayList : Object[] elementData
-             ArrayList : size()
-             """
-            )
-
-             ```
-             )
-
-            // Row 2
-            // ---------------------------------------------
-            miniPage{
-                uml(at:center,size:(100,50)
-                    """
-                        actor Bob #red
-                        ' The only difference between actor
-                        'and participant is the drawing
-                        participant Alice
-                        participant "I have a really\nlong name" as L #99FF99
-                        /' You can also declare:
-                           participant L as "I have a really\nlong name"  #99FF99
-                          '/
-
-                        Alice->Bob: Authentication Request
-                        Bob->Alice: Authentication Response
-                        Bob->L: Log transaction
-                    """
-                )
-            }
-
-            miniCodeNTexup(
-            ```
-            uml(
-            """
-             actor Bob #red
-             ' The only difference
-             ' between actor
-             ' and participant is the drawing
-             participant Alice
-             participant "I have a really\nlong name" as L #99FF99
-             /' You can also declare:
-                participant L as "I have a really\nlong name"  #99FF99
-               '
-             Alice->Bob: Authentication Request
-             Bob->Alice: Authentication Response
-             Bob->L: Log transaction
-            """
-            )
-
-             ```
-             )
+            pageNote("<|-- inheritance; <|.. realization; o-- composition. Members show visibility, name, and type.")
         }
     }
-
 }

@@ -1,16 +1,64 @@
-content-slide(title:"Test me",variant:9){
+content-slide(title: "Try it yourself"){
     body{
-        column{
-            // write whatever you like here???
-            text(
-                """
-                open the following file
-                    ##<ntexup_gitroot>/documentation/ntexup-doc/02-pages/9999-conclusion/0110-test.ntx##
-                and try to write some things there...
-                """
-                font-size: 3%P
-            )
+        col(rows-weight: [6, 86, 8]){
+            sectionLabel("Practice")
+
+            grid((3, 1), columns-weight: [1.15, 0.7, 1.35]){
+                sourcePanel(
+                    """
+import("stdlib" "layout" "text")
+
+page {
+  text("Hello from **ntexup**!",
+       at: center, font-size: 6%P,
+       font-bold)
+}
+""",
+                    title: "hello.ntx · complete example",
+                    fontSize: 1.75%P
+                )
+
+                demoPanel("Preview"){
+                    miniPage{
+                        text("Hello from **ntexup**!",
+                             at: center, font-size: 2.8%P,
+                             font-bold, color: documentColors[0])
+                    }
+                }
+
+                demoPanel("Four steps"){
+                    grid(1, 4, size: (100, 100),
+                        rows-weight: [1, 1, 1, 1.25]){
+                        grid((2, 1), columns-weight: [7, 93]){
+                            text("**1**", font-size: 2%P,
+                                 color: documentColors[0])
+                            text("Save the snippet as **hello.ntx** in any folder.",
+                                 font-size: 1.7%P, text-wrap: wrap)
+                        }
+                        grid((2, 1), columns-weight: [7, 93]){
+                            text("**2**", font-size: 2%P,
+                                 color: documentColors[0])
+                            text("Open a terminal in that folder.",
+                                 font-size: 1.7%P, text-wrap: wrap)
+                        }
+                        grid((2, 1), columns-weight: [7, 93]){
+                            text("**3**", font-size: 2%P,
+                                 color: documentColors[0])
+                            text("Run `nuts -y ntexup check hello.ntx`.",
+                                 font-size: 1.7%P, text-wrap: wrap)
+                        }
+                        grid((2, 1), columns-weight: [7, 93]){
+                            text("**4**", font-size: 2%P,
+                                 color: documentColors[0])
+                            text("""Edit and check again.
+Render with `nuts -y ntexup image -o preview/ hello.ntx`.""",
+                                 font-size: 1.6%P, text-wrap: wrap)
+                        }
+                    }
+                }
+            }
+
+            pageNote("Expected check result: 0 errors. This example needs no theme, repository path or machine-specific setup.")
         }
     }
-
 }

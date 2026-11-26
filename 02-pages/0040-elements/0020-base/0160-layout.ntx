@@ -1,81 +1,104 @@
-content-slide(title:"Layout",variant:4){
+content-slide(title:"Layout", section:"Layout & styling"){
     body{
-        grid(4,2,columns-weight:[1,2]){
-            styles:{
-                "*": {margin:2}
-            }
-            // Row
-            miniPage{
+        sectionLabel("Base elements · groups and weighted grids")
+        grid(2, 3,
+            position:(0, 7), size:(100, 86), origin:top-left,
+            columns-weight:[1, 1.8],
+            rows-weight:[1.2, 1.4, 1.4])
+        {
+            demoPanel("Group · two placed shapes"){
                 group{
-                  rectangle(at:top, size:(50,50), background-color:documentColors[4], color:documentColors[2], margin:10)
-                  triangle(at:left, size:(50,50), background-color:documentColors[5], color:documentColors[5], margin:10)
+                    rectangle(at:top, size:(50,50),
+                        background-color:documentColors[4],
+                        color:documentColors[2], draw-contour,
+                        margin:10)
+                    triangle(at:left, size:(50,50),
+                        background-color:documentColors[5],
+                        color:documentColors[0], draw-contour,
+                        margin:10)
                 }
             }
-            miniCodeNTexup( """
+            miniCodeNTexup("""
                 group{
-                  rectangle(at:top,
-                      size:(50,50),
-                      background-color:
-                        documentColors[4]
-                  )
-                  triangle(at:left,
-                      size:(50,50),
-                      background-color:
-                        documentColors[5]
-                  )
+                  rectangle(at:top, size:(50,50),
+                    background-color:documentColors[4],
+                    color:documentColors[2], draw-contour,
+                    margin:10)
+                  triangle(at:left, size:(50,50),
+                    background-color:documentColors[5],
+                    color:documentColors[0], draw-contour,
+                    margin:10)
                 }
-            """)
+            """, fontSize:2.1%P)
 
-            // Row
-            miniPage{
-                grid((2,2)){
-                    rectangle(at:top, size:(50,50), background-color:documentColors[4], color:documentColors[2], margin:10)
-                    triangle(at:left, size:(50,50), background-color:documentColors[5], color:documentColors[5], margin:10)
+            demoPanel("Grid · shapes and text"){
+                grid(2, 2){
+                    rectangle(at:top, size:(50,50),
+                        background-color:documentColors[4],
+                        color:documentColors[2], draw-contour,
+                        margin:10)
+                    triangle(at:left, size:(50,50),
+                        background-color:documentColors[5],
+                        color:documentColors[0], draw-contour,
+                        margin:10)
                     "Hello"
                 }
             }
-            miniCodeNTexup( """
-                grid((2,2)){
-                  rectangle(at:top,
-                    size:(50,50),
-                    background-color:
-                      documentColors[4]
-                  )
-                  triangle(at:left,
-                    size:(50,50),
-                    background-color:
-                      documentColors[5]
-                  )
+            miniCodeNTexup("""
+                grid(2, 2){
+                  rectangle(at:top, size:(50,50),
+                    background-color:documentColors[4],
+                    color:documentColors[2], draw-contour,
+                    margin:10)
+                  triangle(at:left, size:(50,50),
+                    background-color:documentColors[5],
+                    color:documentColors[0], draw-contour,
+                    margin:10)
+                  "Hello"
                 }
-            """)
+            """, fontSize:2.1%P)
 
-            // Row
-            miniPage{
-                grid((3,2),columns-weight:[1,4],rows-weight:[1,4]){
-                    rectangle(background-color:documentColors[4], color:documentColors[2], margin:10)
-                    triangle(background-color:documentColors[5], color:documentColors[5], margin:10)
-                    rectangle(background-color:documentColors[4], color:documentColors[2], margin:10)
-                    triangle(background-color:documentColors[5], color:documentColors[5], margin:10)
-                    rectangle(background-color:documentColors[4], color:documentColors[2], margin:10)
-                    triangle(background-color:documentColors[5], color:documentColors[5], margin:10)
+            demoPanel("Weighted grid · repeated pair"){
+                grid(3, 2,
+                    columns-weight:[1,4],
+                    rows-weight:[1,4])
+                {
+                    rectangle(background-color:documentColors[4],
+                        color:documentColors[2], draw-contour,
+                        margin:10)
+                    triangle(background-color:documentColors[5],
+                        color:documentColors[0], draw-contour,
+                        margin:10)
+                    rectangle(background-color:documentColors[4],
+                        color:documentColors[2], draw-contour,
+                        margin:10)
+                    triangle(background-color:documentColors[5],
+                        color:documentColors[0], draw-contour,
+                        margin:10)
+                    rectangle(background-color:documentColors[4],
+                        color:documentColors[2], draw-contour,
+                        margin:10)
+                    triangle(background-color:documentColors[5],
+                        color:documentColors[0], draw-contour,
+                        margin:10)
                 }
             }
-            miniCodeNTexup( """
-                grid((3,2),
-                    columns-weight:[1,4],
-                    rows-weight:[1,4]){
-                        rectangle()
-                        triangle()
-                        rectangle()
-                        triangle()
-                        rectangle()
-                        triangle()
+            miniCodeNTexup("""
+                grid(3, 2,
+                  columns-weight:[1,4],
+                  rows-weight:[1,4]){
+                  rectangle(margin:10, draw-contour,
+                    background-color:documentColors[4],
+                    color:documentColors[2])
+                  triangle(margin:10, draw-contour,
+                    background-color:documentColors[5],
+                    color:documentColors[0])
+                  // Repeat this pair three times.
                 }
-             """)
-
-
-
+            """, fontSize:2.1%P)
+        }
+        group(position:(0, 95), size:(100, 5), origin:top-left){
+            pageNote("Margins stay outside each shape; contrasting contours keep fills and edges distinct.")
         }
     }
-
 }

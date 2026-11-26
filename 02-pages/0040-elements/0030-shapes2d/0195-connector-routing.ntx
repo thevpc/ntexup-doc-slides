@@ -1,0 +1,48 @@
+content-slide(title:"Connectors — routing & rounded junctions", section:"2D graphics"){
+    body{
+        col(rows-weight:[1, 1, 1]){
+            grid(2, 1, columns-weight:[3, 2]){
+                demoPanel("Sharp · preserve waypoints"){
+                    rectangle(name:"r1", position:(6, 28), origin:top-left, size:(20, 30), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){ text("A", at:center, font-size:2.6%P, font-bold) }
+                    rectangle(name:"r2", position:(76, 60), origin:top-left, size:(20, 30), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){ text("B", at:center, font-size:2.6%P, font-bold) }
+                    connector("r1", "r2", via:((36, 43), (36, 75)), route:"sharp", end-arrow:triangle-full(), stroke:2.4, color:documentTextSecondary)
+                }
+                sourcePanel("""
+                    connector("r1", "r2",
+                        via: ((36, 43), (36, 75)),
+                        route: "sharp",
+                        end-arrow: triangle-full())
+                """, title:"Polyline route")
+            }
+            grid(2, 1, columns-weight:[3, 2]){
+                demoPanel("Rounded · multiple junctions"){
+                    rectangle(name:"r3", position:(6, 28), origin:top-left, size:(20, 30), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){ text("A", at:center, font-size:2.6%P, font-bold) }
+                    rectangle(name:"r4", position:(76, 60), origin:top-left, size:(20, 30), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){ text("B", at:center, font-size:2.6%P, font-bold) }
+                    connector("r3", "r4", via:((36, 43), (36, 75)), route:"rounded", bend-radius:8, label:"two bends", end-arrow:triangle-full(), stroke:2.4, color:documentColors[0], flow:dots(count:3, size:1.1, period:3))
+                }
+                sourcePanel("""
+                    connector("r3", "r4",
+                        via: ((36, 43), (36, 75)),
+                        route: "rounded",
+                        bend-radius: 8,
+                        label: "two bends",
+                        end-arrow: triangle-full(),
+                        flow: dots(count: 3, size: 1.1, period: 3))
+                """, title:"Curved junctions")
+            }
+            grid(2, 1, columns-weight:[3, 2]){
+                demoPanel("Orthogonal · horizontal and vertical"){
+                    rectangle(name:"r5", position:(6, 28), origin:top-left, size:(20, 30), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){ text("A", at:center, font-size:2.6%P, font-bold) }
+                    rectangle(name:"r6", position:(76, 28), origin:top-left, size:(20, 30), background-color:documentSurface, draw-contour, line-color:documentLine, round-corner:4){ text("B", at:center, font-size:2.6%P, font-bold) }
+                    connector("r5", "r6", via:((38, 55), (64, 30)), route:"orthogonal", end-arrow:triangle-full(), stroke:2.4, color:documentColors[1])
+                }
+                sourcePanel("""
+                    connector("r5", "r6",
+                        via: ((38, 55), (64, 30)),
+                        route: "orthogonal",
+                        end-arrow: triangle-full())
+                """, title:"Right-angle route")
+            }
+        }
+    }
+}

@@ -1,59 +1,62 @@
-content-slide(title: "Built-in Template Components", variant: 4){
+content-slide(title: "Built-in Template Components"){
     body{
-        grid((3, 3), columns-weight: [1, 1, 1], rows-weight: [1, 1, 1]){
-            styles:{
-                "*": { margin: 2 }
-            }
+        col(rows-weight: [6, 94]){
+            sectionLabel("Components")
 
-            // 1. Card with kicker
-            card(accentColor: documentColors[0]){
-                kicker("CARD COMPONENT")
-                ul{
-                    • "Auto-styled container"
-                    • "Integrated left accent bar"
-                    • "Embedded kicker support"
+            grid((3, 3), columns-weight: [1, 1, 1], rows-weight: [1.2, 0.9, 1.1]){
+                styles{
+                    @ul-item{
+                        font-size: 1.95%P
+                        margin: (0.6, 0)
+                        text-wrap: wrap
+                    }
                 }
-            }
 
-            // 2. Stat box
-            card(accentColor: documentColors[1]){
-                stat(value: "99.9%", label: "Availability SLA")
-            }
+                card(accentColor: documentColors[0]){
+                    kicker("CARD")
+                    ul{
+                        • "Styled container"
+                        • "Integrated accent"
+                        • "Kicker + content slot"
+                    }
+                }
 
-            // 3. Quote
-            quote(author: "Alan Kay"){
-                text("The best way to predict the future is to invent it.",
-                     font-size: 2.2%P, font-italic)
-            }
+                card(accentColor: documentColors[1]){
+                    stat(value: "99.9%", label: "Example availability")
+                }
 
-            // 4. Image figure with title and legend
-            image-fig(src: "../../../images/image.png", title: "Reusable figure", legend: "Title and legend stay with the image.", size: 45)
+                quote(author: "Alan Kay"){
+                    text("The best way to predict the future is to invent it.",
+                         font-size: 2.1%P, font-italic, text-wrap: wrap)
+                }
 
-            // 5. Callout: hint-info
-            hint-info("Information Callout"){
-                text("Provides contextual tips and info blocks with semantic coloring.")
-            }
+                image-fig(src: "../../../images/image.png",
+                          title: "Figure",
+                          legend: "Title + legend",
+                          size: 32)
 
-            // 6. Callout: hint-error
-            hint-error("Important Callout"){
-                text("Use the error style for blocking issues, failed checks, and data loss risks.")
-            }
+                hint-info("Information"){
+                    text("Contextual tips for the current step.")
+                }
 
-            // 7. Callout: hint-warning
-            hint-warning("Warning Callout"){
-                text("Highlights cautions or critical notices with warning accent colors.")
-            }
+                hint-error("Error"){
+                    text("Blocking issues or failed checks.")
+                }
 
-            // 8. Callout: hint-success
-            hint-success("Success Callout"){
-                text("Confirms a completed migration, a passed check, or a healthy service.")
-            }
+                hint-warning("Warning"){
+                    text("Cautions before continuing.")
+                }
 
-            // 9. Panel (light canvas)
-            panel(title: "Panel: light canvas"){
-                group(size: (100, 70)){
-                    text("A neutral surface for diagrams and supporting details",
-                         color: documentTextSecondary, position: (50, 65), origin: center, font-size: 1.8%P)
+                hint-success("Success"){
+                    text("Passed checks or healthy services.")
+                }
+
+                panel(title: "Panel"){
+                    group(size: (100, 70)){
+                        text("A neutral canvas for diagrams and details.",
+                             color: documentTextSecondary, position: (50, 60),
+                             origin: center, font-size: 1.9%P, text-wrap: wrap)
+                    }
                 }
             }
         }

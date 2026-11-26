@@ -1,70 +1,77 @@
-content-slide(title:"Rotation",variant:4){
+content-slide(title:"Rotation", section:"Layout & styling"){
     body{
-        grid((4,2),columns-weight:[1,1.5]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
+        sectionLabel("Base elements · rotation and pivot")
+        grid(2, 4,
+            position:(0, 7), size:(100, 86), origin:top-left,
+            columns-weight:[1, 1.8])
+        {
+            demoPanel("Rotated rectangle"){
+                rectangle(at:center, size:(40,25),
+                    background-color:documentColors[4],
+                    color:documentColors[0], rotate:45)
+            }
+            sourcePanel("""
+                rectangle(at:center, size:(40,25),
+                  rotate:45)
+            """, fontSize:2.1%P)
+
+            demoPanel("Rotated text"){
+                text("Rotated Label", font-bold,
+                    rotate:-25, at:center,
+                    color:documentColors[1])
+            }
+            sourcePanel("""
+                text("Rotated Label", font-bold,
+                  rotate:-25, at:center,
+                  color:documentColors[1])
+            """, fontSize:2.1%P)
+
+            demoPanel("Center vs top-left pivot"){
+                grid(2, 1){
+                    miniPage{
+                        rectangle(at:center, size:(45,20),
+                            background-color:documentColors[4],
+                            color:documentColors[0], rotate:30)
+                        text("center", at:bottom,
+                            font-size:2%P,
+                            color:documentTextSecondary)
+                    }
+                    miniPage{
+                        rectangle(at:center, size:(45,20),
+                            background-color:documentColors[4],
+                            color:documentColors[0], rotate:(30,0,0))
+                        text("top-left", at:bottom,
+                            font-size:2%P,
+                            color:documentTextSecondary)
+                    }
                 }
             }
+            sourcePanel("""
+                // left: center pivot
+                rectangle(at:center, size:(45,20),
+                  rotate:30)
+                // right: top-left pivot
+                rectangle(at:center, size:(45,20),
+                  rotate:(30,0,0))
+            """, title:"Pivot comparison · labels omitted", fontSize:2.1%P)
 
-            // Row 1: Basic shape rotation
-            miniPage{
-                rectangle(at:center, size:(40,25), background-color:documentColors[4], color:documentColors[0], rotate:45)
+            demoPanel("Multiple rotations"){
+                rectangle(at:center, size:(35,35),
+                    background-color:documentColors[4],
+                    color:documentColors[2], rotate:15)
+                rectangle(at:center, size:(35,35),
+                    background-color:documentColors[3],
+                    color:documentColors[1], rotate:60)
             }
-            miniCodeNTexup(
-            """
-            rectangle(
-              at:center,
-              size:(40,25),
-              rotate:45
-            )
-            """
-            )
-
-            // Row 2: Text rotation
-            miniPage{
-                text("Rotated Label", font-bold, rotate:-25, at:center, color:documentColors[1])
-            }
-            miniCodeNTexup(
-            """
-            text(
-              "Rotated Label",
-              rotate:-25
-            )
-            """
-            )
-
-            // Row 3: Rotation with custom pivot (top-left vs center)
-            miniPage{
-                group{
-                    rectangle(at:center, size:(45,20), background-color:documentColors[4], color:documentColors[0], rotate:(30, 0, 0))
-                }
-            }
-            miniCodeNTexup(
-            """
-            rectangle(
-              at:center,
-              size:(45,20),
-              // pivot (angle, x, y):
-              rotate:(30, 0, 0)
-            )
-            """
-            )
-
-            // Row 4: Multiple rotated elements
-            miniPage{
-                group{
-                    rectangle(at:center, size:(35,35), background-color:documentColors[4], color:documentColors[2], rotate:15)
-                    rectangle(at:center, size:(35,35), background-color:documentColors[3], color:documentColors[1], rotate:60)
-                }
-            }
-            miniCodeNTexup(
-            """
-            rectangle(size:(35,35), rotate:15)
-            rectangle(size:(35,35), rotate:60)
-            """
-            )
+            sourcePanel("""
+                rectangle(at:center, size:(35,35),
+                  rotate:15)
+                rectangle(at:center, size:(35,35),
+                  rotate:60)
+            """, title:"Rotation excerpt · colors omitted", fontSize:2.1%P)
+        }
+        group(position:(0, 95), size:(100, 5), origin:top-left){
+            pageNote("rotate uses degrees; a tuple supplies (angle, x-pivot, y-pivot) in element percentages.")
         }
     }
 }

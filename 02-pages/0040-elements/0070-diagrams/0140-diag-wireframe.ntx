@@ -1,48 +1,41 @@
-content-slide(title:"Wireframe Diagrams",variant:7){
-    body{
-        grid((4,2),columns-weight:[2,3]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
-                }
-            }
-
-            // Row 1
-            // ---------------------------------------------
-            miniPage{
-                wireframe(size:(90,30),at:center
-                    """
+content-slide(title: "Salt Wireframes") {
+    body {
+        col(rows-weight: [6, 86, 8]) {
+            sectionLabel("Diagrams")
+            grid((2, 2), columns-weight: [1, 1.55]) {
+                demoPanel("Login form · grid and buttons") {
+                    wireframe(
+                        size: (90, 30),
+                        at: center,
+                        """
                         {+
                           Login    | "MyName   "
                           Password | "****     "
                           [Cancel] | [  OK   ]
                         }
-                    """
+                        """
+                    )
+                }
+                sourcePanel(
+                    ```
+wireframe(size:(90,30), at:center,
+"""
+{+
+  Login    | "MyName   "
+  Password | "****     "
+  [Cancel] | [  OK   ]
+}
+""")
+```,
+                    title: "Wireframe · complete example",
+                    fontSize: 2.2%P
                 )
-            }
 
-            miniCodeNTexup(
-             code:
-             ```
-             wireframe(
-              """
-                 Login    | "MyName   "
-                 Password | "****     "
-                 [Cancel] | [  OK   ]
-              """
-             )
-
-             ```
-              rowspan:2
-
-             )
-
-            // Row 2
-            // ---------------------------------------------
-            miniPage{
-                wireframe(size:(90,30),at:center
-                    """
+                demoPanel("Preferences · tabs, group, and controls") {
+                    wireframe(
+                        size: (90, 30),
+                        at: center,
+                        """
                         {+
                         {/ <b>General | Fullscreen | Behavior | Saving }
                         {
@@ -53,31 +46,30 @@ content-slide(title:"Wireframe Diagrams",variant:7){
                         }
                         [Close]
                         }
-                    """
+                        """
+                    )
+                }
+                sourcePanel(
+                    ```
+wireframe(size:(90,30), at:center,
+"""
+{+
+{/ <b>General | Fullscreen | Behavior | Saving }
+{
+{ Open image in: | ^Smart Mode^ }
+[X] Smooth images when zoomed
+[X] Confirm image deletion
+[ ] Show hidden images
+}
+[Close]
+}
+""")
+```,
+                    title: "Wireframe · complete example",
+                    fontSize: 2.1%P
                 )
             }
-
-            miniCodeNTexup(
-                code:
-                ```
-                wireframe(
-                 """
-                     {+
-                     {/ <b>General | Fullscreen | Behavior | Saving }
-                     {
-                     { Open image in: | ^Smart Mode^ }
-                     [X] Smooth images when zoomed
-                     [X] Confirm image deletion
-                     [ ] Show hidden images
-                     }
-                     [Close]
-                     }
-                 """
-                )
-                ```
-                     rowspan:2
-             )
+            pageNote("An outer { ... } block is required; {+ ... } adds the bordered grid used here. {/ starts tabs, | columns, and ^...^ a drop-down.")
         }
     }
-
 }

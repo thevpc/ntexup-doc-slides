@@ -1,82 +1,72 @@
-content-slide(title:"Strokes & Shadows",variant:5){
+content-slide(title:"Strokes & Shadows", section:"Layout & styling"){
     body{
-        grid((4,2),columns-weight:[1,1.5]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
-                }
+        sectionLabel("Base elements · contours and depth")
+        grid(2, 4,
+            position:(0, 7), size:(100, 86), origin:top-left,
+            columns-weight:[1, 1.8])
+        {
+            demoPanel("Dashed contour"){
+                rectangle(at:center, size:(60,25),
+                    background-color:documentColors[4],
+                    draw-contour, line-color:documentColors[0],
+                    stroke:dashed)
             }
+            sourcePanel("""
+                rectangle(at:center, size:(60,25),
+                  background-color:documentColors[4],
+                  draw-contour,
+                  line-color:documentColors[0],
+                  stroke:dashed)
+            """, fontSize:2.1%P)
 
-            // Row 1: Dashed stroke & line-color
-            miniPage{
-                rectangle(at:center, size:(60,25), background-color:documentColors[4], draw-contour, line-color:documentColors[0], stroke:dashed)
+            demoPanel("Custom width and dash"){
+                rectangle(at:center, size:(60,25),
+                    background-color:documentColors[4],
+                    draw-contour, line-color:documentColors[1],
+                    stroke:basic(width:2,
+                        dash:[8,4], cap:round))
             }
-            miniCodeNTexup(
-            """
-            rectangle(
-              size:(60,25),
-              background-color:documentColors[4],
-              draw-contour,
-              line-color:documentColors[0],
-              stroke:dashed
-            )
-            """
-            )
+            sourcePanel("""
+                rectangle(at:center, size:(60,25),
+                  background-color:documentColors[4],
+                  draw-contour,
+                  line-color:documentColors[1],
+                  stroke:basic(width:2,
+                    dash:[8,4], cap:round))
+            """, fontSize:2.1%P)
 
-            // Row 2: Basic stroke with custom width and dash pattern
-            miniPage{
-                rectangle(at:center, size:(60,25), background-color:documentColors[4], draw-contour, line-color:documentColors[1], stroke:basic(width:2, dash:[8,4], cap:round))
+            demoPanel("Shadow with visible contour"){
+                rectangle(at:center, size:(55,22),
+                    background-color:documentColors[0],
+                    draw-contour, line-color:white,
+                    shadow:{distance:(4,4),
+                        radius:6, color:gray})
             }
-            miniCodeNTexup(
-            """
-            rectangle(
-              size:(60,25),
-              draw-contour,
-              line-color:documentColors[1],
-              stroke:basic(width:2,
-                           dash:[8,4],
-                           cap:round)
-            )
-            """
-            )
+            sourcePanel("""
+                rectangle(at:center, size:(55,22),
+                  background-color:documentColors[0],
+                  draw-contour, line-color:white,
+                  shadow:{distance:(4,4),
+                    radius:6, color:gray})
+            """, fontSize:2.1%P)
 
-            // Row 3: Drop shadow on shape/card
-            miniPage{
-                rectangle(at:center, size:(55,22), background-color:documentColors[0], color:white, shadow:{distance:(4,4), radius:6, color:gray})
+            demoPanel("Text shadow"){
+                text("Elevated Text", font-bold,
+                    at:center, font-size:3%P,
+                    color:documentColors[1],
+                    shadow:{distance:(3,3),
+                        radius:4, color:gray})
             }
-            miniCodeNTexup(
-            """
-            rectangle(
-              size:(55,22),
-              background-color:documentColors[0],
-              shadow:{
-                distance:(4,4),
-                radius:6,
-                color:gray
-              }
-            )
-            """
-            )
-
-            // Row 4: Drop shadow on text
-            miniPage{
-                text("Elevated Text", font-bold, at:center, font-size:3%P, color:documentColors[1], shadow:{distance:(3,3), radius:4, color:gray})
-            }
-            miniCodeNTexup(
-            """
-            text(
-              "Elevated Text",
-              font-bold,
-              color:documentColors[1],
-              shadow:{
-                distance:(3,3),
-                radius:4,
-                color:gray
-              }
-            )
-            """
-            )
+            sourcePanel("""
+                text("Elevated Text", font-bold,
+                  at:center, font-size:3%P,
+                  color:documentColors[1],
+                  shadow:{distance:(3,3),
+                    radius:4, color:gray})
+            """, fontSize:2.1%P)
+        }
+        group(position:(0, 95), size:(100, 5), origin:top-left){
+            pageNote("Contours require draw-contour; line-color paints the stroke and font-size controls text shadows.")
         }
     }
 }

@@ -1,124 +1,134 @@
-content-slide(title:"Complex 3D Scenes",variant:5){
-    body{
-        grid((2,2),columns-weight:[1.1,1.4]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
-                }
-            }
-
-            // Row 1: Layered Architectural Composition
-            miniPage{
-                scene3d(
-                    draw-contour,
-                    real-position:(0,0,0),
-                    real-size:(60,82,60),
-                    transform:{
-                        rotate(to:(0,100,0), angle:30)
-                        scale:0.65
-                    }
-                ){
-                    // Base pedestal
-                    box(size:(60,12,60), position:(0,0,0),
-                        background-color:documentColors[10],
-                        faces:{top:{background-color:documentColors[1]}}
-                    )
-                    // Second tier
-                    box(size:(44,14,44), position:(8,12,8),
-                        background-color:documentColors[5],
-                        faces:{top:{background-color:documentColors[6]}}
-                    )
-                    // Crowning pyramid
-                    pyramid(size:(32,28,32), position:(14,26,14),
-                        faces:{
-                            front:{background-color:documentColors[0]}
-                            right:{background-color:documentColors[3]}
-                            left:{background-color:documentColors[4]}
+content-slide(title: "Composed 3D Scenes") {
+    body {
+        col(rows-weight: [6, 88, 6]) {
+            sectionLabel("3D graphics")
+            grid((2, 2), columns-weight: [1, 1.55]) {
+                demoPanel("Architectural composition") {
+                    scene3d(
+                        draw-contour,
+                        real-position: (0, 0, 0),
+                        real-size: (60, 82, 60),
+                        transform: {
+                            rotate(to: (0, 100, 0), angle: 30)
+                            scale: 0.65
                         }
-                    )
-                    // Floating orb
-                    sphere(radius:(16,16,16), position:(30,66,30),
-                        meridians:24, parallels:16,
-                        background-color:documentColors[2]
-                    )
-                }
-            }
-            miniCodeNTexup(
-            """
-            scene3d(real-position:(0,0,0), real-size:(60,82,60), transform:{
-              rotate(to:(0,100,0), angle:30)
-              scale:0.65
-            }){
-              // Multi-tier pedestal & monument
-              box(size:(60,12,60), position:(0,0,0),
-                  faces:{top:{background-color:documentColors[1]}})
-              box(size:(44,14,44), position:(8,12,8),
-                  faces:{top:{background-color:documentColors[6]}})
-              pyramid(size:(32,28,32), position:(14,26,14),
-                  faces:{front:{background-color:documentColors[0]},
-                         right:{background-color:documentColors[3]}})
-              sphere(radius:(16,16,16), position:(30,66,30),
-                  background-color:documentColors[2])
-            }
-            """
-            )
-
-            // Row 2: Spiral Helix with Polyline Trajectory & Floating Spheres
-            miniPage{
-                scene3d(
-                    draw-contour,
-                    real-position:(0,0,0),
-                    real-size:(50,82,50),
-                    transform:{
-                        rotate(to:(0,100,0), angle:25)
-                        scale:0.65
+                    ) {
+                        box(
+                            size: (60, 12, 60),
+                            position: (0, 0, 0),
+                            background-color: documentColors[10],
+                            faces: { top: { background-color: documentColors[1] } }
+                        )
+                        box(
+                            size: (44, 14, 44),
+                            position: (8, 12, 8),
+                            background-color: documentColors[5],
+                            faces: { top: { background-color: documentColors[6] } }
+                        )
+                        pyramid(
+                            size: (32, 28, 32),
+                            position: (14, 26, 14),
+                            background-color: documentColors[7],
+                            faces: {
+                                front: { background-color: documentColors[0] }
+                                right: { background-color: documentColors[3] }
+                                left: { background-color: documentColors[4] }
+                            }
+                        )
+                        sphere(
+                            radius: (16, 16, 16),
+                            position: (30, 66, 30),
+                            meridians: 24,
+                            parallels: 16,
+                            background-color: documentColors[2]
+                        )
                     }
-                ){
-                    // Foundation base
-                    box(size:(50,8,50), position:(0,0,0),
-                        background-color:documentColors[10],
-                        faces:{top:{background-color:documentColors[5]}}
-                    )
-                    // Ascending helix
-                    helix(position:(25,8,25),
-                        radius:(18,18,18),
-                        height:55,
-                        turns:3.0,
-                        line-color:documentColors[0],
-                        stroke:basic(width:2)
-                    )
-                    // Center pillar
-                    box(size:(10,50,10), position:(20,8,20),
-                        background-color:documentColors[7]
-                    )
-                    // Apex floating sphere
-                    sphere(radius:(16,16,16), position:(25,66,25),
-                        meridians:24, parallels:16,
-                        background-color:documentColors[4]
-                    )
                 }
+                sourcePanel(
+                    """
+scene3d(draw-contour,
+  real-position:(0,0,0), real-size:(60,82,60),
+  transform:{rotate(to:(0,100,0), angle:30)
+            scale:0.65}){
+  box(size:(60,12,60), position:(0,0,0),
+    background-color:documentColors[10],
+    faces:{top:{background-color:documentColors[1]}})
+  box(size:(44,14,44), position:(8,12,8),
+    background-color:documentColors[5],
+    faces:{top:{background-color:documentColors[6]}})
+  pyramid(size:(32,28,32), position:(14,26,14),
+    background-color:documentColors[7],
+    faces:{front:{background-color:documentColors[0]}
+           right:{background-color:documentColors[3]}
+           left:{background-color:documentColors[4]}})
+}
+""",
+                    title: "Pedestal excerpt · orb omitted",
+                    fontSize: 1.8%P
+                )
+
+                demoPanel("Helix, pillar & floating orb") {
+                    scene3d(
+                        draw-contour,
+                        real-position: (0, 0, 0),
+                        real-size: (50, 82, 50),
+                        transform: {
+                            rotate(to: (0, 100, 0), angle: 25)
+                            scale: 0.65
+                        }
+                    ) {
+                        box(
+                            size: (50, 8, 50),
+                            position: (0, 0, 0),
+                            background-color: documentColors[10],
+                            faces: { top: { background-color: documentColors[5] } }
+                        )
+                        helix(
+                            position: (25, 8, 25),
+                            radius: (18, 18, 18),
+                            height: 55,
+                            turns: 3.0,
+                            line-color: documentColors[0],
+                            stroke: basic(width: 2)
+                        )
+                        box(
+                            size: (10, 50, 10),
+                            position: (20, 8, 20),
+                            background-color: documentColors[7]
+                        )
+                        sphere(
+                            radius: (16, 16, 16),
+                            position: (25, 66, 25),
+                            meridians: 24,
+                            parallels: 16,
+                            background-color: documentColors[4]
+                        )
+                    }
+                }
+                sourcePanel(
+                    """
+scene3d(draw-contour,
+  real-position:(0,0,0), real-size:(50,82,50),
+  transform:{rotate(to:(0,100,0), angle:25)
+            scale:0.65}){
+  box(size:(50,8,50), position:(0,0,0),
+    background-color:documentColors[10],
+    faces:{top:{background-color:documentColors[5]}})
+  helix(position:(25,8,25), radius:(18,18,18),
+    height:55, turns:3.0,
+    line-color:documentColors[0],
+    stroke:basic(width:2))
+  box(size:(10,50,10), position:(20,8,20),
+    background-color:documentColors[7])
+  sphere(radius:(16,16,16), position:(25,66,25),
+    background-color:documentColors[4])
+}
+""",
+                    title: "Helix scene excerpt · mesh detail omitted",
+                    fontSize: 1.55%P
+                )
             }
-            miniCodeNTexup(
-            """
-            scene3d(real-position:(0,0,0), real-size:(50,82,50), transform:{
-              rotate(to:(0,100,0), angle:25)
-              scale:0.65
-            }){
-              box(size:(50,8,50), position:(0,0,0),
-                  background-color:documentColors[10])
-              helix(position:(25,8,25),
-                    radius:(18,18,18),
-                    height:55, turns:3.0,
-                    line-color:documentColors[0],
-                    stroke:basic(width:2))
-              box(size:(10,50,10), position:(20,8,20),
-                  background-color:documentColors[7])
-              sphere(radius:(16,16,16), position:(25,66,25),
-                  background-color:documentColors[4])
-            }
-            """
-            )
+            pageNote("Previews show all geometry; compact source excerpts omit only the details named in each panel.")
         }
     }
 }

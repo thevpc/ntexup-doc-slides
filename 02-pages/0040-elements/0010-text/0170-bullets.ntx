@@ -1,99 +1,73 @@
-content-slide(title:"Bullets",variant:3){
+content-slide(title:"Bullets", section:"Text & rich content"){
     body{
-        grid(2, 3, columns-weight: [1, 1.2]){
-            styles:{
-                "*": {margin:2}
-                source:{
-                    at:left
+        sectionLabel("Unordered, nested, and ordered lists")
+        grid(2, 3,
+            position:(0, 8), size:(100, 86), origin:top-left,
+            columns-weight:[1, 1.2])
+        {
+            styles{
+                "*": {margin:1}
+            }
+            miniPage{
+                ul(font-size:3%P){
+                    text("Hello ##World##")
+                    text("Hello ###World###")
+                    text("Hello ####World####")
                 }
             }
-
-
-
-            // Row
-            miniPage{
-                //rectangle(at:center, color:documentColors[2])
-                styles:{
-                    "*" : {
-                        font-size:3%P
-                    }
+            miniCodeNTexup("""
+                ul(font-size:3%P){
+                    text("Hello ##World##")
+                    text("Hello ###World###")
+                    text("Hello ####World####")
                 }
-                ul{
-                    ¶ Hello ##World##
-                    ¶ Hello ###World###
-                    ¶ Hello ####World####
+            """, fontSize:2.2%P)
+
+            miniPage{
+                ul(font-size:3%P){
+                    text("Hello ##World##")
+                    ul{
+                        text("Sub 1")
+                        text("Sub 2")
+                    }
+                    text("Hello ###World###")
+                    text("Hello ####World####")
                 }
             }
-            miniCodeNTexup( """
+            miniCodeNTexup("""
+                ul(font-size:3%P){
+                    text("Hello ##World##")
                     ul{
-                        ¶ Hello ##World##
-                        ¶ Hello ###World###
-                        ¶ Hello ####World####
+                        text("Sub 1")
+                        text("Sub 2")
                     }
-             """)
+                    text("Hello ###World###")
+                    text("Hello ####World####")
+                }
+            """, fontSize:2.2%P)
 
-            // Row
             miniPage{
-
-                styles:{
-                    "*" : {
-                        font-size:3%P
-                    }
-                }
-                //rectangle(at:center, color:documentColors[2])
-                ul{
-                    ¶ Hello ##World##
-                    ul{
-                        ¶ Sub 1
-                        ¶ Sub 2
-                    }
-                    ¶ Hello ###World###
-                    ¶ Hello ####World####
-                }
-            }
-            miniCodeNTexup( """
-                ul{
-                    ¶ Hello ##World##
-                    ul{
-                        ¶ Sub 1
-                        ¶ Sub 2
-                    }
-                    ¶ Hello ###World###
-                    ¶ Hello ####World####
-                }
-             """)
-
-            // Row
-            miniPage{
-
-                styles:{
-                    "*" : {
-                        font-size:3%P
-                    }
-                }
-                //rectangle(at:center, color:documentColors[2])
-                ol{
-                    ¶ Hello ##World##
+                ol(font-size:3%P){
+                    text("Hello ##World##")
                     ol{
-                        ¶ Sub 1
-                        ¶ Sub 2
+                        text("Sub 1")
+                        text("Sub 2")
                     }
-                    ¶ Hello ###World###
-                    ¶ Hello ####World####
+                    text("Hello ###World###")
+                    text("Hello ####World####")
                 }
             }
-            miniCodeNTexup( """
-                ol{
-                    ¶ Hello ##World##
+            miniCodeNTexup("""
+                ol(font-size:3%P){
+                    text("Hello ##World##")
                     ol{
-                        ¶ Sub 1
-                        ¶ Sub 2
+                        text("Sub 1")
+                        text("Sub 2")
                     }
-                    ¶ Hello ###World###
-                    ¶ Hello ####World####
+                    text("Hello ###World###")
+                    text("Hello ####World####")
                 }
-             """)
+            """, fontSize:2.2%P)
         }
     }
-
 }

@@ -1,25 +1,16 @@
-themeName=classic // use classic, meridian, or eniso
-//alternativeLocalThemeRepository:= "$HOME/xprojects/work-presentations/templates/"
-
-// extension imports must be declared before the theme include so the theme's
-// page templates see the node types they contain
-import("scoreboard" "table")
-
+themeName=classic // use classic, meridian, eniso, or ibtihel
 
 documentColorAccent=0 // use a number from 0 to 11
-themeShowPalette=true
+themeShowPalette=false
 documentTitle="ntexup"
-documentSubtitle="
-       A declarative, text-based document
-              & presentation generator
-                 "
-documentSubsubtitle="Open Source"
+documentSubtitle="Declarative documents & presentations"
+documentSubsubtitle="Documentation and feature gallery"
 documentAuthor="thevpc"
 documentAuthorEmail="https://github.com/thevpc/ntexup"
-documentAuthorAffiliation="Open Source Community"
-documentChapter="Chapter 1"
-documentDate="2026-09-13"
-documentVersion="v1.1.0.0"
+documentAuthorAffiliation="Open Source · Java · TSON"
+documentChapter="Documentation"
+documentDate="2026-11-26"
+documentVersion="v1.2.0.0"
 
 include("01-styles")
 include("02-pages")
